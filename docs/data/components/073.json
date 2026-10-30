@@ -1,0 +1,422 @@
+{
+  "id": "073",
+  "index": 73,
+  "name": "标题列表",
+  "category": "公众参与",
+  "parameterCount": 21,
+  "hasScript": false,
+  "templateLength": 998,
+  "parameters": [
+    {
+      "name": "通用参数",
+      "parameter": "commonparam",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件id",
+      "parameter": "viewid",
+      "type": "String",
+      "syntax": "${viewid}",
+      "descriptionHtml": "组件本身的id，数字(形如 1001)",
+      "description": "组件本身的id，数字(形如 1001)",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件uid",
+      "parameter": "uid",
+      "type": "String",
+      "syntax": "${uid}",
+      "descriptionHtml": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "description": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "私有样式类名",
+      "parameter": "uniqueClassName",
+      "type": "String",
+      "syntax": "${uniqueClassName}",
+      "descriptionHtml": "用在私有样式表的类名上，字符串(形如 c10)，举例：<br>&lt;span class=\"<span style=\"color:red\">${uniqueClassName}</span>\" &gt;文字&lt;/span&gt;",
+      "description": "用在私有样式表的类名上，字符串(形如 c10)，举例：\n<span class=\"${uniqueClassName}\" >文字</span>",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<span class=\"${uniqueClassName}\" >文字</span>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "引入jQuery类库",
+      "parameter": "v_includeJquery",
+      "type": "Function",
+      "syntax": "${v_includeJquery()}",
+      "descriptionHtml": "引入系统自带的JQuery类库;<br> 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "description": "引入系统自带的JQuery类库;\n 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "\n<!--引入jQuery-->${v_includeJquery()}<!--引入jQuery完成-->\n",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "标题列表条数",
+      "parameter": "size",
+      "type": "String",
+      "syntax": "${size}",
+      "descriptionHtml": "标题列表条数",
+      "description": "标题列表条数",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "标题列表",
+      "parameter": "list_item",
+      "type": "List",
+      "syntax": "<#list list_item as item>\n</#list>",
+      "descriptionHtml": "标题列表",
+      "description": "标题列表",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "列表位置参数",
+      "parameter": "listnogroup",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "类型名称",
+      "parameter": "titleType",
+      "type": "String",
+      "syntax": "${item.titleType}",
+      "descriptionHtml": "类型名称",
+      "description": "类型名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "查询码",
+      "parameter": "searchcode",
+      "type": "String",
+      "syntax": "${item.searchcode}",
+      "descriptionHtml": "查询码",
+      "description": "查询码",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "链接地址",
+      "parameter": "titleUrl",
+      "type": "String",
+      "syntax": "${item.titleUrl}",
+      "descriptionHtml": "链接地址",
+      "description": "链接地址",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "原标题",
+      "parameter": "title",
+      "type": "String",
+      "syntax": "${item.title}",
+      "descriptionHtml": "原标题，不建议直接输出",
+      "description": "原标题，不建议直接输出",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "显示标题",
+      "parameter": "showTitle",
+      "type": "String",
+      "syntax": "${item.showTitle}",
+      "descriptionHtml": "显示标题，进行过字数限制的标题",
+      "description": "显示标题，进行过字数限制的标题",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "原时间",
+      "parameter": "time",
+      "type": "String",
+      "syntax": "${item.time}",
+      "descriptionHtml": "原时间，不建议直接输出",
+      "description": "原时间，不建议直接输出",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "显示时间",
+      "parameter": "showTime",
+      "type": "String",
+      "syntax": "${item.showTime}",
+      "descriptionHtml": "显示时间，进行过格式处理的时间",
+      "description": "显示时间，进行过格式处理的时间",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "处理状态",
+      "parameter": "audit",
+      "type": "String",
+      "syntax": "${item.audit}",
+      "descriptionHtml": "处理状态",
+      "description": "处理状态",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "更多链接地址",
+      "parameter": "moreUrl",
+      "type": "String",
+      "syntax": "${moreUrl}",
+      "descriptionHtml": "更多链接地址。",
+      "description": "更多链接地址。",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "标识:${moreUrl}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "唯一标识",
+      "parameter": "uuid",
+      "type": "String",
+      "syntax": "${uuid}",
+      "descriptionHtml": "唯一标识, 主要在拖放多个组件时使用,确保id,方法等唯一不会冲突。",
+      "description": "唯一标识, 主要在拖放多个组件时使用,确保id,方法等唯一不会冲突。",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "标识:${uuid}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "是第几条",
+      "parameter": "pos",
+      "type": "Integer",
+      "syntax": "${item.pos}",
+      "descriptionHtml": "当前是列表的第几条(从1开始)",
+      "description": "当前是列表的第几条(从1开始)",
+      "kind": "parameter",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "第${item.pos}条",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否首条",
+      "parameter": "isFirst",
+      "type": "Boolean",
+      "syntax": "<#if item.isFirst></#if>",
+      "descriptionHtml": "当前是不是列表的第一条",
+      "description": "当前是不是列表的第一条",
+      "kind": "parameter",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if item.isFirst>首条</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否尾条",
+      "parameter": "isLast",
+      "type": "Boolean",
+      "syntax": "<#if item.isLast></#if>",
+      "descriptionHtml": "当前是不是列表的最后一条",
+      "description": "当前是不是列表的最后一条",
+      "kind": "parameter",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if item.isLast>尾条</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否奇数行",
+      "parameter": "isOdd",
+      "type": "Boolean",
+      "syntax": "<#if item.isOdd></#if>",
+      "descriptionHtml": "当前是不是奇数行",
+      "description": "当前是不是奇数行",
+      "kind": "parameter",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if item.isOdd>奇数行</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否偶数行",
+      "parameter": "isEven",
+      "type": "Boolean",
+      "syntax": "<#if item.isEven></#if>",
+      "descriptionHtml": "当前是不是偶数行",
+      "description": "当前是不是偶数行",
+      "kind": "parameter",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if item.isEven>偶数行</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listnogroup"
+      ]
+    }
+  ],
+  "template": "<table cellspacing=\"1\" cellpadding=\"1\" width=\"100%\" border=\"0\" style=\"word-wrap: break-word;word-break:break-all;border-collapse:collapse;FONT-FAMILY: 宋体;COLOR: #666666;HEIGHT: 22px;FONT-SIZE: 9pt;\">\n    <#list list_item as item>\n        <tr>\n            <td align='center' style=\"COLOR: #ff6600;TEXT-DECORATION: none;LINE-HEIGHT: 22px;PADDING-TOP: 4px;\">\n               <span>${item.titleType}</span> \n            </td>\n            <td align='center' >  \n                <span ><img src=\"/system/resource/images/default/item3.gif\" align=\"absmiddle\"></span>\n            </td>\n            <td align='left' style=\"\">\n                <a href=\"${item.titleUrl}\" style=\"TEXT-DECORATION: none;COLOR: #666666;\">\n                    ${item.showTitle}\n                </a>\n            </td>\n            <td style=\"COLOR: #666666;\">\n                ${item.showTime}\n            </td>\n            <td style=\"COLOR: #ff6600;\">\n                ${item.audit}\n            </td>\n        </tr>\n    </#list>\n</table>",
+  "exampleTemplate": "",
+  "previousFixtureHashes": [
+    "e849c4b1"
+  ],
+  "css": "",
+  "fixture": {
+    "viewid": "1073",
+    "uid": "u_demo",
+    "uniqueClassName": "c_demo",
+    "size": "12",
+    "moreUrl": "#preview",
+    "uuid": "boda_demo",
+    "list_item": [
+      {
+        "titleType": "把课堂搬进山野，让知识连接更广阔的世界",
+        "titleUrl": "把课堂搬进山野，让知识连接更广阔的世界",
+        "showTitle": "把课堂搬进山野，让知识连接更广阔的世界",
+        "showTime": "2026-10-30",
+        "audit": "处理状态",
+        "searchcode": "查询码",
+        "title": "把课堂搬进山野，让知识连接更广阔的世界",
+        "time": "2026-10-30",
+        "pos": 1
+      },
+      {
+        "titleType": "校园开放日｜在这里，遇见新的可能",
+        "titleUrl": "校园开放日｜在这里，遇见新的可能",
+        "showTitle": "校园开放日｜在这里，遇见新的可能",
+        "showTime": "2026-10-30",
+        "audit": "处理状态",
+        "searchcode": "查询码",
+        "title": "校园开放日｜在这里，遇见新的可能",
+        "time": "2026-10-30",
+        "pos": 2
+      },
+      {
+        "titleType": "关于举办青年学术交流活动的通知",
+        "titleUrl": "关于举办青年学术交流活动的通知",
+        "showTitle": "关于举办青年学术交流活动的通知",
+        "showTime": "2026-10-30",
+        "audit": "处理状态",
+        "searchcode": "查询码",
+        "title": "关于举办青年学术交流活动的通知",
+        "time": "2026-10-30",
+        "pos": 3
+      },
+      {
+        "titleType": "图书馆秋季阅读计划正式启动",
+        "titleUrl": "图书馆秋季阅读计划正式启动",
+        "showTitle": "图书馆秋季阅读计划正式启动",
+        "showTime": "2026-10-30",
+        "audit": "处理状态",
+        "searchcode": "查询码",
+        "title": "图书馆秋季阅读计划正式启动",
+        "time": "2026-10-30",
+        "pos": 4
+      },
+      {
+        "titleType": "探索与创新：青年研究者的校园故事",
+        "titleUrl": "探索与创新：青年研究者的校园故事",
+        "showTitle": "探索与创新：青年研究者的校园故事",
+        "showTime": "2026-10-30",
+        "audit": "处理状态",
+        "searchcode": "查询码",
+        "title": "探索与创新：青年研究者的校园故事",
+        "time": "2026-10-30",
+        "pos": 5
+      }
+    ]
+  }
+}

@@ -1,0 +1,191 @@
+{
+  "id": "092",
+  "index": 92,
+  "name": "复杂查询",
+  "category": "领导信箱",
+  "parameterCount": 12,
+  "hasScript": true,
+  "templateLength": 4986,
+  "parameters": [
+    {
+      "name": "通用参数",
+      "parameter": "commonparam",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件id",
+      "parameter": "viewid",
+      "type": "String",
+      "syntax": "${viewid}",
+      "descriptionHtml": "组件本身的id，数字(形如 1001)",
+      "description": "组件本身的id，数字(形如 1001)",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件uid",
+      "parameter": "uid",
+      "type": "String",
+      "syntax": "${uid}",
+      "descriptionHtml": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "description": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "私有样式类名",
+      "parameter": "uniqueClassName",
+      "type": "String",
+      "syntax": "${uniqueClassName}",
+      "descriptionHtml": "用在私有样式表的类名上，字符串(形如 c10)，举例：<br>&lt;span class=\"<span style=\"color:red\">${uniqueClassName}</span>\" &gt;文字&lt;/span&gt;",
+      "description": "用在私有样式表的类名上，字符串(形如 c10)，举例：\n<span class=\"${uniqueClassName}\" >文字</span>",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<span class=\"${uniqueClassName}\" >文字</span>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "引入jQuery类库",
+      "parameter": "v_includeJquery",
+      "type": "Function",
+      "syntax": "${v_includeJquery()}",
+      "descriptionHtml": "引入系统自带的JQuery类库;<br> 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "description": "引入系统自带的JQuery类库;\n 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "\n<!--引入jQuery-->${v_includeJquery()}<!--引入jQuery完成-->\n",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "唯一标识",
+      "parameter": "UUID",
+      "type": "String",
+      "syntax": "${UUID}",
+      "descriptionHtml": "唯一标识",
+      "description": "唯一标识",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "查询表单信息",
+      "parameter": "formgroup",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "表单名称",
+      "parameter": "formname",
+      "type": "String",
+      "syntax": "${formname}",
+      "descriptionHtml": "form表单的名称",
+      "description": "form表单的名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "搜索表单跳转链接",
+      "parameter": "action",
+      "type": "String",
+      "syntax": "${action}",
+      "descriptionHtml": "搜索表单跳转链接",
+      "description": "搜索表单跳转链接",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "姓名输入文本框名称",
+      "parameter": "searchname",
+      "type": "String",
+      "syntax": "${searchname}",
+      "descriptionHtml": "姓名输入文本框名称",
+      "description": "姓名输入文本框名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "查询码输入文本框名称",
+      "parameter": "searchcode",
+      "type": "String",
+      "syntax": "${searchcode}",
+      "descriptionHtml": "查询码输入文本框名称",
+      "description": "查询码输入文本框名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "开始日期输入文本框名称",
+      "parameter": "searchbegintime",
+      "type": "String",
+      "syntax": "${searchbegintime}",
+      "descriptionHtml": "开始日期输入文本框名称",
+      "description": "开始日期输入文本框名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "标题输入文本框名称",
+      "parameter": "searchtitle",
+      "type": "String",
+      "syntax": "${searchtitle}",
+      "descriptionHtml": "标题输入文本框名称",
+      "description": "标题输入文本框名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "结束时间输入文本框名称",
+      "parameter": "searchendtime",
+      "type": "String",
+      "syntax": "${searchendtime}",
+      "descriptionHtml": "结束时间输入文本框名称",
+      "description": "结束时间输入文本框名称",
+      "kind": "parameter",
+      "path": []
+    }
+  ],
+  "template": "<script type=\"text/javascript\">\n   function _leadermail_search_changebase64_3()\n   {\n       if(document.getElementById(\"${searchname}_temp\"))\n       {\n           document.getElementById(\"${searchname}\").value=new  Base64().encode(document.getElementById(\"${searchname}_temp\").value);\n           new VsbFormFunc().disableAutoEnable(document.getElementById(\"${searchname}_temp\"));\n       }\n       if(document.getElementById(\"${searchcode}_temp\"))\n       {\n           document.getElementById(\"${searchcode}\").value=new  Base64().encode(document.getElementById(\"${searchcode}_temp\").value);\n           new VsbFormFunc().disableAutoEnable(document.getElementById(\"${searchcode}_temp\"));\n       }\n       if(document.getElementById(\"${searchtitle}_temp\"))\n       {\n           document.getElementById(\"${searchtitle}\").value=new  Base64().encode(document.getElementById(\"${searchtitle}_temp\").value);\n           new VsbFormFunc().disableAutoEnable(document.getElementById(\"${searchtitle}_temp\"));\n       }\n       return true;\n   } \n</script>\n<form name=${formName } method=\"post\" action=\"${action }\" style=\"display: inline;\" onsubmit=\"return _leadermail_search_changebase64_3();\"> \n        <table  style=\"border:0px black solid;\"  border=\"1\" cellspacing=\"10\" cellpadding=\"0\" width=\"600\">\n            <tr>\n                <td align=\"left\" nowrap=\"nowrap\" style=\"border:0px black solid;\" >\n                    <span  style=\"FONT-FAMILY: 宋体;COLOR: #575352;FONT-WEIGHT: bold;FONT-SIZE: 9pt;\" >姓名</span>\n                </td>\n                <td align=\"left\" style=\"border:0px black solid;\">\n                    <input type=\"text\" name=\"${searchname}\" id=\"${searchname}\" style=\"display:none\"\n                    ><input type=\"text\" name=\"${searchname}_temp\" id=\"${searchname}_temp\" style=\"width:100px;BORDER-BOTTOM: #ecc197 1px solid;BORDER-TOP: #ecc197 1px solid;BORDER-RIGHT: #ecc197 1px solid;BORDER-LEFT: #ecc197 1px solid;BACKGROUND-COLOR: #fffbf8;\">\n                </td>\n                <td align=\"left\" nowrap  style=\"border:0px black solid;\">\n                    <span  style=\"FONT-FAMILY: 宋体;COLOR: #575352;FONT-WEIGHT: bold;FONT-SIZE: 9pt;\" >流水号</span>\n                </td>\n                <td align=\"left\" style=\"border:0px black solid;\">\n                    <input type=\"text\" name=\"${searchcode}\" id=\"${searchcode}\" style=\"display:none\"\n                    ><input type=\"text\" name=\"${searchcode}_temp\" id=\"${searchcode}_temp\" style=\"width:100px;BORDER-BOTTOM: #ecc197 1px solid;BORDER-TOP: #ecc197 1px solid;BORDER-RIGHT: #ecc197 1px solid;BORDER-LEFT: #ecc197 1px solid;BACKGROUND-COLOR: #fffbf8;\">\n                </td>\n                <td align=\"left\" nowrap style=\"border:0px black solid;\">\n                    <span  style=\"FONT-FAMILY: 宋体;COLOR: #575352;FONT-WEIGHT: bold;FONT-SIZE: 9pt;\" >开始日期</span>\n                </td>\n                <td align=\"left\" style=\"border:0px black solid;\">\n                    <input type=text name='wbsearchbegintime' id=\"${searchbegintime}\"  class=\"Wdate\" size=22 onfocus=\"WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',maxDate:'#F{$dp.$D(\\'${searchendtime}\\')}'})\" style=\"width:100px;BORDER-RIGHT: #ecc197 1px solid;BORDER-TOP: #ecc197 1px solid;BORDER-LEFT: #ecc197 1px solid;BORDER-BOTTOM: #ecc197 1px solid;BACKGROUND-COLOR: #fffbf8;\"/>\n                </td>\n                <td rowspan=\"2\" align=\"absmiddle\" style=\"border:0px black solid;\">\n                <input type=\"image\" src=\"/system/resource/images/leadermail/ldxx_anniu_cx.gif\" valign=\"bottom\" style=\"cursor: hand\" border=\"0\"></td>\n            </tr>\n            <tr>\n                <td align=\"left\" style=\"border:0px black solid;\">\n                    <span  style=\"FONT-FAMILY: 宋体;COLOR: #575352;FONT-WEIGHT: bold;FONT-SIZE: 9pt;\" >标题</span>\n                </td>\n                <td align=\"left\" colspan=\"3\" style=\"border:0px black solid;\">\n                    <input type=\"text\" name=\"${searchtitle}\" id=\"${searchtitle}\" style=\"display:none\"\n                    ><input type=\"text\" name=\"${searchtitle}_temp\" id=\"${searchtitle}_temp\" style=\"width:282px;BORDER-BOTTOM: #ecc197 1px solid;BORDER-TOP: #ecc197 1px solid;BORDER-RIGHT: #ecc197 1px solid;BORDER-LEFT: #ecc197 1px solid;BACKGROUND-COLOR: #fffbf8;\">\n                </td>\n                <td align=\"left\" nowrap=\"nowrap\" style=\"border:0px black solid;\">\n                    <span style=\"FONT-FAMILY: 宋体;COLOR: #575352;FONT-WEIGHT: bold;FONT-SIZE: 9pt;\" >结束日期</span>\n                </td>\n                <td align=\"left\" style=\"border:0px black solid;\">\n                    <input type=text name='wbsearchendtime' id=\"${searchendtime}\"  class=\"Wdate\" size=22 onfocus=\"WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',minDate:'#F{$dp.$D(\\'${searchbegintime}\\')}',maxDate:'2030-1-1'})\" style=\"width:100px;BORDER-RIGHT: #ecc197 1px solid;BORDER-TOP: #ecc197 1px solid;BORDER-LEFT: #ecc197 1px solid;BORDER-BOTTOM: #ecc197 1px solid;BACKGROUND-COLOR: #fffbf8;\"/>\n                </td>\n            </tr>\n        </table>\n    </form>",
+  "exampleTemplate": "",
+  "previousFixtureHashes": [
+    "9031a127"
+  ],
+  "css": "",
+  "fixture": {
+    "viewid": "1092",
+    "uid": "u_demo",
+    "uniqueClassName": "c_demo",
+    "UUID": "boda_demo",
+    "formname": "boda_demo",
+    "action": "#preview",
+    "searchname": "示例名称",
+    "searchcode": "查询码输入文本框名称",
+    "searchbegintime": "2026-10-30",
+    "searchtitle": "把课堂搬进山野，让知识连接更广阔的世界",
+    "searchendtime": "2026-10-30",
+    "formName": "boda_demo"
+  }
+}

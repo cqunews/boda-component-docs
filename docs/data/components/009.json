@@ -1,0 +1,228 @@
+{
+  "id": "009",
+  "index": 9,
+  "name": "多屏切换",
+  "category": "网站基础信息",
+  "parameterCount": 10,
+  "hasScript": false,
+  "templateLength": 245,
+  "parameters": [
+    {
+      "name": "通用参数",
+      "parameter": "commonparam",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件id",
+      "parameter": "viewid",
+      "type": "String",
+      "syntax": "${viewid}",
+      "descriptionHtml": "组件本身的id，数字(形如 1001)",
+      "description": "组件本身的id，数字(形如 1001)",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件uid",
+      "parameter": "uid",
+      "type": "String",
+      "syntax": "${uid}",
+      "descriptionHtml": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "description": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "私有样式类名",
+      "parameter": "uniqueClassName",
+      "type": "String",
+      "syntax": "${uniqueClassName}",
+      "descriptionHtml": "用在私有样式表的类名上，字符串(形如 c10)，举例：<br>&lt;span class=\"<span style=\"color:red\">${uniqueClassName}</span>\" &gt;文字&lt;/span&gt;",
+      "description": "用在私有样式表的类名上，字符串(形如 c10)，举例：\n<span class=\"${uniqueClassName}\" >文字</span>",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<span class=\"${uniqueClassName}\" >文字</span>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "引入jQuery类库",
+      "parameter": "v_includeJquery",
+      "type": "Function",
+      "syntax": "${v_includeJquery()}",
+      "descriptionHtml": "引入系统自带的JQuery类库;<br> 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "description": "引入系统自带的JQuery类库;\n 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "\n<!--引入jQuery-->${v_includeJquery()}<!--引入jQuery完成-->\n",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "当前屏代码",
+      "parameter": "curcode",
+      "type": "String",
+      "syntax": "${cur_code}",
+      "descriptionHtml": "当前屏代码",
+      "description": "当前屏代码",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "${cur_code}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "多屏列表",
+      "parameter": "list_list",
+      "type": "List",
+      "syntax": "<#list list_screens as screen></#list>",
+      "descriptionHtml": "多屏列表，包含站点的多屏信息列表",
+      "description": "多屏列表，包含站点的多屏信息列表",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<ul>\n<#list list_screens as screen>\n\t<#if screen.isCur>\n\t<#else>\n\t\t<#if screen.code=='pc'||cur_code=='pc'><li><a href=\"javascript:void(0);\" title=\"${screen.name}\" onclick=\"${screen.setDevice}\">${screen.name}</a></li></#if>\n\t</#if>\n</#list>\n</ul>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "屏名称",
+      "parameter": "screenname",
+      "type": "String",
+      "syntax": "${screen.name}",
+      "descriptionHtml": "屏名称",
+      "description": "屏名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "${screen.name}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "屏名代码",
+      "parameter": "screencode",
+      "type": "String",
+      "syntax": "${screen.code}",
+      "descriptionHtml": "屏名代码",
+      "description": "屏名代码",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "${screen.code}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "是否当前屏",
+      "parameter": "iscur",
+      "type": "Boolean",
+      "syntax": "${screen.isCur}",
+      "descriptionHtml": "是否当前屏",
+      "description": "是否当前屏",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if screen.isCur></#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "切换屏",
+      "parameter": "setdevice",
+      "type": "Boolean",
+      "syntax": "${screen.setDevice}",
+      "descriptionHtml": "切换屏js调用",
+      "description": "切换屏js调用",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "${screen.setDevice}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    }
+  ],
+  "template": "<ul>\n<#list list_screens as screen>\n\t<#if screen.isCur>\n\t<#else>\n\t\t<#if screen.code=='pc'||cur_code=='pc'><li><a href=\"javascript:void(0);\" title=\"${screen.name}\" onclick=\"${screen.setDevice}\">${screen.name}</a></li></#if>\n\t</#if>\n</#list>\n</ul>",
+  "exampleTemplate": "",
+  "previousFixtureHashes": [
+    "f4a44c2e",
+    "facee4a5"
+  ],
+  "css": "",
+  "fixture": {
+    "viewid": "1009",
+    "uid": "u_demo",
+    "uniqueClassName": "c_demo",
+    "cur_code": "pc",
+    "list_screens": [
+      {
+        "name": "电脑版",
+        "code": "pc",
+        "isCur": true,
+        "setDevice": ""
+      },
+      {
+        "name": "手机版",
+        "code": "mobile",
+        "isCur": false,
+        "setDevice": ""
+      }
+    ]
+  }
+}

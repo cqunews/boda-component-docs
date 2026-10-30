@@ -1,0 +1,252 @@
+{
+  "id": "054",
+  "index": 54,
+  "name": "站点信息量排名",
+  "category": "站群统计组件",
+  "parameterCount": 11,
+  "hasScript": false,
+  "templateLength": 97,
+  "parameters": [
+    {
+      "name": "通用参数",
+      "parameter": "commonparam",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件id",
+      "parameter": "viewid",
+      "type": "String",
+      "syntax": "${viewid}",
+      "descriptionHtml": "组件本身的id，数字(形如 1001)",
+      "description": "组件本身的id，数字(形如 1001)",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件uid",
+      "parameter": "uid",
+      "type": "String",
+      "syntax": "${uid}",
+      "descriptionHtml": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "description": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "私有样式类名",
+      "parameter": "uniqueClassName",
+      "type": "String",
+      "syntax": "${uniqueClassName}",
+      "descriptionHtml": "用在私有样式表的类名上，字符串(形如 c10)，举例：<br>&lt;span class=\"<span style=\"color:red\">${uniqueClassName}</span>\" &gt;文字&lt;/span&gt;",
+      "description": "用在私有样式表的类名上，字符串(形如 c10)，举例：\n<span class=\"${uniqueClassName}\" >文字</span>",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<span class=\"${uniqueClassName}\" >文字</span>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "引入jQuery类库",
+      "parameter": "v_includeJquery",
+      "type": "Function",
+      "syntax": "${v_includeJquery()}",
+      "descriptionHtml": "引入系统自带的JQuery类库;<br> 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "description": "引入系统自带的JQuery类库;\n 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "\n<!--引入jQuery-->${v_includeJquery()}<!--引入jQuery完成-->\n",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "网站数量",
+      "parameter": "size",
+      "type": "Integer",
+      "syntax": "${size}",
+      "descriptionHtml": "网站信息量排名总数",
+      "description": "网站信息量排名总数",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "信息量排名列表",
+      "parameter": "statisticList",
+      "type": "List",
+      "syntax": "<#list statisticList as list></#list>",
+      "descriptionHtml": "网站信息量排名列表",
+      "description": "网站信息量排名列表",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#list statisticList as list>\n排名：${list.pos} &nbsp; 网站名称：${list.siteName} &nbsp;信息量：${list.newsNum}\n</#list>\n\t\t",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "列表位置参数",
+      "parameter": "listnogroup",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "网站名称",
+      "parameter": "siteName",
+      "type": "String",
+      "syntax": "${list.siteName}",
+      "descriptionHtml": "网站名称",
+      "description": "网站名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "信息量",
+      "parameter": "newsNum",
+      "type": "String",
+      "syntax": "${list.newsNum}",
+      "descriptionHtml": "站点的信息量",
+      "description": "站点的信息量",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "是第几条",
+      "parameter": "pos",
+      "type": "Integer",
+      "syntax": "${list.pos}",
+      "descriptionHtml": "当前是列表的第几条(从1开始)",
+      "description": "当前是列表的第几条(从1开始)",
+      "kind": "parameter",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "第${list.pos}条",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否首条",
+      "parameter": "isFirst",
+      "type": "Boolean",
+      "syntax": "<#if list.isFirst></#if>",
+      "descriptionHtml": "当前是不是列表的第一条",
+      "description": "当前是不是列表的第一条",
+      "kind": "parameter",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if list.isFirst>首条</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否尾条",
+      "parameter": "isLast",
+      "type": "Boolean",
+      "syntax": "<#if list.isLast></#if>",
+      "descriptionHtml": "当前是不是列表的最后一条",
+      "description": "当前是不是列表的最后一条",
+      "kind": "parameter",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if list.isLast>尾条</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listnogroup"
+      ]
+    }
+  ],
+  "template": "<#list statisticList as list>\n${list.pos} &nbsp; ${list.siteName} &nbsp; ${list.newsNum}\n</#list>",
+  "exampleTemplate": "",
+  "previousFixtureHashes": [
+    "b2aea288"
+  ],
+  "css": "",
+  "fixture": {
+    "viewid": "1054",
+    "uid": "u_demo",
+    "uniqueClassName": "c_demo",
+    "size": 6,
+    "statisticList": [
+      {
+        "pos": 1,
+        "siteName": "示例网站",
+        "newsNum": "12"
+      },
+      {
+        "pos": 2,
+        "siteName": "示例网站",
+        "newsNum": "12"
+      },
+      {
+        "pos": 3,
+        "siteName": "示例网站",
+        "newsNum": "12"
+      },
+      {
+        "pos": 4,
+        "siteName": "示例网站",
+        "newsNum": "12"
+      },
+      {
+        "pos": 5,
+        "siteName": "示例网站",
+        "newsNum": "12"
+      }
+    ]
+  }
+}

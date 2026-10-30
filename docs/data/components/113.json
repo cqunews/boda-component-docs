@@ -1,0 +1,300 @@
+{
+  "id": "113",
+  "index": 113,
+  "name": "拼音列表",
+  "category": "教师风采",
+  "parameterCount": 13,
+  "hasScript": false,
+  "templateLength": 86,
+  "parameters": [
+    {
+      "name": "通用参数",
+      "parameter": "commonparam",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件id",
+      "parameter": "viewid",
+      "type": "String",
+      "syntax": "${viewid}",
+      "descriptionHtml": "组件本身的id，数字(形如 1001)",
+      "description": "组件本身的id，数字(形如 1001)",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件uid",
+      "parameter": "uid",
+      "type": "String",
+      "syntax": "${uid}",
+      "descriptionHtml": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "description": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "私有样式类名",
+      "parameter": "uniqueClassName",
+      "type": "String",
+      "syntax": "${uniqueClassName}",
+      "descriptionHtml": "用在私有样式表的类名上，字符串(形如 c10)，举例：<br>&lt;span class=\"<span style=\"color:red\">${uniqueClassName}</span>\" &gt;文字&lt;/span&gt;",
+      "description": "用在私有样式表的类名上，字符串(形如 c10)，举例：\n<span class=\"${uniqueClassName}\" >文字</span>",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<span class=\"${uniqueClassName}\" >文字</span>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "引入jQuery类库",
+      "parameter": "v_includeJquery",
+      "type": "Function",
+      "syntax": "${v_includeJquery()}",
+      "descriptionHtml": "引入系统自带的JQuery类库;<br> 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "description": "引入系统自带的JQuery类库;\n 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "\n<!--引入jQuery-->${v_includeJquery()}<!--引入jQuery完成-->\n",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "拼音列表",
+      "parameter": "pinyinList",
+      "type": "List",
+      "syntax": "<#list pinyinList as content></#list>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#list pinyinList as content><li><a href=\"${content.url}\" target=_blank title=\"${content.pinyin}\" >${content.pinyin}</a></li></#list>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "列表位置参数",
+      "parameter": "pinyinListgroup",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "当前字母",
+      "parameter": "curLetter",
+      "type": "String",
+      "syntax": "${curLetter}",
+      "descriptionHtml": "当前字母",
+      "description": "当前字母",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "拼音字母",
+      "parameter": "pinyin",
+      "type": "String",
+      "syntax": "${content.pinyin}",
+      "descriptionHtml": "拼音字母",
+      "description": "拼音字母",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "拼音教师链接",
+      "parameter": "url",
+      "type": "String",
+      "syntax": "${content.url}",
+      "descriptionHtml": "拼音教师链接",
+      "description": "拼音教师链接",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "当前第几条",
+      "parameter": "pos",
+      "type": "Integer",
+      "syntax": "${content.pos}",
+      "descriptionHtml": "当前是列表的第几条(从1开始)",
+      "description": "当前是列表的第几条(从1开始)",
+      "kind": "parameter",
+      "path": [
+        "pinyinListgroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "第${content.pos}条",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "pinyinListgroup"
+      ]
+    },
+    {
+      "name": "是否首条",
+      "parameter": "isFirst",
+      "type": "Boolean",
+      "syntax": "<#if content.isFirst></#if>",
+      "descriptionHtml": "当前是不是列表的第一条",
+      "description": "当前是不是列表的第一条",
+      "kind": "parameter",
+      "path": [
+        "pinyinListgroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if content.isFirst>首条</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "pinyinListgroup"
+      ]
+    },
+    {
+      "name": "是否尾条",
+      "parameter": "isLast",
+      "type": "Boolean",
+      "syntax": "<#if content.isLast></#if>",
+      "descriptionHtml": "当前是不是列表的最后一条",
+      "description": "当前是不是列表的最后一条",
+      "kind": "parameter",
+      "path": [
+        "pinyinListgroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if content.isLast>尾条</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "pinyinListgroup"
+      ]
+    },
+    {
+      "name": "是否奇数行",
+      "parameter": "isOdd",
+      "type": "Boolean",
+      "syntax": "<#if content.isOdd></#if>",
+      "descriptionHtml": "当前是不是奇数行",
+      "description": "当前是不是奇数行",
+      "kind": "parameter",
+      "path": [
+        "pinyinListgroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if content.isOdd>奇数行</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "pinyinListgroup"
+      ]
+    },
+    {
+      "name": "是否偶数行",
+      "parameter": "isEven",
+      "type": "Boolean",
+      "syntax": "<#if content.isEven></#if>",
+      "descriptionHtml": "当前是不是偶数行",
+      "description": "当前是不是偶数行",
+      "kind": "parameter",
+      "path": [
+        "pinyinListgroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if content.isEven>偶数行</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "pinyinListgroup"
+      ]
+    }
+  ],
+  "template": "<#list pinyinList as content>\n\t<a href='${content.url}'>${content.pinyin}</a>\n</#list>",
+  "exampleTemplate": "",
+  "previousFixtureHashes": [
+    "e7f8fdb8"
+  ],
+  "css": "",
+  "fixture": {
+    "viewid": "1113",
+    "uid": "u_demo",
+    "uniqueClassName": "c_demo",
+    "curLetter": "#preview",
+    "pinyinList": [
+      {
+        "url": "#preview",
+        "pinyin": "拼音字母",
+        "pos": 1
+      },
+      {
+        "url": "#preview",
+        "pinyin": "拼音字母",
+        "pos": 2
+      },
+      {
+        "url": "#preview",
+        "pinyin": "拼音字母",
+        "pos": 3
+      },
+      {
+        "url": "#preview",
+        "pinyin": "拼音字母",
+        "pos": 4
+      },
+      {
+        "url": "#preview",
+        "pinyin": "拼音字母",
+        "pos": 5
+      }
+    ]
+  }
+}

@@ -1,0 +1,633 @@
+{
+  "id": "042",
+  "index": 42,
+  "name": "招聘信息",
+  "category": "人员招聘",
+  "parameterCount": 30,
+  "hasScript": false,
+  "templateLength": 3080,
+  "parameters": [
+    {
+      "name": "通用参数",
+      "parameter": "commonparam",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件id",
+      "parameter": "viewid",
+      "type": "String",
+      "syntax": "${viewid}",
+      "descriptionHtml": "组件本身的id，数字(形如 1001)",
+      "description": "组件本身的id，数字(形如 1001)",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件uid",
+      "parameter": "uid",
+      "type": "String",
+      "syntax": "${uid}",
+      "descriptionHtml": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "description": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "私有样式类名",
+      "parameter": "uniqueClassName",
+      "type": "String",
+      "syntax": "${uniqueClassName}",
+      "descriptionHtml": "用在私有样式表的类名上，字符串(形如 c10)，举例：<br>&lt;span class=\"<span style=\"color:red\">${uniqueClassName}</span>\" &gt;文字&lt;/span&gt;",
+      "description": "用在私有样式表的类名上，字符串(形如 c10)，举例：\n<span class=\"${uniqueClassName}\" >文字</span>",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<span class=\"${uniqueClassName}\" >文字</span>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "引入jQuery类库",
+      "parameter": "v_includeJquery",
+      "type": "Function",
+      "syntax": "${v_includeJquery()}",
+      "descriptionHtml": "引入系统自带的JQuery类库;<br> 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "description": "引入系统自带的JQuery类库;\n 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "\n<!--引入jQuery-->${v_includeJquery()}<!--引入jQuery完成-->\n",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "唯一标识",
+      "parameter": "uuid",
+      "type": "String",
+      "syntax": "${uuid}",
+      "descriptionHtml": "唯一标识, 主要在拖放多个组件时使用,确保id,方法等唯一不会冲突。",
+      "description": "唯一标识, 主要在拖放多个组件时使用,确保id,方法等唯一不会冲突。",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "标识:${uuid}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "显示招聘条数",
+      "parameter": "show",
+      "type": "Integer",
+      "syntax": "${show}",
+      "descriptionHtml": "显示招聘条数,大于实际招聘条数则显示全部内容",
+      "description": "显示招聘条数,大于实际招聘条数则显示全部内容",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "显示招聘条数：${show}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "招聘信息内容",
+      "parameter": "list",
+      "type": "List",
+      "syntax": "<#list list_job as list></#list>",
+      "descriptionHtml": "招聘信息内容，包含招聘信息的显示",
+      "description": "招聘信息内容，包含招聘信息的显示",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#list list_job as list></#list>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "列表位置参数",
+      "parameter": "listnogroup",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "招聘信息内容",
+      "parameter": "listshow",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "邮箱地址",
+      "parameter": "mailcontent",
+      "type": "String",
+      "syntax": "href =\"mailto:${mailcontent}\"",
+      "descriptionHtml": "简历发送到的邮箱地址,放在A标签中",
+      "description": "简历发送到的邮箱地址,放在A标签中",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "邮箱地址：<a href=\"mailto:${mailcontent}\"><a>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "是第几条",
+      "parameter": "pos",
+      "type": "Integer",
+      "syntax": "${item.pos}",
+      "descriptionHtml": "当前是列表的第几条(从1开始)",
+      "description": "当前是列表的第几条(从1开始)",
+      "kind": "parameter",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "第${item.pos}条",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否首条",
+      "parameter": "isFirst",
+      "type": "Boolean",
+      "syntax": "<#if item.isFirst></#if>",
+      "descriptionHtml": "当前是不是列表的第一条",
+      "description": "当前是不是列表的第一条",
+      "kind": "parameter",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if item.isFirst>首条</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否尾条",
+      "parameter": "isLast",
+      "type": "Boolean",
+      "syntax": "<#if item.isLast></#if>",
+      "descriptionHtml": "当前是不是列表的最后一条",
+      "description": "当前是不是列表的最后一条",
+      "kind": "parameter",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if item.isLast>尾条</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否奇数行",
+      "parameter": "isOdd",
+      "type": "Boolean",
+      "syntax": "<#if item.isOdd></#if>",
+      "descriptionHtml": "当前是不是奇数行",
+      "description": "当前是不是奇数行",
+      "kind": "parameter",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if item.isOdd>奇数行</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否偶数行",
+      "parameter": "isEven",
+      "type": "Boolean",
+      "syntax": "<#if item.isEven></#if>",
+      "descriptionHtml": "当前是不是偶数行",
+      "description": "当前是不是偶数行",
+      "kind": "parameter",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if item.isEven>偶数行</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "招聘职位ID",
+      "parameter": "engagetableid",
+      "type": "String",
+      "syntax": "${list.engagetableid}",
+      "descriptionHtml": "招聘职位ID",
+      "description": "招聘职位ID",
+      "kind": "parameter",
+      "path": [
+        "listshow"
+      ]
+    },
+    {
+      "name": "招聘职位",
+      "parameter": "jobname",
+      "type": "String",
+      "syntax": "${list.jobname}",
+      "descriptionHtml": "招聘职位",
+      "description": "招聘职位",
+      "kind": "parameter",
+      "path": [
+        "listshow"
+      ]
+    },
+    {
+      "name": "招聘部门",
+      "parameter": "departname",
+      "type": "String",
+      "syntax": "${list.departname}",
+      "descriptionHtml": "招聘部门",
+      "description": "招聘部门",
+      "kind": "parameter",
+      "path": [
+        "listshow"
+      ]
+    },
+    {
+      "name": "原发布日期",
+      "parameter": "releasedate",
+      "type": "String",
+      "syntax": "${list.releasedate}",
+      "descriptionHtml": "发布日期的未处理数据，不建议直接输出",
+      "description": "发布日期的未处理数据，不建议直接输出",
+      "kind": "parameter",
+      "path": [
+        "listshow"
+      ]
+    },
+    {
+      "name": "发布日期",
+      "parameter": "showreleasedate",
+      "type": "String",
+      "syntax": "${list.showreleasedate}",
+      "descriptionHtml": "发布日期",
+      "description": "发布日期",
+      "kind": "parameter",
+      "path": [
+        "listshow"
+      ]
+    },
+    {
+      "name": "原失效日期",
+      "parameter": "invalidationdate",
+      "type": "String",
+      "syntax": "${list.invalidationdate}",
+      "descriptionHtml": "失效日期的未处理数据，不建议直接输出",
+      "description": "失效日期的未处理数据，不建议直接输出",
+      "kind": "parameter",
+      "path": [
+        "listshow"
+      ]
+    },
+    {
+      "name": "失效日期",
+      "parameter": "showinvdate",
+      "type": "String",
+      "syntax": "${list.showinvdate}",
+      "descriptionHtml": "失效日期",
+      "description": "失效日期",
+      "kind": "parameter",
+      "path": [
+        "listshow"
+      ]
+    },
+    {
+      "name": "工作地点",
+      "parameter": "jobplace",
+      "type": "String",
+      "syntax": "${list.jobplace}",
+      "descriptionHtml": "工作地点",
+      "description": "工作地点",
+      "kind": "parameter",
+      "path": [
+        "listshow"
+      ]
+    },
+    {
+      "name": "联系方式",
+      "parameter": "contactmode",
+      "type": "String",
+      "syntax": "${list.contactmode}",
+      "descriptionHtml": "联系方式",
+      "description": "联系方式",
+      "kind": "parameter",
+      "path": [
+        "listshow"
+      ]
+    },
+    {
+      "name": "薪资待遇",
+      "parameter": "salary",
+      "type": "String",
+      "syntax": "${list.salary}",
+      "descriptionHtml": "薪资待遇",
+      "description": "薪资待遇",
+      "kind": "parameter",
+      "path": [
+        "listshow"
+      ]
+    },
+    {
+      "name": "原工作职责",
+      "parameter": "jobdescription",
+      "type": "String",
+      "syntax": "${list.jobdescription}",
+      "descriptionHtml": "工作职责的未处理数据，不建议直接输出",
+      "description": "工作职责的未处理数据，不建议直接输出",
+      "kind": "parameter",
+      "path": [
+        "listshow"
+      ]
+    },
+    {
+      "name": "工作职责",
+      "parameter": "showdescription",
+      "type": "String",
+      "syntax": "${list.showdescription}",
+      "descriptionHtml": "工作职责",
+      "description": "工作职责",
+      "kind": "parameter",
+      "path": [
+        "listshow"
+      ]
+    },
+    {
+      "name": "原职位要求",
+      "parameter": "jobqualification",
+      "type": "String",
+      "syntax": "${list.jobqualification}",
+      "descriptionHtml": "职位要求的未处理数据，不建议直接输出",
+      "description": "职位要求的未处理数据，不建议直接输出",
+      "kind": "parameter",
+      "path": [
+        "listshow"
+      ]
+    },
+    {
+      "name": "职位要求",
+      "parameter": "showqualification",
+      "type": "String",
+      "syntax": "${list.showqualification}",
+      "descriptionHtml": "职位要求",
+      "description": "职位要求",
+      "kind": "parameter",
+      "path": [
+        "listshow"
+      ]
+    },
+    {
+      "name": "原备注",
+      "parameter": "remark",
+      "type": "String",
+      "syntax": "${list.remark}",
+      "descriptionHtml": "备注的未处理数据，不建议直接输出",
+      "description": "备注的未处理数据，不建议直接输出",
+      "kind": "parameter",
+      "path": [
+        "listshow"
+      ]
+    },
+    {
+      "name": "备注",
+      "parameter": "showremark",
+      "type": "String",
+      "syntax": "${list.showremark}",
+      "descriptionHtml": "备注",
+      "description": "备注",
+      "kind": "parameter",
+      "path": [
+        "listshow"
+      ]
+    },
+    {
+      "name": "添加应聘页链接",
+      "parameter": "linkurl",
+      "type": "String",
+      "syntax": "href = ${list.linkurl}",
+      "descriptionHtml": "添加应聘页链接，放在A标签中",
+      "description": "添加应聘页链接，放在A标签中",
+      "kind": "parameter",
+      "path": [
+        "listshow"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<a href = ${list.linkurl}></a>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listshow"
+      ]
+    }
+  ],
+  "template": "<table  align=\"center\" width=\"400\" height=\"200\" cellpadding=\"3\" cellspacing=\"1\" bordercolor=\"#DDEEFF\" border=\"0\">\n    <#list list_job as list>\n    <tr>\n        <td  bgcolor=\"#DDEEFF\"  style=\"font-size:9pt;color:#000000;\" align=\"center\" width=\"16%\">\n            招聘职位\n        </td>\n        <td  style=\"font-size:9pt;color:#000000;\" width=\"35%\">\n            ${list.jobname}\n        </td>\n        <td  bgcolor=\"#DDEEFF\"  style=\"font-size:9pt;color:#000000;\" align=\"center\" width=\"16%\">\n            招聘部门\n        </td>\n        <td  colspan=\"4\" style=\"font-size:9pt;color:#000000;\"  >\n            ${list.departname}\n        </td>\n    </tr>\n    <tr>\n        <td bgcolor=\"#DDEEFF\" style=\"font-size:9pt;color:#000000;\" align=\"center\">\n            发布日期\n        </td>\n        <td style=\"font-size:9pt;color:#000000;\" >\n            ${list.showreleasedate}\n        </td>\n        <td bgcolor=\"#DDEEFF\" style=\"font-size:9pt;color:#000000;\" align=\"center\">\n            失效日期\n        </td>\n        <td colspan=\"4\" style=\"font-size:9pt;color:#000000;\" >\n            ${list.showinvdate}\n        </td>\n      </tr>\n      <tr>\n        <td bgcolor=\"#DDEEFF\" style=\"font-size:9pt;color:#000000;\" align=\"center\">\n            工作地点\n        </td>\n        <td style=\"font-size:9pt;color:#000000;\" >\n            ${list.jobplace}\n        </td>\n        <td bgcolor=\"#DDEEFF\" style=\"font-size:9pt;color:#000000;\" align=\"center\">\n            联系方式\n        </td>\n        <td colspan=\"4\" style=\"font-size:9pt;color:#000000;\">\n            ${list.contactmode}\n        </td>\n      </tr>\n      <tr>\n        <td bgcolor=\"#DDEEFF\" style=\"font-size:9pt;color:#000000;\" align=\"center\">\n            薪资待遇\n        </td>\n        <td style=\"font-size:9pt;color:#000000;\" colspan=\"6\">\n            ${list.salary}\n        </td>\n      </tr>\n      <tr >\n        <td bgcolor=\"#DDEEFF\" style=\"font-size:9pt;color:#000000;\" align=\"center\">\n            工作职责\n        </td>\n        <td style=\"font-size:9pt;color:#000000;\" colspan=\"6\">\n            ${list.showdescription}\n        </td>\n      </tr>\n      <tr>\n        <td bgcolor=\"#DDEEFF\" style=\"font-size:9pt;color:#000000;\" align=\"center\"> \n            职位要求\n        </td>\n        <td style=\"font-size:9pt;color:#000000;\" colspan=\"6\">\n            ${list.showqualification}\n        </td>\n      </tr>                                                                                                                  \n      <tr>\n        <td bgcolor=\"#DDEEFF\" style=\"font-size:9pt;color:#000000;\" align=\"center\">\n            备注\n        </td>\n        <td style=\"font-size:9pt;color:#000000;\" colspan=\"6\">\n            ${list.showremark}\n        </td>\n      </tr> \n      <tr>\n        <td  bgcolor=\"#DDEEFF\" align=\"right\"  colspan=\"8\">\n            <a  style='font-size: 9pt' href =\"mailto:${mailcontent}\">发送邮件</a>\n            <a href = ${list.linkurl} style=\"font-size: 9pt\">申请职位</a>\n        </td>\n      </tr>\n      <#if !list.isLast>\n        <tr>\n            <td colspan=\"8\">\n                <hr color=\"#DDEEFF\" size=\"5\" width=\"400\"/>\n            </td>\n        </tr>\n      </#if>\n    </#list>\n</table>",
+  "exampleTemplate": "",
+  "previousFixtureHashes": [
+    "efc8477c"
+  ],
+  "css": "",
+  "fixture": {
+    "viewid": "1042",
+    "uid": "u_demo",
+    "uniqueClassName": "c_demo",
+    "uuid": "boda_demo",
+    "show": 6,
+    "list_job": [
+      {
+        "jobname": "示例名称",
+        "departname": "示例名称",
+        "showreleasedate": "2026-10-30",
+        "showinvdate": "2026-10-30",
+        "jobplace": "工作地点",
+        "contactmode": "联系方式",
+        "salary": "薪资待遇",
+        "showdescription": "工作职责",
+        "showqualification": "职位要求",
+        "showremark": "备注",
+        "linkurl": "#preview",
+        "isLast": false,
+        "engagetableid": "招聘职位ID",
+        "releasedate": "2026-10-30 09:30:00",
+        "invalidationdate": "2026-10-30 09:30:00",
+        "jobdescription": "原工作职责",
+        "jobqualification": "原职位要求",
+        "remark": "原备注"
+      },
+      {
+        "jobname": "示例名称",
+        "departname": "示例名称",
+        "showreleasedate": "2026-10-30",
+        "showinvdate": "2026-10-30",
+        "jobplace": "工作地点",
+        "contactmode": "联系方式",
+        "salary": "薪资待遇",
+        "showdescription": "工作职责",
+        "showqualification": "职位要求",
+        "showremark": "备注",
+        "linkurl": "#preview",
+        "isLast": false,
+        "engagetableid": "招聘职位ID",
+        "releasedate": "2026-10-30 09:30:00",
+        "invalidationdate": "2026-10-30 09:30:00",
+        "jobdescription": "原工作职责",
+        "jobqualification": "原职位要求",
+        "remark": "原备注"
+      },
+      {
+        "jobname": "示例名称",
+        "departname": "示例名称",
+        "showreleasedate": "2026-10-30",
+        "showinvdate": "2026-10-30",
+        "jobplace": "工作地点",
+        "contactmode": "联系方式",
+        "salary": "薪资待遇",
+        "showdescription": "工作职责",
+        "showqualification": "职位要求",
+        "showremark": "备注",
+        "linkurl": "#preview",
+        "isLast": false,
+        "engagetableid": "招聘职位ID",
+        "releasedate": "2026-10-30 09:30:00",
+        "invalidationdate": "2026-10-30 09:30:00",
+        "jobdescription": "原工作职责",
+        "jobqualification": "原职位要求",
+        "remark": "原备注"
+      },
+      {
+        "jobname": "示例名称",
+        "departname": "示例名称",
+        "showreleasedate": "2026-10-30",
+        "showinvdate": "2026-10-30",
+        "jobplace": "工作地点",
+        "contactmode": "联系方式",
+        "salary": "薪资待遇",
+        "showdescription": "工作职责",
+        "showqualification": "职位要求",
+        "showremark": "备注",
+        "linkurl": "#preview",
+        "isLast": false,
+        "engagetableid": "招聘职位ID",
+        "releasedate": "2026-10-30 09:30:00",
+        "invalidationdate": "2026-10-30 09:30:00",
+        "jobdescription": "原工作职责",
+        "jobqualification": "原职位要求",
+        "remark": "原备注"
+      },
+      {
+        "jobname": "示例名称",
+        "departname": "示例名称",
+        "showreleasedate": "2026-10-30",
+        "showinvdate": "2026-10-30",
+        "jobplace": "工作地点",
+        "contactmode": "联系方式",
+        "salary": "薪资待遇",
+        "showdescription": "工作职责",
+        "showqualification": "职位要求",
+        "showremark": "备注",
+        "linkurl": "#preview",
+        "isLast": true,
+        "engagetableid": "招聘职位ID",
+        "releasedate": "2026-10-30 09:30:00",
+        "invalidationdate": "2026-10-30 09:30:00",
+        "jobdescription": "原工作职责",
+        "jobqualification": "原职位要求",
+        "remark": "原备注"
+      }
+    ],
+    "mailcontent": "示例内容"
+  }
+}

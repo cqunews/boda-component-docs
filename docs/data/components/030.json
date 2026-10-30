@@ -1,0 +1,276 @@
+{
+  "id": "030",
+  "index": 30,
+  "name": "会员登录入口",
+  "category": "网站会员",
+  "parameterCount": 18,
+  "hasScript": true,
+  "templateLength": 2458,
+  "parameters": [
+    {
+      "name": "通用参数",
+      "parameter": "commonparam",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件id",
+      "parameter": "viewid",
+      "type": "String",
+      "syntax": "${viewid}",
+      "descriptionHtml": "组件本身的id，数字(形如 1001)",
+      "description": "组件本身的id，数字(形如 1001)",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件uid",
+      "parameter": "uid",
+      "type": "String",
+      "syntax": "${uid}",
+      "descriptionHtml": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "description": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "私有样式类名",
+      "parameter": "uniqueClassName",
+      "type": "String",
+      "syntax": "${uniqueClassName}",
+      "descriptionHtml": "用在私有样式表的类名上，字符串(形如 c10)，举例：<br>&lt;span class=\"<span style=\"color:red\">${uniqueClassName}</span>\" &gt;文字&lt;/span&gt;",
+      "description": "用在私有样式表的类名上，字符串(形如 c10)，举例：\n<span class=\"${uniqueClassName}\" >文字</span>",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<span class=\"${uniqueClassName}\" >文字</span>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "引入jQuery类库",
+      "parameter": "v_includeJquery",
+      "type": "Function",
+      "syntax": "${v_includeJquery()}",
+      "descriptionHtml": "引入系统自带的JQuery类库;<br> 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "description": "引入系统自带的JQuery类库;\n 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "\n<!--引入jQuery-->${v_includeJquery()}<!--引入jQuery完成-->\n",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "唯一标识",
+      "parameter": "UUID",
+      "type": "String",
+      "syntax": "${UUID}",
+      "descriptionHtml": "唯一标识",
+      "description": "唯一标识",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "判断用户是否登录",
+      "parameter": "isLogin",
+      "type": "Boolean",
+      "syntax": "${isLogin?string}",
+      "descriptionHtml": "判断用户登录状态：false表示没有登录  true表示登录成功",
+      "description": "判断用户登录状态：false表示没有登录  true表示登录成功",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "\n            <#if isLogin>\n                 <#--登陆用户存在的操作代码-->\n            <#else>\n                 <#--登录用户不存在的操作代码-->\n            </#if>\n            ",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "密码最大长度",
+      "parameter": "passlen_max",
+      "type": "Integer",
+      "syntax": "${passlen_max}",
+      "descriptionHtml": "验证用户密码的最大长度",
+      "description": "验证用户密码的最大长度",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "密码最小长度",
+      "parameter": "passlen_min",
+      "type": "Integer",
+      "syntax": "${passlen_min}",
+      "descriptionHtml": "验证用户密码的最小长度",
+      "description": "验证用户密码的最小长度",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "用户登录前",
+      "parameter": "loginFail",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "登录表单名称",
+      "parameter": "formName",
+      "type": "String",
+      "syntax": "${formName}",
+      "descriptionHtml": "用户登录表单名称",
+      "description": "用户登录表单名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "隐藏表单",
+      "parameter": "hidden",
+      "type": "String",
+      "syntax": "${hidden}",
+      "descriptionHtml": "隐藏表单",
+      "description": "隐藏表单",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "用户名文本框名称",
+      "parameter": "userTextName",
+      "type": "String",
+      "syntax": "${userTextName}",
+      "descriptionHtml": "用户登录时的填写用户名的文本框名称",
+      "description": "用户登录时的填写用户名的文本框名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "密码文本框名称",
+      "parameter": "pswTextName",
+      "type": "String",
+      "syntax": "${pswTextName}",
+      "descriptionHtml": "用户登录时的填写密码的文本框名称",
+      "description": "用户登录时的填写密码的文本框名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "用户注册URL",
+      "parameter": "regURL",
+      "type": "String",
+      "syntax": "${regURL}",
+      "descriptionHtml": "用户注册的链接地址",
+      "description": "用户注册的链接地址",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "用户取回密码URL",
+      "parameter": "getpwURL",
+      "type": "String",
+      "syntax": "${getpwURL}",
+      "descriptionHtml": "用户取回密码的链接地址",
+      "description": "用户取回密码的链接地址",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "用户登录成功",
+      "parameter": "loginSucc",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "用户名昵称",
+      "parameter": "nickName",
+      "type": "String",
+      "syntax": "${nickName}",
+      "descriptionHtml": "用户名昵称",
+      "description": "用户名昵称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "最后登陆时间",
+      "parameter": "lastEnterDate",
+      "type": "String",
+      "syntax": "${lastEnterDate}",
+      "descriptionHtml": "用户最后一次登陆时间！",
+      "description": "用户最后一次登陆时间！",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "登录次数",
+      "parameter": "enterCount",
+      "type": "Integer",
+      "syntax": "${enterCount}",
+      "descriptionHtml": "用户登录的总次数",
+      "description": "用户登录的总次数",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "单点登录链接地址",
+      "parameter": "caslogLink",
+      "type": "String",
+      "syntax": "${caslogLink}",
+      "descriptionHtml": "单点登录系统前台用户绑定账号的入口",
+      "description": "单点登录系统前台用户绑定账号的入口",
+      "kind": "parameter",
+      "path": []
+    }
+  ],
+  "template": "<script language='JavaScript' src='${v_link(\"/system/resource/js/login/reguser.js\")}'></script>\n <#if isLogin><#--登陆用户存在的操作代码--> \n <table width=\"100%\"> \n <tr align=\"center\"> \n <td width=\"30%\"> <span style=\"font-size: 12px; color: #333333;\">昵称：${nickName}</span></td> \n <td width=\"40%\"> <span style=\"font-size: 12px; color: #333333;\"><#if enterCount=='0'>上次登录时间：${lastEnterDate}</#if>\n <#if enterCount!='0'>最后登录时间：${lastEnterDate}</#if></span></td> <td width=\"20%\"> <span style=\"font-size: 12px; color: #333333;\"> \n <#if enterCount=='0'>您是首次登录!</#if><#if enterCount!='0'>你是第${enterCount}次登录！</#if></span></td> \n <td width=\"47\" align=\"left\"> \n <input class='btnlogin' STYLE='margin-bottom: 2px' type='image' src='/system/resource/images/login/anniu_exit_small.gif' style='cursor:pointer' name='blogout' value='退出' onclick='logout${UUID}()'> </td> \n </tr>\n  </table> <#else> <#--登录用户不存在的操作代码--> \n<form name=\"${formName}\" method=\"post\" style=\"display: inline\"> ${hidden}\n</form>\n   <table> <tr> \n   <td valign=\"middle\"> <span style=\"font-size: 12px; color: #333333;\">用户∶</span> <input name='${userTextName}' id='${userTextName}' type='text' style=\"border: 1px solid #CCCCCC; font-size: 12px\" tabindex='1' size='12' maxlength='20' /> <span style=\"font-size: 12px; color: #333333;\">&nbsp;密码∶</span> <input name='${pswTextName}' id='${pswTextName}' type='password' style=\"border: 1px solid #CCCCCC; font-size: 12px\" tabindex='2' size='12' maxlength='50' /> \n   <input tabindex=\"3\" type=\"image\" src=\"/system/resource/images/login/rukou_anniu_denglu.gif\" STYLE=\"margin-bottom: 2px; cursor: hand; FONT-SIZE: 12px; FILTER: progid : DXImageTransform . Microsoft . Gradient(GradientType = 0, StartColorStr = #ffffff, EndColorStr = #cecfde); CURSOR: hand; COLOR: #666666; font-weight: bold; background-color: #FFFFFF; padding: 1px; border: 1px solid #d7d7d7; vertical-align: middle; text-align: center; background-image: url(/system/resource/images/login/rukou_anniu_denglu.gif);\" onClick=\"tplcheckinput('${formName}')\"> &nbsp;&nbsp; <a href=\"${regURL}\" style=\"COLOR: #000000; text-decoration: none;\"> <span style=\"font-size: 12px; color: #666666;\">&middot;</span> <span style=\"font-size: 12px; color: #666666;\"> 新用户注册</span>\n    </a> <a href='${getpwURL}' style=\"COLOR: #000000; text-decoration: none;\"> <span style=\"font-size: 12px; color: #666666;\">&middot;</span> \n    <span style=\"font-size: 12px; color: #666666;\"> 修改密码</span> </a> </td> </tr> \n    </table> \n\n</#if>",
+  "exampleTemplate": "",
+  "previousFixtureHashes": [
+    "e2080130"
+  ],
+  "css": "",
+  "fixture": {
+    "viewid": "1030",
+    "uid": "u_demo",
+    "uniqueClassName": "c_demo",
+    "UUID": "boda_demo",
+    "passlen_max": 6,
+    "passlen_min": 6,
+    "formName": "boda_demo",
+    "hidden": "",
+    "userTextName": "示例名称",
+    "pswTextName": "示例名称",
+    "regURL": "#preview",
+    "getpwURL": "#preview",
+    "nickName": "示例名称",
+    "lastEnterDate": "2026-10-30 09:30:00",
+    "enterCount": "12",
+    "caslogLink": "#preview",
+    "isLogin": true
+  }
+}

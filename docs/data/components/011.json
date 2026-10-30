@@ -1,0 +1,195 @@
+{
+  "id": "011",
+  "index": 11,
+  "name": "当前位置",
+  "category": "网站导航",
+  "parameterCount": 10,
+  "hasScript": false,
+  "templateLength": 313,
+  "parameters": [
+    {
+      "name": "通用参数",
+      "parameter": "commonparam",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件id",
+      "parameter": "viewid",
+      "type": "String",
+      "syntax": "${viewid}",
+      "descriptionHtml": "组件本身的id，数字(形如 1001)",
+      "description": "组件本身的id，数字(形如 1001)",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件uid",
+      "parameter": "uid",
+      "type": "String",
+      "syntax": "${uid}",
+      "descriptionHtml": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "description": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "私有样式类名",
+      "parameter": "uniqueClassName",
+      "type": "String",
+      "syntax": "${uniqueClassName}",
+      "descriptionHtml": "用在私有样式表的类名上，字符串(形如 c10)，举例：<br>&lt;span class=\"<span style=\"color:red\">${uniqueClassName}</span>\" &gt;文字&lt;/span&gt;",
+      "description": "用在私有样式表的类名上，字符串(形如 c10)，举例：\n<span class=\"${uniqueClassName}\" >文字</span>",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<span class=\"${uniqueClassName}\" >文字</span>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "引入jQuery类库",
+      "parameter": "v_includeJquery",
+      "type": "Function",
+      "syntax": "${v_includeJquery()}",
+      "descriptionHtml": "引入系统自带的JQuery类库;<br> 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "description": "引入系统自带的JQuery类库;\n 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "\n<!--引入jQuery-->${v_includeJquery()}<!--引入jQuery完成-->\n",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "当前位置个数",
+      "parameter": "size",
+      "type": "Integer",
+      "syntax": "${size}",
+      "descriptionHtml": "当前位置个数",
+      "description": "当前位置个数",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "当前位置列表",
+      "parameter": "list_menu",
+      "type": "List",
+      "syntax": "<#list list_menu as menu> </#list>",
+      "descriptionHtml": "当前位置列表",
+      "description": "当前位置列表",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "是第几条",
+      "parameter": "pos",
+      "type": "Integer",
+      "syntax": "${menu.pos}",
+      "descriptionHtml": "当前是列表的第几条(从1开始)",
+      "description": "当前是列表的第几条(从1开始)",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "第${menu.pos}条",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "原名称",
+      "parameter": "name",
+      "type": "String",
+      "syntax": "${menu.name}",
+      "descriptionHtml": "当前位置原始名称，不建议直接输出",
+      "description": "当前位置原始名称，不建议直接输出",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "显示名称",
+      "parameter": "showName",
+      "type": "String",
+      "syntax": "${menu.showName}",
+      "descriptionHtml": "显示用的当前位置名称，调整过格式",
+      "description": "显示用的当前位置名称，调整过格式",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "当前位置链接",
+      "parameter": "linkUrl",
+      "type": "String",
+      "syntax": "${menu.linkUrl}",
+      "descriptionHtml": "当前位置链接",
+      "description": "当前位置链接",
+      "kind": "parameter",
+      "path": []
+    }
+  ],
+  "template": "<div>\n    当前位置: \n        <#list list_menu as menu>\n            <#if (menu.pos > 1)>\n                >>\n            </#if>\n            <#if menu.linkUrl != \"\">\n                <a href=\"${menu.linkUrl}\">${menu.showName}</a>\n            <#else>\n                ${menu.name}\n            </#if>\n        </#list>\n</div>",
+  "exampleTemplate": "",
+  "previousFixtureHashes": [
+    "29278485"
+  ],
+  "css": "",
+  "fixture": {
+    "viewid": "1011",
+    "uid": "u_demo",
+    "uniqueClassName": "c_demo",
+    "size": 6,
+    "list_menu": [
+      {
+        "pos": 1,
+        "linkUrl": "#preview",
+        "showName": "示例名称",
+        "name": "示例名称"
+      },
+      {
+        "pos": 2,
+        "linkUrl": "#preview",
+        "showName": "示例名称",
+        "name": "示例名称"
+      },
+      {
+        "pos": 3,
+        "linkUrl": "#preview",
+        "showName": "示例名称",
+        "name": "示例名称"
+      },
+      {
+        "pos": 4,
+        "linkUrl": "#preview",
+        "showName": "示例名称",
+        "name": "示例名称"
+      },
+      {
+        "pos": 5,
+        "linkUrl": "#preview",
+        "showName": "示例名称",
+        "name": "示例名称"
+      }
+    ]
+  }
+}

@@ -1,0 +1,194 @@
+{
+  "id": "066",
+  "index": 66,
+  "name": "数据查询入口",
+  "category": "数据查询",
+  "parameterCount": 12,
+  "hasScript": true,
+  "templateLength": 1212,
+  "parameters": [
+    {
+      "name": "通用参数",
+      "parameter": "commonparam",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件id",
+      "parameter": "viewid",
+      "type": "String",
+      "syntax": "${viewid}",
+      "descriptionHtml": "组件本身的id，数字(形如 1001)",
+      "description": "组件本身的id，数字(形如 1001)",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件uid",
+      "parameter": "uid",
+      "type": "String",
+      "syntax": "${uid}",
+      "descriptionHtml": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "description": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "私有样式类名",
+      "parameter": "uniqueClassName",
+      "type": "String",
+      "syntax": "${uniqueClassName}",
+      "descriptionHtml": "用在私有样式表的类名上，字符串(形如 c10)，举例：<br>&lt;span class=\"<span style=\"color:red\">${uniqueClassName}</span>\" &gt;文字&lt;/span&gt;",
+      "description": "用在私有样式表的类名上，字符串(形如 c10)，举例：\n<span class=\"${uniqueClassName}\" >文字</span>",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<span class=\"${uniqueClassName}\" >文字</span>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "引入jQuery类库",
+      "parameter": "v_includeJquery",
+      "type": "Function",
+      "syntax": "${v_includeJquery()}",
+      "descriptionHtml": "引入系统自带的JQuery类库;<br> 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "description": "引入系统自带的JQuery类库;\n 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "\n<!--引入jQuery-->${v_includeJquery()}<!--引入jQuery完成-->\n",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "表单名称",
+      "parameter": "formname",
+      "type": "String",
+      "syntax": "${formname}",
+      "descriptionHtml": "表单名称,用于name属性",
+      "description": "表单名称,用于name属性",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "查询结果地址页",
+      "parameter": "resultUrl",
+      "type": "URL",
+      "syntax": "${resultUrl}",
+      "descriptionHtml": "查询结果页地址",
+      "description": "查询结果页地址",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "所有字段",
+      "parameter": "field_map",
+      "type": "Map",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "验证码功能",
+      "parameter": "authcode",
+      "type": "String",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<INPUT name=\"${authcode_name}\" id=\"${authcode_id}\" type=\"text\" size=\"14\" maxlength=\"4\" size=\"6\">\n<a href=\"javascript:reloadauthcode${uid}();\" >${authcode_img}</a>\n",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "验证码id值",
+      "parameter": "authcode_id",
+      "type": "String",
+      "syntax": "${authcode_id}",
+      "descriptionHtml": "验证码id值,用于输入框的id属性",
+      "description": "验证码id值,用于输入框的id属性",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "验证码name值",
+      "parameter": "authcode_name",
+      "type": "String",
+      "syntax": "${authcode_name}",
+      "descriptionHtml": "验证码name值,用于输入框的name属性",
+      "description": "验证码name值,用于输入框的name属性",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "验证码图片",
+      "parameter": "authcode_img",
+      "type": "String",
+      "syntax": "${authcode_img}",
+      "descriptionHtml": "验证码图片,和验证码更换文字链接配合使用",
+      "description": "验证码图片,和验证码更换文字链接配合使用",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "验证码脚本",
+      "parameter": "authcode_js",
+      "type": "String",
+      "syntax": "<script>\nfunction checkauthcode${uid}()\n{\n    var authcode_id = document.getElementById(\"${authcode_id}\").value;\n    if(authcode_id==\"\")\n    {\n        alert(\"必须填写验证码！\");\n        return false;\n    }\n}\nfunction reloadauthcode${uid}()\n{\n    var verify=document.getElementById(\"authcode_img${uid}\");\n    verify.setAttribute(\"src\",\"/system/resource/js/message/createimage.jsp?\"+Math.random());\n}\n</script>",
+      "descriptionHtml": "验证码的脚本代码,使用验证码功能时必须使用",
+      "description": "验证码的脚本代码,使用验证码功能时必须使用",
+      "kind": "parameter",
+      "path": []
+    }
+  ],
+  "template": "<form action=\"${resultUrl}\" method=\"post\" name=\"${formname}\" id=\"${formname}\" onSubmit=\"return checkcondition${uid}()\">\n    <table align=\"center\" cellpadding=\"3\" cellspacing=\"5\" width=375>\n        <tr>\n            <td align=\"center\" colspan=2><h1>录取结果查询</h1></td>\n        </tr>\n        <tr>\n            <td width=\"100\" height=\"30\" align=\"right\">${field_map.ksh}：</td>\n            <td width=\"275\"><input type=\"text\" name=\"${ksh}\" id=\"${ksh}\" size=\"33\"></td>\n        </tr>\n        <tr>\n            <td height=\"30\" align=\"right\">${field_map.sfzh}：</td>\n            <td><input type=\"text\" name=\"${sfzh}\" id=\"${sfzh}\" size=\"33\"></td>\n        </tr>\n        <tr>\n            <td align=\"center\" colspan=2><input type=\"submit\" value=\"查询\" /></td>\n        </tr>\n    </table>\n</form>\n<script>\n    function checkcondition${uid}()\n    {\n        var ${ksh} = document.getElementById(\"${ksh}\").value;\n        if (${ksh}==\"\")\n        {\n            alert(\"请输入${field_map.ksh}\");\n            return false;\n        }\n        var ${sfzh} = document.getElementById(\"${sfzh}\").value;\n        if (${sfzh}==\"\")\n        {\n            alert(\"请输入${field_map.sfzh}\");\n            return false;\n        }\n        return true;\n    }\n</script>\n",
+  "exampleTemplate": "",
+  "previousFixtureHashes": [
+    "e93cc5b4",
+    "76bccc2c"
+  ],
+  "css": "",
+  "fixture": {
+    "viewid": "1066",
+    "uid": "u_demo",
+    "uniqueClassName": "c_demo",
+    "formname": "boda_demo",
+    "resultUrl": "#preview",
+    "authcode_id": "验证码id值",
+    "authcode_name": "示例名称",
+    "authcode_img": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+    "field_map": {
+      "ksh": "示例内容",
+      "sfzh": "示例内容"
+    },
+    "ksh": "示例内容",
+    "sfzh": "示例内容"
+  }
+}

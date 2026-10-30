@@ -1,0 +1,230 @@
+{
+  "id": "032",
+  "index": 32,
+  "name": "简单检索",
+  "category": "关键字检索",
+  "parameterCount": 13,
+  "hasScript": true,
+  "templateLength": 3913,
+  "parameters": [
+    {
+      "name": "通用参数",
+      "parameter": "commonparam",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件id",
+      "parameter": "viewid",
+      "type": "String",
+      "syntax": "${viewid}",
+      "descriptionHtml": "组件本身的id，数字(形如 1001)",
+      "description": "组件本身的id，数字(形如 1001)",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件uid",
+      "parameter": "uid",
+      "type": "String",
+      "syntax": "${uid}",
+      "descriptionHtml": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "description": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "私有样式类名",
+      "parameter": "uniqueClassName",
+      "type": "String",
+      "syntax": "${uniqueClassName}",
+      "descriptionHtml": "用在私有样式表的类名上，字符串(形如 c10)，举例：<br>&lt;span class=\"<span style=\"color:red\">${uniqueClassName}</span>\" &gt;文字&lt;/span&gt;",
+      "description": "用在私有样式表的类名上，字符串(形如 c10)，举例：\n<span class=\"${uniqueClassName}\" >文字</span>",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<span class=\"${uniqueClassName}\" >文字</span>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "引入jQuery类库",
+      "parameter": "v_includeJquery",
+      "type": "Function",
+      "syntax": "${v_includeJquery()}",
+      "descriptionHtml": "引入系统自带的JQuery类库;<br> 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "description": "引入系统自带的JQuery类库;\n 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "\n<!--引入jQuery-->${v_includeJquery()}<!--引入jQuery完成-->\n",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "唯一标识",
+      "parameter": "UUID",
+      "type": "String",
+      "syntax": "标识:${UUID}",
+      "descriptionHtml": "唯一标识, 主要在拖放多个组件时使用,确保id、方法等唯一不会冲突。",
+      "description": "唯一标识, 主要在拖放多个组件时使用,确保id、方法等唯一不会冲突。",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "form表单",
+      "parameter": "form",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "搜索表单名称",
+      "parameter": "formName",
+      "type": "String",
+      "syntax": "${formName}",
+      "descriptionHtml": "搜索表单名称",
+      "description": "搜索表单名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "搜索提交地址",
+      "parameter": "actionURL",
+      "type": "String",
+      "syntax": "${actionURL}",
+      "descriptionHtml": "搜索提交地址",
+      "description": "搜索提交地址",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "搜索隐藏表单",
+      "parameter": "hidden",
+      "type": "String",
+      "syntax": "${hidden}",
+      "descriptionHtml": "搜索隐藏表单",
+      "description": "搜索隐藏表单",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "查询输入文本框名称",
+      "parameter": "inTextName",
+      "type": "String",
+      "syntax": "${inTextName}",
+      "descriptionHtml": "查询输入文本框名称",
+      "description": "查询输入文本框名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "查询的频率是否快",
+      "parameter": "isSearchFreqFast",
+      "type": "Boolean",
+      "syntax": "${isSearchFreqFast?String}",
+      "descriptionHtml": "查询的频率是否快 true：快 false:合适",
+      "description": "查询的频率是否快 true：快 false:合适",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "显示网站栏目时需要的参数",
+      "parameter": "showNav",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "栏目选择下列表单名称",
+      "parameter": "navItemName",
+      "type": "String",
+      "syntax": "${navItemName}",
+      "descriptionHtml": "栏目选择下列表单名称",
+      "description": "栏目选择下列表单名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "栏目查询的选择项",
+      "parameter": "navOption",
+      "type": "String",
+      "syntax": "${navOption}",
+      "descriptionHtml": "栏目查询的选择项",
+      "description": "栏目查询的选择项",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "不显示网站栏目时需要的表单参数",
+      "parameter": "noShowNav",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "不显示网站栏目时需要隐藏表单",
+      "parameter": "nohidden",
+      "type": "String",
+      "syntax": "${nohidden}",
+      "descriptionHtml": "不显示网站栏目时需要隐藏表单",
+      "description": "不显示网站栏目时需要隐藏表单",
+      "kind": "parameter",
+      "path": []
+    }
+  ],
+  "template": "<form action='${actionURL}' method='post' name='${formName}'  style=\"display: inline;\" onsubmit=\"return subsearchdata${formName}()\">\n ${hidden}\n <table border='0' cellspacing=\"1\" cellpadding=\"0\" >\n  <tr>\n   <td Valign=\"middle\" nowrap=\"nowrap\" height=\"22\">\n         <span style=\"font-size:9pt;\">${sitesearch}</span><select name=\"condition\" >\n               ${navOption}\n         </select>\n   </td>\n   <td>\n       <span id=\"intextspan${formName}\"></span>\n       <iframe id=\"intextframe${formName}\"   src=\"about:blank\"   scrolling=\"no\" frameborder=\"0\" style=\"position:absolute;top:0px;left:0px;display:none;\"></iframe>\n       <input size='12' name='${inTextName}' style=\"height:22px\"  >\n   </td>\n   <td align=\"absmiddle\" nowrap=\"nowrap\" height=\"1\">\n        <#if (searchimg =\"\")>\n                    <input type='submit' name=\"FindButton\" value='${startsearch}' ${searchbuttonstyle} />\n               <#else>\n                    <input type=\"image\"  src='${searchimg}'  align=\"absmiddle\" valign=\"bottom\" style=\"cursor: hand\" >\n                </#if>\n   </td>\n  </tr>\n </table>\n</form>\n<script>\nString.prototype.trim　= function()       \n{              \n    var t = this.replace(/(^\\s*)|(\\s*$)/g, \"\");     \n    return t.replace(/(^　*)|(　*$)/g, \"\");     \n}\nfunction subsearchdata${formName}()\n{ \n    if(document.${formName}.INTEXT.value.trim()==\"\")\n    {\n         alert(\"${key}\");\n         return false;\n    }\n    if(checkData${formName}(document.${formName}))\n    {\n       return true;  \n    }\n    return false;\n}       \n</script>\n\n<#if isSearchFreqFast>\n    <script language='JavaScript' src='${v_link(\"/system/dwr/engine.js\")}'></script>\n    <script language='JavaScript' src='${v_link(\"/system/dwr/util.js\")}'></script>\n    <script language='JavaScript' src='${v_link(\"/system/dwr/interface/NewsSearchDWR.js\")}'></script>\n    <script language='JavaScript' src='${v_link(\"/system/resource/js/vsb_news_search.js\")}'></script>\n    <script language='JavaScript' src='${v_link(\"/system/resource/js/vsb_news_search_entry.js\")}'></script>    \n    <script language='JavaScript' src='${v_link(\"/system/resource/js/language.js\")}'></script>\n    <script language='JavaScript' src='${v_link(\"/system/resource/js/base64.js\")}'></script>\n    <script language='JavaScript' src='${v_link(\"/system/resource/js/formfunc.js\")}'></script>    \n    <script>    \n    news_search${formName} = new vsb_news_search();\n    news_search${formName}.isShowCode=false;\n    news_search${formName}.tooltipid = 'tooltip${formName}';\n    news_search${formName}.apptag = 'intextspan${formName}';\n    news_search${formName}.frametag = 'intextframe${formName}';\n    news_search_entry${formName} = new vsb_news_search_entry();\n    news_search_entry${formName}.formname = \"${formName}\";\n    news_search_entry${formName}.news_search_obj = news_search${formName}; \n    news_search_entry${formName}.querytxtsize = 155\n    news_search_entry${formName}.yzmts =\"${yzmts}\";\n    news_search_entry${formName}.qdstyle =\"\";\n    news_search_entry${formName}.qdname = \"${Yes}\";\n    news_search_entry${formName}.qxstyle = \"\";\n    news_search_entry${formName}.qxname = \"${Abolish}\";\n    news_search_entry${formName}.showstr='${yzmtsk}';    \n    function checkData${formName}(formname)\n    {    \n        return news_search_entry${formName}.checkdata(formname)   \n    }\n    </script>\n<#else>\n    <script> \n    function checkData${formName}(formname)\n    {\n        if(${formName}.INTEXT.value.trim()==\"\")\n        {\n            alert(\"${key}\");\n            return false;\n        }       \n        var  base64 = new Base64();\n        if(window.toFF==1)\n            {\n                var ssvalue = ${formName}.INTEXT.value;\n                document.${formName}.INTEXT2.value = base64.encode(Simplized(ssvalue));\n            }else\n            document.${formName}.INTEXT2.value = base64.encode(document.${formName}.INTEXT.value);\n           return true;\n    }\n    </script>\n</#if>",
+  "exampleTemplate": "",
+  "previousFixtureHashes": [
+    "6b731015",
+    "8088a1f3"
+  ],
+  "css": "",
+  "fixture": {
+    "viewid": "1032",
+    "uid": "u_demo",
+    "uniqueClassName": "c_demo",
+    "formName": "boda_demo",
+    "actionURL": "#preview",
+    "hidden": "",
+    "inTextName": "示例名称",
+    "navItemName": "示例名称",
+    "navOption": "<option>全站内容</option><option>校园新闻</option>",
+    "nohidden": "",
+    "sitesearch": "站内搜索",
+    "searchimg": "",
+    "startsearch": "搜索",
+    "searchbuttonstyle": "",
+    "key": "示例内容",
+    "isSearchFreqFast": false,
+    "yzmts": "示例内容",
+    "Yes": "示例内容",
+    "Abolish": "示例内容",
+    "yzmtsk": "示例内容"
+  }
+}

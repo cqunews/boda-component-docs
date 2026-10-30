@@ -1,0 +1,421 @@
+{
+  "id": "096",
+  "index": 96,
+  "name": "部门领导统计",
+  "category": "领导信箱",
+  "parameterCount": 19,
+  "hasScript": false,
+  "templateLength": 1532,
+  "parameters": [
+    {
+      "name": "通用参数",
+      "parameter": "commonparam",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件id",
+      "parameter": "viewid",
+      "type": "String",
+      "syntax": "${viewid}",
+      "descriptionHtml": "组件本身的id，数字(形如 1001)",
+      "description": "组件本身的id，数字(形如 1001)",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件uid",
+      "parameter": "uid",
+      "type": "String",
+      "syntax": "${uid}",
+      "descriptionHtml": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "description": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "私有样式类名",
+      "parameter": "uniqueClassName",
+      "type": "String",
+      "syntax": "${uniqueClassName}",
+      "descriptionHtml": "用在私有样式表的类名上，字符串(形如 c10)，举例：<br>&lt;span class=\"<span style=\"color:red\">${uniqueClassName}</span>\" &gt;文字&lt;/span&gt;",
+      "description": "用在私有样式表的类名上，字符串(形如 c10)，举例：\n<span class=\"${uniqueClassName}\" >文字</span>",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<span class=\"${uniqueClassName}\" >文字</span>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "引入jQuery类库",
+      "parameter": "v_includeJquery",
+      "type": "Function",
+      "syntax": "${v_includeJquery()}",
+      "descriptionHtml": "引入系统自带的JQuery类库;<br> 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "description": "引入系统自带的JQuery类库;\n 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "\n<!--引入jQuery-->${v_includeJquery()}<!--引入jQuery完成-->\n",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "唯一标识",
+      "parameter": "UUID",
+      "type": "String",
+      "syntax": "${UUID}",
+      "descriptionHtml": "唯一标识",
+      "description": "唯一标识",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "显示条数",
+      "parameter": "size",
+      "type": "Integer",
+      "syntax": "${size}",
+      "descriptionHtml": "显示条数",
+      "description": "显示条数",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "${size}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "部门列表",
+      "parameter": "null",
+      "type": "String",
+      "syntax": "<#list list as deptlist></#list>",
+      "descriptionHtml": "部门列表",
+      "description": "部门列表",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "部门代码",
+      "parameter": "deptcode",
+      "type": "String",
+      "syntax": "${list.deptcode}",
+      "descriptionHtml": "部门代码",
+      "description": "部门代码",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "部门名称",
+      "parameter": "deptname",
+      "type": "String",
+      "syntax": "${list.deptname}",
+      "descriptionHtml": "部门名称",
+      "description": "部门名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "领导编码",
+      "parameter": "leadercode",
+      "type": "String",
+      "syntax": "${list.leadercode}",
+      "descriptionHtml": "领导编码",
+      "description": "领导编码",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "${list.leadercode}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "领导名称",
+      "parameter": "leadername",
+      "type": "String",
+      "syntax": "${list.leadername}",
+      "descriptionHtml": "领导名称",
+      "description": "领导名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "${list.leadername}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "百分比",
+      "parameter": "percentagechar",
+      "type": "String",
+      "syntax": "${list.percentagechar}",
+      "descriptionHtml": "百分比",
+      "description": "百分比",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "${list.percentagechar}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "总数",
+      "parameter": "totlenum",
+      "type": "Integer",
+      "syntax": "${list.totlenum}",
+      "descriptionHtml": "总数",
+      "description": "总数",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "${list.totlenum}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "回复数",
+      "parameter": "replynum",
+      "type": "Integer",
+      "syntax": "${list.replynum}",
+      "descriptionHtml": "回复数",
+      "description": "回复数",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "${list.replynum}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "未回复数",
+      "parameter": "noreplynum",
+      "type": "Integer",
+      "syntax": "${list.noreplynum}",
+      "descriptionHtml": "未回复数",
+      "description": "未回复数",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "${list.noreplynum}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "名次",
+      "parameter": "pos",
+      "type": "Integer",
+      "syntax": "${list.pos}",
+      "descriptionHtml": "名次",
+      "description": "名次",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "${list.pos}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "名次",
+      "parameter": "pos",
+      "type": "Integer",
+      "syntax": "${list.pos}",
+      "descriptionHtml": "名次",
+      "description": "名次",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "${list.pos}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "领导个数",
+      "parameter": "leadersize",
+      "type": "Integer",
+      "syntax": "${list.leadersize}",
+      "descriptionHtml": "领导个数",
+      "description": "领导个数",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "${list.leadersize}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "是否输出部门",
+      "parameter": "showdept",
+      "type": "Boolean",
+      "syntax": "${list.showdept}",
+      "descriptionHtml": "是否输出部门",
+      "description": "是否输出部门",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "${list.showdept}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    }
+  ],
+  "template": "<div class=\"govinfolist101611\">\n   <table class= cellspacing=\"0\" cellpadding=\"5\" width=\"100%\" border=0 style=\"word-break: break-all;\" >\n                <tr align=\"center\" >\n                    <td  class=\"headtitletdstyle793550738_10161111\">部门</td>\n                    <td  class=\"headtitletdstyle793550738_10161111\">名次</td>\n                    <td  class=\"headtitletdstyle793550738_10161111\">领导</td>\n                    <td  class=\"headtitletdstyle793550738_10161111\">未回复数</td>\n                    <td  class=\"headtitletdstyle793550738_10161111\">回复数</td>\n                    <td  class=\"headtitletdstyle793550738_10161111\">回复率</td></tr>\n        <#list deptlist as list>\n        <tr align=\"center\" >\n            <#if list.showdept>\n            <td nowrap class=\"showmingcistyle793550738_10161111\" rowspan=\"${list.leadersize}\">\n                ${list.deptname}\n            </td>\n            </#if>\n            <td nowrap class=\"showdeptstyle793550738_10161111\">\n                ${list.pos}\n            </td>\n            <td nowrap class=\"showzongshustyle793550738_10161111\">\n                ${list.leadername}\n            </td>\n            <td nowrap class=\"noreplystyle793550738_10161111\">\n                ${list.noreplynum}\n            </td>\n            <td nowrap class=\"replystyle793550738_10161111\">\n                ${list.replynum}\n            </td>\n            <td nowrap class=\"showpercentagestyle793550738_10161111\">\n                ${list.percentagechar}\n            </td>\n        </tr>\n        </#list>\n    </table>\n</div>",
+  "exampleTemplate": "",
+  "previousFixtureHashes": [
+    "4329a261"
+  ],
+  "css": ".showpercentagestyle793550738_10161111{ FONT-FAMILY: 宋体;COLOR: #222222;FONT-SIZE: 9pt; }\n.noreplystyle793550738_10161111{ FONT-FAMILY: 宋体;COLOR: #222222;FONT-SIZE: 9pt; }\n.headtitletdstyle793550738_10161111{background: -moz-linear-gradient(top, #ffffff, #feeecd); FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0,,StartColorStr=#ffffff,, EndColorStr=#feeecd);FONT-FAMILY: 宋体;COLOR: #ff6600;FONT-SIZE: 9pt;FONT-WEIGHT: bold; }\n.replystyle793550738_10161111{ FONT-FAMILY: 宋体;COLOR: #222222;FONT-SIZE: 9pt; }\n.showzongshustyle793550738_10161111{ FONT-FAMILY: 宋体;COLOR: #222222;FONT-SIZE: 9pt; }\n.showdeptstyle793550738_10161111{ FONT-FAMILY: 宋体;COLOR: #222222;FONT-SIZE: 9pt; }\n.showmingcistyle793550738_10161111{ FONT-FAMILY: 宋体;COLOR: #222222;FONT-SIZE: 9pt; }\n.govinfolist101611 table\n{\n    border-collapse:collapse;\n    border:1px #ecc197 solid;\n}                                                                          \n.govinfolist101611 td\n{\n    border:1px #ecc197 solid;\n} ",
+  "fixture": {
+    "viewid": "1096",
+    "uid": "u_demo",
+    "uniqueClassName": "c_demo",
+    "UUID": "boda_demo",
+    "size": 6,
+    "deptlist": [
+      {
+        "showdept": true,
+        "leadersize": 6,
+        "deptname": "示例名称",
+        "pos": 1,
+        "leadername": "示例名称",
+        "noreplynum": 6,
+        "replynum": 6,
+        "percentagechar": "百分比",
+        "deptcode": "部门代码",
+        "leadercode": "领导编码",
+        "totlenum": 6
+      },
+      {
+        "showdept": true,
+        "leadersize": 6,
+        "deptname": "示例名称",
+        "pos": 2,
+        "leadername": "示例名称",
+        "noreplynum": 6,
+        "replynum": 6,
+        "percentagechar": "百分比",
+        "deptcode": "部门代码",
+        "leadercode": "领导编码",
+        "totlenum": 6
+      },
+      {
+        "showdept": true,
+        "leadersize": 6,
+        "deptname": "示例名称",
+        "pos": 3,
+        "leadername": "示例名称",
+        "noreplynum": 6,
+        "replynum": 6,
+        "percentagechar": "百分比",
+        "deptcode": "部门代码",
+        "leadercode": "领导编码",
+        "totlenum": 6
+      },
+      {
+        "showdept": true,
+        "leadersize": 6,
+        "deptname": "示例名称",
+        "pos": 4,
+        "leadername": "示例名称",
+        "noreplynum": 6,
+        "replynum": 6,
+        "percentagechar": "百分比",
+        "deptcode": "部门代码",
+        "leadercode": "领导编码",
+        "totlenum": 6
+      },
+      {
+        "showdept": true,
+        "leadersize": 6,
+        "deptname": "示例名称",
+        "pos": 5,
+        "leadername": "示例名称",
+        "noreplynum": 6,
+        "replynum": 6,
+        "percentagechar": "百分比",
+        "deptcode": "部门代码",
+        "leadercode": "领导编码",
+        "totlenum": 6
+      }
+    ]
+  }
+}

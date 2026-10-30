@@ -1,0 +1,1250 @@
+{
+  "total": 122,
+  "parsed": 122,
+  "rendered": 122,
+  "strictRendered": 122,
+  "rows": [
+    {
+      "id": "001",
+      "name": "LOGO",
+      "category": "网站基础信息",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [
+        "v_media：使用图片模拟媒体输出"
+      ],
+      "error": null
+    },
+    {
+      "id": "002",
+      "name": "主页|收藏",
+      "category": "网站基础信息",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "003",
+      "name": "版权",
+      "category": "网站基础信息",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "004",
+      "name": "文字计数器",
+      "category": "网站基础信息",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "005",
+      "name": "计数器",
+      "category": "网站基础信息",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "006",
+      "name": "外部计数器",
+      "category": "网站基础信息",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "007",
+      "name": "单位简介",
+      "category": "网站基础信息",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "008",
+      "name": "二维码",
+      "category": "网站基础信息",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [
+        "v_includeJquery：预览中不加载博达 jQuery"
+      ],
+      "error": null
+    },
+    {
+      "id": "009",
+      "name": "多屏切换",
+      "category": "网站基础信息",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "010",
+      "name": "网站导航",
+      "category": "网站导航",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "011",
+      "name": "当前位置",
+      "category": "网站导航",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "012",
+      "name": "栏目名称",
+      "category": "网站导航",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "013",
+      "name": "标题列表",
+      "category": "文章列表",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "014",
+      "name": "静态翻页列表",
+      "category": "文章列表",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "015",
+      "name": "翻页标题列表",
+      "category": "文章列表",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "016",
+      "name": "单篇正文",
+      "category": "文章列表",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "017",
+      "name": "多列标题列表",
+      "category": "文章列表",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "018",
+      "name": "图片文章列表",
+      "category": "文章列表",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "019",
+      "name": "文章心情列表",
+      "category": "文章列表",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "020",
+      "name": "文章内容",
+      "category": "文章内容",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [
+        "v_includeJquery：预览中不加载博达 jQuery"
+      ],
+      "error": null
+    },
+    {
+      "id": "021",
+      "name": "相关组图",
+      "category": "文章内容",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [
+        "v_link：保留原始资源地址，博达系统资源未连接"
+      ],
+      "error": null
+    },
+    {
+      "id": "022",
+      "name": "组图内容",
+      "category": "文章内容",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [
+        "v_link：保留原始资源地址，博达系统资源未连接"
+      ],
+      "error": null
+    },
+    {
+      "id": "023",
+      "name": "链接列表",
+      "category": "链接列表",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "024",
+      "name": "图片列表",
+      "category": "图片列表",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "025",
+      "name": "图片翻页列表",
+      "category": "图片列表",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [
+        "v_media：使用图片模拟媒体输出"
+      ],
+      "error": null
+    },
+    {
+      "id": "026",
+      "name": "滚动图片",
+      "category": "图片列表",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "027",
+      "name": "超文本",
+      "category": "超文本",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "028",
+      "name": "装饰图片",
+      "category": "栏目装饰组件",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "029",
+      "name": "装饰文字",
+      "category": "栏目装饰组件",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "030",
+      "name": "会员登录入口",
+      "category": "网站会员",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [
+        "v_link：保留原始资源地址，博达系统资源未连接"
+      ],
+      "error": null
+    },
+    {
+      "id": "031",
+      "name": "用户注册",
+      "category": "网站会员",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [
+        "v_link：保留原始资源地址，博达系统资源未连接"
+      ],
+      "error": null
+    },
+    {
+      "id": "032",
+      "name": "简单检索",
+      "category": "关键字检索",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "033",
+      "name": "复杂检索",
+      "category": "关键字检索",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [
+        "v_link：保留原始资源地址，博达系统资源未连接"
+      ],
+      "error": null
+    },
+    {
+      "id": "034",
+      "name": "全文检索",
+      "category": "全文检索",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "035",
+      "name": "检索结果",
+      "category": "全文检索",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "036",
+      "name": "简单检索",
+      "category": "全文检索",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [
+        "v_link：保留原始资源地址，博达系统资源未连接"
+      ],
+      "error": null
+    },
+    {
+      "id": "037",
+      "name": "简单检索结果",
+      "category": "全文检索",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "038",
+      "name": "复杂检索",
+      "category": "全文检索",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "039",
+      "name": "复杂检索结果",
+      "category": "全文检索",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "040",
+      "name": "第三方搜索",
+      "category": "第三方检索",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "041",
+      "name": "在线投稿",
+      "category": "在线投稿",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "042",
+      "name": "招聘信息",
+      "category": "人员招聘",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "043",
+      "name": "应聘信息",
+      "category": "人员招聘",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "044",
+      "name": "静态自定义DIV组件",
+      "category": "自定义组件",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "045",
+      "name": "动态自定义DIV组件",
+      "category": "自定义组件",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "046",
+      "name": "外部广告代码",
+      "category": "自定义组件",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "047",
+      "name": "自定义查询入口",
+      "category": "自定义组件",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "048",
+      "name": "自定义查询结果",
+      "category": "自定义组件",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "049",
+      "name": "栏目文章数统计",
+      "category": "站内统计组件",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "050",
+      "name": "在线人数统计",
+      "category": "站内统计组件",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "051",
+      "name": "栏目点击统计",
+      "category": "站内统计组件",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "052",
+      "name": "管理员文章数统计",
+      "category": "站内统计组件",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "053",
+      "name": "站点访问量排名",
+      "category": "站群统计组件",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "054",
+      "name": "站点信息量排名",
+      "category": "站群统计组件",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "055",
+      "name": "问卷归档列表",
+      "category": "调查问卷",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "056",
+      "name": "网站列表",
+      "category": "网站列表",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "057",
+      "name": "网站翻页列表",
+      "category": "网站列表",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "058",
+      "name": "腾讯微博秀",
+      "category": "微博组件",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "059",
+      "name": "新浪微博秀",
+      "category": "微博组件",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "060",
+      "name": "类型列表",
+      "category": "综合检索",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "061",
+      "name": "检索范围",
+      "category": "综合检索",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "062",
+      "name": "时间范围",
+      "category": "综合检索",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "063",
+      "name": "排序方式",
+      "category": "综合检索",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "064",
+      "name": "检索入口",
+      "category": "综合检索",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "065",
+      "name": "检索结果",
+      "category": "综合检索",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "066",
+      "name": "数据查询入口",
+      "category": "数据查询",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "067",
+      "name": "数据查询结果",
+      "category": "数据查询",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "068",
+      "name": "提交信息",
+      "category": "公众参与",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "069",
+      "name": "翻页列表",
+      "category": "公众参与",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "070",
+      "name": "信息详细",
+      "category": "公众参与",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "071",
+      "name": "信息搜索",
+      "category": "公众参与",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "072",
+      "name": "搜索结果",
+      "category": "公众参与",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "073",
+      "name": "标题列表",
+      "category": "公众参与",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "074",
+      "name": "标题带回复列表",
+      "category": "公众参与",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "075",
+      "name": "部门列表",
+      "category": "公众参与",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "076",
+      "name": "部门信息列表",
+      "category": "公众参与",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "077",
+      "name": "公众参与个人信息列表",
+      "category": "公众参与",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "078",
+      "name": "公众参与统计",
+      "category": "公众参与",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "079",
+      "name": "公众参与全文检索",
+      "category": "公众参与",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "080",
+      "name": "公众参与全文检索结果",
+      "category": "公众参与",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "081",
+      "name": "部门列表",
+      "category": "领导信箱",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "082",
+      "name": "领导列表",
+      "category": "领导信箱",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "083",
+      "name": "信件类型列表",
+      "category": "领导信箱",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "084",
+      "name": "信件列表",
+      "category": "领导信箱",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "085",
+      "name": "典型信件翻页列表",
+      "category": "领导信箱",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "086",
+      "name": "典型信件标题列表",
+      "category": "领导信箱",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "087",
+      "name": "信件标题列表",
+      "category": "领导信箱",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "088",
+      "name": "信件详细",
+      "category": "领导信箱",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "089",
+      "name": "信件投票",
+      "category": "领导信箱",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "090",
+      "name": "简单查询",
+      "category": "领导信箱",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "091",
+      "name": "简单查询结果",
+      "category": "领导信箱",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "092",
+      "name": "复杂查询",
+      "category": "领导信箱",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "093",
+      "name": "复杂查询结果",
+      "category": "领导信箱",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "094",
+      "name": "部门统计",
+      "category": "领导信箱",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "095",
+      "name": "领导统计",
+      "category": "领导信箱",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "096",
+      "name": "部门领导统计",
+      "category": "领导信箱",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "097",
+      "name": "信件审核状态列表",
+      "category": "领导信箱",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "098",
+      "name": "信件处理流程",
+      "category": "领导信箱",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "099",
+      "name": "信件内容列表",
+      "category": "领导信箱",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "100",
+      "name": "个人信件列表",
+      "category": "领导信箱",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "101",
+      "name": "领导信箱全文检索",
+      "category": "领导信箱",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "102",
+      "name": "领导信箱全文检索结果",
+      "category": "领导信箱",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "103",
+      "name": "博硕导教师列表",
+      "category": "教师风采",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "104",
+      "name": "学院列表",
+      "category": "教师风采",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "105",
+      "name": "职称教师列表",
+      "category": "教师风采",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "106",
+      "name": "系所教师列表",
+      "category": "教师风采",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "107",
+      "name": "高级检索入口",
+      "category": "教师风采",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [
+        "预览环境将布尔值输出为 true/false"
+      ],
+      "error": null
+    },
+    {
+      "id": "108",
+      "name": "高级检索结果",
+      "category": "教师风采",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "109",
+      "name": "学科列表",
+      "category": "教师风采",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "110",
+      "name": "系列表",
+      "category": "教师风采",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "111",
+      "name": "职称列表",
+      "category": "教师风采",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "112",
+      "name": "教师翻页列表",
+      "category": "教师风采",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "113",
+      "name": "拼音列表",
+      "category": "教师风采",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "114",
+      "name": "拼音教师翻页列表",
+      "category": "教师风采",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "115",
+      "name": "最近更新教师列表",
+      "category": "教师风采",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "116",
+      "name": "热点教师列表",
+      "category": "教师风采",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "117",
+      "name": "学院荣誉列表",
+      "category": "教师风采",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "119",
+      "name": "教师类型学院教师列表",
+      "category": "教师风采",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "120",
+      "name": "职称学院教师列表",
+      "category": "教师风采",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "121",
+      "name": "学院学科教师翻页列表",
+      "category": "教师风采",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "122",
+      "name": "学院职称教师列表",
+      "category": "教师风采",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    },
+    {
+      "id": "123",
+      "name": "学院学科教师列表",
+      "category": "教师风采",
+      "parsed": true,
+      "rendered": true,
+      "strictRendered": true,
+      "warnings": [],
+      "error": null
+    }
+  ]
+}

@@ -1,0 +1,372 @@
+{
+  "id": "052",
+  "index": 52,
+  "name": "管理员文章数统计",
+  "category": "站内统计组件",
+  "parameterCount": 15,
+  "hasScript": false,
+  "templateLength": 1414,
+  "parameters": [
+    {
+      "name": "通用参数",
+      "parameter": "commonparam",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件id",
+      "parameter": "viewid",
+      "type": "String",
+      "syntax": "${viewid}",
+      "descriptionHtml": "组件本身的id，数字(形如 1001)",
+      "description": "组件本身的id，数字(形如 1001)",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件uid",
+      "parameter": "uid",
+      "type": "String",
+      "syntax": "${uid}",
+      "descriptionHtml": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "description": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "私有样式类名",
+      "parameter": "uniqueClassName",
+      "type": "String",
+      "syntax": "${uniqueClassName}",
+      "descriptionHtml": "用在私有样式表的类名上，字符串(形如 c10)，举例：<br>&lt;span class=\"<span style=\"color:red\">${uniqueClassName}</span>\" &gt;文字&lt;/span&gt;",
+      "description": "用在私有样式表的类名上，字符串(形如 c10)，举例：\n<span class=\"${uniqueClassName}\" >文字</span>",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<span class=\"${uniqueClassName}\" >文字</span>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "引入jQuery类库",
+      "parameter": "v_includeJquery",
+      "type": "Function",
+      "syntax": "${v_includeJquery()}",
+      "descriptionHtml": "引入系统自带的JQuery类库;<br> 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "description": "引入系统自带的JQuery类库;\n 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "\n<!--引入jQuery-->${v_includeJquery()}<!--引入jQuery完成-->\n",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "统计条数",
+      "parameter": "size",
+      "type": "Integer",
+      "syntax": "${size}",
+      "descriptionHtml": "统计信息总数",
+      "description": "统计信息总数",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "管理员文章数列表",
+      "parameter": "list_user",
+      "type": "List",
+      "syntax": "<#list list_user as user></#list>",
+      "descriptionHtml": "管理员文章数列表",
+      "description": "管理员文章数列表",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#list list_user as user>\n\t\t   管理员姓名:${user.username}&nbsp;&nbsp;添加新闻数:${user.totlenum}&nbsp;&nbsp;应用新闻数:${user.auditnum}\n\t\t</#list>\n\t\t",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "列表位置参数",
+      "parameter": "listnogroup",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "管理员姓名",
+      "parameter": "username",
+      "type": "String",
+      "syntax": "${user.username}",
+      "descriptionHtml": "管理员姓名",
+      "description": "管理员姓名",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "${user.username}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "添加新闻数",
+      "parameter": "totlenum",
+      "type": "String",
+      "syntax": "${user.totlenum}",
+      "descriptionHtml": "添加新闻数",
+      "description": "添加新闻数",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "${user.totlenum}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "采用新闻数",
+      "parameter": "auditnum",
+      "type": "String",
+      "syntax": "${user.auditnum}",
+      "descriptionHtml": "采用新闻数",
+      "description": "采用新闻数",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "${user.auditnum}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "唯一标识",
+      "parameter": "uuid",
+      "type": "String",
+      "syntax": "${uuid}",
+      "descriptionHtml": "唯一标识, 主要在拖放多个组件时使用,确保id,方法等唯一不会冲突。",
+      "description": "唯一标识, 主要在拖放多个组件时使用,确保id,方法等唯一不会冲突。",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "标识:${uuid}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "是第几条",
+      "parameter": "pos",
+      "type": "Integer",
+      "syntax": "${user.pos}",
+      "descriptionHtml": "当前是列表的第几条(从1开始)",
+      "description": "当前是列表的第几条(从1开始)",
+      "kind": "parameter",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "第${user.pos}条",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否首条",
+      "parameter": "isFirst",
+      "type": "Boolean",
+      "syntax": "<#if user.isFirst></#if>",
+      "descriptionHtml": "当前是不是列表的第一条",
+      "description": "当前是不是列表的第一条",
+      "kind": "parameter",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if user.isFirst>首条</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否尾条",
+      "parameter": "isLast",
+      "type": "Boolean",
+      "syntax": "<#if user.isLast></#if>",
+      "descriptionHtml": "当前是不是列表的最后一条",
+      "description": "当前是不是列表的最后一条",
+      "kind": "parameter",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if user.isLast>尾条</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否奇数行",
+      "parameter": "isOdd",
+      "type": "Boolean",
+      "syntax": "<#if user.isOdd></#if>",
+      "descriptionHtml": "当前是不是奇数行",
+      "description": "当前是不是奇数行",
+      "kind": "parameter",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if user.isOdd>奇数行</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否偶数行",
+      "parameter": "isEven",
+      "type": "Boolean",
+      "syntax": "<#if user.isEven></#if>",
+      "descriptionHtml": "当前是不是偶数行",
+      "description": "当前是不是偶数行",
+      "kind": "parameter",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if user.isEven>偶数行</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listnogroup"
+      ]
+    }
+  ],
+  "template": "<table width=\"100%\" cellspacing=\"0\" cellpadding=\"0\" style=\"BACKGROUND-COLOR: #3a82c8;border-left: 1px solid #b8cced; border-bottom: 1px solid #b8cced;\">\n    <tr style=\"COLOR: #ffffff;FONT-FAMILY: 宋体;FONT-WEIGHT: bold;FONT-SIZE: 9pt;LINE-HEIGHT: 200%;\">\n        <td align=\"center\" style=\"border-right:1px solid #b8cced;border-top: 1px solid #b8cced;\">编号</td>\n        <td align=\"center\" style=\"border-right:1px solid #b8cced;border-top: 1px solid #b8cced;\">管理员姓名</td>\n        <td align=\"center\" style=\"border-right:1px solid #b8cced;border-top: 1px solid #b8cced;\">添加新闻数</td>\n        <td align=\"center\" style=\"border-right:1px solid #b8cced;border-top: 1px solid #b8cced;\">采用新闻数</td>\n    </tr>\n    <#list list_user as user>\n        <tr style=\"BACKGROUND-COLOR: <#if user.isOdd>#eef7ff<#else>#ffffff</#if>;COLOR: #222222;FONT-FAMILY: 宋体;LINE-HEIGHT: 150%;FONT-SIZE: 9pt;\">\n            <td height=20 align=\"center\" style=\"border-right:1px solid #b8cced;border-top: 1px solid #b8cced;\">${user_index+1}</td>\n            <td align=\"center\" style=\"border-right:1px solid #b8cced;border-top: 1px solid #b8cced;\">${user.username}</td>\n            <td align=\"center\" style=\"border-right:1px solid #b8cced;border-top: 1px solid #b8cced;\">${user.totlenum}</td>\n            <td align=\"center\" style=\"border-right:1px solid #b8cced;border-top: 1px solid #b8cced;\">${user.auditnum}</td>\n        </tr>        \n    </#list>\n</table>",
+  "exampleTemplate": "",
+  "previousFixtureHashes": [
+    "e3621f32"
+  ],
+  "css": "",
+  "fixture": {
+    "viewid": "1052",
+    "uid": "u_demo",
+    "uniqueClassName": "c_demo",
+    "size": 6,
+    "uuid": "boda_demo",
+    "list_user": [
+      {
+        "isOdd": true,
+        "username": "示例名称",
+        "totlenum": "12",
+        "auditnum": "12",
+        "pos": 1
+      },
+      {
+        "isOdd": false,
+        "username": "示例名称",
+        "totlenum": "12",
+        "auditnum": "12",
+        "pos": 2
+      },
+      {
+        "isOdd": true,
+        "username": "示例名称",
+        "totlenum": "12",
+        "auditnum": "12",
+        "pos": 3
+      },
+      {
+        "isOdd": false,
+        "username": "示例名称",
+        "totlenum": "12",
+        "auditnum": "12",
+        "pos": 4
+      },
+      {
+        "isOdd": true,
+        "username": "示例名称",
+        "totlenum": "12",
+        "auditnum": "12",
+        "pos": 5
+      }
+    ],
+    "user_index": 0
+  }
+}

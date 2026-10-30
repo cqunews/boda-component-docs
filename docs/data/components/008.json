@@ -1,0 +1,101 @@
+{
+  "id": "008",
+  "index": 8,
+  "name": "二维码",
+  "category": "网站基础信息",
+  "parameterCount": 4,
+  "hasScript": true,
+  "templateLength": 817,
+  "parameters": [
+    {
+      "name": "通用参数",
+      "parameter": "commonparam",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件id",
+      "parameter": "viewid",
+      "type": "String",
+      "syntax": "${viewid}",
+      "descriptionHtml": "组件本身的id，数字(形如 1001)",
+      "description": "组件本身的id，数字(形如 1001)",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件uid",
+      "parameter": "uid",
+      "type": "String",
+      "syntax": "${uid}",
+      "descriptionHtml": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "description": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "私有样式类名",
+      "parameter": "uniqueClassName",
+      "type": "String",
+      "syntax": "${uniqueClassName}",
+      "descriptionHtml": "用在私有样式表的类名上，字符串(形如 c10)，举例：<br>&lt;span class=\"<span style=\"color:red\">${uniqueClassName}</span>\" &gt;文字&lt;/span&gt;",
+      "description": "用在私有样式表的类名上，字符串(形如 c10)，举例：\n<span class=\"${uniqueClassName}\" >文字</span>",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<span class=\"${uniqueClassName}\" >文字</span>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "引入jQuery类库",
+      "parameter": "v_includeJquery",
+      "type": "Function",
+      "syntax": "${v_includeJquery()}",
+      "descriptionHtml": "引入系统自带的JQuery类库;<br> 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "description": "引入系统自带的JQuery类库;\n 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "\n<!--引入jQuery-->${v_includeJquery()}<!--引入jQuery完成-->\n",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    }
+  ],
+  "template": "<!-- 下面这个div是二维码容器,ID不能变-->\n<div id=\"output${uid}\"></div>\n<!-- 下面是生成二维码调用的JS，不要动-->\n${v_includeJquery()}\n<script src=\"/system/resource/qrcode/js/jquery.qrcode.js\"></script>\n<script src=\"/system/resource/qrcode/js/qrcode.js\"></script>\n<script>\nvar codeInfo = \"${text}\" ==\"\"? window.location.href:\"${text}\";\n<#if elementRunMode == 1>\n    codeInfo = \"https://example.invalid/\";\n</#if>\njQuery(function(){\n    jQuery('#output${uid}').qrcode({\n        text:codeInfo,\n        render: !!document.createElement('canvas').getContext?\"canvas\":\"table\",//设置渲染方式  \n        width: ${width},     //设置宽度  \n        height: ${height},     //设置高度  \n        correctLevel: ${correctlevel},//纠错等级  \n        background: \"${background}\",//背景颜色  \n        foreground: \"${foreground}\",//前景颜色  \n        logo:\"${logo}\"//图像logo\n    });\n})\n</script>",
+  "exampleTemplate": "",
+  "previousFixtureHashes": [
+    "8c8bd3eb",
+    "233a2aef"
+  ],
+  "css": "",
+  "fixture": {
+    "viewid": "1008",
+    "uid": "u_demo",
+    "uniqueClassName": "c_demo",
+    "text": "https://example.invalid/",
+    "elementRunMode": 0,
+    "width": 180,
+    "height": 180,
+    "correctlevel": 1,
+    "background": "#ffffff",
+    "foreground": "#146653",
+    "logo": ""
+  }
+}

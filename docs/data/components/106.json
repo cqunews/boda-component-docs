@@ -1,0 +1,891 @@
+{
+  "id": "106",
+  "index": 106,
+  "name": "系所教师列表",
+  "category": "教师风采",
+  "parameterCount": 39,
+  "hasScript": false,
+  "templateLength": 0,
+  "parameters": [
+    {
+      "name": "通用参数",
+      "parameter": "commonparam",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件id",
+      "parameter": "viewid",
+      "type": "String",
+      "syntax": "${viewid}",
+      "descriptionHtml": "组件本身的id，数字(形如 1001)",
+      "description": "组件本身的id，数字(形如 1001)",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件uid",
+      "parameter": "uid",
+      "type": "String",
+      "syntax": "${uid}",
+      "descriptionHtml": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "description": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "私有样式类名",
+      "parameter": "uniqueClassName",
+      "type": "String",
+      "syntax": "${uniqueClassName}",
+      "descriptionHtml": "用在私有样式表的类名上，字符串(形如 c10)，举例：<br>&lt;span class=\"<span style=\"color:red\">${uniqueClassName}</span>\" &gt;文字&lt;/span&gt;",
+      "description": "用在私有样式表的类名上，字符串(形如 c10)，举例：\n<span class=\"${uniqueClassName}\" >文字</span>",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<span class=\"${uniqueClassName}\" >文字</span>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "引入jQuery类库",
+      "parameter": "v_includeJquery",
+      "type": "Function",
+      "syntax": "${v_includeJquery()}",
+      "descriptionHtml": "引入系统自带的JQuery类库;<br> 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "description": "引入系统自带的JQuery类库;\n 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "\n<!--引入jQuery-->${v_includeJquery()}<!--引入jQuery完成-->\n",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "系所教师列表",
+      "parameter": "teachersList",
+      "type": "List",
+      "syntax": "<#list deptteacherlist as dept><#list dept.teacherList as teacher></#list></#list>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#list deptteacherlist as dept><#list dept.teacherList as teacher><li><a href=\"${teacher.url}\"  target=_blank title=\"${teacher.tipName}\" >${teacher.showName}</a></li></#list></#list>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "列表位置参数",
+      "parameter": "teachersListgroup",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "教师编号",
+      "parameter": "teacherId",
+      "type": "String",
+      "syntax": "${teacher.teacherId}",
+      "descriptionHtml": "教师编号",
+      "description": "教师编号",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "${teacher.teacherId}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "教师提示名称",
+      "parameter": "tipName",
+      "type": "String",
+      "syntax": "${teacher.tipName}",
+      "descriptionHtml": "教师提示名称",
+      "description": "教师提示名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "${teacher.tipName}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "教师显示名称",
+      "parameter": "showName",
+      "type": "String",
+      "syntax": "${teacher.showName}",
+      "descriptionHtml": "教师显示名称",
+      "description": "教师显示名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "${teacher.showName}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "教师个人主页链接",
+      "parameter": "url",
+      "type": "Url",
+      "syntax": "${teacher.url}",
+      "descriptionHtml": "教师个人主页链接",
+      "description": "教师个人主页链接",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "${teacher.url}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "教师英文名称",
+      "parameter": "ename",
+      "type": "String",
+      "syntax": "${teacher.ename}",
+      "descriptionHtml": "教师英文名称",
+      "description": "教师英文名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "教师拼音名称",
+      "parameter": "namePinYin",
+      "type": "String",
+      "syntax": "${teacher.namePinYin}",
+      "descriptionHtml": "教师拼音名称",
+      "description": "教师拼音名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "${teacher.namePinYin}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "出生年份",
+      "parameter": "birthday",
+      "type": "String",
+      "syntax": "${teacher.birthday}",
+      "descriptionHtml": "出生年份",
+      "description": "出生年份",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "电子邮件",
+      "parameter": "email",
+      "type": "String",
+      "syntax": "${teacher.email}",
+      "descriptionHtml": "电子邮件",
+      "description": "电子邮件",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "${teacher.email}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "所在单位",
+      "parameter": "unit",
+      "type": "String",
+      "syntax": "${teacher.unit}",
+      "descriptionHtml": "所在单位",
+      "description": "所在单位",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "${teacher.unit}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "职务",
+      "parameter": "job",
+      "type": "String",
+      "syntax": "${teacher.job}",
+      "descriptionHtml": "职务",
+      "description": "职务",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "${teacher.job}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "学历",
+      "parameter": "education",
+      "type": "String",
+      "syntax": "${teacher.education}",
+      "descriptionHtml": "学历",
+      "description": "学历",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "${teacher.education}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "主要任职",
+      "parameter": "workexperience",
+      "type": "String",
+      "syntax": "${teacher.workexperience}",
+      "descriptionHtml": "主要任职",
+      "description": "主要任职",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "${teacher.workexperience}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "原始曾获荣誉",
+      "parameter": "honor",
+      "type": "String",
+      "syntax": "${teacher.honor}",
+      "descriptionHtml": "原始曾获荣誉",
+      "description": "原始曾获荣誉",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "${teacher.honor}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "显示曾获荣誉",
+      "parameter": "showHonor",
+      "type": "String",
+      "syntax": "${teacher.showHonor}",
+      "descriptionHtml": "显示曾获荣誉",
+      "description": "显示曾获荣誉",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "${teacher.showHonor}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "显示个人简介",
+      "parameter": "showProfile",
+      "type": "String",
+      "syntax": "${teacher.showProfile}",
+      "descriptionHtml": "显示个人简介",
+      "description": "显示个人简介",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "${teacher.showProfile}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "原始办公地点",
+      "parameter": "officeLocation",
+      "type": "String",
+      "syntax": "${teacher.officeLocation}",
+      "descriptionHtml": "原始办公地点",
+      "description": "原始办公地点",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "${teacher.officeLocation}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "显示办公地点",
+      "parameter": "showOfficeLocation",
+      "type": "String",
+      "syntax": "${teacher.showOfficeLocation}",
+      "descriptionHtml": "显示办公地点",
+      "description": "显示办公地点",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "${teacher.showOfficeLocation}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "性别",
+      "parameter": "sex",
+      "type": "String",
+      "syntax": "${teacher.sex}",
+      "descriptionHtml": "教师性别",
+      "description": "教师性别",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "联系方式",
+      "parameter": "contact",
+      "type": "String",
+      "syntax": "${teacher.contact}",
+      "descriptionHtml": "联系方式",
+      "description": "联系方式",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "${teacher.contact}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "学位",
+      "parameter": "degree",
+      "type": "String",
+      "syntax": "${teacher.degree}",
+      "descriptionHtml": "学位",
+      "description": "学位",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "${teacher.degree}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "学科",
+      "parameter": "discipline",
+      "type": "String",
+      "syntax": "${teacher.discipline}",
+      "descriptionHtml": "学科",
+      "description": "学科",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "${teacher.discipline}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "职称",
+      "parameter": "prorank",
+      "type": "String",
+      "syntax": "${teacher.prorank}",
+      "descriptionHtml": "职称",
+      "description": "职称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "${teacher.prorank}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "毕业院校",
+      "parameter": "graduatedUniversity",
+      "type": "String",
+      "syntax": "${teacher.graduatedUniversity}",
+      "descriptionHtml": "毕业院校",
+      "description": "毕业院校",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "${teacher.graduatedUniversity}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "是否院士",
+      "parameter": "academician",
+      "type": "String",
+      "syntax": "${teacher.academician}",
+      "descriptionHtml": "是否院士,0表示不是院士，1表示是院士",
+      "description": "是否院士,0表示不是院士，1表示是院士",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "${teacher.academician}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "是否研究生导师",
+      "parameter": "gtutor",
+      "type": "String",
+      "syntax": "${teacher.gtutor}",
+      "descriptionHtml": "是否研究生导师,0表示不是研究生导师，1表示是研究生导师",
+      "description": "是否研究生导师,0表示不是研究生导师，1表示是研究生导师",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if teacher.gtutor==\"1\">是研究生导师<#else>不是研究生导师</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "是否博士生导师",
+      "parameter": "doctorTutor",
+      "type": "String",
+      "syntax": "${teacher.doctorTutor}",
+      "descriptionHtml": "是否博士生导师,0表示不是博士生导师，1表示是博士生导师",
+      "description": "是否博士生导师,0表示不是博士生导师，1表示是博士生导师",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if teacher.doctorTutor==\"1\">是博士生导师<#else>不是博士生导师</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "教师图片ID",
+      "parameter": "picId",
+      "type": "String",
+      "syntax": "${teacher.picId}",
+      "descriptionHtml": "教师图片",
+      "description": "教师图片",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "${teacher.picId}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "教师图片",
+      "parameter": "picurl",
+      "type": "String",
+      "syntax": "${teacher.picurl}",
+      "descriptionHtml": "教师图片",
+      "description": "教师图片",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "${teacher.picurl}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "在职信息",
+      "parameter": "jobtype",
+      "type": "String",
+      "syntax": "${teacher.jobtype}",
+      "descriptionHtml": "在职信息",
+      "description": "在职信息",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "${teacher.jobtype}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "当前第几条",
+      "parameter": "pos",
+      "type": "Integer",
+      "syntax": "${teacher.pos}",
+      "descriptionHtml": "当前是列表的第几条(从1开始)",
+      "description": "当前是列表的第几条(从1开始)",
+      "kind": "parameter",
+      "path": [
+        "teachersListgroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "第${teacher.pos}条",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "teachersListgroup"
+      ]
+    },
+    {
+      "name": "是否首条",
+      "parameter": "isFirst",
+      "type": "Boolean",
+      "syntax": "<#if teacher.isFirst></#if>",
+      "descriptionHtml": "当前是不是列表的第一条",
+      "description": "当前是不是列表的第一条",
+      "kind": "parameter",
+      "path": [
+        "teachersListgroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if teacher.isFirst>首条</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "teachersListgroup"
+      ]
+    },
+    {
+      "name": "是否尾条",
+      "parameter": "isLast",
+      "type": "Boolean",
+      "syntax": "<#if teacher.isLast></#if>",
+      "descriptionHtml": "当前是不是列表的最后一条",
+      "description": "当前是不是列表的最后一条",
+      "kind": "parameter",
+      "path": [
+        "teachersListgroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if teacher.isLast>尾条</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "teachersListgroup"
+      ]
+    },
+    {
+      "name": "是否奇数行",
+      "parameter": "isOdd",
+      "type": "Boolean",
+      "syntax": "<#if teacher.isOdd></#if>",
+      "descriptionHtml": "当前是不是奇数行",
+      "description": "当前是不是奇数行",
+      "kind": "parameter",
+      "path": [
+        "teachersListgroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if teacher.isOdd>奇数行</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "teachersListgroup"
+      ]
+    },
+    {
+      "name": "是否偶数行",
+      "parameter": "isEven",
+      "type": "Boolean",
+      "syntax": "<#if teacher.isEven></#if>",
+      "descriptionHtml": "当前是不是偶数行",
+      "description": "当前是不是偶数行",
+      "kind": "parameter",
+      "path": [
+        "teachersListgroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if teacher.isEven>偶数行</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "teachersListgroup"
+      ]
+    }
+  ],
+  "template": "",
+  "exampleTemplate": "<ul class=\"teacher-demo\">\n<#list teacherlist as teacher>\n<li><img src=\"${teacher.picurl}\" width=\"120\" height=\"150\" alt=\"${teacher.showName}\"><h3>${teacher.showName?html}</h3><p>${teacher.unit?html}</p></li>\n</#list>\n</ul>",
+  "previousFixtureHashes": [
+    "eb100073",
+    "98680a1a"
+  ],
+  "css": "",
+  "fixture": {
+    "viewid": "1106",
+    "uid": "u_demo",
+    "uniqueClassName": "c_demo",
+    "teacherlist": [
+      {
+        "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "showName": "陈明",
+        "unit": "示例单位一",
+        "teacherId": "demo_teacherId_0",
+        "tipName": "陈明",
+        "url": "#preview",
+        "ename": "示例名称",
+        "namePinYin": "示例名称",
+        "birthday": "出生年份",
+        "email": "",
+        "job": "职务",
+        "education": "学历",
+        "workexperience": "主要任职",
+        "honor": "原始曾获荣誉",
+        "showHonor": "显示曾获荣誉",
+        "showProfile": "显示个人简介",
+        "officeLocation": "原始办公地点",
+        "showOfficeLocation": "显示办公地点",
+        "sex": "性别",
+        "contact": "联系方式",
+        "degree": "学位",
+        "discipline": "学科",
+        "prorank": "职称",
+        "graduatedUniversity": "毕业院校",
+        "academician": "是否院士",
+        "gtutor": "是否研究生导师",
+        "doctorTutor": "是否博士生导师",
+        "picId": "teacher_photo_1",
+        "jobtype": "在职信息",
+        "pos": 1
+      },
+      {
+        "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "showName": "李文",
+        "unit": "示例单位二",
+        "teacherId": "demo_teacherId_1",
+        "tipName": "李文",
+        "url": "#preview",
+        "ename": "示例名称",
+        "namePinYin": "示例名称",
+        "birthday": "出生年份",
+        "email": "",
+        "job": "职务",
+        "education": "学历",
+        "workexperience": "主要任职",
+        "honor": "原始曾获荣誉",
+        "showHonor": "显示曾获荣誉",
+        "showProfile": "显示个人简介",
+        "officeLocation": "原始办公地点",
+        "showOfficeLocation": "显示办公地点",
+        "sex": "性别",
+        "contact": "联系方式",
+        "degree": "学位",
+        "discipline": "学科",
+        "prorank": "职称",
+        "graduatedUniversity": "毕业院校",
+        "academician": "是否院士",
+        "gtutor": "是否研究生导师",
+        "doctorTutor": "是否博士生导师",
+        "picId": "teacher_photo_2",
+        "jobtype": "在职信息",
+        "pos": 2
+      },
+      {
+        "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "showName": "张晓",
+        "unit": "示例单位五",
+        "teacherId": "demo_teacherId_2",
+        "tipName": "张晓",
+        "url": "#preview",
+        "ename": "示例名称",
+        "namePinYin": "示例名称",
+        "birthday": "出生年份",
+        "email": "",
+        "job": "职务",
+        "education": "学历",
+        "workexperience": "主要任职",
+        "honor": "原始曾获荣誉",
+        "showHonor": "显示曾获荣誉",
+        "showProfile": "显示个人简介",
+        "officeLocation": "原始办公地点",
+        "showOfficeLocation": "显示办公地点",
+        "sex": "性别",
+        "contact": "联系方式",
+        "degree": "学位",
+        "discipline": "学科",
+        "prorank": "职称",
+        "graduatedUniversity": "毕业院校",
+        "academician": "是否院士",
+        "gtutor": "是否研究生导师",
+        "doctorTutor": "是否博士生导师",
+        "picId": "teacher_photo_3",
+        "jobtype": "在职信息",
+        "pos": 3
+      }
+    ]
+  }
+}

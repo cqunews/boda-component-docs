@@ -1,0 +1,809 @@
+{
+  "id": "010",
+  "index": 10,
+  "name": "网站导航",
+  "category": "网站导航",
+  "parameterCount": 46,
+  "hasScript": false,
+  "templateLength": 153,
+  "parameters": [
+    {
+      "name": "通用参数",
+      "parameter": "commonparam",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件id",
+      "parameter": "viewid",
+      "type": "String",
+      "syntax": "${viewid}",
+      "descriptionHtml": "组件本身的id，数字(形如 1001)",
+      "description": "组件本身的id，数字(形如 1001)",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件uid",
+      "parameter": "uid",
+      "type": "String",
+      "syntax": "${uid}",
+      "descriptionHtml": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "description": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "私有样式类名",
+      "parameter": "uniqueClassName",
+      "type": "String",
+      "syntax": "${uniqueClassName}",
+      "descriptionHtml": "用在私有样式表的类名上，字符串(形如 c10)，举例：<br>&lt;span class=\"<span style=\"color:red\">${uniqueClassName}</span>\" &gt;文字&lt;/span&gt;",
+      "description": "用在私有样式表的类名上，字符串(形如 c10)，举例：\n<span class=\"${uniqueClassName}\" >文字</span>",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<span class=\"${uniqueClassName}\" >文字</span>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "引入jQuery类库",
+      "parameter": "v_includeJquery",
+      "type": "Function",
+      "syntax": "${v_includeJquery()}",
+      "descriptionHtml": "引入系统自带的JQuery类库;<br> 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "description": "引入系统自带的JQuery类库;\n 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "\n<!--引入jQuery-->${v_includeJquery()}<!--引入jQuery完成-->\n",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "本级栏目导航个数",
+      "parameter": "size",
+      "type": "Integer",
+      "syntax": "${size}",
+      "descriptionHtml": "当前级导航链接数量",
+      "description": "当前级导航链接数量",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "栏目导航列表",
+      "parameter": "list_menu",
+      "type": "List",
+      "syntax": "<#list list_menu as menu>\n</#list>",
+      "descriptionHtml": "导航列表",
+      "description": "导航列表",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "列表位置参数",
+      "parameter": "listnogroup",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "栏目ID",
+      "parameter": "id",
+      "type": "String",
+      "syntax": "${menu.id}",
+      "descriptionHtml": "导航的栏目ID",
+      "description": "导航的栏目ID",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "栏目原标题",
+      "parameter": "title",
+      "type": "String",
+      "syntax": "${menu.title}",
+      "descriptionHtml": "栏目导航的原始标题，不建议直接输出",
+      "description": "栏目导航的原始标题，不建议直接输出",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "栏目显示标题",
+      "parameter": "showTitle",
+      "type": "String",
+      "syntax": "${menu.showTitle}",
+      "descriptionHtml": "显示用的导航标题，调整过格式",
+      "description": "显示用的导航标题，调整过格式",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "提示标题",
+      "parameter": "tipsTitle",
+      "type": "String",
+      "syntax": "${menu.tipsTitle}",
+      "descriptionHtml": "Html元素的\"title\"属性专用，显示提示，专门调整过格式",
+      "description": "Html元素的\"title\"属性专用，显示提示，专门调整过格式",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "栏目链接",
+      "parameter": "url",
+      "type": "URL",
+      "syntax": "${menu.url}",
+      "descriptionHtml": "栏目导航的链接地址",
+      "description": "栏目导航的链接地址",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "链接打开方式",
+      "parameter": "target",
+      "type": "String",
+      "syntax": "${menu.target}",
+      "descriptionHtml": "放到 A 的属性中即可, 表示新窗口打开还是原窗口打开",
+      "description": "放到 A 的属性中即可, 表示新窗口打开还是原窗口打开",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "栏目图片",
+      "parameter": "picUrl",
+      "type": "URL",
+      "syntax": "${menu.picUrl}",
+      "descriptionHtml": "在栏目上设置的导航图片",
+      "description": "在栏目上设置的导航图片",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "选中栏目图片",
+      "parameter": "focusPicUrl",
+      "type": "URL",
+      "syntax": "${menu.focusPicUrl}",
+      "descriptionHtml": "在栏目上设置的选中导航图片",
+      "description": "在栏目上设置的选中导航图片",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "是否当前栏目",
+      "parameter": "isFocus",
+      "type": "Boolean",
+      "syntax": "<#if menu.isFocus>当前栏目</#if>",
+      "descriptionHtml": "是当前栏目或是当前栏目的子栏目时值为真",
+      "description": "是当前栏目或是当前栏目的子栏目时值为真",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "当前层级",
+      "parameter": "level",
+      "type": "Integer",
+      "syntax": "${menu.level}",
+      "descriptionHtml": "当前处于导航的第几层",
+      "description": "当前处于导航的第几层",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "装饰图片链接",
+      "parameter": "decorateImage",
+      "type": "group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "装饰文字",
+      "parameter": "decorateText",
+      "type": "group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "子栏目",
+      "parameter": "children",
+      "type": "group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "首页链接地址",
+      "parameter": "indexUrl",
+      "type": "String",
+      "syntax": "${siteUrl}",
+      "descriptionHtml": "网站首页链接地址",
+      "description": "网站首页链接地址",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "是第几条",
+      "parameter": "pos",
+      "type": "Integer",
+      "syntax": "${menu.pos}",
+      "descriptionHtml": "当前是列表的第几条(从1开始)",
+      "description": "当前是列表的第几条(从1开始)",
+      "kind": "parameter",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "第${menu.pos}条",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否首条",
+      "parameter": "isFirst",
+      "type": "Boolean",
+      "syntax": "<#if menu.isFirst></#if>",
+      "descriptionHtml": "当前是不是列表的第一条",
+      "description": "当前是不是列表的第一条",
+      "kind": "parameter",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if menu.isFirst>首条</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否尾条",
+      "parameter": "isLast",
+      "type": "Boolean",
+      "syntax": "<#if menu.isLast></#if>",
+      "descriptionHtml": "当前是不是列表的最后一条",
+      "description": "当前是不是列表的最后一条",
+      "kind": "parameter",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if menu.isLast>尾条</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "装饰图片链接1",
+      "parameter": "decorateImage1",
+      "type": "String",
+      "syntax": "${menu.decorateImage1}",
+      "descriptionHtml": "在使用该参数时，请将样式配置中的\"是否提取栏目装饰图片和装饰文字\" 配置成 \"是\"，该处提取对应栏目装饰图片链接1对应的图片链接",
+      "description": "在使用该参数时，请将样式配置中的\"是否提取栏目装饰图片和装饰文字\" 配置成 \"是\"，该处提取对应栏目装饰图片链接1对应的图片链接",
+      "kind": "parameter",
+      "path": [
+        "decorateImage"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#list list_menu as menu>\n    <#if menu.decorateImage1!=\"\">\n    <a href=\"${menu.url}\" ${menu.target} title=\"${menu.tipsTitle}\" ><img src=\"${menu.decorateImage1}\" border=0 /></a>\n    <#else>\n    <a href=\"${menu.url}\" ${menu.target} title=\"${menu.tipsTitle}\" >${menu.showTitle}</a>\n    </#if>\n</#list>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "decorateImage"
+      ]
+    },
+    {
+      "name": "装饰图片链接2",
+      "parameter": "decorateImage2",
+      "type": "String",
+      "syntax": "${menu.decorateImage2}",
+      "descriptionHtml": "在使用该参数时，请将样式配置中的\"是否提取栏目装饰图片和装饰文字\" 配置成 \"是\"，该处提取对应栏目装饰图片链接2对应的图片链接",
+      "description": "在使用该参数时，请将样式配置中的\"是否提取栏目装饰图片和装饰文字\" 配置成 \"是\"，该处提取对应栏目装饰图片链接2对应的图片链接",
+      "kind": "parameter",
+      "path": [
+        "decorateImage"
+      ]
+    },
+    {
+      "name": "装饰图片链接3",
+      "parameter": "decorateImage3",
+      "type": "String",
+      "syntax": "${menu.decorateImage3}",
+      "descriptionHtml": "在使用该参数时，请将样式配置中的\"是否提取栏目装饰图片和装饰文字\" 配置成 \"是\"，该处提取对应栏目装饰图片链接3对应的图片链接",
+      "description": "在使用该参数时，请将样式配置中的\"是否提取栏目装饰图片和装饰文字\" 配置成 \"是\"，该处提取对应栏目装饰图片链接3对应的图片链接",
+      "kind": "parameter",
+      "path": [
+        "decorateImage"
+      ]
+    },
+    {
+      "name": "装饰图片链接4",
+      "parameter": "decorateImage4",
+      "type": "String",
+      "syntax": "${menu.decorateImage4}",
+      "descriptionHtml": "在使用该参数时，请将样式配置中的\"是否提取栏目装饰图片和装饰文字\" 配置成 \"是\"，该处提取对应栏目装饰图片链接4对应的图片链接",
+      "description": "在使用该参数时，请将样式配置中的\"是否提取栏目装饰图片和装饰文字\" 配置成 \"是\"，该处提取对应栏目装饰图片链接4对应的图片链接",
+      "kind": "parameter",
+      "path": [
+        "decorateImage"
+      ]
+    },
+    {
+      "name": "装饰图片链接5",
+      "parameter": "decorateImage5",
+      "type": "String",
+      "syntax": "${menu.decorateImage5}",
+      "descriptionHtml": "在使用该参数时，请将样式配置中的\"是否提取栏目装饰图片和装饰文字\" 配置成 \"是\"，该处提取对应栏目装饰图片链接5对应的图片链接",
+      "description": "在使用该参数时，请将样式配置中的\"是否提取栏目装饰图片和装饰文字\" 配置成 \"是\"，该处提取对应栏目装饰图片链接5对应的图片链接",
+      "kind": "parameter",
+      "path": [
+        "decorateImage"
+      ]
+    },
+    {
+      "name": "装饰图片链接6",
+      "parameter": "decorateImage6",
+      "type": "String",
+      "syntax": "${menu.decorateImage6}",
+      "descriptionHtml": "在使用该参数时，请将样式配置中的\"是否提取栏目装饰图片和装饰文字\" 配置成 \"是\"，该处提取对应栏目装饰图片链接6对应的图片链接",
+      "description": "在使用该参数时，请将样式配置中的\"是否提取栏目装饰图片和装饰文字\" 配置成 \"是\"，该处提取对应栏目装饰图片链接6对应的图片链接",
+      "kind": "parameter",
+      "path": [
+        "decorateImage"
+      ]
+    },
+    {
+      "name": "装饰图片链接7",
+      "parameter": "decorateImage7",
+      "type": "String",
+      "syntax": "${menu.decorateImage7}",
+      "descriptionHtml": "在使用该参数时，请将样式配置中的\"是否提取栏目装饰图片和装饰文字\" 配置成 \"是\"，该处提取对应栏目装饰图片链接7对应的图片链接",
+      "description": "在使用该参数时，请将样式配置中的\"是否提取栏目装饰图片和装饰文字\" 配置成 \"是\"，该处提取对应栏目装饰图片链接7对应的图片链接",
+      "kind": "parameter",
+      "path": [
+        "decorateImage"
+      ]
+    },
+    {
+      "name": "装饰图片链接8",
+      "parameter": "decorateImage8",
+      "type": "String",
+      "syntax": "${menu.decorateImage8}",
+      "descriptionHtml": "在使用该参数时，请将样式配置中的\"是否提取栏目装饰图片和装饰文字\" 配置成 \"是\"，该处提取对应栏目装饰图片链接8对应的图片链接",
+      "description": "在使用该参数时，请将样式配置中的\"是否提取栏目装饰图片和装饰文字\" 配置成 \"是\"，该处提取对应栏目装饰图片链接8对应的图片链接",
+      "kind": "parameter",
+      "path": [
+        "decorateImage"
+      ]
+    },
+    {
+      "name": "装饰图片链接9",
+      "parameter": "decorateImage9",
+      "type": "String",
+      "syntax": "${menu.decorateImage9}",
+      "descriptionHtml": "在使用该参数时，请将样式配置中的\"是否提取栏目装饰图片和装饰文字\" 配置成 \"是\"，该处提取对应栏目装饰图片链接9对应的图片链接",
+      "description": "在使用该参数时，请将样式配置中的\"是否提取栏目装饰图片和装饰文字\" 配置成 \"是\"，该处提取对应栏目装饰图片链接9对应的图片链接",
+      "kind": "parameter",
+      "path": [
+        "decorateImage"
+      ]
+    },
+    {
+      "name": "装饰图片链接10",
+      "parameter": "decorateImage10",
+      "type": "String",
+      "syntax": "${menu.decorateImage10}",
+      "descriptionHtml": "在使用该参数时，请将样式配置中的\"是否提取栏目装饰图片和装饰文字\" 配置成 \"是\"，该处提取对应栏目装饰图片链接10对应的图片链接",
+      "description": "在使用该参数时，请将样式配置中的\"是否提取栏目装饰图片和装饰文字\" 配置成 \"是\"，该处提取对应栏目装饰图片链接10对应的图片链接",
+      "kind": "parameter",
+      "path": [
+        "decorateImage"
+      ]
+    },
+    {
+      "name": "装饰文字1",
+      "parameter": "decorateText1",
+      "type": "String",
+      "syntax": "${menu.decorateText1}",
+      "descriptionHtml": "在使用该参数时，请将样式配置中的\"是否提取栏目装饰图片和装饰文字\" 配置成 \"是\"，该处提取对应栏目装饰文字1对应的装饰文字",
+      "description": "在使用该参数时，请将样式配置中的\"是否提取栏目装饰图片和装饰文字\" 配置成 \"是\"，该处提取对应栏目装饰文字1对应的装饰文字",
+      "kind": "parameter",
+      "path": [
+        "decorateText"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#list list_menu as menu>\n    <#if menu.decorateImage1!=\"\">\n    <a href=\"${menu.url}\" ${menu.target} title=\"${menu.tipsTitle}\" >${menu.decorateText1}</a>\n    <#else>\n    <a href=\"${menu.url}\" ${menu.target} title=\"${menu.tipsTitle}\" >${menu.showTitle}</a>\n    </#if>\n</#list>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "decorateText"
+      ]
+    },
+    {
+      "name": "装饰文字2",
+      "parameter": "decorateText2",
+      "type": "String",
+      "syntax": "${menu.decorateText2}",
+      "descriptionHtml": "在使用该参数时，请将样式配置中的\"是否提取栏目装饰图片和装饰文字\" 配置成 \"是\"，该处提取对应栏目装饰文字2对应的装饰文字",
+      "description": "在使用该参数时，请将样式配置中的\"是否提取栏目装饰图片和装饰文字\" 配置成 \"是\"，该处提取对应栏目装饰文字2对应的装饰文字",
+      "kind": "parameter",
+      "path": [
+        "decorateText"
+      ]
+    },
+    {
+      "name": "装饰文字3",
+      "parameter": "decorateText3",
+      "type": "String",
+      "syntax": "${menu.decorateText3}",
+      "descriptionHtml": "在使用该参数时，请将样式配置中的\"是否提取栏目装饰图片和装饰文字\" 配置成 \"是\"，该处提取对应栏目装饰文字3对应的装饰文字",
+      "description": "在使用该参数时，请将样式配置中的\"是否提取栏目装饰图片和装饰文字\" 配置成 \"是\"，该处提取对应栏目装饰文字3对应的装饰文字",
+      "kind": "parameter",
+      "path": [
+        "decorateText"
+      ]
+    },
+    {
+      "name": "装饰文字4",
+      "parameter": "decorateText4",
+      "type": "String",
+      "syntax": "${menu.decorateText4}",
+      "descriptionHtml": "在使用该参数时，请将样式配置中的\"是否提取栏目装饰图片和装饰文字\" 配置成 \"是\"，该处提取对应栏目装饰文字4对应的装饰文字",
+      "description": "在使用该参数时，请将样式配置中的\"是否提取栏目装饰图片和装饰文字\" 配置成 \"是\"，该处提取对应栏目装饰文字4对应的装饰文字",
+      "kind": "parameter",
+      "path": [
+        "decorateText"
+      ]
+    },
+    {
+      "name": "装饰文字5",
+      "parameter": "decorateText5",
+      "type": "String",
+      "syntax": "${menu.decorateText5}",
+      "descriptionHtml": "在使用该参数时，请将样式配置中的\"是否提取栏目装饰图片和装饰文字\" 配置成 \"是\"，该处提取对应栏目装饰文字5对应的装饰文字",
+      "description": "在使用该参数时，请将样式配置中的\"是否提取栏目装饰图片和装饰文字\" 配置成 \"是\"，该处提取对应栏目装饰文字5对应的装饰文字",
+      "kind": "parameter",
+      "path": [
+        "decorateText"
+      ]
+    },
+    {
+      "name": "装饰文字6",
+      "parameter": "decorateText6",
+      "type": "String",
+      "syntax": "${menu.decorateText6}",
+      "descriptionHtml": "在使用该参数时，请将样式配置中的\"是否提取栏目装饰图片和装饰文字\" 配置成 \"是\"，该处提取对应栏目装饰文字6对应的装饰文字",
+      "description": "在使用该参数时，请将样式配置中的\"是否提取栏目装饰图片和装饰文字\" 配置成 \"是\"，该处提取对应栏目装饰文字6对应的装饰文字",
+      "kind": "parameter",
+      "path": [
+        "decorateText"
+      ]
+    },
+    {
+      "name": "装饰文字7",
+      "parameter": "decorateText7",
+      "type": "String",
+      "syntax": "${menu.decorateText7}",
+      "descriptionHtml": "在使用该参数时，请将样式配置中的\"是否提取栏目装饰图片和装饰文字\" 配置成 \"是\"，该处提取对应栏目装饰文字7对应的装饰文字",
+      "description": "在使用该参数时，请将样式配置中的\"是否提取栏目装饰图片和装饰文字\" 配置成 \"是\"，该处提取对应栏目装饰文字7对应的装饰文字",
+      "kind": "parameter",
+      "path": [
+        "decorateText"
+      ]
+    },
+    {
+      "name": "装饰文字8",
+      "parameter": "decorateText8",
+      "type": "String",
+      "syntax": "${menu.decorateText8}",
+      "descriptionHtml": "在使用该参数时，请将样式配置中的\"是否提取栏目装饰图片和装饰文字\" 配置成 \"是\"，该处提取对应栏目装饰文字8对应的装饰文字",
+      "description": "在使用该参数时，请将样式配置中的\"是否提取栏目装饰图片和装饰文字\" 配置成 \"是\"，该处提取对应栏目装饰文字8对应的装饰文字",
+      "kind": "parameter",
+      "path": [
+        "decorateText"
+      ]
+    },
+    {
+      "name": "装饰文字9",
+      "parameter": "decorateText9",
+      "type": "String",
+      "syntax": "${menu.decorateText9}",
+      "descriptionHtml": "在使用该参数时，请将样式配置中的\"是否提取栏目装饰图片和装饰文字\" 配置成 \"是\"，该处提取对应栏目装饰文字9对应的装饰文字",
+      "description": "在使用该参数时，请将样式配置中的\"是否提取栏目装饰图片和装饰文字\" 配置成 \"是\"，该处提取对应栏目装饰文字9对应的装饰文字",
+      "kind": "parameter",
+      "path": [
+        "decorateText"
+      ]
+    },
+    {
+      "name": "装饰文字10",
+      "parameter": "decorateText10",
+      "type": "String",
+      "syntax": "${menu.decorateText10}",
+      "descriptionHtml": "在使用该参数时，请将样式配置中的\"是否提取栏目装饰图片和装饰文字\" 配置成 \"是\"，该处提取对应栏目装饰文字10对应的装饰文字",
+      "description": "在使用该参数时，请将样式配置中的\"是否提取栏目装饰图片和装饰文字\" 配置成 \"是\"，该处提取对应栏目装饰文字10对应的装饰文字",
+      "kind": "parameter",
+      "path": [
+        "decorateText"
+      ]
+    },
+    {
+      "name": "是否有子栏目",
+      "parameter": "hasSubMenu",
+      "type": "Boolean",
+      "syntax": "<#if menu.hasSubMenu></#if>",
+      "descriptionHtml": "是否有子栏目",
+      "description": "是否有子栏目",
+      "kind": "parameter",
+      "path": [
+        "children"
+      ]
+    },
+    {
+      "name": "子栏目个数",
+      "parameter": "subMenuSize",
+      "type": "Integer",
+      "syntax": "${menu.subMenuSize}",
+      "descriptionHtml": "子栏目导航的个数",
+      "description": "子栏目导航的个数",
+      "kind": "parameter",
+      "path": [
+        "children"
+      ]
+    },
+    {
+      "name": "子栏目列表",
+      "parameter": "list_subMenu",
+      "type": "List",
+      "syntax": "<#list menu.list_subMenu as menu>\n</#list>",
+      "descriptionHtml": "子栏目导航列表，下级参数同栏目导航列表；多层级，层级可设置；有子栏目时才有效",
+      "description": "子栏目导航列表，下级参数同栏目导航列表；多层级，层级可设置；有子栏目时才有效",
+      "kind": "parameter",
+      "path": [
+        "children"
+      ]
+    }
+  ],
+  "template": "<#list list_menu as menu>\n    <a href=\"${menu.url}\" ${menu.target} title=\"${menu.tipsTitle}\">${menu.showTitle}</a>\n    <#if !menu.isLast>|</#if>\n</#list>",
+  "exampleTemplate": "",
+  "previousFixtureHashes": [
+    "3d35a48f",
+    "629864d0"
+  ],
+  "css": "",
+  "fixture": {
+    "viewid": "1010",
+    "uid": "u_demo",
+    "uniqueClassName": "c_demo",
+    "size": 6,
+    "siteUrl": "#preview",
+    "list_menu": [
+      {
+        "url": "#preview",
+        "target": "",
+        "tipsTitle": "首页",
+        "showTitle": "首页",
+        "isLast": false,
+        "id": "12",
+        "title": "首页",
+        "picUrl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "focusPicUrl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "level": 6,
+        "pos": 1,
+        "decorateImage1": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "decorateImage2": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "decorateImage3": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "decorateImage4": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "decorateImage5": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "decorateImage6": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "decorateImage7": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "decorateImage8": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "decorateImage9": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "decorateImage10": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "decorateText1": "装饰文字1",
+        "decorateText2": "装饰文字2",
+        "decorateText3": "装饰文字3",
+        "decorateText4": "装饰文字4",
+        "decorateText5": "装饰文字5",
+        "decorateText6": "装饰文字6",
+        "decorateText7": "装饰文字7",
+        "decorateText8": "装饰文字8",
+        "decorateText9": "装饰文字9",
+        "decorateText10": "装饰文字10",
+        "subMenuSize": 6
+      },
+      {
+        "url": "#preview",
+        "target": "",
+        "tipsTitle": "校园动态",
+        "showTitle": "校园动态",
+        "isLast": false,
+        "id": "12",
+        "title": "校园动态",
+        "picUrl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "focusPicUrl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "level": 6,
+        "pos": 2,
+        "decorateImage1": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "decorateImage2": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "decorateImage3": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "decorateImage4": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "decorateImage5": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "decorateImage6": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "decorateImage7": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "decorateImage8": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "decorateImage9": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "decorateImage10": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "decorateText1": "装饰文字1",
+        "decorateText2": "装饰文字2",
+        "decorateText3": "装饰文字3",
+        "decorateText4": "装饰文字4",
+        "decorateText5": "装饰文字5",
+        "decorateText6": "装饰文字6",
+        "decorateText7": "装饰文字7",
+        "decorateText8": "装饰文字8",
+        "decorateText9": "装饰文字9",
+        "decorateText10": "装饰文字10",
+        "subMenuSize": 6
+      },
+      {
+        "url": "#preview",
+        "target": "",
+        "tipsTitle": "通知公告",
+        "showTitle": "通知公告",
+        "isLast": false,
+        "id": "12",
+        "title": "通知公告",
+        "picUrl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "focusPicUrl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "level": 6,
+        "pos": 3,
+        "decorateImage1": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "decorateImage2": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "decorateImage3": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "decorateImage4": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "decorateImage5": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "decorateImage6": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "decorateImage7": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "decorateImage8": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "decorateImage9": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "decorateImage10": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "decorateText1": "装饰文字1",
+        "decorateText2": "装饰文字2",
+        "decorateText3": "装饰文字3",
+        "decorateText4": "装饰文字4",
+        "decorateText5": "装饰文字5",
+        "decorateText6": "装饰文字6",
+        "decorateText7": "装饰文字7",
+        "decorateText8": "装饰文字8",
+        "decorateText9": "装饰文字9",
+        "decorateText10": "装饰文字10",
+        "subMenuSize": 6
+      },
+      {
+        "url": "#preview",
+        "target": "",
+        "tipsTitle": "人才培养",
+        "showTitle": "人才培养",
+        "isLast": false,
+        "id": "12",
+        "title": "人才培养",
+        "picUrl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "focusPicUrl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "level": 6,
+        "pos": 4,
+        "decorateImage1": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "decorateImage2": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "decorateImage3": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "decorateImage4": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "decorateImage5": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "decorateImage6": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "decorateImage7": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "decorateImage8": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "decorateImage9": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "decorateImage10": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "decorateText1": "装饰文字1",
+        "decorateText2": "装饰文字2",
+        "decorateText3": "装饰文字3",
+        "decorateText4": "装饰文字4",
+        "decorateText5": "装饰文字5",
+        "decorateText6": "装饰文字6",
+        "decorateText7": "装饰文字7",
+        "decorateText8": "装饰文字8",
+        "decorateText9": "装饰文字9",
+        "decorateText10": "装饰文字10",
+        "subMenuSize": 6
+      },
+      {
+        "url": "#preview",
+        "target": "",
+        "tipsTitle": "关于我们",
+        "showTitle": "关于我们",
+        "isLast": true,
+        "id": "12",
+        "title": "关于我们",
+        "picUrl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "focusPicUrl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "level": 6,
+        "pos": 5,
+        "decorateImage1": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "decorateImage2": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "decorateImage3": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "decorateImage4": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "decorateImage5": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "decorateImage6": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "decorateImage7": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "decorateImage8": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "decorateImage9": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "decorateImage10": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "decorateText1": "装饰文字1",
+        "decorateText2": "装饰文字2",
+        "decorateText3": "装饰文字3",
+        "decorateText4": "装饰文字4",
+        "decorateText5": "装饰文字5",
+        "decorateText6": "装饰文字6",
+        "decorateText7": "装饰文字7",
+        "decorateText8": "装饰文字8",
+        "decorateText9": "装饰文字9",
+        "decorateText10": "装饰文字10",
+        "subMenuSize": 6
+      }
+    ]
+  }
+}

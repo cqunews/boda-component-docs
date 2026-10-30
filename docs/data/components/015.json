@@ -1,0 +1,800 @@
+{
+  "id": "015",
+  "index": 15,
+  "name": "翻页标题列表",
+  "category": "文章列表",
+  "parameterCount": 36,
+  "hasScript": false,
+  "templateLength": 738,
+  "parameters": [
+    {
+      "name": "通用参数",
+      "parameter": "commonparam",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件id",
+      "parameter": "viewid",
+      "type": "String",
+      "syntax": "${viewid}",
+      "descriptionHtml": "组件本身的id，数字(形如 1001)",
+      "description": "组件本身的id，数字(形如 1001)",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件uid",
+      "parameter": "uid",
+      "type": "String",
+      "syntax": "${uid}",
+      "descriptionHtml": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "description": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "私有样式类名",
+      "parameter": "uniqueClassName",
+      "type": "String",
+      "syntax": "${uniqueClassName}",
+      "descriptionHtml": "用在私有样式表的类名上，字符串(形如 c10)，举例：<br>&lt;span class=\"<span style=\"color:red\">${uniqueClassName}</span>\" &gt;文字&lt;/span&gt;",
+      "description": "用在私有样式表的类名上，字符串(形如 c10)，举例：\n<span class=\"${uniqueClassName}\" >文字</span>",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<span class=\"${uniqueClassName}\" >文字</span>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "引入jQuery类库",
+      "parameter": "v_includeJquery",
+      "type": "Function",
+      "syntax": "${v_includeJquery()}",
+      "descriptionHtml": "引入系统自带的JQuery类库;<br> 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "description": "引入系统自带的JQuery类库;\n 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "\n<!--引入jQuery-->${v_includeJquery()}<!--引入jQuery完成-->\n",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "文章条数",
+      "parameter": "size",
+      "type": "Integer",
+      "syntax": "${size}",
+      "descriptionHtml": "文章列表条数，可以在配置中修改",
+      "description": "文章列表条数，可以在配置中修改",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "文章条数：${size}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "文章分段条数",
+      "parameter": "sectionNum",
+      "type": "Integer",
+      "syntax": "${sectionNum}",
+      "descriptionHtml": "文章分段条数，可以在配置中修改",
+      "description": "文章分段条数，可以在配置中修改",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if news.pos%sectionNum==0 && !news.isLast><hr style=\"height:1px;border:none;border-top:1px dashed #CCCCCC;\"></#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "CSS分页栏",
+      "parameter": "cssPageBar",
+      "type": "cssPageBar",
+      "syntax": "${cssPageBar}",
+      "descriptionHtml": "可以使用css样式表定义的翻页列表的分页栏, 请使用右侧按钮配置要使用的样式",
+      "description": "可以使用css样式表定义的翻页列表的分页栏, 请使用右侧按钮配置要使用的样式",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "${includePageBarCss}<div style=\"margin-top:10px;text-align:center;\" class=\"pb_sys_common pb_sys_normal pb_sys_style1\"><span class=\"p_t\">共${totalCount}条</span> ${cssPageBar}</div><#--分页表头-->",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "配置样式",
+      "parameter": null,
+      "type": null,
+      "syntax": "${cssPageBar}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "文章列表",
+      "parameter": "list_news",
+      "type": "List",
+      "syntax": "<#list list_news as news>\n</#list>",
+      "descriptionHtml": "文章列表",
+      "description": "文章列表",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#list list_news as news>\n   <li><a href=\"${news.columnUrl}\">[${news.showColumnName}]</a>\n       <a href=\"${news.url}\" target=_blank title=\"${news.tipsTitle}\" style=\"${news.cssTitleColor}\">${news.showTitle}</a>\n       &nbsp;${news.showDate}&nbsp;点击：[${news.showClickTimes}] 次<#if news.isNew>&nbsp;new</#if>\n</#list>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "列表位置参数",
+      "parameter": "listnogroup",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "文章序号",
+      "parameter": "contentNo",
+      "type": "String",
+      "syntax": "${news.contentNo}",
+      "descriptionHtml": "文章序号(从1开始)",
+      "description": "文章序号(从1开始)",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "文章ID",
+      "parameter": "id",
+      "type": "String",
+      "syntax": "${news.id}",
+      "descriptionHtml": "文章编号ID",
+      "description": "文章编号ID",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "栏目ID",
+      "parameter": "treeId",
+      "type": "String",
+      "syntax": "${news.treeId}",
+      "descriptionHtml": "文章所在栏目ID",
+      "description": "文章所在栏目ID",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "原标题",
+      "parameter": "title",
+      "type": "String",
+      "syntax": "${news.title}",
+      "descriptionHtml": "文章的原始标题，不建议直接输出",
+      "description": "文章的原始标题，不建议直接输出",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "显示标题",
+      "parameter": "showTitle",
+      "type": "String",
+      "syntax": "${news.showTitle}",
+      "descriptionHtml": "显示用的标题，调整过格式并可配置长度限制",
+      "description": "显示用的标题，调整过格式并可配置长度限制",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<a href=\"${news.url}\" target=_blank title=\"${news.tipsTitle}\" style=\"${news.cssTitleColor}\">${news.showTitle}</a>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "提示标题",
+      "parameter": "tipsTitle",
+      "type": "String",
+      "syntax": "${news.tipsTitle}",
+      "descriptionHtml": "Html元素的\"title\"属性专用，显示提示，专门调整过格式",
+      "description": "Html元素的\"title\"属性专用，显示提示，专门调整过格式",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<a href=\"${news.url}\" target=_blank title=\"${news.tipsTitle}\" style=\"${news.cssTitleColor}\">${news.showTitle}</a>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "标题颜色",
+      "parameter": "titleColor",
+      "type": "String",
+      "syntax": "${news.titleColor}",
+      "descriptionHtml": "文章标题的颜色，未设置则为空",
+      "description": "文章标题的颜色，未设置则为空",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "标题样式颜色",
+      "parameter": "cssTitleColor",
+      "type": "String",
+      "syntax": "${news.cssTitleColor}",
+      "descriptionHtml": "适合放在样式内的文章标题颜色<br><br>未设置时为空字符串<br>设置的话形如 \"color:#FF8000;\"",
+      "description": "适合放在样式内的文章标题颜色\n\n未设置时为空字符串\n设置的话形如 \"color:#FF8000;\"",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<a href=\"${news.url}\" target=_blank title=\"${news.tipsTitle}\" style=\"${news.cssTitleColor}\">${news.showTitle}</a>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "原摘要",
+      "parameter": "abstract",
+      "type": "String",
+      "syntax": "${news.abstract}",
+      "descriptionHtml": "文章的原始摘要，不建议直接输出",
+      "description": "文章的原始摘要，不建议直接输出",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "显示摘要",
+      "parameter": "showAbstract",
+      "type": "String",
+      "syntax": "${news.showAbstract}",
+      "descriptionHtml": "显示用的标题，调整过格式并可配置长度限制",
+      "description": "显示用的标题，调整过格式并可配置长度限制",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "文章链接",
+      "parameter": "url",
+      "type": "URL",
+      "syntax": "${news.url}",
+      "descriptionHtml": "文章的链接地址",
+      "description": "文章的链接地址",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<a href=\"${news.url}\" target=_blank title=\"${news.tipsTitle}\" style=\"${news.cssTitleColor}\">${news.showTitle}</a>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "标题图地址",
+      "parameter": "picUrl",
+      "type": "URL",
+      "syntax": "${news.picUrl}",
+      "descriptionHtml": "文章标题图的地址，可能为图片，可能为视频，也可能为空",
+      "description": "文章标题图的地址，可能为图片，可能为视频，也可能为空",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "原日期",
+      "parameter": "date",
+      "type": "String",
+      "syntax": "${news.date}",
+      "descriptionHtml": "文章原始日期，格式为 \"年年年年-月月-日日 时时:分分:秒秒\"，可转换格式",
+      "description": "文章原始日期，格式为 \"年年年年-月月-日日 时时:分分:秒秒\"，可转换格式",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "日期格式化",
+      "parameter": null,
+      "type": null,
+      "syntax": "${v_date(news.date, \"yyyy-MM-dd HH:mm\")}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "显示日期",
+      "parameter": "showDate",
+      "type": "String",
+      "syntax": "${news.showDate}",
+      "descriptionHtml": "显示用的文章日期，格式可配置",
+      "description": "显示用的文章日期，格式可配置",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "日期：${news.showDate}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "是否最新",
+      "parameter": "isNew",
+      "type": "Boolean",
+      "syntax": "<#if news.isNew></#if>",
+      "descriptionHtml": "是不是最新文章；最新的判断方法可配置",
+      "description": "是不是最新文章；最新的判断方法可配置",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if news.isNew>&nbsp;new</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "原点击数",
+      "parameter": "clickTimes",
+      "type": "String",
+      "syntax": "${news.clickTimes}",
+      "descriptionHtml": "文章的点击数量，不建议直接输出",
+      "description": "文章的点击数量，不建议直接输出",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "显示点击数",
+      "parameter": "showClickTimes",
+      "type": "String",
+      "syntax": "${news.showClickTimes}",
+      "descriptionHtml": "显示用的文章的点击数，采用ajax技术自动更新",
+      "description": "显示用的文章的点击数，采用ajax技术自动更新",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "点击：[${news.showClickTimes}]次",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "原栏目名",
+      "parameter": "columnName",
+      "type": "String",
+      "syntax": "${news.columnName}",
+      "descriptionHtml": "文章所在栏目名称，可配置栏目的层级，不建议直接输出",
+      "description": "文章所在栏目名称，可配置栏目的层级，不建议直接输出",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "显示栏目名",
+      "parameter": "showColumnName",
+      "type": "String",
+      "syntax": "${news.showColumnName}",
+      "descriptionHtml": "文章所在栏目名称，可配置栏目的层级，调整过格式",
+      "description": "文章所在栏目名称，可配置栏目的层级，调整过格式",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<a href=\"${news.columnUrl}\">[${news.showColumnName}]</a>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "栏目地址",
+      "parameter": "columnUrl",
+      "type": "URL",
+      "syntax": "${news.columnUrl}",
+      "descriptionHtml": "文章所在栏目地址，可配置栏目的层级",
+      "description": "文章所在栏目地址，可配置栏目的层级",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<a href=\"${news.columnUrl}\">[${news.showColumnName}]</a>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "是否图片文章",
+      "parameter": "isHaveImg",
+      "type": "Boolean",
+      "syntax": "<#if news.isHaveImg></#if>",
+      "descriptionHtml": "是否图片文章",
+      "description": "是否图片文章",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if news.isHaveImg>&nbsp;图片</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "是否视频文章",
+      "parameter": "isHaveVideo",
+      "type": "Boolean",
+      "syntax": "<#if news.isHaveVideo></#if>",
+      "descriptionHtml": "是否视频文章",
+      "description": "是否视频文章",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if news.isHaveVideo>&nbsp;视频</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "自定义字段",
+      "parameter": "showExtendField",
+      "type": "String",
+      "syntax": "${(news.fields.字段名称)!}",
+      "descriptionHtml": "显示一个自定义字段,“字段名称”需要替换成对应的字段英文名称。也可以使用类似<#if (news.fields.字段名称)>&nbsp;</#if>的语法",
+      "description": "显示一个自定义字段,“字段名称”需要替换成对应的字段英文名称。也可以使用类似<#if (news.fields.字段名称)> 的语法",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "${(news.fields.字段名称)!}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "是第几条",
+      "parameter": "pos",
+      "type": "Integer",
+      "syntax": "${news.pos}",
+      "descriptionHtml": "当前是列表的第几条(从1开始)",
+      "description": "当前是列表的第几条(从1开始)",
+      "kind": "parameter",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "第${news.pos}条",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否首条",
+      "parameter": "isFirst",
+      "type": "Boolean",
+      "syntax": "<#if news.isFirst></#if>",
+      "descriptionHtml": "当前是不是列表的第一条",
+      "description": "当前是不是列表的第一条",
+      "kind": "parameter",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if news.isFirst>首条</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否尾条",
+      "parameter": "isLast",
+      "type": "Boolean",
+      "syntax": "<#if news.isLast></#if>",
+      "descriptionHtml": "当前是不是列表的最后一条",
+      "description": "当前是不是列表的最后一条",
+      "kind": "parameter",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if news.isLast>尾条</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否奇数行",
+      "parameter": "isOdd",
+      "type": "Boolean",
+      "syntax": "<#if news.isOdd></#if>",
+      "descriptionHtml": "当前是不是奇数行",
+      "description": "当前是不是奇数行",
+      "kind": "parameter",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if news.isOdd>奇数行</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否偶数行",
+      "parameter": "isEven",
+      "type": "Boolean",
+      "syntax": "<#if news.isEven></#if>",
+      "descriptionHtml": "当前是不是偶数行",
+      "description": "当前是不是偶数行",
+      "kind": "parameter",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if news.isEven>偶数行</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listnogroup"
+      ]
+    }
+  ],
+  "template": "<div>\n    <UL>\n    <#list list_news as news>\n        <li><a href=\"${news.columnUrl}\">[${news.showColumnName}]</a>\n            <a href=\"${news.url}\" target=_blank title=\"${news.tipsTitle}\" style=\"${news.cssTitleColor}\">${news.showTitle}</a>\n            &nbsp;${news.showDate}&nbsp;点击：[${news.showClickTimes}] 次<#if news.isNew>&nbsp;new</#if></li>\n        <#--列表分段用的分隔符，可在配置栏分段相关配置中设置分段条数-->\n        <#if news.pos%sectionNum==0 && !news.isLast><hr style=\"height:1px;border:none;border-top:1px dashed #CCCCCC;\"></#if>\n    </#list>\n    </UL>\n    ${includePageBarCss}<div style=\"margin-top:10px;text-align:center;\" class=\"pb_sys_common pb_sys_normal pb_sys_style1\"><span class=\"p_t\">共${totalCount}条</span> ${cssPageBar}</div><#--分页表头-->\n</div>",
+  "exampleTemplate": "",
+  "previousFixtureHashes": [
+    "8006d07d",
+    "49775a1f"
+  ],
+  "css": "",
+  "fixture": {
+    "viewid": "1015",
+    "uid": "u_demo",
+    "uniqueClassName": "c_demo",
+    "size": 6,
+    "sectionNum": 6,
+    "cssPageBar": "CSS分页栏",
+    "list_news": [
+      {
+        "columnUrl": "#preview",
+        "showColumnName": "校园动态",
+        "url": "#preview",
+        "tipsTitle": "把课堂搬进山野，让知识连接更广阔的世界",
+        "cssTitleColor": "把课堂搬进山野，让知识连接更广阔的世界",
+        "showTitle": "把课堂搬进山野，让知识连接更广阔的世界",
+        "showDate": "2026-10-30",
+        "showClickTimes": "12",
+        "isNew": true,
+        "pos": 1,
+        "isLast": false,
+        "contentNo": "文章序号",
+        "id": "12",
+        "treeId": "demo_treeId_0",
+        "title": "把课堂搬进山野，让知识连接更广阔的世界",
+        "titleColor": "把课堂搬进山野，让知识连接更广阔的世界",
+        "abstract": "在校园里记录发现，在探索中连接未来。这里是一段用于检查组件排版的示例摘要。",
+        "showAbstract": "在校园里记录发现，在探索中连接未来。这里是一段用于检查组件排版的示例摘要。",
+        "picUrl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "date": "2026-10-30 09:30:00",
+        "clickTimes": "12",
+        "columnName": "校园动态"
+      },
+      {
+        "columnUrl": "#preview",
+        "showColumnName": "校园动态",
+        "url": "#preview",
+        "tipsTitle": "校园开放日｜在这里，遇见新的可能",
+        "cssTitleColor": "校园开放日｜在这里，遇见新的可能",
+        "showTitle": "校园开放日｜在这里，遇见新的可能",
+        "showDate": "2026-10-30",
+        "showClickTimes": "12",
+        "isNew": true,
+        "pos": 2,
+        "isLast": false,
+        "contentNo": "文章序号",
+        "id": "12",
+        "treeId": "demo_treeId_1",
+        "title": "校园开放日｜在这里，遇见新的可能",
+        "titleColor": "校园开放日｜在这里，遇见新的可能",
+        "abstract": "在校园里记录发现，在探索中连接未来。这里是一段用于检查组件排版的示例摘要。",
+        "showAbstract": "在校园里记录发现，在探索中连接未来。这里是一段用于检查组件排版的示例摘要。",
+        "picUrl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "date": "2026-10-30 09:30:00",
+        "clickTimes": "12",
+        "columnName": "校园动态"
+      },
+      {
+        "columnUrl": "#preview",
+        "showColumnName": "校园动态",
+        "url": "#preview",
+        "tipsTitle": "关于举办青年学术交流活动的通知",
+        "cssTitleColor": "关于举办青年学术交流活动的通知",
+        "showTitle": "关于举办青年学术交流活动的通知",
+        "showDate": "2026-10-30",
+        "showClickTimes": "12",
+        "isNew": false,
+        "pos": 3,
+        "isLast": false,
+        "contentNo": "文章序号",
+        "id": "12",
+        "treeId": "demo_treeId_2",
+        "title": "关于举办青年学术交流活动的通知",
+        "titleColor": "关于举办青年学术交流活动的通知",
+        "abstract": "在校园里记录发现，在探索中连接未来。这里是一段用于检查组件排版的示例摘要。",
+        "showAbstract": "在校园里记录发现，在探索中连接未来。这里是一段用于检查组件排版的示例摘要。",
+        "picUrl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "date": "2026-10-30 09:30:00",
+        "clickTimes": "12",
+        "columnName": "校园动态"
+      },
+      {
+        "columnUrl": "#preview",
+        "showColumnName": "校园动态",
+        "url": "#preview",
+        "tipsTitle": "图书馆秋季阅读计划正式启动",
+        "cssTitleColor": "图书馆秋季阅读计划正式启动",
+        "showTitle": "图书馆秋季阅读计划正式启动",
+        "showDate": "2026-10-30",
+        "showClickTimes": "12",
+        "isNew": false,
+        "pos": 4,
+        "isLast": false,
+        "contentNo": "文章序号",
+        "id": "12",
+        "treeId": "demo_treeId_3",
+        "title": "图书馆秋季阅读计划正式启动",
+        "titleColor": "图书馆秋季阅读计划正式启动",
+        "abstract": "在校园里记录发现，在探索中连接未来。这里是一段用于检查组件排版的示例摘要。",
+        "showAbstract": "在校园里记录发现，在探索中连接未来。这里是一段用于检查组件排版的示例摘要。",
+        "picUrl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "date": "2026-10-30 09:30:00",
+        "clickTimes": "12",
+        "columnName": "校园动态"
+      },
+      {
+        "columnUrl": "#preview",
+        "showColumnName": "校园动态",
+        "url": "#preview",
+        "tipsTitle": "探索与创新：青年研究者的校园故事",
+        "cssTitleColor": "探索与创新：青年研究者的校园故事",
+        "showTitle": "探索与创新：青年研究者的校园故事",
+        "showDate": "2026-10-30",
+        "showClickTimes": "12",
+        "isNew": false,
+        "pos": 5,
+        "isLast": true,
+        "contentNo": "文章序号",
+        "id": "12",
+        "treeId": "demo_treeId_4",
+        "title": "探索与创新：青年研究者的校园故事",
+        "titleColor": "探索与创新：青年研究者的校园故事",
+        "abstract": "在校园里记录发现，在探索中连接未来。这里是一段用于检查组件排版的示例摘要。",
+        "showAbstract": "在校园里记录发现，在探索中连接未来。这里是一段用于检查组件排版的示例摘要。",
+        "picUrl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "date": "2026-10-30 09:30:00",
+        "clickTimes": "12",
+        "columnName": "校园动态"
+      }
+    ],
+    "includePageBarCss": "示例内容",
+    "totalCount": "12"
+  }
+}

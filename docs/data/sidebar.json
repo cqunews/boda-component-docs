@@ -1,0 +1,640 @@
+[
+  {
+    "text": "网站基础信息",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "LOGO",
+        "link": "/components/001"
+      },
+      {
+        "text": "主页|收藏",
+        "link": "/components/002"
+      },
+      {
+        "text": "版权",
+        "link": "/components/003"
+      },
+      {
+        "text": "文字计数器",
+        "link": "/components/004"
+      },
+      {
+        "text": "计数器",
+        "link": "/components/005"
+      },
+      {
+        "text": "外部计数器",
+        "link": "/components/006"
+      },
+      {
+        "text": "单位简介",
+        "link": "/components/007"
+      },
+      {
+        "text": "二维码",
+        "link": "/components/008"
+      },
+      {
+        "text": "多屏切换",
+        "link": "/components/009"
+      }
+    ]
+  },
+  {
+    "text": "网站导航",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "网站导航",
+        "link": "/components/010"
+      },
+      {
+        "text": "当前位置",
+        "link": "/components/011"
+      },
+      {
+        "text": "栏目名称",
+        "link": "/components/012"
+      }
+    ]
+  },
+  {
+    "text": "文章列表",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "标题列表",
+        "link": "/components/013"
+      },
+      {
+        "text": "静态翻页列表",
+        "link": "/components/014"
+      },
+      {
+        "text": "翻页标题列表",
+        "link": "/components/015"
+      },
+      {
+        "text": "单篇正文",
+        "link": "/components/016"
+      },
+      {
+        "text": "多列标题列表",
+        "link": "/components/017"
+      },
+      {
+        "text": "图片文章列表",
+        "link": "/components/018"
+      },
+      {
+        "text": "文章心情列表",
+        "link": "/components/019"
+      }
+    ]
+  },
+  {
+    "text": "文章内容",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "文章内容",
+        "link": "/components/020"
+      },
+      {
+        "text": "相关组图",
+        "link": "/components/021"
+      },
+      {
+        "text": "组图内容",
+        "link": "/components/022"
+      }
+    ]
+  },
+  {
+    "text": "链接列表",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "链接列表",
+        "link": "/components/023"
+      }
+    ]
+  },
+  {
+    "text": "图片列表",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "图片列表",
+        "link": "/components/024"
+      },
+      {
+        "text": "图片翻页列表",
+        "link": "/components/025"
+      },
+      {
+        "text": "滚动图片",
+        "link": "/components/026"
+      }
+    ]
+  },
+  {
+    "text": "超文本",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "超文本",
+        "link": "/components/027"
+      }
+    ]
+  },
+  {
+    "text": "栏目装饰组件",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "装饰图片",
+        "link": "/components/028"
+      },
+      {
+        "text": "装饰文字",
+        "link": "/components/029"
+      }
+    ]
+  },
+  {
+    "text": "网站会员",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "会员登录入口",
+        "link": "/components/030"
+      },
+      {
+        "text": "用户注册",
+        "link": "/components/031"
+      }
+    ]
+  },
+  {
+    "text": "关键字检索",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "简单检索",
+        "link": "/components/032"
+      },
+      {
+        "text": "复杂检索",
+        "link": "/components/033"
+      }
+    ]
+  },
+  {
+    "text": "全文检索",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "全文检索",
+        "link": "/components/034"
+      },
+      {
+        "text": "检索结果",
+        "link": "/components/035"
+      },
+      {
+        "text": "简单检索",
+        "link": "/components/036"
+      },
+      {
+        "text": "简单检索结果",
+        "link": "/components/037"
+      },
+      {
+        "text": "复杂检索",
+        "link": "/components/038"
+      },
+      {
+        "text": "复杂检索结果",
+        "link": "/components/039"
+      }
+    ]
+  },
+  {
+    "text": "第三方检索",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "第三方搜索",
+        "link": "/components/040"
+      }
+    ]
+  },
+  {
+    "text": "在线投稿",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "在线投稿",
+        "link": "/components/041"
+      }
+    ]
+  },
+  {
+    "text": "人员招聘",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "招聘信息",
+        "link": "/components/042"
+      },
+      {
+        "text": "应聘信息",
+        "link": "/components/043"
+      }
+    ]
+  },
+  {
+    "text": "自定义组件",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "静态自定义DIV组件",
+        "link": "/components/044"
+      },
+      {
+        "text": "动态自定义DIV组件",
+        "link": "/components/045"
+      },
+      {
+        "text": "外部广告代码",
+        "link": "/components/046"
+      },
+      {
+        "text": "自定义查询入口",
+        "link": "/components/047"
+      },
+      {
+        "text": "自定义查询结果",
+        "link": "/components/048"
+      }
+    ]
+  },
+  {
+    "text": "站内统计组件",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "栏目文章数统计",
+        "link": "/components/049"
+      },
+      {
+        "text": "在线人数统计",
+        "link": "/components/050"
+      },
+      {
+        "text": "栏目点击统计",
+        "link": "/components/051"
+      },
+      {
+        "text": "管理员文章数统计",
+        "link": "/components/052"
+      }
+    ]
+  },
+  {
+    "text": "站群统计组件",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "站点访问量排名",
+        "link": "/components/053"
+      },
+      {
+        "text": "站点信息量排名",
+        "link": "/components/054"
+      }
+    ]
+  },
+  {
+    "text": "调查问卷",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "问卷归档列表",
+        "link": "/components/055"
+      }
+    ]
+  },
+  {
+    "text": "网站列表",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "网站列表",
+        "link": "/components/056"
+      },
+      {
+        "text": "网站翻页列表",
+        "link": "/components/057"
+      }
+    ]
+  },
+  {
+    "text": "微博组件",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "腾讯微博秀",
+        "link": "/components/058"
+      },
+      {
+        "text": "新浪微博秀",
+        "link": "/components/059"
+      }
+    ]
+  },
+  {
+    "text": "综合检索",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "类型列表",
+        "link": "/components/060"
+      },
+      {
+        "text": "检索范围",
+        "link": "/components/061"
+      },
+      {
+        "text": "时间范围",
+        "link": "/components/062"
+      },
+      {
+        "text": "排序方式",
+        "link": "/components/063"
+      },
+      {
+        "text": "检索入口",
+        "link": "/components/064"
+      },
+      {
+        "text": "检索结果",
+        "link": "/components/065"
+      }
+    ]
+  },
+  {
+    "text": "数据查询",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "数据查询入口",
+        "link": "/components/066"
+      },
+      {
+        "text": "数据查询结果",
+        "link": "/components/067"
+      }
+    ]
+  },
+  {
+    "text": "公众参与",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "提交信息",
+        "link": "/components/068"
+      },
+      {
+        "text": "翻页列表",
+        "link": "/components/069"
+      },
+      {
+        "text": "信息详细",
+        "link": "/components/070"
+      },
+      {
+        "text": "信息搜索",
+        "link": "/components/071"
+      },
+      {
+        "text": "搜索结果",
+        "link": "/components/072"
+      },
+      {
+        "text": "标题列表",
+        "link": "/components/073"
+      },
+      {
+        "text": "标题带回复列表",
+        "link": "/components/074"
+      },
+      {
+        "text": "部门列表",
+        "link": "/components/075"
+      },
+      {
+        "text": "部门信息列表",
+        "link": "/components/076"
+      },
+      {
+        "text": "公众参与个人信息列表",
+        "link": "/components/077"
+      },
+      {
+        "text": "公众参与统计",
+        "link": "/components/078"
+      },
+      {
+        "text": "公众参与全文检索",
+        "link": "/components/079"
+      },
+      {
+        "text": "公众参与全文检索结果",
+        "link": "/components/080"
+      }
+    ]
+  },
+  {
+    "text": "领导信箱",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "部门列表",
+        "link": "/components/081"
+      },
+      {
+        "text": "领导列表",
+        "link": "/components/082"
+      },
+      {
+        "text": "信件类型列表",
+        "link": "/components/083"
+      },
+      {
+        "text": "信件列表",
+        "link": "/components/084"
+      },
+      {
+        "text": "典型信件翻页列表",
+        "link": "/components/085"
+      },
+      {
+        "text": "典型信件标题列表",
+        "link": "/components/086"
+      },
+      {
+        "text": "信件标题列表",
+        "link": "/components/087"
+      },
+      {
+        "text": "信件详细",
+        "link": "/components/088"
+      },
+      {
+        "text": "信件投票",
+        "link": "/components/089"
+      },
+      {
+        "text": "简单查询",
+        "link": "/components/090"
+      },
+      {
+        "text": "简单查询结果",
+        "link": "/components/091"
+      },
+      {
+        "text": "复杂查询",
+        "link": "/components/092"
+      },
+      {
+        "text": "复杂查询结果",
+        "link": "/components/093"
+      },
+      {
+        "text": "部门统计",
+        "link": "/components/094"
+      },
+      {
+        "text": "领导统计",
+        "link": "/components/095"
+      },
+      {
+        "text": "部门领导统计",
+        "link": "/components/096"
+      },
+      {
+        "text": "信件审核状态列表",
+        "link": "/components/097"
+      },
+      {
+        "text": "信件处理流程",
+        "link": "/components/098"
+      },
+      {
+        "text": "信件内容列表",
+        "link": "/components/099"
+      },
+      {
+        "text": "个人信件列表",
+        "link": "/components/100"
+      },
+      {
+        "text": "领导信箱全文检索",
+        "link": "/components/101"
+      },
+      {
+        "text": "领导信箱全文检索结果",
+        "link": "/components/102"
+      }
+    ]
+  },
+  {
+    "text": "教师风采",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "博硕导教师列表",
+        "link": "/components/103"
+      },
+      {
+        "text": "学院列表",
+        "link": "/components/104"
+      },
+      {
+        "text": "职称教师列表",
+        "link": "/components/105"
+      },
+      {
+        "text": "系所教师列表",
+        "link": "/components/106"
+      },
+      {
+        "text": "高级检索入口",
+        "link": "/components/107"
+      },
+      {
+        "text": "高级检索结果",
+        "link": "/components/108"
+      },
+      {
+        "text": "学科列表",
+        "link": "/components/109"
+      },
+      {
+        "text": "系列表",
+        "link": "/components/110"
+      },
+      {
+        "text": "职称列表",
+        "link": "/components/111"
+      },
+      {
+        "text": "教师翻页列表",
+        "link": "/components/112"
+      },
+      {
+        "text": "拼音列表",
+        "link": "/components/113"
+      },
+      {
+        "text": "拼音教师翻页列表",
+        "link": "/components/114"
+      },
+      {
+        "text": "最近更新教师列表",
+        "link": "/components/115"
+      },
+      {
+        "text": "热点教师列表",
+        "link": "/components/116"
+      },
+      {
+        "text": "学院荣誉列表",
+        "link": "/components/117"
+      },
+      {
+        "text": "教师类型学院教师列表",
+        "link": "/components/119"
+      },
+      {
+        "text": "职称学院教师列表",
+        "link": "/components/120"
+      },
+      {
+        "text": "学院学科教师翻页列表",
+        "link": "/components/121"
+      },
+      {
+        "text": "学院职称教师列表",
+        "link": "/components/122"
+      },
+      {
+        "text": "学院学科教师列表",
+        "link": "/components/123"
+      }
+    ]
+  }
+]

@@ -1,0 +1,923 @@
+{
+  "id": "022",
+  "index": 22,
+  "name": "组图内容",
+  "category": "文章内容",
+  "parameterCount": 60,
+  "hasScript": true,
+  "templateLength": 4311,
+  "parameters": [
+    {
+      "name": "通用参数",
+      "parameter": "commonparam",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件id",
+      "parameter": "viewid",
+      "type": "String",
+      "syntax": "${viewid}",
+      "descriptionHtml": "组件本身的id，数字(形如 1001)",
+      "description": "组件本身的id，数字(形如 1001)",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件uid",
+      "parameter": "uid",
+      "type": "String",
+      "syntax": "${uid}",
+      "descriptionHtml": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "description": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "私有样式类名",
+      "parameter": "uniqueClassName",
+      "type": "String",
+      "syntax": "${uniqueClassName}",
+      "descriptionHtml": "用在私有样式表的类名上，字符串(形如 c10)，举例：<br>&lt;span class=\"<span style=\"color:red\">${uniqueClassName}</span>\" &gt;文字&lt;/span&gt;",
+      "description": "用在私有样式表的类名上，字符串(形如 c10)，举例：\n<span class=\"${uniqueClassName}\" >文字</span>",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<span class=\"${uniqueClassName}\" >文字</span>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "引入jQuery类库",
+      "parameter": "v_includeJquery",
+      "type": "Function",
+      "syntax": "${v_includeJquery()}",
+      "descriptionHtml": "引入系统自带的JQuery类库;<br> 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "description": "引入系统自带的JQuery类库;\n 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "\n<!--引入jQuery-->${v_includeJquery()}<!--引入jQuery完成-->\n",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "文章ID",
+      "parameter": "id",
+      "type": "String",
+      "syntax": "${id}",
+      "descriptionHtml": "文章编号ID",
+      "description": "文章编号ID",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "栏目ID",
+      "parameter": "treeId",
+      "type": "String",
+      "syntax": "${treeId}",
+      "descriptionHtml": "栏目ID",
+      "description": "栏目ID",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "网站ID",
+      "parameter": "owner",
+      "type": "String",
+      "syntax": "${owner}",
+      "descriptionHtml": "网站ID",
+      "description": "网站ID",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "客户端IP",
+      "parameter": "ip",
+      "type": "String",
+      "syntax": "${ip}",
+      "descriptionHtml": "客户端IP",
+      "description": "客户端IP",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "原标题",
+      "parameter": "title",
+      "type": "String",
+      "syntax": "${title}",
+      "descriptionHtml": "组图的原始标题，不建议直接输出",
+      "description": "组图的原始标题，不建议直接输出",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "显示标题",
+      "parameter": "showTitle",
+      "type": "String",
+      "syntax": "${showTitle}",
+      "descriptionHtml": "显示用的标题，调整过格式并可配置长度限制",
+      "description": "显示用的标题，调整过格式并可配置长度限制",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "脚本标题",
+      "parameter": "jsTitle",
+      "type": "String",
+      "syntax": " title=\"${jsTitle}\" ",
+      "descriptionHtml": "Html元素的\"title\"用于js脚本调用时使用",
+      "description": "Html元素的\"title\"用于js脚本调用时使用",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "标题颜色",
+      "parameter": "titleColor",
+      "type": "String",
+      "syntax": "${titleColor}",
+      "descriptionHtml": "文章标题的颜色，未设置则为空",
+      "description": "文章标题的颜色，未设置则为空",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "标题样式颜色",
+      "parameter": "cssTitleColor",
+      "type": "String",
+      "syntax": "${cssTitleColor}",
+      "descriptionHtml": "适合放在样式内的文章标题颜色<br><br>未设置时为空字符串<br>设置的话形如 \"color:#FF8000;\"",
+      "description": "适合放在样式内的文章标题颜色\n\n未设置时为空字符串\n设置的话形如 \"color:#FF8000;\"",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<h1 style=\"${cssTitleColor}\">${showTitle}</h1>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "原日期",
+      "parameter": "date",
+      "type": "String",
+      "syntax": "${date}",
+      "descriptionHtml": "文章原始日期，格式为 \"年年年年-月月-日日 时时:分分:秒秒\"，可转换格式",
+      "description": "文章原始日期，格式为 \"年年年年-月月-日日 时时:分分:秒秒\"，可转换格式",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "日期格式化",
+      "parameter": null,
+      "type": null,
+      "syntax": "${v_date(date, \"yyyy-MM-dd HH:mm\")}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "显示日期",
+      "parameter": "showDate",
+      "type": "String",
+      "syntax": "${showDate}",
+      "descriptionHtml": "显示用的文章日期，格式可配置",
+      "description": "显示用的文章日期，格式可配置",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "日期：${showDate}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "原点击数",
+      "parameter": "clickTimes",
+      "type": "String",
+      "syntax": "${clickTimes}",
+      "descriptionHtml": "文章的点击数量，不建议直接输出",
+      "description": "文章的点击数量，不建议直接输出",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "显示点击数",
+      "parameter": "showClickTimes",
+      "type": "String",
+      "syntax": "${showClickTimes}",
+      "descriptionHtml": "显示用的文章的点击数，采用ajax技术自动更新",
+      "description": "显示用的文章的点击数，采用ajax技术自动更新",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "点击：[${showClickTimes}]次",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "栏目名",
+      "parameter": "columnName",
+      "type": "String",
+      "syntax": "${columnName}",
+      "descriptionHtml": "文章所在栏目名称，可配置栏目的层级",
+      "description": "文章所在栏目名称，可配置栏目的层级",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<a href=\"${columnUrl}\">[${columnName}]</a>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "栏目地址",
+      "parameter": "columnUrl",
+      "type": "URL",
+      "syntax": "${columnUrl}",
+      "descriptionHtml": "文章所在栏目地址，可配置栏目的层级",
+      "description": "文章所在栏目地址，可配置栏目的层级",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<a href=\"${columnUrl}\">[${columnName}]</a>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "显示摘要",
+      "parameter": "showAbstract",
+      "type": "String",
+      "syntax": "${showAbstract}",
+      "descriptionHtml": "文章的摘要,调整过格式",
+      "description": "文章的摘要,调整过格式",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "脚本摘要",
+      "parameter": "showjsAbstract",
+      "type": "String",
+      "syntax": "${showjsAbstract}",
+      "descriptionHtml": "文章的摘要,调整过格式",
+      "description": "文章的摘要,调整过格式",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "显示资料来源",
+      "parameter": "showSource",
+      "type": "String",
+      "syntax": "${showSource}",
+      "descriptionHtml": "文章的资料来源,调整过格式",
+      "description": "文章的资料来源,调整过格式",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "显示作者",
+      "parameter": "showAuthor",
+      "type": "String",
+      "syntax": "${showAuthor}",
+      "descriptionHtml": "组图的作者,调整过格式",
+      "description": "组图的作者,调整过格式",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组图显示图片参数",
+      "parameter": "pagepicnogroup",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "\n<ul>                \n<#list pagepiclist as pagepiclist>\n    <li>\n        <div><img src=\"${pagepiclist.pic}\" /></div>\n        <div>${pagepiclist.showTitle}</div>\n        <div>${pagepiclist.showcontent}</div>\n     </li>      \n</#list>\n</ul>\n            ",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "是第几条",
+      "parameter": "pos",
+      "type": "Integer",
+      "syntax": "${pagepiclist.pos}",
+      "descriptionHtml": "当前是列表的第几条(从1开始)",
+      "description": "当前是列表的第几条(从1开始)",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "第${pagepiclist.pos}条",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "是否首条",
+      "parameter": "isFirst",
+      "type": "Boolean",
+      "syntax": "<#if pagepiclist.isFirst></#if>",
+      "descriptionHtml": "当前是不是列表的第一条",
+      "description": "当前是不是列表的第一条",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if pagepiclist.isFirst>首条</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "是否尾条",
+      "parameter": "isLast",
+      "type": "Boolean",
+      "syntax": "<#if pagepiclist.isLast></#if>",
+      "descriptionHtml": "当前是不是列表的最后一条",
+      "description": "当前是不是列表的最后一条",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if pagepiclist.isLast>尾条</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "是否奇数行",
+      "parameter": "isOdd",
+      "type": "Boolean",
+      "syntax": "<#if pagepiclist.isOdd></#if>",
+      "descriptionHtml": "当前是不是奇数行",
+      "description": "当前是不是奇数行",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if pagepiclist.isOdd>奇数行</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "是否偶数行",
+      "parameter": "isEven",
+      "type": "Boolean",
+      "syntax": "<#if pagepiclist.isEven></#if>",
+      "descriptionHtml": "当前是不是偶数行",
+      "description": "当前是不是偶数行",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if pagepiclist.isEven>偶数行</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "图片标题",
+      "parameter": "title",
+      "type": "String",
+      "syntax": "${pagepiclist.title}",
+      "descriptionHtml": "组图的原始标题，不建议直接输出",
+      "description": "组图的原始标题，不建议直接输出",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "显示标题",
+      "parameter": "showTitle",
+      "type": "String",
+      "syntax": "${pagepiclist.showTitle}",
+      "descriptionHtml": "显示用的标题，调整过格式并可配置长度限制",
+      "description": "显示用的标题，调整过格式并可配置长度限制",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "脚本标题",
+      "parameter": "tipsTitle",
+      "type": "String",
+      "syntax": " title=\"${pagepiclist.jsTitle}\" ",
+      "descriptionHtml": "Html元素的\"title\"用于js脚本调用时使用",
+      "description": "Html元素的\"title\"用于js脚本调用时使用",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "图片原始图",
+      "parameter": "pic",
+      "type": "String",
+      "syntax": " ${pagepiclist.pic} ",
+      "descriptionHtml": "组图原始图",
+      "description": "组图原始图",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "图片缩略图",
+      "parameter": "thumbpic",
+      "type": "String",
+      "syntax": " ${pagepiclist.thumbpic}",
+      "descriptionHtml": "组图缩略图",
+      "description": "组图缩略图",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "图片内容",
+      "parameter": "content",
+      "type": "String",
+      "syntax": " ${pagepiclist.content} ",
+      "descriptionHtml": "组图内容",
+      "description": "组图内容",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "图片显示内容",
+      "parameter": "showcontent",
+      "type": "String",
+      "syntax": " ${pagepiclist.showcontent} ",
+      "descriptionHtml": "图片显示内容",
+      "description": "图片显示内容",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "上下条参数",
+      "parameter": "previousnext",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "上一张组图地址",
+      "parameter": "previousurl",
+      "type": "String",
+      "syntax": "${previousurl}",
+      "descriptionHtml": "上一张组图地址",
+      "description": "上一张组图地址",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "上一张组图原标题",
+      "parameter": "previoustitle",
+      "type": "String",
+      "syntax": "${previoustitle}",
+      "descriptionHtml": "上一张组图原标题",
+      "description": "上一张组图原标题",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "上一张组图显示标题",
+      "parameter": "showprevioustitle",
+      "type": "String",
+      "syntax": "${showprevioustitle}",
+      "descriptionHtml": "上一张组图显示标题",
+      "description": "上一张组图显示标题",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "上一张组图脚本标题",
+      "parameter": "jsprevioustitle",
+      "type": "String",
+      "syntax": "${jsprevioustitle}",
+      "descriptionHtml": "上一张组图脚本标题",
+      "description": "上一张组图脚本标题",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "上一张组图预览图片",
+      "parameter": "previousimage",
+      "type": "String",
+      "syntax": "${previousimage}",
+      "descriptionHtml": "上一张组图预览图片",
+      "description": "上一张组图预览图片",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "下一张组图地址",
+      "parameter": "nexturl",
+      "type": "String",
+      "syntax": "${nexturl}",
+      "descriptionHtml": "下一张组图地址",
+      "description": "下一张组图地址",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "下一张组图原标题",
+      "parameter": "nexttitle",
+      "type": "String",
+      "syntax": "${nexttitle}",
+      "descriptionHtml": "下一张组图原标题",
+      "description": "下一张组图原标题",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "下一张组图显示标题",
+      "parameter": "shownexttitle",
+      "type": "String",
+      "syntax": "${shownexttitle}",
+      "descriptionHtml": "下一张组图显示标题",
+      "description": "下一张组图显示标题",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "下一张组图脚本",
+      "parameter": "jsnexttitle",
+      "type": "String",
+      "syntax": "${jsnexttitle}",
+      "descriptionHtml": "下一张组图脚本",
+      "description": "下一张组图脚本",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "下一张组图预览图片",
+      "parameter": "nextimage",
+      "type": "String",
+      "syntax": "${nextimage}",
+      "descriptionHtml": "下一张组图预览图片",
+      "description": "下一张组图预览图片",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "自定义属性",
+      "parameter": "extend",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "是否有自定义属性",
+      "parameter": "hasExtend",
+      "type": "Boolean",
+      "syntax": "<#if hasExtend>\n</#if>",
+      "descriptionHtml": "文章是否有自定义属性",
+      "description": "文章是否有自定义属性",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "自定义属性个数",
+      "parameter": "extendSize",
+      "type": "Integer",
+      "syntax": "${extendSize}",
+      "descriptionHtml": "自定义属性数量",
+      "description": "自定义属性数量",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "自定义属性列表",
+      "parameter": "list_extend",
+      "type": "List",
+      "syntax": "<#list list_extend as extend>\n</#list>",
+      "descriptionHtml": "自定义属性列表",
+      "description": "自定义属性列表",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "微博分享",
+      "parameter": "attach",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<script>\nfunction shareTo${uniqueClassName}(a)\n{\n        var ec = encodeURIComponent,\n        U = window.location,\n        T = \"${jsTitle}\",\n        S = \"\",\n        key = \"\";\n        shareto(a,U,T,S,key); \n}\n</script>\n<table width='100%' >\n<tr>\n<td >\n    <#list weibo as wb>\n            <image align=absmiddle src=\"${wb.weiboicon16}\" style=\"cursor:hand\" onclick=\"shareTo${uniqueClassName}('${wb.weiboname}')\" title=\"分享至${wb.weiboshowname}\"><span style=\"cursor:hand\" onclick=\"shareTo${uniqueClassName}('${wb.weiboname}')\" >${wb.weiboshowname}</span>\n    </#list>\n</td>\n</tr>\n</table>\n",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "微博列表",
+      "parameter": "weiboarray",
+      "type": "List",
+      "syntax": "<#list weibo as wb>\n    </#list>",
+      "descriptionHtml": "可分享的微博列表",
+      "description": "可分享的微博列表",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "微博名称",
+      "parameter": "weiboshowname",
+      "type": "String",
+      "syntax": "${wb.weiboshowname}",
+      "descriptionHtml": "微博英文名称",
+      "description": "微博英文名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "微博类型",
+      "parameter": "weiboname",
+      "type": "String",
+      "syntax": "${wb.weiboname}",
+      "descriptionHtml": "微博类型",
+      "description": "微博类型",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "微博大图标",
+      "parameter": "weibbigcss",
+      "type": "String",
+      "syntax": "${weiboicon32}",
+      "descriptionHtml": "微博大图标",
+      "description": "微博大图标",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "微博小图标",
+      "parameter": "weibsmallcss",
+      "type": "String",
+      "syntax": "${weiboicon16}",
+      "descriptionHtml": "微博小图标",
+      "description": "微博小图标",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "微博图标样式",
+      "parameter": "weibostyle",
+      "type": "String",
+      "syntax": "class=\"weibo_${wb.weiboname}\"",
+      "descriptionHtml": "微博样式",
+      "description": "微博样式",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "列表位置参数",
+      "parameter": "extendlistnogroup",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": [
+        "list_extend"
+      ]
+    },
+    {
+      "name": "属性名称",
+      "parameter": "name",
+      "type": "String",
+      "syntax": "${extend.name}",
+      "descriptionHtml": "属性的名称",
+      "description": "属性的名称",
+      "kind": "parameter",
+      "path": [
+        "list_extend"
+      ]
+    },
+    {
+      "name": "属性值",
+      "parameter": "value",
+      "type": "String",
+      "syntax": "${extend.value}",
+      "descriptionHtml": "属性值，不建议直接输出",
+      "description": "属性值，不建议直接输出",
+      "kind": "parameter",
+      "path": [
+        "list_extend"
+      ]
+    },
+    {
+      "name": "显示属性值",
+      "parameter": "showValue",
+      "type": "String",
+      "syntax": "${extend.showValue}",
+      "descriptionHtml": "显示用的属性值，处理过格式",
+      "description": "显示用的属性值，处理过格式",
+      "kind": "parameter",
+      "path": [
+        "list_extend"
+      ]
+    },
+    {
+      "name": "是第几个属性",
+      "parameter": "pos",
+      "type": "Integer",
+      "syntax": "${extend.pos}",
+      "descriptionHtml": "是第几个属性(从1开始)",
+      "description": "是第几个属性(从1开始)",
+      "kind": "parameter",
+      "path": [
+        "list_extend",
+        "extendlistnogroup"
+      ]
+    },
+    {
+      "name": "是否首属性",
+      "parameter": "isFirst",
+      "type": "Boolean",
+      "syntax": "<#if extend.isFirst></#if>",
+      "descriptionHtml": "是不是第一个属性",
+      "description": "是不是第一个属性",
+      "kind": "parameter",
+      "path": [
+        "list_extend",
+        "extendlistnogroup"
+      ]
+    },
+    {
+      "name": "是否尾属性",
+      "parameter": "isLast",
+      "type": "Boolean",
+      "syntax": "<#if extend.isLast></#if>",
+      "descriptionHtml": "是不是最后一个属性",
+      "description": "是不是最后一个属性",
+      "kind": "parameter",
+      "path": [
+        "list_extend",
+        "extendlistnogroup"
+      ]
+    }
+  ],
+  "template": "<span style=\"display:none\">        \n<span id=\"pagepicimgs${uid}\">\n<#list pagepiclist as pagepiclist>\n    <span>${pagepiclist.pic}</span>\n</#list>    \n</span>\n<span id=\"pagepicthumbimgs${uid}\">\n<#list pagepiclist as pagepiclist>\n    <span>${pagepiclist.thumbpic}</span>\n</#list> \n</span>\n<span id=\"pagepictitles${uid}\">\n<#list pagepiclist as pagepiclist>\n    <span>${pagepiclist.showTitle}</span>\n</#list>     \n</span>\n<span id=\"pagepiccontents${uid}\">\n<#list pagepiclist as pagepiclist>\n    <textarea> ${pagepiclist.showcontent}</textarea>\n</#list>     \n</span>\n</span>\n<table class=\"pagepic_tablestyle_0\" border=0>\n    <tr>\n        <td class=\"pagepic_newtitle_0\" style=\"${cssTitleColor}\">\n            ${showTitle}\n        </td>\n    </tr>\n    <tr>\n        <td class=\"pagepic_newdesc_0\">\n            ${showAbstract}       \n        </td>\n    </tr>\n    <tr>\n        <td valign=\"top\" class=\"pagepic_borstyle_0\">\n            <table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">\n                <tr>\n                    <td  align=center class=\"pagepic_tdstyle_0\">            \n                        <table width=100%>\n                            <tr>\n                                <td width=70% align=center id=tdnextid${uid} class=\"pagepic_imgcontentstyle_0\">\n                                    <div id=imgcontent${uid}></div>\n                                </td>\n                                <td width=30% valign=top>\n                                    <table width=100%>\n                                        <tr>                                \n                                            <td nowrap>\n                                                <div style=\"float:left\"><img  id=previousimgid${uid} src=\"/system/resource/js/gallery/prevPageArrow.gif\"  style=\"cursor:pointer\" width=\"31\" height=\"28\"/>&nbsp; </div><div id=currenttotalsize${uid} class=pagepic_currenttotalsize_0>0/0</div><div style=\"float:left\">&nbsp;<img  id=nextimgid${uid} src=\"/system/resource/js/gallery/nextPageArrow.gif\"  style=\"cursor:pointer\" width=\"31\" height=\"28\"/></div>\n                                            </td>                                \n                                        </tr>\n                                        <tr>\n                                            <td class=\"pagepic_titlecontent_0\">\n                                                <div id=titlecontent${uid}></div>\n                                            </td>\n                                        </tr>\n                                        <tr>\n                                            <td>\n                                                <div id=desccontent${uid} class=\"pagepic_desccontent_0\"></div>\n                                            </td>\n                                        </tr>                       \n                                    </table>\n                                </td>\n                            </tr>\n                        </table>\n                    </td>\n                </tr>\n            </table>\n        </td>\n    </tr>            \n</table>\n<script language=\"javascript\" src=\"${v_link(\"/system/resource/js/vsbpreloadimg.js\")}\"></script>\n<script language=\"javascript\" src=\"${v_link(\"/system/resource/js/gallery/vsbgallery.js\")}\"></script>\n<script>\n    var gallery = new vsbGallery();\n    gallery.pagepicimgsid=\"pagepicimgs${uid}\";\n    gallery.pagepicthumbimgsid=\"pagepicthumbimgs${uid}\";\n    gallery.pagepictitlesid = \"pagepictitles${uid}\";\n    gallery.pagepiccontentsid=\"pagepiccontents${uid}\";\n    gallery.currenttotalsizeid=\"currenttotalsize${uid}\";\n    gallery.imgcontentid=\"imgcontent${uid}\";\n    gallery.titlecontentid=\"titlecontent${uid}\";\n    gallery.desccontentid =\"desccontent${uid}\";\n    gallery.thumbleftimgsid=\"thumbleftimgs${uid}\";\n    gallery.thumbrightimgsid=\"thumbrightimgs${uid}\";\n    gallery.thumbimgcontentid = \"thumbimgcontent${uid}\";\n    gallery.previousimgid=\"previousimgid${uid}\";\n    gallery.nextimgid=\"nextimgid${uid}\";\n    gallery.startautoplayid=\"startautoplayid${uid}\";\n    gallery.stopautoplayid=\"stopautoplayid${uid}\";\n    gallery.tdnextid=\"tdnextid${uid}\";\n    gallery.istdnext = true;\n    gallery.imgwidth = 650\n    gallery.imgheight = 460;\n    gallery.isstretch= false;\n    gallery.iszoomin = false;\n    gallery.show();\n</script>",
+  "exampleTemplate": "",
+  "previousFixtureHashes": [
+    "ee2e02bb",
+    "2c8ee968"
+  ],
+  "css": "/* 可以修改的样式 */  \n/* 窗体样式 */\n.pagepic_tablestyle_0\n{\n    width:960px;\n}\n/* 组图标题样式 */\n.pagepic_newtitle_0\n{\n    font-size:22px;\n    line-height: 150%; \n    font-weight: bold;\n    text-align:center;  \n}    \n/* 组图简介样式 */\n.pagepic_newdesc_0\n{\n    font-size:13px;\n    line-height: 150%; \n}  \n/* 当前页总页数样式 */\n.pagepic_currenttotalsize_0\n{\n    font-size:14px; \n    float:left;\n    padding-top:8px;\n    width:70px;\n    text-align:center;  \n    font-weight: bold;\n}  \n/* 图片行样式 */\n.pagepic_imgcontentstyle_0\n{\n    height:500px;\n}\n/* 单个图片标题样式 */\n.pagepic_titlecontent_0\n{\n    font-size:9pt;\n    text-align:left;\n    font-weight: bold  \n}  \n/* 单个图片内容样式 */\n.pagepic_desccontent_0\n{\n    font-size:9pt;\n    line-height:28px \n    text-align:left;  \n    overflow:auto;\n    height:500px;\n    width:260px;\n}  \n\n/* 无需修改的样式 */  \n.pagepic_tdstyle_0\n{\n    height:500px;\n}\n.pagepic_borstyle_0\n{\n    border:1px solid #d6d6d6; \n    padding:5px\n}\n",
+  "fixture": {
+    "viewid": "1022",
+    "uid": "u_demo",
+    "uniqueClassName": "c_demo",
+    "id": "12",
+    "treeId": "demo_treeId",
+    "owner": "网站ID",
+    "ip": "客户端IP",
+    "title": "把课堂搬进山野，让知识连接更广阔的世界",
+    "showTitle": "把课堂搬进山野，让知识连接更广阔的世界",
+    "titleColor": "",
+    "cssTitleColor": "",
+    "date": "2026-10-30 09:30:00",
+    "showDate": "2026-10-30",
+    "clickTimes": "12",
+    "showClickTimes": "12",
+    "columnName": "校园动态",
+    "columnUrl": "#preview",
+    "showAbstract": "在校园里记录发现，在探索中连接未来。这里是一段用于检查组件排版的示例摘要。",
+    "showjsAbstract": "在校园里记录发现，在探索中连接未来。这里是一段用于检查组件排版的示例摘要。",
+    "showSource": "显示资料来源",
+    "showAuthor": "示例作者",
+    "previousurl": "#preview",
+    "previoustitle": "把课堂搬进山野，让知识连接更广阔的世界",
+    "showprevioustitle": "把课堂搬进山野，让知识连接更广阔的世界",
+    "jsprevioustitle": "把课堂搬进山野，让知识连接更广阔的世界",
+    "previousimage": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+    "nexturl": "#preview",
+    "nexttitle": "把课堂搬进山野，让知识连接更广阔的世界",
+    "shownexttitle": "把课堂搬进山野，让知识连接更广阔的世界",
+    "jsnexttitle": "把课堂搬进山野，让知识连接更广阔的世界",
+    "nextimage": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+    "extendSize": 6,
+    "weiboicon32": "微博大图标",
+    "weiboicon16": "微博小图标",
+    "pagepiclist": [
+      {
+        "pic": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "thumbpic": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "showTitle": "把课堂搬进山野，让知识连接更广阔的世界",
+        "showcontent": "示例内容",
+        "pos": 1,
+        "title": "把课堂搬进山野，让知识连接更广阔的世界"
+      },
+      {
+        "pic": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "thumbpic": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "showTitle": "校园开放日｜在这里，遇见新的可能",
+        "showcontent": "示例内容",
+        "pos": 2,
+        "title": "校园开放日｜在这里，遇见新的可能"
+      },
+      {
+        "pic": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "thumbpic": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "showTitle": "关于举办青年学术交流活动的通知",
+        "showcontent": "示例内容",
+        "pos": 3,
+        "title": "关于举办青年学术交流活动的通知"
+      },
+      {
+        "pic": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "thumbpic": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "showTitle": "图书馆秋季阅读计划正式启动",
+        "showcontent": "示例内容",
+        "pos": 4,
+        "title": "图书馆秋季阅读计划正式启动"
+      },
+      {
+        "pic": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "thumbpic": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "showTitle": "探索与创新：青年研究者的校园故事",
+        "showcontent": "示例内容",
+        "pos": 5,
+        "title": "探索与创新：青年研究者的校园故事"
+      }
+    ]
+  }
+}

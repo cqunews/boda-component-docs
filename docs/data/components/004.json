@@ -1,0 +1,96 @@
+{
+  "id": "004",
+  "index": 4,
+  "name": "文字计数器",
+  "category": "网站基础信息",
+  "parameterCount": 4,
+  "hasScript": true,
+  "templateLength": 391,
+  "parameters": [
+    {
+      "name": "通用参数",
+      "parameter": "commonparam",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件id",
+      "parameter": "viewid",
+      "type": "String",
+      "syntax": "${viewid}",
+      "descriptionHtml": "组件本身的id，数字(形如 1001)",
+      "description": "组件本身的id，数字(形如 1001)",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件uid",
+      "parameter": "uid",
+      "type": "String",
+      "syntax": "${uid}",
+      "descriptionHtml": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "description": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "私有样式类名",
+      "parameter": "uniqueClassName",
+      "type": "String",
+      "syntax": "${uniqueClassName}",
+      "descriptionHtml": "用在私有样式表的类名上，字符串(形如 c10)，举例：<br>&lt;span class=\"<span style=\"color:red\">${uniqueClassName}</span>\" &gt;文字&lt;/span&gt;",
+      "description": "用在私有样式表的类名上，字符串(形如 c10)，举例：\n<span class=\"${uniqueClassName}\" >文字</span>",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<span class=\"${uniqueClassName}\" >文字</span>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "引入jQuery类库",
+      "parameter": "v_includeJquery",
+      "type": "Function",
+      "syntax": "${v_includeJquery()}",
+      "descriptionHtml": "引入系统自带的JQuery类库;<br> 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "description": "引入系统自带的JQuery类库;\n 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "\n<!--引入jQuery-->${v_includeJquery()}<!--引入jQuery完成-->\n",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    }
+  ],
+  "template": "<#--\n本组件采用 DWR ajax 的方式读取站点的计数器\n-->\n\n<#--以下代码是显示点击次数的地方 修改字体样式在此标签中添加-->\n<span id=\"${visittimename}\" name=\"${visittimename}\"></span>   \n\n<#--以下代码请勿修改-->\n<script>\nfunction getvisittime${visittimename}()\n{       \n    ${pageCounterDWR}\n}\nfunction callbackdata${visittimename}(data)\n{\n    document.getElementById(\"${visittimename}\").innerHTML = data; \n}\ngetvisittime${visittimename}();\n</script>",
+  "exampleTemplate": "",
+  "previousFixtureHashes": [
+    "e147f852",
+    "9f921744"
+  ],
+  "css": "",
+  "fixture": {
+    "viewid": "1004",
+    "uid": "u_demo",
+    "uniqueClassName": "c_demo",
+    "visittimename": "2026-10-30",
+    "pageCounterDWR": "12",
+    "_previewVisitCount": 1286
+  }
+}

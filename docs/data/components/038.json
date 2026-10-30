@@ -1,0 +1,387 @@
+{
+  "id": "038",
+  "index": 38,
+  "name": "复杂检索",
+  "category": "全文检索",
+  "parameterCount": 30,
+  "hasScript": true,
+  "templateLength": 5079,
+  "parameters": [
+    {
+      "name": "通用参数",
+      "parameter": "commonparam",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件id",
+      "parameter": "viewid",
+      "type": "String",
+      "syntax": "${viewid}",
+      "descriptionHtml": "组件本身的id，数字(形如 1001)",
+      "description": "组件本身的id，数字(形如 1001)",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件uid",
+      "parameter": "uid",
+      "type": "String",
+      "syntax": "${uid}",
+      "descriptionHtml": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "description": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "私有样式类名",
+      "parameter": "uniqueClassName",
+      "type": "String",
+      "syntax": "${uniqueClassName}",
+      "descriptionHtml": "用在私有样式表的类名上，字符串(形如 c10)，举例：<br>&lt;span class=\"<span style=\"color:red\">${uniqueClassName}</span>\" &gt;文字&lt;/span&gt;",
+      "description": "用在私有样式表的类名上，字符串(形如 c10)，举例：\n<span class=\"${uniqueClassName}\" >文字</span>",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<span class=\"${uniqueClassName}\" >文字</span>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "引入jQuery类库",
+      "parameter": "v_includeJquery",
+      "type": "Function",
+      "syntax": "${v_includeJquery()}",
+      "descriptionHtml": "引入系统自带的JQuery类库;<br> 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "description": "引入系统自带的JQuery类库;\n 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "\n<!--引入jQuery-->${v_includeJquery()}<!--引入jQuery完成-->\n",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "标识ID",
+      "parameter": "viewid",
+      "type": "String",
+      "syntax": "标识:${viewid}",
+      "descriptionHtml": "标识id, 主要在拖放多个组件时使用,确保id、方法等不会冲突。",
+      "description": "标识id, 主要在拖放多个组件时使用,确保id、方法等不会冲突。",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "form表单",
+      "parameter": "form",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "搜索表单名称",
+      "parameter": "formName",
+      "type": "String",
+      "syntax": "${formName}",
+      "descriptionHtml": "搜索表单名称",
+      "description": "搜索表单名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "搜索提交地址",
+      "parameter": "actionURL",
+      "type": "String",
+      "syntax": "${actionURL}",
+      "descriptionHtml": "搜索提交地址",
+      "description": "搜索提交地址",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "隐藏标题表单域",
+      "parameter": "htitleId",
+      "type": "String",
+      "syntax": "${htitleId}",
+      "descriptionHtml": "隐藏标题表单域",
+      "description": "隐藏标题表单域",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "隐藏正文表单域",
+      "parameter": "hcontentId",
+      "type": "String",
+      "syntax": "${hcontentId}",
+      "descriptionHtml": "隐藏正文表单域",
+      "description": "隐藏正文表单域",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "隐藏关键字表单域",
+      "parameter": "hkwordId",
+      "type": "String",
+      "syntax": "${hkwordId}",
+      "descriptionHtml": "隐藏关键字表单域",
+      "description": "隐藏关键字表单域",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "隐藏摘要表单域",
+      "parameter": "hsumaryId",
+      "type": "String",
+      "syntax": "${hsumaryId}",
+      "descriptionHtml": "隐藏摘要表单域",
+      "description": "隐藏摘要表单域",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "隐藏作者表单域",
+      "parameter": "hauthorId",
+      "type": "String",
+      "syntax": "${hauthorId}",
+      "descriptionHtml": "隐藏作者表单域",
+      "description": "隐藏作者表单域",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "隐藏来源表单域",
+      "parameter": "hsourceId",
+      "type": "String",
+      "syntax": "${hsourceId}",
+      "descriptionHtml": "隐藏来源表单域",
+      "description": "隐藏来源表单域",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "隐藏栏目表单域",
+      "parameter": "hcolumnId",
+      "type": "String",
+      "syntax": "${hcolumnId}",
+      "descriptionHtml": "隐藏栏目表单域",
+      "description": "隐藏栏目表单域",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "隐藏表单域",
+      "parameter": "hidden",
+      "type": "String",
+      "syntax": "${hidden}",
+      "descriptionHtml": "隐藏表单域",
+      "description": "隐藏表单域",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件编号",
+      "parameter": "viewid",
+      "type": "String",
+      "syntax": "${viewid}",
+      "descriptionHtml": "组件编号",
+      "description": "组件编号",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "标题名称",
+      "parameter": "titleName",
+      "type": "String",
+      "syntax": "${titleName}",
+      "descriptionHtml": "标题名称",
+      "description": "标题名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "标题ID",
+      "parameter": "titleId",
+      "type": "String",
+      "syntax": "${titleId}",
+      "descriptionHtml": "标题ID",
+      "description": "标题ID",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "正文名称",
+      "parameter": "contentName",
+      "type": "String",
+      "syntax": "${contentName}",
+      "descriptionHtml": "正文名称",
+      "description": "正文名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "正文ID",
+      "parameter": "contentId",
+      "type": "String",
+      "syntax": "${contentId}",
+      "descriptionHtml": "正文ID",
+      "description": "正文ID",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "关键字名称",
+      "parameter": "kwordName",
+      "type": "String",
+      "syntax": "${kwordName}",
+      "descriptionHtml": "关键字名称",
+      "description": "关键字名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "关键字ID",
+      "parameter": "kwordId",
+      "type": "String",
+      "syntax": "${kwordId}",
+      "descriptionHtml": "关键字ID",
+      "description": "关键字ID",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "摘要名称",
+      "parameter": "sumaryName",
+      "type": "String",
+      "syntax": "${sumaryName}",
+      "descriptionHtml": "摘要名称",
+      "description": "摘要名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "摘要ID",
+      "parameter": "sumaryId",
+      "type": "String",
+      "syntax": "${sumaryId}",
+      "descriptionHtml": "摘要ID",
+      "description": "摘要ID",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "作者名称",
+      "parameter": "authorName",
+      "type": "String",
+      "syntax": "${authorName}",
+      "descriptionHtml": "作者名称",
+      "description": "作者名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "作者ID",
+      "parameter": "authorId",
+      "type": "String",
+      "syntax": "${authorId}",
+      "descriptionHtml": "作者ID",
+      "description": "作者ID",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "来源名称",
+      "parameter": "sourceName",
+      "type": "String",
+      "syntax": "${sourceName}",
+      "descriptionHtml": "来源名称",
+      "description": "来源名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "来源ID",
+      "parameter": "sourceId",
+      "type": "String",
+      "syntax": "${sourceId}",
+      "descriptionHtml": "来源ID",
+      "description": "来源ID",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "栏目名称",
+      "parameter": "columnName",
+      "type": "String",
+      "syntax": "${columnName}",
+      "descriptionHtml": "栏目名称",
+      "description": "栏目名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "栏目ID",
+      "parameter": "columnId",
+      "type": "String",
+      "syntax": "${columnId}",
+      "descriptionHtml": "栏目ID",
+      "description": "栏目ID",
+      "kind": "parameter",
+      "path": []
+    }
+  ],
+  "template": "<script type=\"text/javascript\">\nfunction checkinputdata${viewid}()\n{\n        encodeinputdata${viewid}(document.getElementById(\"${titleId}\"),document.getElementById(\"${htitleId}\"));\n        encodeinputdata${viewid}(document.getElementById(\"${contentId}\"),document.getElementById(\"${hcontentId}\"));\n        encodeinputdata${viewid}(document.getElementById(\"${kwordId}\"),document.getElementById(\"${hkwordId}\"));\n        encodeinputdata${viewid}(document.getElementById(\"${sumaryId}\"),document.getElementById(\"${hsumaryId}\"));\n        encodeinputdata${viewid}(document.getElementById(\"${authorId}\"),document.getElementById(\"${hauthorId}\"));\n        encodeinputdata${viewid}(document.getElementById(\"${sourceId}\"),document.getElementById(\"${hsourceId}\"));\n        encodeinputdata${viewid}(document.getElementById(\"${columnId}\"),document.getElementById(\"${hcolumnId}\"));\n}\nfunction encodeinputdata${viewid}(showinputobj,inputobj){\n        var keyword = showinputobj.value;\n        if(window.toFF==1)\n        {\n            showinputobj.value = Simplized(keyword );\n        }else\n        {\n            showinputobj.value = keyword;            \n        }\n        var  base64 = new Base64();\n        inputobj.value = base64.encode(showinputobj.value);\n        new VsbFormFunc().disableAutoEnable(showinputobj);\n    } \n</script>\n<form action=\"${actionURL}\" method=\"post\" id=\"${formName}\" name=\"${formName}\" onsubmit=\"return checkinputdata${viewid}();\" style=\"display: inline\">\n ${hidden}\n <table  style=\"FONT-FAMILY: 宋体;FONT-SIZE: 9pt;\"  width=100% align=\"center\" border=\"0\" cellspacing=\"0\" cellpadding=\"3\">\n        <tr>\n            <td >标题</td>\n            <td >\n                <input type=\"text\" name=\"${titleName}\" id=\"${titleId}\" value=\"\"  style=\"BORDER-BOTTOM: #878787 1px solid;BORDER-LEFT: #878787 1px solid;FONT-FAMILY: 宋体;HEIGHT: 22px;COLOR: #222222;FONT-SIZE: 10pt;BORDER-TOP: #878787 1px solid;BORDER-RIGHT: #878787 1px solid;PADDING-TOP: 3px;\" >\n            </td>\n        </tr>\n        <tr>\n            <td >正文</td>\n            <td >\n                <input type=\"text\" name=\"${contentName}\" id=\"${contentId}\" value=\"\" style=\"BORDER-BOTTOM: #878787 1px solid;BORDER-LEFT: #878787 1px solid;FONT-FAMILY: 宋体;HEIGHT: 22px;COLOR: #222222;FONT-SIZE: 10pt;BORDER-TOP: #878787 1px solid;BORDER-RIGHT: #878787 1px solid;PADDING-TOP: 3px;\"  >\n            </td>\n        </tr>\n        <tr>\n            <td >关键字</td>\n            <td >\n                <input type=\"text\" name=\"${kwordName}\" id=\"${kwordId}\" value=\"\"  style=\"BORDER-BOTTOM: #878787 1px solid;BORDER-LEFT: #878787 1px solid;FONT-FAMILY: 宋体;HEIGHT: 22px;COLOR: #222222;FONT-SIZE: 10pt;BORDER-TOP: #878787 1px solid;BORDER-RIGHT: #878787 1px solid;PADDING-TOP: 3px;\" >\n            </td>\n        </tr>\n        <tr>\n            <td >摘要</td>\n            <td >\n                <input type=\"text\" name=\"${sumaryName}\" id=\"${sumaryId}\" value=\"\" style=\"BORDER-BOTTOM: #878787 1px solid;BORDER-LEFT: #878787 1px solid;FONT-FAMILY: 宋体;HEIGHT: 22px;COLOR: #222222;FONT-SIZE: 10pt;BORDER-TOP: #878787 1px solid;BORDER-RIGHT: #878787 1px solid;PADDING-TOP: 3px;\"  >\n            </td>\n        </tr>\n        <tr>\n            <td >作者</td>\n            <td >\n                <input type=\"text\" name=\"${authorName}\" id=\"${authorId}\" value=\"\" style=\"BORDER-BOTTOM: #878787 1px solid;BORDER-LEFT: #878787 1px solid;FONT-FAMILY: 宋体;HEIGHT: 22px;COLOR: #222222;FONT-SIZE: 10pt;BORDER-TOP: #878787 1px solid;BORDER-RIGHT: #878787 1px solid;PADDING-TOP: 3px;\"  >\n            </td>\n        </tr>\n        <tr>\n            <td >来源</td>\n            <td >\n                <input type=\"text\" name=\"${sourceName}\" id=\"${sourceId}\" value=\"\"  style=\"BORDER-BOTTOM: #878787 1px solid;BORDER-LEFT: #878787 1px solid;FONT-FAMILY: 宋体;HEIGHT: 22px;COLOR: #222222;FONT-SIZE: 10pt;BORDER-TOP: #878787 1px solid;BORDER-RIGHT: #878787 1px solid;PADDING-TOP: 3px;\" >\n            </td>\n        </tr>\n        <tr>\n            <td >栏目</td>\n            <td >\n                <input type=\"text\" name=\"${columnName}\" id=\"${columnId}\" value=\"\" style=\"BORDER-BOTTOM: #878787 1px solid;BORDER-LEFT: #878787 1px solid;FONT-FAMILY: 宋体;HEIGHT: 22px;COLOR: #222222;FONT-SIZE: 10pt;BORDER-TOP: #878787 1px solid;BORDER-RIGHT: #878787 1px solid;PADDING-TOP: 3px;\"  >\n            </td>\n        </tr>\n        <tr>\n            <td >日期</td>\n            <td >\n                <input type=text readonly='readonly' name='_w_v_l_s_n_s_k_begin' id=\"fgidate\" class=\"Wdate\" size=22 onfocus=\"WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',maxDate:'#F{$dp.$D(\\'lgidate\\')}'})\" />\n                <input type=text readonly='readonly' name='_w_v_l_s_n_s_k_end' id=\"lgidate\" class=\"Wdate\" size=22 onfocus=\"WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',minDate:'#F{$dp.$D(\\'fgidate\\')}',maxDate:'2030-1-1'})\" />\n            </td>\n        </tr>\n        <tr height=\"30\" >\n            <TD>&nbsp;</TD>\n            <td >\n                <input type=\"image\" src=\"/system/resource/images/research/seach22.gif\" border=\"0\" align=\"absmiddle\" style=\"cursor: pointer;\">\n            </td>\n        </tr>\n    </table>\n</form>\n",
+  "exampleTemplate": "",
+  "previousFixtureHashes": [
+    "5411f485",
+    "1f77c315"
+  ],
+  "css": "",
+  "fixture": {
+    "viewid": "1038",
+    "uid": "u_demo",
+    "uniqueClassName": "c_demo",
+    "formName": "boda_demo",
+    "actionURL": "#preview",
+    "htitleId": "demo_htitleId",
+    "hcontentId": "demo_hcontentId",
+    "hkwordId": "demo_hkwordId",
+    "hsumaryId": "demo_hsumaryId",
+    "hauthorId": "demo_hauthorId",
+    "hsourceId": "demo_hsourceId",
+    "hcolumnId": "demo_hcolumnId",
+    "hidden": "",
+    "titleName": "把课堂搬进山野，让知识连接更广阔的世界",
+    "titleId": "demo_titleId",
+    "contentName": "示例名称",
+    "contentId": "demo_contentId",
+    "kwordName": "示例名称",
+    "kwordId": "demo_kwordId",
+    "sumaryName": "示例名称",
+    "sumaryId": "demo_sumaryId",
+    "authorName": "示例作者",
+    "authorId": "demo_authorId",
+    "sourceName": "示例名称",
+    "sourceId": "demo_sourceId",
+    "columnName": "校园动态",
+    "columnId": "demo_columnId"
+  }
+}

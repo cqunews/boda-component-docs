@@ -1,0 +1,113 @@
+{
+  "id": "002",
+  "index": 2,
+  "name": "主页|收藏",
+  "category": "网站基础信息",
+  "parameterCount": 5,
+  "hasScript": true,
+  "templateLength": 2889,
+  "parameters": [
+    {
+      "name": "通用参数",
+      "parameter": "commonparam",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件id",
+      "parameter": "viewid",
+      "type": "String",
+      "syntax": "${viewid}",
+      "descriptionHtml": "组件本身的id，数字(形如 1001)",
+      "description": "组件本身的id，数字(形如 1001)",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件uid",
+      "parameter": "uid",
+      "type": "String",
+      "syntax": "${uid}",
+      "descriptionHtml": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "description": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "私有样式类名",
+      "parameter": "uniqueClassName",
+      "type": "String",
+      "syntax": "${uniqueClassName}",
+      "descriptionHtml": "用在私有样式表的类名上，字符串(形如 c10)，举例：<br>&lt;span class=\"<span style=\"color:red\">${uniqueClassName}</span>\" &gt;文字&lt;/span&gt;",
+      "description": "用在私有样式表的类名上，字符串(形如 c10)，举例：\n<span class=\"${uniqueClassName}\" >文字</span>",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<span class=\"${uniqueClassName}\" >文字</span>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "引入jQuery类库",
+      "parameter": "v_includeJquery",
+      "type": "Function",
+      "syntax": "${v_includeJquery()}",
+      "descriptionHtml": "引入系统自带的JQuery类库;<br> 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "description": "引入系统自带的JQuery类库;\n 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "\n<!--引入jQuery-->${v_includeJquery()}<!--引入jQuery完成-->\n",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "唯一性标识",
+      "parameter": "jsName",
+      "type": "String",
+      "syntax": "${jsName}",
+      "descriptionHtml": "唯一性标识, 主要在拖放多个组件时使用,确保id,方法等唯一不会冲突。",
+      "description": "唯一性标识, 主要在拖放多个组件时使用,确保id,方法等唯一不会冲突。",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "${jsName}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    }
+  ],
+  "template": "<#--\n说明：\n    js方法不能缺少，dosub为加入收藏功能实现方法，setHomepage为设为首页功能实现方法。\n-->\n<script language=\"javascript\">\nfunction dosub${jsName}()\n{\n    try{\n        var ua = navigator.userAgent.toLowerCase();\n        if(ua.indexOf(\"msie 8\")>-1)\n        {\n            window.external.AddToFavoritesBar(document.location.href,document.title,\"\");//IE8\n        }else if(ua.toLowerCase().indexOf(\"rv:\")>-1)\n        {\n            window.external.AddToFavoritesBar(document.location.href,document.title,\"\");//IE11+\n        }else{\n            if (document.all) \n            {\n                window.external.addFavorite(document.location.href, document.title);\n            }else if(window.sidebar)\n            {\n                window.sidebar.addPanel( document.title, document.location.href, \"\");//firefox\n            }\n            else\n            {\n                alert(hotKeys${jsName}());\n            }\n        }\n\n    }\n    catch (e){alert(\"无法自动添加到收藏夹，请使用 Ctrl + d 手动添加\");}\n}\nfunction hotKeys${jsName}() \n{\n    var ua = navigator.userAgent.toLowerCase(); \n    var str = \"\";    \n    var isWebkit = (ua.indexOf('webkit') != - 1); \n    var isMac = (ua.indexOf('mac') != - 1);     \n    if (ua.indexOf('konqueror') != - 1) \n    {  \n        str = 'CTRL + B'; // Konqueror   \n    } \n    else if (window.home || isWebkit || isMac) \n    {        \n        str = (isMac ? 'Command/Cmd' : 'CTRL') + ' + D'; // Netscape, Safari, iCab, IE5/Mac   \n    }\n    return ((str) ? '无法自动添加到收藏夹，请使用' + str + '手动添加' : str);\n}\nfunction setHomepage${jsName}()\n{\n    var url = document.location.href;\n    if (document.all)\n    {\n        document.body.style.behavior='url(#default#homepage)';\n        document.body.setHomePage(url);\n    }\n    else if (window.sidebar)\n    {\n        if(window.netscape)\n        {\n             try{\n                  netscape.security.PrivilegeManager.enablePrivilege(\"UniversalXPConnect\");\n             }catch (e){\n                   alert(\"该操作被浏览器拒绝，如果想启用该功能，请在地址栏内输入 about:config,然后将项 signed.applets.codebase_principal_support 值该为true\");\n             }\n        }\n    var prefs = Components.classes['@mozilla.org/preferences-service;1'].getService(Components. interfaces.nsIPrefBranch);\n    prefs.setCharPref('browser.startup.homepage',url);\n    }\n    else\n    {\n        alert(\"浏览器不支持自动设为首页，请手动设置\");\n    }\n}\n</script>\n<table cellpadding=\"0\" cellspacing=\"0\">\n    <tr>\n        <td style=\"font-size: 9pt\">\n            <A style=\"TEXT-DECORATION: none;\" href=\"javascript:setHomepage${jsName}()\">\n                <span style=\"COLOR: #222222;FONT-FAMILY: 宋体;FONT-SIZE: 9pt;\">设为首页</span>\n            </A>\n        </td>\n    </tr>\n    <tr>\n        <td>  \n            <A onclick=\"javascript:dosub${jsName}();\" href=\"#\" style=\"TEXT-DECORATION: none;\">\n                <span style=\"TEXT-DECORATION: none;COLOR: #222222;FONT-FAMILY: 宋体;FONT-SIZE: 9pt;\">加入收藏</span>\n            </A>\n        </td>\n    </tr>\n        \n</table>",
+  "exampleTemplate": "",
+  "previousFixtureHashes": [
+    "bd602790"
+  ],
+  "css": "",
+  "fixture": {
+    "viewid": "1002",
+    "uid": "u_demo",
+    "uniqueClassName": "c_demo",
+    "jsName": "示例名称"
+  }
+}

@@ -1,0 +1,995 @@
+{
+  "id": "120",
+  "index": 120,
+  "name": "职称学院教师列表",
+  "category": "教师风采",
+  "parameterCount": 4,
+  "hasScript": false,
+  "templateLength": 1246,
+  "parameters": [
+    {
+      "name": "通用参数",
+      "parameter": "commonparam",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件id",
+      "parameter": "viewid",
+      "type": "String",
+      "syntax": "${viewid}",
+      "descriptionHtml": "组件本身的id，数字(形如 1001)",
+      "description": "组件本身的id，数字(形如 1001)",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件uid",
+      "parameter": "uid",
+      "type": "String",
+      "syntax": "${uid}",
+      "descriptionHtml": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "description": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "私有样式类名",
+      "parameter": "uniqueClassName",
+      "type": "String",
+      "syntax": "${uniqueClassName}",
+      "descriptionHtml": "用在私有样式表的类名上，字符串(形如 c10)，举例：<br>&lt;span class=\"<span style=\"color:red\">${uniqueClassName}</span>\" &gt;文字&lt;/span&gt;",
+      "description": "用在私有样式表的类名上，字符串(形如 c10)，举例：\n<span class=\"${uniqueClassName}\" >文字</span>",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<span class=\"${uniqueClassName}\" >文字</span>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "引入jQuery类库",
+      "parameter": "v_includeJquery",
+      "type": "Function",
+      "syntax": "${v_includeJquery()}",
+      "descriptionHtml": "引入系统自带的JQuery类库;<br> 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "description": "引入系统自带的JQuery类库;\n 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "\n<!--引入jQuery-->${v_includeJquery()}<!--引入jQuery完成-->\n",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    }
+  ],
+  "template": "<#list positionaltitleslist as positionaltitles>\n    <p>${positionaltitles.showName}</p>\n    <#list positionaltitles.rankcollegeList as rankcollege>\n        <p>${rankcollege.showName}</p>\n        <ul>\n            <#list rankcollege.teacherList as teacher>\n                <li id=\"${teacher.lineID}\" style=\"${teacher.lineShowStyle}\">\n                    <em><a href=\"${teacher.url}\"  target=_blank title=\"${teacher.tipName}\">\n                        <table width=\"140\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">\n                            <tbody>\n                                <tr>\n                                    <td height=\"170\" align=\"center\" valign=\"middle\">\n                                        <img   id=\"${teacher.picId}\"/>\n                                    </td>\n                                </tr>\n                            </tbody>\n                        </table>\n                    </a></em>\n                    <span>\n                        <h2><a href=\"${teacher.url}\"  target=_blank title=\"${teacher.tipName}\">${teacher.showName}</a></h2>\n                        <p><font>单位:</font>${teacher.unit}</p>\n                    </span>\n                </li>\n            </#list>\n        </ul>\n    </#list> \n</#list>\n\n  ",
+  "exampleTemplate": "",
+  "previousFixtureHashes": [
+    "e3368148",
+    "97cda8c5"
+  ],
+  "css": "",
+  "fixture": {
+    "viewid": "1120",
+    "uid": "u_demo",
+    "uniqueClassName": "c_demo",
+    "positionaltitleslist": [
+      {
+        "showName": "示例名称",
+        "rankcollegeList": [
+          {
+            "showName": "示例单位一",
+            "teacherList": [
+              {
+                "lineID": "teacher_row_1",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "陈明",
+                "picId": "teacher_photo_1",
+                "showName": "陈明",
+                "unit": "示例单位一",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              },
+              {
+                "lineID": "teacher_row_2",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "李文",
+                "picId": "teacher_photo_2",
+                "showName": "李文",
+                "unit": "示例单位二",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              },
+              {
+                "lineID": "teacher_row_3",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "张晓",
+                "picId": "teacher_photo_3",
+                "showName": "张晓",
+                "unit": "示例单位五",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              }
+            ]
+          },
+          {
+            "showName": "示例单位二",
+            "teacherList": [
+              {
+                "lineID": "teacher_row_4",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "陈明",
+                "picId": "teacher_photo_4",
+                "showName": "陈明",
+                "unit": "示例单位一",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              },
+              {
+                "lineID": "teacher_row_5",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "李文",
+                "picId": "teacher_photo_5",
+                "showName": "李文",
+                "unit": "示例单位二",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              },
+              {
+                "lineID": "teacher_row_6",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "张晓",
+                "picId": "teacher_photo_6",
+                "showName": "张晓",
+                "unit": "示例单位五",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              }
+            ]
+          },
+          {
+            "showName": "示例单位三",
+            "teacherList": [
+              {
+                "lineID": "teacher_row_7",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "陈明",
+                "picId": "teacher_photo_7",
+                "showName": "陈明",
+                "unit": "示例单位一",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              },
+              {
+                "lineID": "teacher_row_8",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "李文",
+                "picId": "teacher_photo_8",
+                "showName": "李文",
+                "unit": "示例单位二",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              },
+              {
+                "lineID": "teacher_row_9",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "张晓",
+                "picId": "teacher_photo_9",
+                "showName": "张晓",
+                "unit": "示例单位五",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              }
+            ]
+          },
+          {
+            "showName": "示例单位四",
+            "teacherList": [
+              {
+                "lineID": "teacher_row_10",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "陈明",
+                "picId": "teacher_photo_10",
+                "showName": "陈明",
+                "unit": "示例单位一",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              },
+              {
+                "lineID": "teacher_row_11",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "李文",
+                "picId": "teacher_photo_11",
+                "showName": "李文",
+                "unit": "示例单位二",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              },
+              {
+                "lineID": "teacher_row_12",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "张晓",
+                "picId": "teacher_photo_12",
+                "showName": "张晓",
+                "unit": "示例单位五",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              }
+            ]
+          },
+          {
+            "showName": "示例单位五",
+            "teacherList": [
+              {
+                "lineID": "teacher_row_13",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "陈明",
+                "picId": "teacher_photo_13",
+                "showName": "陈明",
+                "unit": "示例单位一",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              },
+              {
+                "lineID": "teacher_row_14",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "李文",
+                "picId": "teacher_photo_14",
+                "showName": "李文",
+                "unit": "示例单位二",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              },
+              {
+                "lineID": "teacher_row_15",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "张晓",
+                "picId": "teacher_photo_15",
+                "showName": "张晓",
+                "unit": "示例单位五",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "showName": "示例名称",
+        "rankcollegeList": [
+          {
+            "showName": "示例单位一",
+            "teacherList": [
+              {
+                "lineID": "teacher_row_16",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "陈明",
+                "picId": "teacher_photo_16",
+                "showName": "陈明",
+                "unit": "示例单位一",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              },
+              {
+                "lineID": "teacher_row_17",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "李文",
+                "picId": "teacher_photo_17",
+                "showName": "李文",
+                "unit": "示例单位二",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              },
+              {
+                "lineID": "teacher_row_18",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "张晓",
+                "picId": "teacher_photo_18",
+                "showName": "张晓",
+                "unit": "示例单位五",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              }
+            ]
+          },
+          {
+            "showName": "示例单位二",
+            "teacherList": [
+              {
+                "lineID": "teacher_row_19",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "陈明",
+                "picId": "teacher_photo_19",
+                "showName": "陈明",
+                "unit": "示例单位一",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              },
+              {
+                "lineID": "teacher_row_20",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "李文",
+                "picId": "teacher_photo_20",
+                "showName": "李文",
+                "unit": "示例单位二",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              },
+              {
+                "lineID": "teacher_row_21",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "张晓",
+                "picId": "teacher_photo_21",
+                "showName": "张晓",
+                "unit": "示例单位五",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              }
+            ]
+          },
+          {
+            "showName": "示例单位三",
+            "teacherList": [
+              {
+                "lineID": "teacher_row_22",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "陈明",
+                "picId": "teacher_photo_22",
+                "showName": "陈明",
+                "unit": "示例单位一",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              },
+              {
+                "lineID": "teacher_row_23",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "李文",
+                "picId": "teacher_photo_23",
+                "showName": "李文",
+                "unit": "示例单位二",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              },
+              {
+                "lineID": "teacher_row_24",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "张晓",
+                "picId": "teacher_photo_24",
+                "showName": "张晓",
+                "unit": "示例单位五",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              }
+            ]
+          },
+          {
+            "showName": "示例单位四",
+            "teacherList": [
+              {
+                "lineID": "teacher_row_25",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "陈明",
+                "picId": "teacher_photo_25",
+                "showName": "陈明",
+                "unit": "示例单位一",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              },
+              {
+                "lineID": "teacher_row_26",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "李文",
+                "picId": "teacher_photo_26",
+                "showName": "李文",
+                "unit": "示例单位二",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              },
+              {
+                "lineID": "teacher_row_27",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "张晓",
+                "picId": "teacher_photo_27",
+                "showName": "张晓",
+                "unit": "示例单位五",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              }
+            ]
+          },
+          {
+            "showName": "示例单位五",
+            "teacherList": [
+              {
+                "lineID": "teacher_row_28",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "陈明",
+                "picId": "teacher_photo_28",
+                "showName": "陈明",
+                "unit": "示例单位一",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              },
+              {
+                "lineID": "teacher_row_29",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "李文",
+                "picId": "teacher_photo_29",
+                "showName": "李文",
+                "unit": "示例单位二",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              },
+              {
+                "lineID": "teacher_row_30",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "张晓",
+                "picId": "teacher_photo_30",
+                "showName": "张晓",
+                "unit": "示例单位五",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "showName": "示例名称",
+        "rankcollegeList": [
+          {
+            "showName": "示例单位一",
+            "teacherList": [
+              {
+                "lineID": "teacher_row_31",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "陈明",
+                "picId": "teacher_photo_31",
+                "showName": "陈明",
+                "unit": "示例单位一",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              },
+              {
+                "lineID": "teacher_row_32",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "李文",
+                "picId": "teacher_photo_32",
+                "showName": "李文",
+                "unit": "示例单位二",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              },
+              {
+                "lineID": "teacher_row_33",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "张晓",
+                "picId": "teacher_photo_33",
+                "showName": "张晓",
+                "unit": "示例单位五",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              }
+            ]
+          },
+          {
+            "showName": "示例单位二",
+            "teacherList": [
+              {
+                "lineID": "teacher_row_34",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "陈明",
+                "picId": "teacher_photo_34",
+                "showName": "陈明",
+                "unit": "示例单位一",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              },
+              {
+                "lineID": "teacher_row_35",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "李文",
+                "picId": "teacher_photo_35",
+                "showName": "李文",
+                "unit": "示例单位二",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              },
+              {
+                "lineID": "teacher_row_36",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "张晓",
+                "picId": "teacher_photo_36",
+                "showName": "张晓",
+                "unit": "示例单位五",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              }
+            ]
+          },
+          {
+            "showName": "示例单位三",
+            "teacherList": [
+              {
+                "lineID": "teacher_row_37",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "陈明",
+                "picId": "teacher_photo_37",
+                "showName": "陈明",
+                "unit": "示例单位一",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              },
+              {
+                "lineID": "teacher_row_38",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "李文",
+                "picId": "teacher_photo_38",
+                "showName": "李文",
+                "unit": "示例单位二",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              },
+              {
+                "lineID": "teacher_row_39",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "张晓",
+                "picId": "teacher_photo_39",
+                "showName": "张晓",
+                "unit": "示例单位五",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              }
+            ]
+          },
+          {
+            "showName": "示例单位四",
+            "teacherList": [
+              {
+                "lineID": "teacher_row_40",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "陈明",
+                "picId": "teacher_photo_40",
+                "showName": "陈明",
+                "unit": "示例单位一",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              },
+              {
+                "lineID": "teacher_row_41",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "李文",
+                "picId": "teacher_photo_41",
+                "showName": "李文",
+                "unit": "示例单位二",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              },
+              {
+                "lineID": "teacher_row_42",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "张晓",
+                "picId": "teacher_photo_42",
+                "showName": "张晓",
+                "unit": "示例单位五",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              }
+            ]
+          },
+          {
+            "showName": "示例单位五",
+            "teacherList": [
+              {
+                "lineID": "teacher_row_43",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "陈明",
+                "picId": "teacher_photo_43",
+                "showName": "陈明",
+                "unit": "示例单位一",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              },
+              {
+                "lineID": "teacher_row_44",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "李文",
+                "picId": "teacher_photo_44",
+                "showName": "李文",
+                "unit": "示例单位二",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              },
+              {
+                "lineID": "teacher_row_45",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "张晓",
+                "picId": "teacher_photo_45",
+                "showName": "张晓",
+                "unit": "示例单位五",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "showName": "示例名称",
+        "rankcollegeList": [
+          {
+            "showName": "示例单位一",
+            "teacherList": [
+              {
+                "lineID": "teacher_row_46",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "陈明",
+                "picId": "teacher_photo_46",
+                "showName": "陈明",
+                "unit": "示例单位一",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              },
+              {
+                "lineID": "teacher_row_47",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "李文",
+                "picId": "teacher_photo_47",
+                "showName": "李文",
+                "unit": "示例单位二",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              },
+              {
+                "lineID": "teacher_row_48",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "张晓",
+                "picId": "teacher_photo_48",
+                "showName": "张晓",
+                "unit": "示例单位五",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              }
+            ]
+          },
+          {
+            "showName": "示例单位二",
+            "teacherList": [
+              {
+                "lineID": "teacher_row_49",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "陈明",
+                "picId": "teacher_photo_49",
+                "showName": "陈明",
+                "unit": "示例单位一",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              },
+              {
+                "lineID": "teacher_row_50",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "李文",
+                "picId": "teacher_photo_50",
+                "showName": "李文",
+                "unit": "示例单位二",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              },
+              {
+                "lineID": "teacher_row_51",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "张晓",
+                "picId": "teacher_photo_51",
+                "showName": "张晓",
+                "unit": "示例单位五",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              }
+            ]
+          },
+          {
+            "showName": "示例单位三",
+            "teacherList": [
+              {
+                "lineID": "teacher_row_52",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "陈明",
+                "picId": "teacher_photo_52",
+                "showName": "陈明",
+                "unit": "示例单位一",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              },
+              {
+                "lineID": "teacher_row_53",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "李文",
+                "picId": "teacher_photo_53",
+                "showName": "李文",
+                "unit": "示例单位二",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              },
+              {
+                "lineID": "teacher_row_54",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "张晓",
+                "picId": "teacher_photo_54",
+                "showName": "张晓",
+                "unit": "示例单位五",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              }
+            ]
+          },
+          {
+            "showName": "示例单位四",
+            "teacherList": [
+              {
+                "lineID": "teacher_row_55",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "陈明",
+                "picId": "teacher_photo_55",
+                "showName": "陈明",
+                "unit": "示例单位一",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              },
+              {
+                "lineID": "teacher_row_56",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "李文",
+                "picId": "teacher_photo_56",
+                "showName": "李文",
+                "unit": "示例单位二",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              },
+              {
+                "lineID": "teacher_row_57",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "张晓",
+                "picId": "teacher_photo_57",
+                "showName": "张晓",
+                "unit": "示例单位五",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              }
+            ]
+          },
+          {
+            "showName": "示例单位五",
+            "teacherList": [
+              {
+                "lineID": "teacher_row_58",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "陈明",
+                "picId": "teacher_photo_58",
+                "showName": "陈明",
+                "unit": "示例单位一",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              },
+              {
+                "lineID": "teacher_row_59",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "李文",
+                "picId": "teacher_photo_59",
+                "showName": "李文",
+                "unit": "示例单位二",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              },
+              {
+                "lineID": "teacher_row_60",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "张晓",
+                "picId": "teacher_photo_60",
+                "showName": "张晓",
+                "unit": "示例单位五",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "showName": "示例名称",
+        "rankcollegeList": [
+          {
+            "showName": "示例单位一",
+            "teacherList": [
+              {
+                "lineID": "teacher_row_61",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "陈明",
+                "picId": "teacher_photo_61",
+                "showName": "陈明",
+                "unit": "示例单位一",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              },
+              {
+                "lineID": "teacher_row_62",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "李文",
+                "picId": "teacher_photo_62",
+                "showName": "李文",
+                "unit": "示例单位二",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              },
+              {
+                "lineID": "teacher_row_63",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "张晓",
+                "picId": "teacher_photo_63",
+                "showName": "张晓",
+                "unit": "示例单位五",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              }
+            ]
+          },
+          {
+            "showName": "示例单位二",
+            "teacherList": [
+              {
+                "lineID": "teacher_row_64",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "陈明",
+                "picId": "teacher_photo_64",
+                "showName": "陈明",
+                "unit": "示例单位一",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              },
+              {
+                "lineID": "teacher_row_65",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "李文",
+                "picId": "teacher_photo_65",
+                "showName": "李文",
+                "unit": "示例单位二",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              },
+              {
+                "lineID": "teacher_row_66",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "张晓",
+                "picId": "teacher_photo_66",
+                "showName": "张晓",
+                "unit": "示例单位五",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              }
+            ]
+          },
+          {
+            "showName": "示例单位三",
+            "teacherList": [
+              {
+                "lineID": "teacher_row_67",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "陈明",
+                "picId": "teacher_photo_67",
+                "showName": "陈明",
+                "unit": "示例单位一",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              },
+              {
+                "lineID": "teacher_row_68",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "李文",
+                "picId": "teacher_photo_68",
+                "showName": "李文",
+                "unit": "示例单位二",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              },
+              {
+                "lineID": "teacher_row_69",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "张晓",
+                "picId": "teacher_photo_69",
+                "showName": "张晓",
+                "unit": "示例单位五",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              }
+            ]
+          },
+          {
+            "showName": "示例单位四",
+            "teacherList": [
+              {
+                "lineID": "teacher_row_70",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "陈明",
+                "picId": "teacher_photo_70",
+                "showName": "陈明",
+                "unit": "示例单位一",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              },
+              {
+                "lineID": "teacher_row_71",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "李文",
+                "picId": "teacher_photo_71",
+                "showName": "李文",
+                "unit": "示例单位二",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              },
+              {
+                "lineID": "teacher_row_72",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "张晓",
+                "picId": "teacher_photo_72",
+                "showName": "张晓",
+                "unit": "示例单位五",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              }
+            ]
+          },
+          {
+            "showName": "示例单位五",
+            "teacherList": [
+              {
+                "lineID": "teacher_row_73",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "陈明",
+                "picId": "teacher_photo_73",
+                "showName": "陈明",
+                "unit": "示例单位一",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              },
+              {
+                "lineID": "teacher_row_74",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "李文",
+                "picId": "teacher_photo_74",
+                "showName": "李文",
+                "unit": "示例单位二",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              },
+              {
+                "lineID": "teacher_row_75",
+                "lineShowStyle": "",
+                "url": "#preview",
+                "tipName": "张晓",
+                "picId": "teacher_photo_75",
+                "showName": "张晓",
+                "unit": "示例单位五",
+                "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

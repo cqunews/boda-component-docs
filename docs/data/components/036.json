@@ -1,0 +1,203 @@
+{
+  "id": "036",
+  "index": 36,
+  "name": "简单检索",
+  "category": "全文检索",
+  "parameterCount": 13,
+  "hasScript": true,
+  "templateLength": 3697,
+  "parameters": [
+    {
+      "name": "通用参数",
+      "parameter": "commonparam",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件id",
+      "parameter": "viewid",
+      "type": "String",
+      "syntax": "${viewid}",
+      "descriptionHtml": "组件本身的id，数字(形如 1001)",
+      "description": "组件本身的id，数字(形如 1001)",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件uid",
+      "parameter": "uid",
+      "type": "String",
+      "syntax": "${uid}",
+      "descriptionHtml": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "description": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "私有样式类名",
+      "parameter": "uniqueClassName",
+      "type": "String",
+      "syntax": "${uniqueClassName}",
+      "descriptionHtml": "用在私有样式表的类名上，字符串(形如 c10)，举例：<br>&lt;span class=\"<span style=\"color:red\">${uniqueClassName}</span>\" &gt;文字&lt;/span&gt;",
+      "description": "用在私有样式表的类名上，字符串(形如 c10)，举例：\n<span class=\"${uniqueClassName}\" >文字</span>",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<span class=\"${uniqueClassName}\" >文字</span>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "引入jQuery类库",
+      "parameter": "v_includeJquery",
+      "type": "Function",
+      "syntax": "${v_includeJquery()}",
+      "descriptionHtml": "引入系统自带的JQuery类库;<br> 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "description": "引入系统自带的JQuery类库;\n 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "\n<!--引入jQuery-->${v_includeJquery()}<!--引入jQuery完成-->\n",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "唯一标识",
+      "parameter": "UUID",
+      "type": "String",
+      "syntax": "标识:${UUID}",
+      "descriptionHtml": "唯一标识, 主要在拖放多个组件时使用,确保id、方法等唯一不会冲突。",
+      "description": "唯一标识, 主要在拖放多个组件时使用,确保id、方法等唯一不会冲突。",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "form表单",
+      "parameter": "form",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "搜索表单名称",
+      "parameter": "formName",
+      "type": "String",
+      "syntax": "${formName}",
+      "descriptionHtml": "搜索表单名称",
+      "description": "搜索表单名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "搜索提交地址",
+      "parameter": "actionURL",
+      "type": "String",
+      "syntax": "${actionURL}",
+      "descriptionHtml": "搜索提交地址",
+      "description": "搜索提交地址",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "查询输入文本框名称",
+      "parameter": "searchTypeName",
+      "type": "String",
+      "syntax": "${searchTypeName}",
+      "descriptionHtml": "查询输入文本框名称",
+      "description": "查询输入文本框名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "查询类型选择框名称",
+      "parameter": "searchTypeName",
+      "type": "String",
+      "syntax": "${searchTypeName}",
+      "descriptionHtml": "查询类型选择框名称",
+      "description": "查询类型选择框名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "查询时间选择框名称",
+      "parameter": "searchTypeTimeName",
+      "type": "String",
+      "syntax": "${searchTypeTimeName}",
+      "descriptionHtml": "查询时间选择框名称",
+      "description": "查询时间选择框名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "查询关键字",
+      "parameter": "keyword",
+      "type": "String",
+      "syntax": "${keyword}",
+      "descriptionHtml": "查询关键字",
+      "description": "查询关键字",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "查询时选择类型",
+      "parameter": "type",
+      "type": "String",
+      "syntax": "${type}",
+      "descriptionHtml": "查询时选择类型",
+      "description": "查询时选择类型",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "查询时选择时间",
+      "parameter": "time",
+      "type": "String",
+      "syntax": "${time}",
+      "descriptionHtml": "查询时选择时间",
+      "description": "查询时选择时间",
+      "kind": "parameter",
+      "path": []
+    }
+  ],
+  "template": "<script type=\"text/javascript\">\nfunction checksearch${uid}(type){\n        var keyword = document.getElementById('_w_v_l_s_n_s_kword_show_id${uid}').value;\n        if(keyword==null||keyword==\"\"){\n            alert(\"请输入查询内容\");\n            return false;\n        }\n        if(window.toFF==1)\n        {\n            document.getElementById(\"_w_v_l_s_n_s_kword_show_id${uid}\").value = Simplized(keyword );\n        }else\n        {\n            document.getElementById(\"_w_v_l_s_n_s_kword_show_id${uid}\").value = keyword;            \n        }\n        var  base64 = new Base64();\n        document.getElementById(\"_w_v_l_s_n_s_kword_id${uid}\").value = base64.encode(document.getElementById(\"_w_v_l_s_n_s_kword_show_id${uid}\").value);\n        new VsbFormFunc().disableAutoEnable(document.getElementById(\"_w_v_l_s_n_s_kword_show_id${uid}\"));\n        return true;\n    } \n</script>\n<form action=\"${actionURL}\" method=\"post\" id=\"${formName}\" name=\"${formName}\" onsubmit=\"return checksearch${uid}(1)\" target=\"_blank\" style=\"display: inline\">\n    <input type=\"hidden\" id=\"_w_v_l_s_n_s_kword_id${uid}\"  name=\"_w_v_l_s_n_s_k\" value=\"\">\n    <input type=\"hidden\" id=\"searchScope\" name=\"searchScope\" value=\"${searchScope}\">\n    <table   width=100% align=\"center\" border=\"0\" cellspacing=\"1\" cellpadding=\"3\">\n        <tr class=\"listTitle\">\n            <td align=\"left\"  nowrap=\"nowrap\" style=\"FONT-FAMILY: 宋体; FONT-SIZE: 9pt\">\n                文章检索：\n                <input type=\"text\" name=\"_w_v_l_s_n_s_kword_show\" id=\"_w_v_l_s_n_s_kword_show_id${uid}\" value=\"${keyword}\"  style=\"BACKGROUND-IMAGE: url(${v_link(\"/system/resource/images/research/seach_bg.gif\")}); BORDER-BOTTOM: #878787 1px solid; POSITION: relative; BORDER-LEFT: #878787 1px solid; PADDING-LEFT: 18px; BACKGROUND-REPEAT: no-repeat; FONT-FAMILY: 宋体; HEIGHT: 22px; COLOR: #222222; FONT-SIZE: 10pt; BORDER-TOP: #878787 1px solid; BORDER-RIGHT: #878787 1px solid; PADDING-TOP: 3px\">\n                <select name=\"${searchTypeName}\" id=\"_w_v_l_s_n_s_kstype_id\" >\n                    <option value=\"1\" <#if type==1 >selected</#if> >\n                                            全部\n                    </option>\n                    <option value=\"2\" <#if type==2 >selected</#if>>\n                        标题\n                    </option>\n                    <option value=\"3\" <#if type==3 >selected</#if>>\n                                             正文\n                    </option>\n                    <option value=\"4\" <#if type==4 >selected</#if>>\n                        标签\n                    </option>\n                    <option value=\"5\" <#if type==5 >selected</#if>>\n                                        摘要\n                    </option>\n                    <option value=\"6\" <#if type==6 >selected</#if>>\n                                        作者\n                    </option>\n                    <option value=\"7\" <#if type==7 >selected</#if>>\n                                        来源\n                    </option>\n                    <option value=\"8\" <#if type==8 >selected</#if>>\n                        栏目\n                    </option>\n                </select>\n                <select name=\"${searchTypeTimeName}\" id=\"_w_v_l_s_n_s_kstime_id\" >\n                    <option value=\"0\" <#if time==0 >selected</#if> >\n                        全部时间\n                    </option>\n                    <#list timeList as x>\n                    <option value=\"${x?number}\" <#if time==x?number>selected</#if> >${x}</option>\n                    </#list>\n                </select>\n                <INPUT style=\"CURSOR: hand\" align=absMiddle src=\"/system/resource/images/research/seach22.gif\" type=image>\n            </td>\n        </tr>\n    </table>\n</form>",
+  "exampleTemplate": "",
+  "previousFixtureHashes": [
+    "72a0afef"
+  ],
+  "css": "",
+  "fixture": {
+    "viewid": "1036",
+    "uid": "u_demo",
+    "uniqueClassName": "c_demo",
+    "formName": "boda_demo",
+    "actionURL": "#preview",
+    "searchTypeName": "示例名称",
+    "searchTypeTimeName": "2026-10-30",
+    "keyword": "查询关键字",
+    "type": 6,
+    "time": 6,
+    "searchScope": "示例内容",
+    "timeList": [
+      "30"
+    ]
+  }
+}

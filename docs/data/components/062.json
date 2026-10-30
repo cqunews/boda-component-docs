@@ -1,0 +1,103 @@
+{
+  "id": "062",
+  "index": 62,
+  "name": "时间范围",
+  "category": "综合检索",
+  "parameterCount": 5,
+  "hasScript": true,
+  "templateLength": 849,
+  "parameters": [
+    {
+      "name": "通用参数",
+      "parameter": "commonparam",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件id",
+      "parameter": "viewid",
+      "type": "String",
+      "syntax": "${viewid}",
+      "descriptionHtml": "组件本身的id，数字(形如 1001)",
+      "description": "组件本身的id，数字(形如 1001)",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件uid",
+      "parameter": "uid",
+      "type": "String",
+      "syntax": "${uid}",
+      "descriptionHtml": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "description": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "私有样式类名",
+      "parameter": "uniqueClassName",
+      "type": "String",
+      "syntax": "${uniqueClassName}",
+      "descriptionHtml": "用在私有样式表的类名上，字符串(形如 c10)，举例：<br>&lt;span class=\"<span style=\"color:red\">${uniqueClassName}</span>\" &gt;文字&lt;/span&gt;",
+      "description": "用在私有样式表的类名上，字符串(形如 c10)，举例：\n<span class=\"${uniqueClassName}\" >文字</span>",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<span class=\"${uniqueClassName}\" >文字</span>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "引入jQuery类库",
+      "parameter": "v_includeJquery",
+      "type": "Function",
+      "syntax": "${v_includeJquery()}",
+      "descriptionHtml": "引入系统自带的JQuery类库;<br> 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "description": "引入系统自带的JQuery类库;\n 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "\n<!--引入jQuery-->${v_includeJquery()}<!--引入jQuery完成-->\n",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "用户选择的时间范围",
+      "parameter": "tg",
+      "type": "Integer",
+      "syntax": "${tg}",
+      "descriptionHtml": "用户选择的时间范围",
+      "description": "用户选择的时间范围",
+      "kind": "parameter",
+      "path": []
+    }
+  ],
+  "template": "<ul style=\"list-style:none;display:block;\">\n<li style=\"display:block;cursor: pointer;\" onclick=\"_change_time_region(5)\">不限时间</li>\n<li style=\"display:block;cursor: pointer;\" onclick=\"_change_time_region(1)\">一周以内</li>\n<li style=\"display:block;cursor: pointer;\" onclick=\"_change_time_region(2)\">一个月以内</li>\n<li style=\"display:block;cursor: pointer;\" onclick=\"_change_time_region(3)\">半年以内</li>\n<li style=\"display:block;cursor: pointer;\" onclick=\"_change_time_region(4)\">一年以内</li>\n</ul>\n<script type=\"text/javascript\">\nfunction _change_time_region(type)\n{\n    if(document.getElementById(\"_lucenen_search_comprehensive\"))\n    {\n        if(document.getElementById(\"tg\"))\n        {\n            document.getElementById(\"tg\").value = type;\n            try{\n            _submit_search_comprehensive();\n            }catch(exception){}\n        }\n    }\n}\n</script>",
+  "exampleTemplate": "",
+  "previousFixtureHashes": [
+    "6efda4a5"
+  ],
+  "css": "",
+  "fixture": {
+    "viewid": "1062",
+    "uid": "u_demo",
+    "uniqueClassName": "c_demo",
+    "tg": 6
+  }
+}

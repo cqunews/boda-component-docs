@@ -1,0 +1,438 @@
+{
+  "id": "023",
+  "index": 23,
+  "name": "链接列表",
+  "category": "链接列表",
+  "parameterCount": 20,
+  "hasScript": false,
+  "templateLength": 180,
+  "parameters": [
+    {
+      "name": "通用参数",
+      "parameter": "commonparam",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件id",
+      "parameter": "viewid",
+      "type": "String",
+      "syntax": "${viewid}",
+      "descriptionHtml": "组件本身的id，数字(形如 1001)",
+      "description": "组件本身的id，数字(形如 1001)",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件uid",
+      "parameter": "uid",
+      "type": "String",
+      "syntax": "${uid}",
+      "descriptionHtml": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "description": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "私有样式类名",
+      "parameter": "uniqueClassName",
+      "type": "String",
+      "syntax": "${uniqueClassName}",
+      "descriptionHtml": "用在私有样式表的类名上，字符串(形如 c10)，举例：<br>&lt;span class=\"<span style=\"color:red\">${uniqueClassName}</span>\" &gt;文字&lt;/span&gt;",
+      "description": "用在私有样式表的类名上，字符串(形如 c10)，举例：\n<span class=\"${uniqueClassName}\" >文字</span>",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<span class=\"${uniqueClassName}\" >文字</span>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "引入jQuery类库",
+      "parameter": "v_includeJquery",
+      "type": "Function",
+      "syntax": "${v_includeJquery()}",
+      "descriptionHtml": "引入系统自带的JQuery类库;<br> 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "description": "引入系统自带的JQuery类库;\n 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "\n<!--引入jQuery-->${v_includeJquery()}<!--引入jQuery完成-->\n",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "链接条数",
+      "parameter": "size",
+      "type": "Integer",
+      "syntax": "${size}",
+      "descriptionHtml": "链接列表条数，可以在配置中修改",
+      "description": "链接列表条数，可以在配置中修改",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "链接条数：${size}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "链接列表",
+      "parameter": "list_link",
+      "type": "List",
+      "syntax": "<#list list_link as link>\n</#list>",
+      "descriptionHtml": "链接列表",
+      "description": "链接列表",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<UL>\n<#list list_link as link>\n    <LI><a href=\"${link.hrefUrl}\" ${link.target} title=\"${link.tipsLinkTip}\" onclick=\"${link.addClicksFun}\">${link.showTitle}</a>\n</#list>\n</UL>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "列表位置参数",
+      "parameter": "listnogroup",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "链接ID",
+      "parameter": "id",
+      "type": "String",
+      "syntax": "${link.id}",
+      "descriptionHtml": "链接编号ID",
+      "description": "链接编号ID",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "原标题",
+      "parameter": "title",
+      "type": "String",
+      "syntax": "${link.title}",
+      "descriptionHtml": "链接的原始标题，不建议直接输出",
+      "description": "链接的原始标题，不建议直接输出",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "显示标题",
+      "parameter": "showTitle",
+      "type": "String",
+      "syntax": "${link.showTitle}",
+      "descriptionHtml": "显示用的标题，调整过格式并可配置长度限制",
+      "description": "显示用的标题，调整过格式并可配置长度限制",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<a href=\"${link.hrefUrl}\" ${link.target} title=\"${link.tipsLinkTip}\" onclick=\"${link.addClicksFun}\">${link.showTitle}</a>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "原链接提示",
+      "parameter": "linkTip",
+      "type": "String",
+      "syntax": "${link.linkTip}",
+      "descriptionHtml": "链接的提示，不建议直接输出",
+      "description": "链接的提示，不建议直接输出",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "链接提示",
+      "parameter": "tipsLinkTip",
+      "type": "String",
+      "syntax": "${link.tipsLinkTip}",
+      "descriptionHtml": "Html元素的\"title\"属性专用，显示链接提示，专门调整过格式",
+      "description": "Html元素的\"title\"属性专用，显示链接提示，专门调整过格式",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "原链接地址",
+      "parameter": "url",
+      "type": "URL",
+      "syntax": "${link.url}",
+      "descriptionHtml": "链接地址, 不建议直接输出",
+      "description": "链接地址, 不建议直接输出",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "链接地址",
+      "parameter": "hrefUrl",
+      "type": "URL",
+      "syntax": "${link.hrefUrl}",
+      "descriptionHtml": "用于href值的地址，调整过格式",
+      "description": "用于href值的地址，调整过格式",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<a href=\"${link.hrefUrl}\" ${link.target} title=\"${link.tipsLinkTip}\" onclick=\"${link.addClicksFun}\">${link.showTitle}</a>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "打开方式",
+      "parameter": "target",
+      "type": "String",
+      "syntax": "${link.target}",
+      "descriptionHtml": "放到 A 的属性中即可, 表示新窗口打开还是原窗口打开",
+      "description": "放到 A 的属性中即可, 表示新窗口打开还是原窗口打开",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<a href=\"${link.hrefUrl}\" ${link.target} title=\"${link.tipsLinkTip}\" onclick=\"${link.addClicksFun}\">${link.showTitle}</a>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "原点击数",
+      "parameter": "clickTimes",
+      "type": "String",
+      "syntax": "${link.clickTimes}",
+      "descriptionHtml": "链接的点击数量，不建议直接输出",
+      "description": "链接的点击数量，不建议直接输出",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "显示点击数",
+      "parameter": "showClickTimes",
+      "type": "String",
+      "syntax": "${link.showClickTimes}",
+      "descriptionHtml": "显示用的链接的点击数，采用ajax技术自动更新",
+      "description": "显示用的链接的点击数，采用ajax技术自动更新",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "点击：[${link.showClickTimes}]次",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "加点击数方法",
+      "parameter": "addClicksFun",
+      "type": "String",
+      "syntax": "onclick=\"${link.addClicksFun}\"",
+      "descriptionHtml": "加点击数的方法， 可以放到 A 的 onclick 里",
+      "description": "加点击数的方法， 可以放到 A 的 onclick 里",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "是第几条",
+      "parameter": "pos",
+      "type": "Integer",
+      "syntax": "${link.pos}",
+      "descriptionHtml": "当前是列表的第几条(从1开始)",
+      "description": "当前是列表的第几条(从1开始)",
+      "kind": "parameter",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "第${link.pos}条",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否首条",
+      "parameter": "isFirst",
+      "type": "Boolean",
+      "syntax": "<#if link.isFirst></#if>",
+      "descriptionHtml": "当前是不是列表的第一条",
+      "description": "当前是不是列表的第一条",
+      "kind": "parameter",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if link.isFirst>首条</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否尾条",
+      "parameter": "isLast",
+      "type": "Boolean",
+      "syntax": "<#if link.isLast></#if>",
+      "descriptionHtml": "当前是不是列表的最后一条",
+      "description": "当前是不是列表的最后一条",
+      "kind": "parameter",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if link.isLast>尾条</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listnogroup"
+      ]
+    }
+  ],
+  "template": "<UL>\n<#list list_link as link>\n    <LI><a href=\"${link.hrefUrl}\" ${link.target} title=\"${link.tipsLinkTip}\" onclick=\"${link.addClicksFun}\">${link.showTitle}</a></li>\n</#list>\n</UL>",
+  "exampleTemplate": "",
+  "previousFixtureHashes": [
+    "8b43fe16",
+    "ed87ca72"
+  ],
+  "css": "",
+  "fixture": {
+    "viewid": "1023",
+    "uid": "u_demo",
+    "uniqueClassName": "c_demo",
+    "size": 6,
+    "list_link": [
+      {
+        "hrefUrl": "#preview",
+        "target": "",
+        "tipsLinkTip": "#preview",
+        "addClicksFun": "12",
+        "showTitle": "把课堂搬进山野，让知识连接更广阔的世界",
+        "id": "12",
+        "title": "把课堂搬进山野，让知识连接更广阔的世界",
+        "linkTip": "#preview",
+        "url": "#preview",
+        "clickTimes": "12",
+        "showClickTimes": "12",
+        "pos": 1
+      },
+      {
+        "hrefUrl": "#preview",
+        "target": "",
+        "tipsLinkTip": "#preview",
+        "addClicksFun": "12",
+        "showTitle": "校园开放日｜在这里，遇见新的可能",
+        "id": "12",
+        "title": "校园开放日｜在这里，遇见新的可能",
+        "linkTip": "#preview",
+        "url": "#preview",
+        "clickTimes": "12",
+        "showClickTimes": "12",
+        "pos": 2
+      },
+      {
+        "hrefUrl": "#preview",
+        "target": "",
+        "tipsLinkTip": "#preview",
+        "addClicksFun": "12",
+        "showTitle": "关于举办青年学术交流活动的通知",
+        "id": "12",
+        "title": "关于举办青年学术交流活动的通知",
+        "linkTip": "#preview",
+        "url": "#preview",
+        "clickTimes": "12",
+        "showClickTimes": "12",
+        "pos": 3
+      },
+      {
+        "hrefUrl": "#preview",
+        "target": "",
+        "tipsLinkTip": "#preview",
+        "addClicksFun": "12",
+        "showTitle": "图书馆秋季阅读计划正式启动",
+        "id": "12",
+        "title": "图书馆秋季阅读计划正式启动",
+        "linkTip": "#preview",
+        "url": "#preview",
+        "clickTimes": "12",
+        "showClickTimes": "12",
+        "pos": 4
+      },
+      {
+        "hrefUrl": "#preview",
+        "target": "",
+        "tipsLinkTip": "#preview",
+        "addClicksFun": "12",
+        "showTitle": "探索与创新：青年研究者的校园故事",
+        "id": "12",
+        "title": "探索与创新：青年研究者的校园故事",
+        "linkTip": "#preview",
+        "url": "#preview",
+        "clickTimes": "12",
+        "showClickTimes": "12",
+        "pos": 5
+      }
+    ]
+  }
+}

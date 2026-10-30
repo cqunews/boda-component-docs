@@ -1,0 +1,804 @@
+{
+  "id": "072",
+  "index": 72,
+  "name": "搜索结果",
+  "category": "公众参与",
+  "parameterCount": 47,
+  "hasScript": false,
+  "templateLength": 10953,
+  "parameters": [
+    {
+      "name": "通用参数",
+      "parameter": "commonparam",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件id",
+      "parameter": "viewid",
+      "type": "String",
+      "syntax": "${viewid}",
+      "descriptionHtml": "组件本身的id，数字(形如 1001)",
+      "description": "组件本身的id，数字(形如 1001)",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件uid",
+      "parameter": "uid",
+      "type": "String",
+      "syntax": "${uid}",
+      "descriptionHtml": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "description": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "私有样式类名",
+      "parameter": "uniqueClassName",
+      "type": "String",
+      "syntax": "${uniqueClassName}",
+      "descriptionHtml": "用在私有样式表的类名上，字符串(形如 c10)，举例：<br>&lt;span class=\"<span style=\"color:red\">${uniqueClassName}</span>\" &gt;文字&lt;/span&gt;",
+      "description": "用在私有样式表的类名上，字符串(形如 c10)，举例：\n<span class=\"${uniqueClassName}\" >文字</span>",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<span class=\"${uniqueClassName}\" >文字</span>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "引入jQuery类库",
+      "parameter": "v_includeJquery",
+      "type": "Function",
+      "syntax": "${v_includeJquery()}",
+      "descriptionHtml": "引入系统自带的JQuery类库;<br> 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "description": "引入系统自带的JQuery类库;\n 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "\n<!--引入jQuery-->${v_includeJquery()}<!--引入jQuery完成-->\n",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "搜索状态",
+      "parameter": "statue",
+      "type": "String",
+      "syntax": "${statue}",
+      "descriptionHtml": "搜索状态，0正常1没有找到你要查询的内容",
+      "description": "搜索状态，0正常1没有找到你要查询的内容",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "查询码",
+      "parameter": "searchcode",
+      "type": "String",
+      "syntax": "${searchcode}",
+      "descriptionHtml": "搜索的查询码",
+      "description": "搜索的查询码",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "form表单",
+      "parameter": "form",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "搜索表单名称",
+      "parameter": "formName",
+      "type": "String",
+      "syntax": "${formName}",
+      "descriptionHtml": "搜索表单名称",
+      "description": "搜索表单名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<form  name=\"${formName}\" method=\"post\" action=\"${actionUrl}\"></form>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "表单提交地址",
+      "parameter": "actionUrl",
+      "type": "String",
+      "syntax": "${actionUrl}",
+      "descriptionHtml": "表单提交地址",
+      "description": "表单提交地址",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "表单搜索框名称",
+      "parameter": "formSearch",
+      "type": "String",
+      "syntax": "${formSearch}",
+      "descriptionHtml": "表单搜索框名称",
+      "description": "表单搜索框名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "搜索结果",
+      "parameter": "searchresult",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "原标题",
+      "parameter": "title",
+      "type": "String",
+      "syntax": "${title}",
+      "descriptionHtml": "原标题，不建议直接输出",
+      "description": "原标题，不建议直接输出",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "显示标题",
+      "parameter": "showTitle",
+      "type": "String",
+      "syntax": "${showTitle}",
+      "descriptionHtml": "显示标题，进行过格式处理的标题",
+      "description": "显示标题，进行过格式处理的标题",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "发言人帐号",
+      "parameter": "showAccount",
+      "type": "String",
+      "syntax": "${showAccount}",
+      "descriptionHtml": "发言人帐号",
+      "description": "发言人帐号",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "原留言日期",
+      "parameter": "time",
+      "type": "String",
+      "syntax": "${time}",
+      "descriptionHtml": "原留言日期，不建议直接输出",
+      "description": "原留言日期，不建议直接输出",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "显示留言日期",
+      "parameter": "showTime",
+      "type": "String",
+      "syntax": "${showTime}",
+      "descriptionHtml": "显示留言日期，进行过格式处理的留言日期",
+      "description": "显示留言日期，进行过格式处理的留言日期",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "联系人姓名",
+      "parameter": "showName",
+      "type": "String",
+      "syntax": "${showName}",
+      "descriptionHtml": "联系人姓名，没有为空",
+      "description": "联系人姓名，没有为空",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "身份证号",
+      "parameter": "showIdCard",
+      "type": "String",
+      "syntax": "${showIdCard}",
+      "descriptionHtml": "身份证号，没有为空",
+      "description": "身份证号，没有为空",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "手机",
+      "parameter": "showTelphone",
+      "type": "String",
+      "syntax": "${showTelphone}",
+      "descriptionHtml": "手机，没有为空",
+      "description": "手机，没有为空",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "联系方式",
+      "parameter": "showAddress",
+      "type": "String",
+      "syntax": "${showAddress}",
+      "descriptionHtml": "联系方式，没有为空",
+      "description": "联系方式，没有为空",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "固定电话",
+      "parameter": "showPhone",
+      "type": "String",
+      "syntax": "${showPhone}",
+      "descriptionHtml": "固定电话，没有为空",
+      "description": "固定电话，没有为空",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "留言人Email",
+      "parameter": "showEmail",
+      "type": "String",
+      "syntax": "${showEmail}",
+      "descriptionHtml": "留言人Email，没有为空",
+      "description": "留言人Email，没有为空",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "留言人单位",
+      "parameter": "showUnit",
+      "type": "String",
+      "syntax": "${showUnit}",
+      "descriptionHtml": "留言人单位，没有为空",
+      "description": "留言人单位，没有为空",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "性别",
+      "parameter": "showSex",
+      "type": "String",
+      "syntax": "${showSex}",
+      "descriptionHtml": "性别，没有为空",
+      "description": "性别，没有为空",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "处理状态",
+      "parameter": "showAudit",
+      "type": "String",
+      "syntax": "${showAudit}",
+      "descriptionHtml": "处理状态",
+      "description": "处理状态",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "附件个数",
+      "parameter": "attachSize",
+      "type": "String",
+      "syntax": "${attachSize}",
+      "descriptionHtml": "附件个数",
+      "description": "附件个数",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "附件列表",
+      "parameter": "list_attach",
+      "type": "List",
+      "syntax": "<#list list_attach as attach>\n    </#list>",
+      "descriptionHtml": "附件列表",
+      "description": "附件列表",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "发言内容",
+      "parameter": "showContent",
+      "type": "String",
+      "syntax": "${showContent}",
+      "descriptionHtml": "发言内容",
+      "description": "发言内容",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "回复人名称",
+      "parameter": "showReaccount",
+      "type": "String",
+      "syntax": "${showReaccount}",
+      "descriptionHtml": "回复人名称，没有为空",
+      "description": "回复人名称，没有为空",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "原回复时间",
+      "parameter": "retime",
+      "type": "String",
+      "syntax": "${retime}",
+      "descriptionHtml": "原回复时间，没有为空",
+      "description": "原回复时间，没有为空",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "显示回复时间",
+      "parameter": "showRetime",
+      "type": "String",
+      "syntax": "${showRetime}",
+      "descriptionHtml": "显示回复时间，没有为空",
+      "description": "显示回复时间，没有为空",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "回复附件个数",
+      "parameter": "reattachSize",
+      "type": "String",
+      "syntax": "${reattachSize}",
+      "descriptionHtml": "回复附件个数",
+      "description": "回复附件个数",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "回复附件列表",
+      "parameter": "list_reattach",
+      "type": "List",
+      "syntax": "<#list list_reattach as attach>\n    </#list>",
+      "descriptionHtml": "回复附件列表",
+      "description": "回复附件列表",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "回复内容",
+      "parameter": "showRecontent",
+      "type": "String",
+      "syntax": "${showRecontent}",
+      "descriptionHtml": "回复内容，没有为空",
+      "description": "回复内容，没有为空",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "唯一标识",
+      "parameter": "uuid",
+      "type": "String",
+      "syntax": "${uuid}",
+      "descriptionHtml": "唯一标识, 主要在拖放多个组件时使用,确保id,方法等唯一不会冲突。",
+      "description": "唯一标识, 主要在拖放多个组件时使用,确保id,方法等唯一不会冲突。",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "标识:${uuid}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "列表位置参数",
+      "parameter": "listnogroup",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": [
+        "list_attach"
+      ]
+    },
+    {
+      "name": "下载地址",
+      "parameter": "downloadUrl",
+      "type": "String",
+      "syntax": "${attach.downloadUrl}",
+      "descriptionHtml": "下载地址",
+      "description": "下载地址",
+      "kind": "parameter",
+      "path": [
+        "list_attach"
+      ]
+    },
+    {
+      "name": "附件名称",
+      "parameter": "fileName",
+      "type": "String",
+      "syntax": "${attach.fileName}",
+      "descriptionHtml": "附件名称",
+      "description": "附件名称",
+      "kind": "parameter",
+      "path": [
+        "list_attach"
+      ]
+    },
+    {
+      "name": "是第几条",
+      "parameter": "pos",
+      "type": "Integer",
+      "syntax": "${attach.pos}",
+      "descriptionHtml": "当前是列表的第几条(从1开始)",
+      "description": "当前是列表的第几条(从1开始)",
+      "kind": "parameter",
+      "path": [
+        "list_attach",
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "第${attach.pos}条",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "list_attach",
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否首条",
+      "parameter": "isFirst",
+      "type": "Boolean",
+      "syntax": "<#if attach.isFirst></#if>",
+      "descriptionHtml": "当前是不是列表的第一条",
+      "description": "当前是不是列表的第一条",
+      "kind": "parameter",
+      "path": [
+        "list_attach",
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if attach.isFirst>首条</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "list_attach",
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否尾条",
+      "parameter": "isLast",
+      "type": "Boolean",
+      "syntax": "<#if attach.isLast></#if>",
+      "descriptionHtml": "当前是不是列表的最后一条",
+      "description": "当前是不是列表的最后一条",
+      "kind": "parameter",
+      "path": [
+        "list_attach",
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if attach.isLast>尾条</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "list_attach",
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否奇数行",
+      "parameter": "isOdd",
+      "type": "Boolean",
+      "syntax": "<#if attach.isOdd></#if>",
+      "descriptionHtml": "当前是不是奇数行",
+      "description": "当前是不是奇数行",
+      "kind": "parameter",
+      "path": [
+        "list_attach",
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if attach.isOdd>奇数行</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "list_attach",
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否偶数行",
+      "parameter": "isEven",
+      "type": "Boolean",
+      "syntax": "<#if attach.isEven></#if>",
+      "descriptionHtml": "当前是不是偶数行",
+      "description": "当前是不是偶数行",
+      "kind": "parameter",
+      "path": [
+        "list_attach",
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if attach.isEven>偶数行</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "list_attach",
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "列表位置参数",
+      "parameter": "listnogroup",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": [
+        "list_reattach"
+      ]
+    },
+    {
+      "name": "下载地址",
+      "parameter": "downloadUrl",
+      "type": "String",
+      "syntax": "${attach.downloadUrl}",
+      "descriptionHtml": "下载地址",
+      "description": "下载地址",
+      "kind": "parameter",
+      "path": [
+        "list_reattach"
+      ]
+    },
+    {
+      "name": "附件名称",
+      "parameter": "fileName",
+      "type": "String",
+      "syntax": "${attach.fileName}",
+      "descriptionHtml": "附件名称",
+      "description": "附件名称",
+      "kind": "parameter",
+      "path": [
+        "list_reattach"
+      ]
+    },
+    {
+      "name": "是第几条",
+      "parameter": "pos",
+      "type": "Integer",
+      "syntax": "${attach.pos}",
+      "descriptionHtml": "当前是列表的第几条(从1开始)",
+      "description": "当前是列表的第几条(从1开始)",
+      "kind": "parameter",
+      "path": [
+        "list_reattach",
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "第${attach.pos}条",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "list_reattach",
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否首条",
+      "parameter": "isFirst",
+      "type": "Boolean",
+      "syntax": "<#if attach.isFirst></#if>",
+      "descriptionHtml": "当前是不是列表的第一条",
+      "description": "当前是不是列表的第一条",
+      "kind": "parameter",
+      "path": [
+        "list_reattach",
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if attach.isFirst>首条</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "list_reattach",
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否尾条",
+      "parameter": "isLast",
+      "type": "Boolean",
+      "syntax": "<#if attach.isLast></#if>",
+      "descriptionHtml": "当前是不是列表的最后一条",
+      "description": "当前是不是列表的最后一条",
+      "kind": "parameter",
+      "path": [
+        "list_reattach",
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if attach.isLast>尾条</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "list_reattach",
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否奇数行",
+      "parameter": "isOdd",
+      "type": "Boolean",
+      "syntax": "<#if attach.isOdd></#if>",
+      "descriptionHtml": "当前是不是奇数行",
+      "description": "当前是不是奇数行",
+      "kind": "parameter",
+      "path": [
+        "list_reattach",
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if attach.isOdd>奇数行</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "list_reattach",
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否偶数行",
+      "parameter": "isEven",
+      "type": "Boolean",
+      "syntax": "<#if attach.isEven></#if>",
+      "descriptionHtml": "当前是不是偶数行",
+      "description": "当前是不是偶数行",
+      "kind": "parameter",
+      "path": [
+        "list_reattach",
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if attach.isEven>偶数行</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "list_reattach",
+        "listnogroup"
+      ]
+    }
+  ],
+  "template": "<#if searchcode==''>\n    <table><tr><td style=\"font-size: 9pt;\" align=\"center\">请输入查询码!</td></tr></table>\n<#else>\n    <form name=\"${formName}\" method=\"post\" action=\"${actionUrl}\" style=\"display: inline;\">\n        <table style=\"FONT-FAMILY: 宋体;FONT-SIZE: 9pt;\" align=\"center\">\n            <tr>\n                <td>\n                    查询码：&nbsp;<input type=\"text\" name=\"${formSearch}\" value=\"${searchcode}\" style=\"width: 150px\">\n                </td>\n                <td align=\"absmiddle\">\n                    <img src=\"/system/resource/images/default/anniu_cx2.jpg\" valign=\"bottom\" style=\"cursor:hand\" onClick=\"document.${formName}.submit()\">\n                </td>\n            </tr>\n        </table>\n    </form>\n    <#if statue=='1'>\n        <TABLE width=\"100%\" style=\"font-size: 9pt;\" >\n            <tr><td align=\"center\">没有找到你要查询的内容</td></tr>\n        </TABLE>\n    <#else>\n        <table width=\"100%\" border=\"0\"  style=\"word-wrap: break-word;word-break:break-all;border-collapse:collapse;border:1px #ecc197 solid;FONT-FAMILY: 宋体;FONT-SIZE: 9pt;\">\n            <tr>\n                <td width=\"117px\" align=\"left\" style=\"border:1px #ecc197 solid;COLOR: #ff6600;PADDING-BOTTOM: 5px;PADDING-LEFT: 5px;BACKGROUND-COLOR: #ffffec;PADDING-RIGHT: 5px;FONT-WEIGHT: bold;HEIGHT: 22px;PADDING-TOP: 5px;\">\n                    标题\n                </td>\n                <td align=\"left\" style=\"border:1px #ecc197 solid;COLOR: #555555;PADDING-LEFT: 15px;LINE-HEIGHT: 2;\">\n                    ${showTitle}\n                </td>\n            </tr>\n            <tr>\n                <td align=\"left\" style=\"border:1px #ecc197 solid;COLOR: #ff6600;PADDING-BOTTOM: 5px;PADDING-LEFT: 5px;BACKGROUND-COLOR: #ffffec;PADDING-RIGHT: 5px;FONT-WEIGHT: bold;HEIGHT: 22px;PADDING-TOP: 5px;\">\n                    发言人帐号\n                </td>\n                <td align=\"left\" style=\"border:1px #ecc197 solid;COLOR: #555555;PADDING-LEFT: 15px;LINE-HEIGHT: 2;\">\n                    ${showAccount}\n                </td>\n            </tr>\n            <tr>\n                <td align=\"left\" style=\"border:1px #ecc197 solid;COLOR: #ff6600;PADDING-BOTTOM: 5px;PADDING-LEFT: 5px;BACKGROUND-COLOR: #ffffec;PADDING-RIGHT: 5px;FONT-WEIGHT: bold;HEIGHT: 22px;PADDING-TOP: 5px;\">\n                    留言日期\n                </td>\n                <td align=\"left\" style=\"border:1px #ecc197 solid;COLOR: #555555;PADDING-LEFT: 15px;LINE-HEIGHT: 2;\">\n                    ${showTime}\n                </td>\n            </tr>\n            <#if showName!=''>\n                <tr>\n                    <td align=\"left\" style=\"border:1px #ecc197 solid;COLOR: #ff6600;PADDING-BOTTOM: 5px;PADDING-LEFT: 5px;BACKGROUND-COLOR: #ffffec;PADDING-RIGHT: 5px;FONT-WEIGHT: bold;HEIGHT: 22px;PADDING-TOP: 5px;\">\n                        联系人姓名\n                    </td>\n                    <td align=\"left\" style=\"border:1px #ecc197 solid;COLOR: #555555;PADDING-LEFT: 15px;LINE-HEIGHT: 2;\">\n                        ${showName}\n                    </td>\n                </tr>    \n            </#if>\n            <#if showIdCard!=''>\n                <tr>\n                    <td align=\"left\" style=\"border:1px #ecc197 solid;COLOR: #ff6600;PADDING-BOTTOM: 5px;PADDING-LEFT: 5px;BACKGROUND-COLOR: #ffffec;PADDING-RIGHT: 5px;FONT-WEIGHT: bold;HEIGHT: 22px;PADDING-TOP: 5px;\">\n                        身份证号\n                    </td>\n                    <td align=\"left\" style=\"border:1px #ecc197 solid;COLOR: #555555;PADDING-LEFT: 15px;LINE-HEIGHT: 2;\">\n                        ${showIdCard}\n                    </td>\n                </tr>\n            </#if>\n            <#if showTelphone!=''>\n                <tr>\n                    <td align=\"left\" style=\"border:1px #ecc197 solid;COLOR: #ff6600;PADDING-BOTTOM: 5px;PADDING-LEFT: 5px;BACKGROUND-COLOR: #ffffec;PADDING-RIGHT: 5px;FONT-WEIGHT: bold;HEIGHT: 22px;PADDING-TOP: 5px;\">\n                        手机\n                    </td>\n                    <td align=\"left\" style=\"border:1px #ecc197 solid;COLOR: #555555;PADDING-LEFT: 15px;LINE-HEIGHT: 2;\">\n                        ${showTelphone}\n                    </td>\n                </tr>\n            </#if>\n            <#if showAddress!=''>\n                 <tr>\n                    <td align=\"left\" style=\"border:1px #ecc197 solid;COLOR: #ff6600;PADDING-BOTTOM: 5px;PADDING-LEFT: 5px;BACKGROUND-COLOR: #ffffec;PADDING-RIGHT: 5px;FONT-WEIGHT: bold;HEIGHT: 22px;PADDING-TOP: 5px;\">\n                        联系方式\n                    </td>\n                    <td align=\"left\" style=\"border:1px #ecc197 solid;COLOR: #555555;PADDING-LEFT: 15px;LINE-HEIGHT: 2;\">\n                        ${showAddress}\n                    </td>\n                </tr> \n            </#if>\n            <#if showPhone!=''>\n                 <tr>\n                    <td align=\"left\" style=\"border:1px #ecc197 solid;COLOR: #ff6600;PADDING-BOTTOM: 5px;PADDING-LEFT: 5px;BACKGROUND-COLOR: #ffffec;PADDING-RIGHT: 5px;FONT-WEIGHT: bold;HEIGHT: 22px;PADDING-TOP: 5px;\">\n                        固定电话\n                    </td>\n                    <td align=\"left\" style=\"border:1px #ecc197 solid;COLOR: #555555;PADDING-LEFT: 15px;LINE-HEIGHT: 2;\">\n                        ${showPhone}\n                    </td>\n                </tr> \n            </#if>\n            <#if showEmail!=''>    \n                 <tr>\n                    <td align=\"left\" style=\"border:1px #ecc197 solid;COLOR: #ff6600;PADDING-BOTTOM: 5px;PADDING-LEFT: 5px;BACKGROUND-COLOR: #ffffec;PADDING-RIGHT: 5px;FONT-WEIGHT: bold;HEIGHT: 22px;PADDING-TOP: 5px;\">\n                        留言人Email\n                    </td>\n                    <td align=\"left\" style=\"border:1px #ecc197 solid;COLOR: #555555;PADDING-LEFT: 15px;LINE-HEIGHT: 2;\">\n                        ${showEmail}\n                    </td>\n                </tr> \n            </#if>\n            <#if showUnit!=''>         \n                 <tr>\n                    <td align=\"left\" style=\"border:1px #ecc197 solid;COLOR: #ff6600;PADDING-BOTTOM: 5px;PADDING-LEFT: 5px;BACKGROUND-COLOR: #ffffec;PADDING-RIGHT: 5px;FONT-WEIGHT: bold;HEIGHT: 22px;PADDING-TOP: 5px;\">\n                        留言人单位\n                    </td>\n                    <td align=\"left\" style=\"border:1px #ecc197 solid;COLOR: #555555;PADDING-LEFT: 15px;LINE-HEIGHT: 2;\">\n                        ${showUnit}\n                    </td>\n                </tr>\n            </#if>\n            <#if showSex!=''>   \n                 <tr>\n                    <td align=\"left\" style=\"border:1px #ecc197 solid;COLOR: #ff6600;PADDING-BOTTOM: 5px;PADDING-LEFT: 5px;BACKGROUND-COLOR: #ffffec;PADDING-RIGHT: 5px;FONT-WEIGHT: bold;HEIGHT: 22px;PADDING-TOP: 5px;\">\n                        性别\n                    </td>\n                    <td align=\"left\" style=\"border:1px #ecc197 solid;COLOR: #555555;PADDING-LEFT: 15px;LINE-HEIGHT: 2;\">\n                        ${showSex}\n                    </td>\n                </tr>\n            </#if>     \n            <tr>\n                <td align=\"left\" style=\"border:1px #ecc197 solid;COLOR: #ff6600;PADDING-BOTTOM: 5px;PADDING-LEFT: 5px;BACKGROUND-COLOR: #ffffec;PADDING-RIGHT: 5px;FONT-WEIGHT: bold;HEIGHT: 22px;PADDING-TOP: 5px;\">\n                    处理状态\n                </td>\n                <td align=\"left\" style=\"border:1px #ecc197 solid;COLOR: #555555;PADDING-LEFT: 15px;LINE-HEIGHT: 2;\">\n                   ${showAudit}\n                </td>\n            </tr>\n            <#if (attachSize>0)>\n                <tr>\n                    <td align=\"left\" style=\"border:1px #ecc197 solid;COLOR: #ff6600;PADDING-BOTTOM: 5px;PADDING-LEFT: 5px;BACKGROUND-COLOR: #ffffec;PADDING-RIGHT: 5px;FONT-WEIGHT: bold;HEIGHT: 22px;PADDING-TOP: 5px;\">\n                        附件\n                    </td>\n                    <td align=\"left\" style=\"border:1px #ecc197 solid;COLOR: #555555;PADDING-LEFT: 15px;LINE-HEIGHT: 2;\">\n                        <#list list_attach as attach>\n                            <a href=\"${attach.downloadUrl}\">${attach.fileName}</a><br>\n                        </#list>\n                    </td>\n                </tr> \n            </#if>\n            <tr>\n                <td align=\"left\" style=\"border:1px #ecc197 solid;COLOR: #ff6600;PADDING-BOTTOM: 5px;PADDING-LEFT: 5px;BACKGROUND-COLOR: #ffffec;PADDING-RIGHT: 5px;FONT-WEIGHT: bold;HEIGHT: 22px;PADDING-TOP: 5px;\">\n                    发言内容\n                </td>\n                <td align=\"left\" style=\"border:1px #ecc197 solid;COLOR: #555555;PADDING-LEFT: 15px;LINE-HEIGHT: 2;\">\n                    ${showContent}\n                </td>\n            </tr>\n            <#if showReaccount!=''>   \n                 <tr>\n                    <td align=\"left\" style=\"border:1px #ecc197 solid;COLOR: #ff6600;PADDING-BOTTOM: 5px;PADDING-LEFT: 5px;BACKGROUND-COLOR: #ffffec;PADDING-RIGHT: 5px;FONT-WEIGHT: bold;HEIGHT: 22px;PADDING-TOP: 5px;\">\n                        回复人名称\n                    </td>\n                    <td align=\"left\" style=\"border:1px #ecc197 solid;COLOR: #555555;PADDING-LEFT: 15px;LINE-HEIGHT: 2;\">\n                        ${showReaccount}\n                    </td>\n                </tr>\n            </#if>\n            <#if showRetime!=''>   \n                 <tr>\n                    <td align=\"left\" style=\"border:1px #ecc197 solid;COLOR: #ff6600;PADDING-BOTTOM: 5px;PADDING-LEFT: 5px;BACKGROUND-COLOR: #ffffec;PADDING-RIGHT: 5px;FONT-WEIGHT: bold;HEIGHT: 22px;PADDING-TOP: 5px;\">\n                        回复时间\n                    </td>\n                    <td align=\"left\" style=\"border:1px #ecc197 solid;COLOR: #555555;PADDING-LEFT: 15px;LINE-HEIGHT: 2;\">\n                        ${showRetime}\n                    </td>\n                </tr>\n            </#if>  \n            <#if (reattachSize>0)>\n                <tr>\n                    <td align=\"left\" style=\"border:1px #ecc197 solid;COLOR: #ff6600;PADDING-BOTTOM: 5px;PADDING-LEFT: 5px;BACKGROUND-COLOR: #ffffec;PADDING-RIGHT: 5px;FONT-WEIGHT: bold;HEIGHT: 22px;PADDING-TOP: 5px;\">\n                        回复附件\n                    </td>\n                    <td align=\"left\" style=\"border:1px #ecc197 solid;COLOR: #555555;PADDING-LEFT: 15px;LINE-HEIGHT: 2;\">\n                        <#list list_reattach as attach>\n                            <a href=\"${attach.downloadUrl}\">${attach.fileName}</a><br>\n                        </#list>\n                    </td>\n                </tr> \n            </#if>\n            <#if showRecontent!=''>   \n                 <tr>\n                    <td align=\"left\" style=\"border:1px #ecc197 solid;COLOR: #ff6600;PADDING-BOTTOM: 5px;PADDING-LEFT: 5px;BACKGROUND-COLOR: #ffffec;PADDING-RIGHT: 5px;FONT-WEIGHT: bold;HEIGHT: 22px;PADDING-TOP: 5px;\">\n                        回复内容\n                    </td>\n                    <td align=\"left\" style=\"border:1px #ecc197 solid;COLOR: #555555;PADDING-LEFT: 15px;LINE-HEIGHT: 2;\">\n                        ${showRecontent}\n                    </td>\n                </tr>\n            </#if>  \n        </table>\n    </#if>\n</#if>",
+  "exampleTemplate": "",
+  "previousFixtureHashes": [
+    "bf87e8c9",
+    "22c369e7"
+  ],
+  "css": "",
+  "fixture": {
+    "viewid": "1072",
+    "uid": "u_demo",
+    "uniqueClassName": "c_demo",
+    "statue": "搜索状态",
+    "searchcode": "查询码",
+    "formName": "boda_demo",
+    "actionUrl": "#preview",
+    "formSearch": "表单搜索框名称",
+    "title": "把课堂搬进山野，让知识连接更广阔的世界",
+    "showTitle": "把课堂搬进山野，让知识连接更广阔的世界",
+    "showAccount": "12",
+    "time": "2026-10-30",
+    "showTime": "2026-10-30",
+    "showName": "示例名称",
+    "showIdCard": "身份证号",
+    "showTelphone": "",
+    "showAddress": "联系方式",
+    "showPhone": "",
+    "showEmail": "",
+    "showUnit": "留言人单位",
+    "showSex": "性别",
+    "showAudit": "处理状态",
+    "attachSize": 6,
+    "showContent": "<p>这里是组件的示例正文。你可以修改模板结构和 CSS，实时观察内容排版的变化。</p><p>所有内容均为本地演示数据，可在“示例数据”中自由编辑。</p>",
+    "showReaccount": "12",
+    "retime": "2026-10-30",
+    "showRetime": "2026-10-30",
+    "reattachSize": 6,
+    "showRecontent": "<p>这里是组件的示例正文。你可以修改模板结构和 CSS，实时观察内容排版的变化。</p><p>所有内容均为本地演示数据，可在“示例数据”中自由编辑。</p>",
+    "uuid": "boda_demo",
+    "list_attach": [
+      {
+        "downloadUrl": "#preview",
+        "fileName": "活动指南.pdf"
+      },
+      {
+        "downloadUrl": "#preview",
+        "fileName": "活动指南.pdf"
+      }
+    ],
+    "list_reattach": [
+      {
+        "downloadUrl": "#preview",
+        "fileName": "活动指南.pdf",
+        "pos": 1
+      },
+      {
+        "downloadUrl": "#preview",
+        "fileName": "活动指南.pdf",
+        "pos": 2
+      }
+    ]
+  }
+}

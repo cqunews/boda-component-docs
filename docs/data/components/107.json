@@ -1,0 +1,1179 @@
+{
+  "id": "107",
+  "index": 107,
+  "name": "高级检索入口",
+  "category": "教师风采",
+  "parameterCount": 54,
+  "hasScript": true,
+  "templateLength": 6223,
+  "parameters": [
+    {
+      "name": "通用参数",
+      "parameter": "commonparam",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件id",
+      "parameter": "viewid",
+      "type": "String",
+      "syntax": "${viewid}",
+      "descriptionHtml": "组件本身的id，数字(形如 1001)",
+      "description": "组件本身的id，数字(形如 1001)",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件uid",
+      "parameter": "uid",
+      "type": "String",
+      "syntax": "${uid}",
+      "descriptionHtml": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "description": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "私有样式类名",
+      "parameter": "uniqueClassName",
+      "type": "String",
+      "syntax": "${uniqueClassName}",
+      "descriptionHtml": "用在私有样式表的类名上，字符串(形如 c10)，举例：<br>&lt;span class=\"<span style=\"color:red\">${uniqueClassName}</span>\" &gt;文字&lt;/span&gt;",
+      "description": "用在私有样式表的类名上，字符串(形如 c10)，举例：\n<span class=\"${uniqueClassName}\" >文字</span>",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<span class=\"${uniqueClassName}\" >文字</span>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "引入jQuery类库",
+      "parameter": "v_includeJquery",
+      "type": "Function",
+      "syntax": "${v_includeJquery()}",
+      "descriptionHtml": "引入系统自带的JQuery类库;<br> 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "description": "引入系统自带的JQuery类库;\n 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "\n<!--引入jQuery-->${v_includeJquery()}<!--引入jQuery完成-->\n",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "当前选择学院id",
+      "parameter": "curcollegeid",
+      "type": "String",
+      "syntax": "${curcollegeid}",
+      "descriptionHtml": "当前选择学院id",
+      "description": "当前选择学院id",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "学院列表",
+      "parameter": "collegeList",
+      "type": "List",
+      "syntax": "<#list collegeList as college></#list>",
+      "descriptionHtml": "学院列表",
+      "description": "学院列表",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#list collegeList as college>${college.collegeShowName}</#list>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "列表位置参数",
+      "parameter": "collegeListgroup",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "学院编号",
+      "parameter": "collegeId",
+      "type": "String",
+      "syntax": "${college.collegeId}",
+      "descriptionHtml": "学院编号",
+      "description": "学院编号",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "学院编码",
+      "parameter": "collegeCode",
+      "type": "String",
+      "syntax": "${college.collegeCode}",
+      "descriptionHtml": "学院编码",
+      "description": "学院编码",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "学院或系显示名称",
+      "parameter": "collegeShowName",
+      "type": "String",
+      "syntax": "${college.collegeShowName}",
+      "descriptionHtml": "学院或系显示名称",
+      "description": "学院或系显示名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "学科列表",
+      "parameter": "disciplineList",
+      "type": "List",
+      "syntax": "<#list disciplineList as discipline></#list>",
+      "descriptionHtml": "学科列表",
+      "description": "学科列表",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#list disciplineList as discipline>${discipline.disciplineName}</#list>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "列表位置参数",
+      "parameter": "disciplineListgroup",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "学科编号",
+      "parameter": "disciplineId",
+      "type": "String",
+      "syntax": "${discipline.disciplineId}",
+      "descriptionHtml": "学科编号",
+      "description": "学科编号",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "学科编码",
+      "parameter": "disciplineCode",
+      "type": "String",
+      "syntax": "${discipline.disciplineCode}",
+      "descriptionHtml": "学科编码",
+      "description": "学科编码",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "学科显示名称",
+      "parameter": "disciplineShowName",
+      "type": "String",
+      "syntax": "${discipline.disciplineShowName}",
+      "descriptionHtml": "学科显示名称",
+      "description": "学科显示名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "职称列表",
+      "parameter": "rankList",
+      "type": "List",
+      "syntax": "<#list rankList as rank></#list>",
+      "descriptionHtml": "职称列表",
+      "description": "职称列表",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#list rankList as rank>${rank.name}</#list>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "列表位置参数",
+      "parameter": "rankListgroup",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "职称编号",
+      "parameter": "rankId",
+      "type": "String",
+      "syntax": "${rank.rankId}",
+      "descriptionHtml": "职称编号",
+      "description": "职称编号",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "职称编码",
+      "parameter": "rankCode",
+      "type": "String",
+      "syntax": "${rank.rankCode}",
+      "descriptionHtml": "职称编码",
+      "description": "职称编码",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "职称显示名称",
+      "parameter": "rankShowName",
+      "type": "String",
+      "syntax": "${rank.rankShowName}",
+      "descriptionHtml": "职称显示名称",
+      "description": "职称显示名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "荣誉列表",
+      "parameter": "honorList",
+      "type": "List",
+      "syntax": "<#list honorList as honor></#list>",
+      "descriptionHtml": "荣誉列表",
+      "description": "荣誉列表",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#list honorList as honor>${honor.name}</#list>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "列表位置参数",
+      "parameter": "honorListgroup",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "荣誉编号",
+      "parameter": "honorId",
+      "type": "String",
+      "syntax": "${honor.honorId}",
+      "descriptionHtml": "荣誉编号",
+      "description": "荣誉编号",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "荣誉编码",
+      "parameter": "honorCode",
+      "type": "String",
+      "syntax": "${honor.honorCode}",
+      "descriptionHtml": "荣誉编码",
+      "description": "荣誉编码",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "荣誉显示名称",
+      "parameter": "honorShowName",
+      "type": "String",
+      "syntax": "${honor.honorShowName}",
+      "descriptionHtml": "荣誉显示名称",
+      "description": "荣誉显示名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "拼音列表",
+      "parameter": "pinyinList",
+      "type": "List",
+      "syntax": "<#list pinyinList as content></#list>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#list pinyinList as content>${content.pinyin}</#list>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "列表位置参数",
+      "parameter": "pinyinListgroup",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "拼音字母",
+      "parameter": "pinyin",
+      "type": "String",
+      "syntax": "${content.pinyin}",
+      "descriptionHtml": "拼音字母",
+      "description": "拼音字母",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "是否只查询博导",
+      "parameter": "isbd",
+      "type": "Boolean",
+      "syntax": "${isbd}",
+      "descriptionHtml": "是否只查询博导",
+      "description": "是否只查询博导",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "是否只查询硕导",
+      "parameter": "issd",
+      "type": "Boolean",
+      "syntax": "${issd}",
+      "descriptionHtml": "是否只查询硕导",
+      "description": "是否只查询硕导",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "一共有多少条",
+      "parameter": "collegeSize",
+      "type": "Integer",
+      "syntax": "${college.collegeSize}",
+      "descriptionHtml": "一共有多少条",
+      "description": "一共有多少条",
+      "kind": "parameter",
+      "path": [
+        "collegeListgroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "第${college.collegeSize}条",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "collegeListgroup"
+      ]
+    },
+    {
+      "name": "当前第几条",
+      "parameter": "pos",
+      "type": "Integer",
+      "syntax": "${college.pos}",
+      "descriptionHtml": "当前是列表的第几条(从1开始)",
+      "description": "当前是列表的第几条(从1开始)",
+      "kind": "parameter",
+      "path": [
+        "collegeListgroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "第${college.pos}条",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "collegeListgroup"
+      ]
+    },
+    {
+      "name": "是否首条",
+      "parameter": "isFirst",
+      "type": "Boolean",
+      "syntax": "<#if college.isFirst></#if>",
+      "descriptionHtml": "当前是不是列表的第一条",
+      "description": "当前是不是列表的第一条",
+      "kind": "parameter",
+      "path": [
+        "collegeListgroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if college.isFirst>首条</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "collegeListgroup"
+      ]
+    },
+    {
+      "name": "是否尾条",
+      "parameter": "isLast",
+      "type": "Boolean",
+      "syntax": "<#if college.isLast></#if>",
+      "descriptionHtml": "当前是不是列表的最后一条",
+      "description": "当前是不是列表的最后一条",
+      "kind": "parameter",
+      "path": [
+        "collegeListgroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if college.isLast>尾条</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "collegeListgroup"
+      ]
+    },
+    {
+      "name": "是否奇数行",
+      "parameter": "isOdd",
+      "type": "Boolean",
+      "syntax": "<#if college.isOdd></#if>",
+      "descriptionHtml": "当前是不是奇数行",
+      "description": "当前是不是奇数行",
+      "kind": "parameter",
+      "path": [
+        "collegeListgroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if college.isOdd>奇数行</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "collegeListgroup"
+      ]
+    },
+    {
+      "name": "是否偶数行",
+      "parameter": "isEven",
+      "type": "Boolean",
+      "syntax": "<#if college.isEven></#if>",
+      "descriptionHtml": "当前是不是偶数行",
+      "description": "当前是不是偶数行",
+      "kind": "parameter",
+      "path": [
+        "collegeListgroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if college.isEven>偶数行</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "collegeListgroup"
+      ]
+    },
+    {
+      "name": "共有几条",
+      "parameter": "disciplineSize",
+      "type": "Integer",
+      "syntax": "${discipline.disciplineSize}",
+      "descriptionHtml": "当前列表一共有几条",
+      "description": "当前列表一共有几条",
+      "kind": "parameter",
+      "path": [
+        "disciplineListgroup"
+      ]
+    },
+    {
+      "name": "当前第几条",
+      "parameter": "pos",
+      "type": "Integer",
+      "syntax": "${discipline.pos}",
+      "descriptionHtml": "当前是列表的第几条(从1开始)",
+      "description": "当前是列表的第几条(从1开始)",
+      "kind": "parameter",
+      "path": [
+        "disciplineListgroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "第${discipline.pos}条",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "disciplineListgroup"
+      ]
+    },
+    {
+      "name": "是否首条",
+      "parameter": "isFirst",
+      "type": "Boolean",
+      "syntax": "<#if discipline.isFirst></#if>",
+      "descriptionHtml": "当前是不是列表的第一条",
+      "description": "当前是不是列表的第一条",
+      "kind": "parameter",
+      "path": [
+        "disciplineListgroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if discipline.isFirst>首条</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "disciplineListgroup"
+      ]
+    },
+    {
+      "name": "是否尾条",
+      "parameter": "isLast",
+      "type": "Boolean",
+      "syntax": "<#if discipline.isLast></#if>",
+      "descriptionHtml": "当前是不是列表的最后一条",
+      "description": "当前是不是列表的最后一条",
+      "kind": "parameter",
+      "path": [
+        "disciplineListgroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if discipline.isLast>尾条</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "disciplineListgroup"
+      ]
+    },
+    {
+      "name": "是否奇数行",
+      "parameter": "isOdd",
+      "type": "Boolean",
+      "syntax": "<#if discipline.isOdd></#if>",
+      "descriptionHtml": "当前是不是奇数行",
+      "description": "当前是不是奇数行",
+      "kind": "parameter",
+      "path": [
+        "disciplineListgroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if discipline.isOdd>奇数行</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "disciplineListgroup"
+      ]
+    },
+    {
+      "name": "是否偶数行",
+      "parameter": "isEven",
+      "type": "Boolean",
+      "syntax": "<#if discipline.isEven></#if>",
+      "descriptionHtml": "当前是不是偶数行",
+      "description": "当前是不是偶数行",
+      "kind": "parameter",
+      "path": [
+        "disciplineListgroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if discipline.isEven>偶数行</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "disciplineListgroup"
+      ]
+    },
+    {
+      "name": "共有几条",
+      "parameter": "size",
+      "type": "Integer",
+      "syntax": "${rank.size}",
+      "descriptionHtml": "当前列表一共有几条",
+      "description": "当前列表一共有几条",
+      "kind": "parameter",
+      "path": [
+        "rankListgroup"
+      ]
+    },
+    {
+      "name": "当前第几条",
+      "parameter": "pos",
+      "type": "Integer",
+      "syntax": "${rank.pos}",
+      "descriptionHtml": "当前是列表的第几条(从1开始)",
+      "description": "当前是列表的第几条(从1开始)",
+      "kind": "parameter",
+      "path": [
+        "rankListgroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "第${rank.pos}条",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "rankListgroup"
+      ]
+    },
+    {
+      "name": "是否首条",
+      "parameter": "isFirst",
+      "type": "Boolean",
+      "syntax": "<#if rank.isFirst></#if>",
+      "descriptionHtml": "当前是不是列表的第一条",
+      "description": "当前是不是列表的第一条",
+      "kind": "parameter",
+      "path": [
+        "rankListgroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if rank.isFirst>首条</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "rankListgroup"
+      ]
+    },
+    {
+      "name": "是否尾条",
+      "parameter": "isLast",
+      "type": "Boolean",
+      "syntax": "<#if rank.isLast></#if>",
+      "descriptionHtml": "当前是不是列表的最后一条",
+      "description": "当前是不是列表的最后一条",
+      "kind": "parameter",
+      "path": [
+        "rankListgroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if rank.isLast>尾条</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "rankListgroup"
+      ]
+    },
+    {
+      "name": "是否奇数行",
+      "parameter": "isOdd",
+      "type": "Boolean",
+      "syntax": "<#if rank.isOdd></#if>",
+      "descriptionHtml": "当前是不是奇数行",
+      "description": "当前是不是奇数行",
+      "kind": "parameter",
+      "path": [
+        "rankListgroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if rank.isOdd>奇数行</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "rankListgroup"
+      ]
+    },
+    {
+      "name": "是否偶数行",
+      "parameter": "isEven",
+      "type": "Boolean",
+      "syntax": "<#if rank.isEven></#if>",
+      "descriptionHtml": "当前是不是偶数行",
+      "description": "当前是不是偶数行",
+      "kind": "parameter",
+      "path": [
+        "rankListgroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if rank.isEven>偶数行</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "rankListgroup"
+      ]
+    },
+    {
+      "name": "共有几条",
+      "parameter": "size",
+      "type": "Integer",
+      "syntax": "${honor.size}",
+      "descriptionHtml": "当前列表一共有几条",
+      "description": "当前列表一共有几条",
+      "kind": "parameter",
+      "path": [
+        "honorListgroup"
+      ]
+    },
+    {
+      "name": "当前第几条",
+      "parameter": "pos",
+      "type": "Integer",
+      "syntax": "${honor.pos}",
+      "descriptionHtml": "当前是列表的第几条(从1开始)",
+      "description": "当前是列表的第几条(从1开始)",
+      "kind": "parameter",
+      "path": [
+        "honorListgroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "第${honor.pos}条",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "honorListgroup"
+      ]
+    },
+    {
+      "name": "是否首条",
+      "parameter": "isFirst",
+      "type": "Boolean",
+      "syntax": "<#if honor.isFirst></#if>",
+      "descriptionHtml": "当前是不是列表的第一条",
+      "description": "当前是不是列表的第一条",
+      "kind": "parameter",
+      "path": [
+        "honorListgroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if honor.isFirst>首条</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "honorListgroup"
+      ]
+    },
+    {
+      "name": "是否尾条",
+      "parameter": "isLast",
+      "type": "Boolean",
+      "syntax": "<#if honor.isLast></#if>",
+      "descriptionHtml": "当前是不是列表的最后一条",
+      "description": "当前是不是列表的最后一条",
+      "kind": "parameter",
+      "path": [
+        "honorListgroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if honor.isLast>尾条</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "honorListgroup"
+      ]
+    },
+    {
+      "name": "是否奇数行",
+      "parameter": "isOdd",
+      "type": "Boolean",
+      "syntax": "<#if honor.isOdd></#if>",
+      "descriptionHtml": "当前是不是奇数行",
+      "description": "当前是不是奇数行",
+      "kind": "parameter",
+      "path": [
+        "honorListgroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if honor.isOdd>奇数行</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "honorListgroup"
+      ]
+    },
+    {
+      "name": "是否偶数行",
+      "parameter": "isEven",
+      "type": "Boolean",
+      "syntax": "<#if honor.isEven></#if>",
+      "descriptionHtml": "当前是不是偶数行",
+      "description": "当前是不是偶数行",
+      "kind": "parameter",
+      "path": [
+        "honorListgroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if honor.isEven>偶数行</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "honorListgroup"
+      ]
+    },
+    {
+      "name": "当前第几条",
+      "parameter": "pos",
+      "type": "Integer",
+      "syntax": "${content.pos}",
+      "descriptionHtml": "当前是列表的第几条(从1开始)",
+      "description": "当前是列表的第几条(从1开始)",
+      "kind": "parameter",
+      "path": [
+        "pinyinListgroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "第${content.pos}条",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "pinyinListgroup"
+      ]
+    },
+    {
+      "name": "是否首条",
+      "parameter": "isFirst",
+      "type": "Boolean",
+      "syntax": "<#if content.isFirst></#if>",
+      "descriptionHtml": "当前是不是列表的第一条",
+      "description": "当前是不是列表的第一条",
+      "kind": "parameter",
+      "path": [
+        "pinyinListgroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if content.isFirst>首条</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "pinyinListgroup"
+      ]
+    },
+    {
+      "name": "是否尾条",
+      "parameter": "isLast",
+      "type": "Boolean",
+      "syntax": "<#if content.isLast></#if>",
+      "descriptionHtml": "当前是不是列表的最后一条",
+      "description": "当前是不是列表的最后一条",
+      "kind": "parameter",
+      "path": [
+        "pinyinListgroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if content.isLast>尾条</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "pinyinListgroup"
+      ]
+    },
+    {
+      "name": "是否奇数行",
+      "parameter": "isOdd",
+      "type": "Boolean",
+      "syntax": "<#if content.isOdd></#if>",
+      "descriptionHtml": "当前是不是奇数行",
+      "description": "当前是不是奇数行",
+      "kind": "parameter",
+      "path": [
+        "pinyinListgroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if content.isOdd>奇数行</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "pinyinListgroup"
+      ]
+    },
+    {
+      "name": "是否偶数行",
+      "parameter": "isEven",
+      "type": "Boolean",
+      "syntax": "<#if content.isEven></#if>",
+      "descriptionHtml": "当前是不是偶数行",
+      "description": "当前是不是偶数行",
+      "kind": "parameter",
+      "path": [
+        "pinyinListgroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if content.isEven>偶数行</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "pinyinListgroup"
+      ]
+    }
+  ],
+  "template": "<script type=\"text/javascript\">\nvar  create_advance_search_conditon = null;\nvar tsites_advance_search = null;\njQuery(document).ready(function(){\n    jQuery.ajax({\n          url: \"/system/resource/tsites/jsviews.min.js\",\n          dataType: \"script\",\n          cache: true\n    }).done(function() {\n        tsites_advance_search = new Tsites_advance_search();\n        if(tsites_load_data_options)\n        {\n            tsites_advance_search.initParam(tsites_load_data_options); \n            tsites_advance_search.setIsBd(${isbd});\n            tsites_advance_search.setIsSd(${issd}); \n            tsites_advance_search.loadData();\n        }\n        create_advance_search_conditon = new Create_advance_search_conditon();\n    });\n});\nfunction Create_advance_search_conditon()\n{\n    var teachername = \"\";\n    var rdvalue = \"\";\n \n    this.setTeacherNameAndRdValue = function()\n    {\n        teachername = jQuery(\"#${teamnameInputId}\").val(); \n        if(teachername==\"关键字\")\n        {\n            teachername = \"\";\n        }\n            rdvalue = jQuery(\"#${reasearchDirection}\").val(); \n        if(rdvalue==\"关键字\")\n        {\n            rdvalue = \"\";\n        } \n    }   \n    this.selectByCollege = function(sobj)\n    {\n        this.setTeacherNameAndRdValue();\n        tsites_advance_search.onlySetTeacherNameAndRd(teachername,rdvalue);\n        var id = sobj?sobj.options[sobj.selectedIndex].value:0; \n        tsites_advance_search.setCollege(id);\n    }\n    this.selectByDiscipline = function(dobj)\n    {\n        this.setTeacherNameAndRdValue();\n        tsites_advance_search.onlySetTeacherNameAndRd(teachername,rdvalue);\n        var id = dobj?dobj.options[dobj.selectedIndex].value:0;\n        tsites_advance_search.setDiscipline(id);\n    }\n    this.selectByEnrollDiscipline = function(dobj)\n    {\n        this.setTeacherNameAndRdValue();\n        tsites_advance_search.onlySetTeacherNameAndRd(teachername,rdvalue);\n        var id = dobj?dobj.options[dobj.selectedIndex].value:0;\n        tsites_advance_search.setEnrollDiscipline(id);\n    }\n    this.selectByRank = function(id,aobj)\n    {\n        this.setTeacherNameAndRdValue();\n        tsites_advance_search.onlySetTeacherNameAndRd(teachername,rdvalue);\n        tsites_advance_search.setRank(id);\n    }\n    this.selectByHonor = function(dobj)\n    {\n        this.setTeacherNameAndRdValue();\n        tsites_advance_search.onlySetTeacherNameAndRd(teachername,rdvalue);\n    var id = dobj?dobj.options[dobj.selectedIndex].value:0;\n        tsites_advance_search.setHonor(id);\n    }\n    this.selectByPinyin = function(py)\n    {\n        this.setTeacherNameAndRdValue();\n        tsites_advance_search.onlySetTeacherNameAndRd(teachername,rdvalue);\n        tsites_advance_search.setPinyin(py);\n    }\n    this.selectByIsBd = function()\n   {\n        this.setTeacherNameAndRdValue();\n        this.setBdAndSdValue();\n        tsites_advance_search.onlySetTeacherNameAndRd(teachername,rdvalue);\n        tsites_advance_search.setIsBd(isbd);\n    }\n     this.selectByIsSd = function()\n   {\n        this.setTeacherNameAndRdValue();\n        this.setBdAndSdValue();\n        tsites_advance_search.onlySetTeacherNameAndRd(teachername,rdvalue);\n        tsites_advance_search.setIsSd(issd);\n    }\n    this.selectByNameAndRd = function()\n    {\n        this.setTeacherNameAndRdValue();\n        tsites_advance_search.setTeacherNameAndRd(teachername,rdvalue);\n    }\n    this.reset_select = function()\n    {\n        jQuery(\"#${teamnameInputId}\").val(\"关键字\");\n        jQuery(\"#${reasearchDirection}\").val(\"关键字\"); \n        //学院重置\n        var tc = document.getElementById(\"tsites_teacher_query_college_id\");\n        tc.options[0].selected=true;\n        //学科重置\n        var ttd = document.getElementById(\"tsites_teacher_query_discipline_id\");\n        ttd.options[0].selected=true;\n        //教师职称重置\n        var ttqd = document.getElementById(\"tsites_teacher_query_zs_discipline_id\");\n        ttqd.options[0].selected=true; \n        tsites_advance_search.resetCollege(0);\n        tsites_advance_search.resetDiscipline(0);\n        tsites_advance_search.resetRank(0);\n        tsites_advance_search.onlySetTeacherNameAndRd('','');\n        tsites_advance_search.loadData();   \n    }\n}\n</script>\n<div class=\"search-area clearfix\">\n<div class=\"item\">\n<label for=\"\">学院设置：</label>\n\n<select onchange=\"create_advance_search_conditon.selectByCollege(this)\" id=\"tsites_teacher_query_college_id\" >\n    <option value=\"0\">--不限--</option>\n    <#list collegeList as college>\n        <option value=\"${college.collegeId}\">\n        |--${college.collegeShowName}\n        </option>\n          \n    </#list>\n</select>\n</div>\n\n\n\n\n\n<div class=\"item\">\n<label for=\"\">学科专业：</label>\n<select onchange=\"create_advance_search_conditon.selectByDiscipline(this)\" id=\"tsites_teacher_query_discipline_id\">\n    <option value=\"0\">--不限--</option>\n    <#list disciplineList as discipline>\n        <option value=\"${discipline.disciplineId}\">\n        |--${discipline.disciplineShowName}\n        </option>        \n    </#list>\n</select>\n</div>\n\n\n<div class=\"item\">\n<label for=\"\">研究方向：</label>\n<input id=\"${reasearchDirection}\" name=\"\" type=\"text\" class=\"inpyjf text\" value=\"关键字\" onfocus=\"this.style.color='#000';if (value =='关键字'){value =''}\" onblur=\"this.style.color='#000';if (value ==''){value='关键字'}\"  />\n</div>\n\n\n<div class=\"item\">\n<label for=\"\">教师职称：</label>\n<select onchange=\"create_advance_search_conditon.selectByRank(this.value,this)\" id=\"tsites_teacher_query_zs_discipline_id\">\n    <option value=\"0\">--不限--</option>\n    <#list rankList as rank>\n        <option value=\"${rank.rankId}\">\n        |--${rank.rankShowName}\n        </option>\n    </#list>\n</select>\n</div>\n\n\n<div class=\"item\">\n<label for=\"\">姓氏名称：</label>\n<input id=\"${teamnameInputId}\" name=\"\" type=\"text\" class=\"inpyjf text\" value=\"关键字\" onfocus=\"this.style.color='#000';if (value =='关键字'){value =''}\" onblur=\"this.style.color='#000';if (value ==''){value='关键字'}\"/>\n</div>\n\n\n\n\n\n\n\n<div class=\"submite\">\n           \n                <input value=\"查询\" class=\"sub\" type=\"button\" onclick=\"create_advance_search_conditon.selectByNameAndRd()\" >\n           \n                <input value=\"重置\" class=\"reset\" type=\"button\" onclick=\"create_advance_search_conditon.reset_select()\">\n          \n</div>\n\n</div>\n\n",
+  "exampleTemplate": "",
+  "previousFixtureHashes": [
+    "18f32425",
+    "6e4f16e5"
+  ],
+  "css": "",
+  "fixture": {
+    "viewid": "1107",
+    "uid": "u_demo",
+    "uniqueClassName": "c_demo",
+    "curcollegeid": "当前选择学院id",
+    "isbd": true,
+    "issd": true,
+    "teamnameInputId": "demo_teamnameInputId",
+    "reasearchDirection": "示例内容",
+    "collegeList": [
+      {
+        "collegeId": "demo_collegeId_0",
+        "collegeShowName": "示例单位一",
+        "collegeCode": "学院编码",
+        "collegeSize": 3,
+        "pos": 1
+      },
+      {
+        "collegeId": "demo_collegeId_1",
+        "collegeShowName": "示例单位二",
+        "collegeCode": "学院编码",
+        "collegeSize": 3,
+        "pos": 2
+      },
+      {
+        "collegeId": "demo_collegeId_2",
+        "collegeShowName": "示例单位三",
+        "collegeCode": "学院编码",
+        "collegeSize": 3,
+        "pos": 3
+      },
+      {
+        "collegeId": "demo_collegeId_3",
+        "collegeShowName": "示例单位四",
+        "collegeCode": "学院编码",
+        "collegeSize": 3,
+        "pos": 4
+      },
+      {
+        "collegeId": "demo_collegeId_4",
+        "collegeShowName": "示例单位五",
+        "collegeCode": "学院编码",
+        "collegeSize": 3,
+        "pos": 5
+      }
+    ],
+    "disciplineList": [
+      {
+        "disciplineId": "demo_disciplineId_0",
+        "disciplineShowName": "示例名称",
+        "disciplineCode": "学科编码",
+        "disciplineSize": 6,
+        "pos": 1
+      },
+      {
+        "disciplineId": "demo_disciplineId_1",
+        "disciplineShowName": "示例名称",
+        "disciplineCode": "学科编码",
+        "disciplineSize": 6,
+        "pos": 2
+      },
+      {
+        "disciplineId": "demo_disciplineId_2",
+        "disciplineShowName": "示例名称",
+        "disciplineCode": "学科编码",
+        "disciplineSize": 6,
+        "pos": 3
+      },
+      {
+        "disciplineId": "demo_disciplineId_3",
+        "disciplineShowName": "示例名称",
+        "disciplineCode": "学科编码",
+        "disciplineSize": 6,
+        "pos": 4
+      },
+      {
+        "disciplineId": "demo_disciplineId_4",
+        "disciplineShowName": "示例名称",
+        "disciplineCode": "学科编码",
+        "disciplineSize": 6,
+        "pos": 5
+      }
+    ],
+    "rankList": [
+      {
+        "rankId": "demo_rankId_0",
+        "rankShowName": "示例名称",
+        "rankCode": "职称编码",
+        "size": 6,
+        "pos": 1
+      },
+      {
+        "rankId": "demo_rankId_1",
+        "rankShowName": "示例名称",
+        "rankCode": "职称编码",
+        "size": 6,
+        "pos": 2
+      },
+      {
+        "rankId": "demo_rankId_2",
+        "rankShowName": "示例名称",
+        "rankCode": "职称编码",
+        "size": 6,
+        "pos": 3
+      },
+      {
+        "rankId": "demo_rankId_3",
+        "rankShowName": "示例名称",
+        "rankCode": "职称编码",
+        "size": 6,
+        "pos": 4
+      },
+      {
+        "rankId": "demo_rankId_4",
+        "rankShowName": "示例名称",
+        "rankCode": "职称编码",
+        "size": 6,
+        "pos": 5
+      }
+    ]
+  }
+}

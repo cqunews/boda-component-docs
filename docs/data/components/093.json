@@ -1,0 +1,470 @@
+{
+  "id": "093",
+  "index": 93,
+  "name": "复杂查询结果",
+  "category": "领导信箱",
+  "parameterCount": 22,
+  "hasScript": false,
+  "templateLength": 3679,
+  "parameters": [
+    {
+      "name": "通用参数",
+      "parameter": "commonparam",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件id",
+      "parameter": "viewid",
+      "type": "String",
+      "syntax": "${viewid}",
+      "descriptionHtml": "组件本身的id，数字(形如 1001)",
+      "description": "组件本身的id，数字(形如 1001)",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件uid",
+      "parameter": "uid",
+      "type": "String",
+      "syntax": "${uid}",
+      "descriptionHtml": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "description": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "私有样式类名",
+      "parameter": "uniqueClassName",
+      "type": "String",
+      "syntax": "${uniqueClassName}",
+      "descriptionHtml": "用在私有样式表的类名上，字符串(形如 c10)，举例：<br>&lt;span class=\"<span style=\"color:red\">${uniqueClassName}</span>\" &gt;文字&lt;/span&gt;",
+      "description": "用在私有样式表的类名上，字符串(形如 c10)，举例：\n<span class=\"${uniqueClassName}\" >文字</span>",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<span class=\"${uniqueClassName}\" >文字</span>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "引入jQuery类库",
+      "parameter": "v_includeJquery",
+      "type": "Function",
+      "syntax": "${v_includeJquery()}",
+      "descriptionHtml": "引入系统自带的JQuery类库;<br> 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "description": "引入系统自带的JQuery类库;\n 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "\n<!--引入jQuery-->${v_includeJquery()}<!--引入jQuery完成-->\n",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "唯一标识",
+      "parameter": "UUID",
+      "type": "String",
+      "syntax": "${UUID}",
+      "descriptionHtml": "唯一标识",
+      "description": "唯一标识",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "${UUID}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "CSS分页栏",
+      "parameter": "cssPageBar",
+      "type": "cssPageBar",
+      "syntax": "${cssPageBar}",
+      "descriptionHtml": "可以使用css样式表定义的翻页列表的分页栏, 请使用右侧按钮配置要使用的样式",
+      "description": "可以使用css样式表定义的翻页列表的分页栏, 请使用右侧按钮配置要使用的样式",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "${includePageBarCss}<div style=\"margin-top:10px;text-align:center;\" class=\"pb_sys_common pb_sys_normal pb_sys_style1\"><span class=\"p_t\">共${totalCount}条</span> ${cssPageBar}</div><#--分页表头-->",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "配置样式",
+      "parameter": null,
+      "type": null,
+      "syntax": "${cssPageBar}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "表单名称",
+      "parameter": "formName",
+      "type": "String",
+      "syntax": "${formName}",
+      "descriptionHtml": "表单名称",
+      "description": "表单名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<form name=\"${formName}\" id=\"${formName}\" method=\"post\">",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "信件列表",
+      "parameter": "size",
+      "type": "Integer",
+      "syntax": "${size}",
+      "descriptionHtml": "信件列表条数，可以在配置中修改",
+      "description": "信件列表条数，可以在配置中修改",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "信件列表：${size}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "信件列表",
+      "parameter": "list",
+      "type": "List",
+      "syntax": "<#list list as list></#list>",
+      "descriptionHtml": "信件列表",
+      "description": "信件列表",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#list list as list></#list>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "列表位置参数",
+      "parameter": "listnogroup",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "信件ID",
+      "parameter": "id",
+      "type": "String",
+      "syntax": "${list.leadermailid}",
+      "descriptionHtml": "链接编号ID",
+      "description": "链接编号ID",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "查询码",
+      "parameter": "searchcode",
+      "type": "String",
+      "syntax": "${list.searchcode}",
+      "descriptionHtml": "信件的查询码",
+      "description": "信件的查询码",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "信件详细页链接",
+      "parameter": "url",
+      "type": "String",
+      "syntax": "${list.url}",
+      "descriptionHtml": "信件的查询码",
+      "description": "信件的查询码",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "未处理的标题",
+      "parameter": "title",
+      "type": "String",
+      "syntax": "${list.title}",
+      "descriptionHtml": "未处理的信件标题，不建议直接输出",
+      "description": "未处理的信件标题，不建议直接输出",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "显示标题",
+      "parameter": "showtitle",
+      "type": "String",
+      "syntax": "${list.showtitle}",
+      "descriptionHtml": "显示用的标题，调整过格式并可配置长度限制",
+      "description": "显示用的标题，调整过格式并可配置长度限制",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<a href=\"${list.url}\">${list.showtitle}</a>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "信件类别",
+      "parameter": "typename",
+      "type": "String",
+      "syntax": "${list.typename}",
+      "descriptionHtml": "信件的类别",
+      "description": "信件的类别",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "信件所属部门",
+      "parameter": "lmmsgtypename",
+      "type": "String",
+      "syntax": "${list.lmmsgtypename}",
+      "descriptionHtml": "信件所属部门",
+      "description": "信件所属部门",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "信件日期",
+      "parameter": "date",
+      "type": "String",
+      "syntax": " title=\"${list.date}\" ",
+      "descriptionHtml": "信件日期",
+      "description": "信件日期",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "信件回复状态",
+      "parameter": "reply",
+      "type": "String",
+      "syntax": "${list.reply}",
+      "descriptionHtml": "信件回复状态",
+      "description": "信件回复状态",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "点击数",
+      "parameter": "clickcount",
+      "type": "String",
+      "syntax": "${list.clickcount}",
+      "descriptionHtml": "信件的点击数量",
+      "description": "信件的点击数量",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "是第几条",
+      "parameter": "pos",
+      "type": "Integer",
+      "syntax": "${list.pos}",
+      "descriptionHtml": "当前是列表的第几条(从1开始)",
+      "description": "当前是列表的第几条(从1开始)",
+      "kind": "parameter",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "第${list.pos}条",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否首条",
+      "parameter": "isFirst",
+      "type": "Boolean",
+      "syntax": "<#if list.isFirst></#if>",
+      "descriptionHtml": "当前是不是列表的第一条",
+      "description": "当前是不是列表的第一条",
+      "kind": "parameter",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if list.isFirst>首条</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否尾条",
+      "parameter": "isLast",
+      "type": "Boolean",
+      "syntax": "<#if list.isLast></#if>",
+      "descriptionHtml": "当前是不是列表的最后一条",
+      "description": "当前是不是列表的最后一条",
+      "kind": "parameter",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if list.isLast>尾条</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listnogroup"
+      ]
+    }
+  ],
+  "template": "<FORM method=\"post\" id=\"${formName}\" name=\"${formName}\" style=\"display: inline;\">  \n        <input type=\"hidden\" name=\"wbsearchtitle\" value=\"${base64wbsearchtitle}\" />\n        <input type=\"hidden\" name=\"wbsearchname\" value=\"${base64wbsearchname}\" />\n        <input type=\"hidden\" name=\"wbserialnum\" value=\"${base64wbserialnum}\" />  \n        <TABLE  cellspacing=\"0\" cellpadding=\"5\" width=\"100%\" border=\"0\" style=\"word-break:break-all;border-collapse: collapse;border:1px #FFA366 solid;FONT-FAMILY: 宋体;COLOR: #6f6f6f;FONT-SIZE: 9pt;\">\n            <tr  style=\"COLOR: #ff6600;FONT-FAMILY: 宋体;BACKGROUND-IMAGE: url(/system/resource/images/leadermail/ldxx_list_topbg.gif);FONT-WEIGHT: bold;POSITION: relative;HEIGHT: 32px;FONT-SIZE: 9pt; \" >\n                <td align=\"center\" style=\"border:1px #FFA366 solid;\">\n                    <span >查询码</span>\n                </td>               \n                <td align=\"center\" style=\"border:1px #FFA366 solid;\">\n                    <span >标题</span>\n                </td>               \n                <td align=\"center\" style=\"border:1px #FFA366 solid;\">\n                    <span >类别</span>\n                </td>\n                <td align=\"center\" style=\"border:1px #FFA366 solid;\">\n                    <span >信件类型</span>\n                </td>               \n                <td align=\"center\" style=\"border:1px #FFA366 solid;\">\n                    <span >时间</span>\n                </td>               \n                <td align=\"center\" style=\"border:1px #FFA366 solid;\">\n                    <span >回复状态</span>\n                </td>               \n                <td align=\"center\" style=\"border:1px #FFA366 solid;\">\n                    <span >点击次数</span>\n                </td>   \n            </tr>\n            <#list list as list>\n\n            <TR  align=\"center\">                  \n                <TD height=5 align=\"left\" nowrap=\"nowrap\"  style=\"border:1px #FFA366 solid;\">\n                 ${list.searchcode}\n                </TD> \n                \n                <TD height=5 align=\"left\" nowrap=\"nowrap\" style=\"padding-left:30px;border:1px #FFA366 solid;\">\n                    <a href=\"${list.url}\"  style=\"text-decoration: none;\" >\n                    <span  style=\"TEXT-DECORATION: none;FONT-FAMILY: 宋体;COLOR: #6f6f6f;POSITION: relative;FONT-SIZE: 9pt;cursor: hand\">\n                    ${list.showtitle}\n                    </span> </a>\n                </TD>               \n                <TD height=5 align=\"center\" nowrap=\"nowrap\"  style=\"border:1px #FFA366 solid;\">\n                   ${list.typename}\n                </TD> \n                <TD height=5 align=\"center\" nowrap=\"nowrap\" style=\"border:1px #FFA366 solid;\">\n                    ${list.lmmsgtypename}\n                </TD>\n                \n                <TD height=5 align=\"center\" nowrap=\"nowrap\" style=\"border:1px #FFA366 solid;\">\n                    ${list.date}\n                </TD>\n                \n                <TD height=5 align=\"center\" nowrap=\"nowrap\" style=\"border:1px #FFA366 solid;\">\n                    <span  style=\"FONT-FAMILY: 宋体;COLOR: #ff6600;FONT-SIZE: 9pt;\" >${list.reply}</span>\n                </TD> \n                <TD height=5 align=\"center\" nowrap=\"nowrap\" style=\"border:1px #FFA366 solid;\">\n                    ${list.clickcount}\n                </TD>              \n            </tr>\n            </#list>\n        </TABLE><TABLE  cellspacing=\"0\" cellpadding=\"5\" width=\"100%\" border=\"0\" align=\"center\">\n             ${includePageBarCss}<div style=\"margin-top:10px;text-align:center;\" class=\"pb_sys_common pb_sys_normal pb_sys_style1\"><span class=\"p_t\">共${totalCount}条</span> ${cssPageBar}</div><#--分页表头-->\n        </TABLE>\n</FORM>",
+  "exampleTemplate": "",
+  "previousFixtureHashes": [
+    "49193e92"
+  ],
+  "css": "",
+  "fixture": {
+    "viewid": "1093",
+    "uid": "u_demo",
+    "uniqueClassName": "c_demo",
+    "UUID": "boda_demo",
+    "cssPageBar": "CSS分页栏",
+    "formName": "boda_demo",
+    "size": 6,
+    "base64wbsearchtitle": "把课堂搬进山野，让知识连接更广阔的世界",
+    "base64wbsearchname": "示例名称",
+    "base64wbserialnum": "12",
+    "list": [
+      {
+        "searchcode": "查询码",
+        "url": "#preview",
+        "showtitle": "把课堂搬进山野，让知识连接更广阔的世界",
+        "typename": "示例名称",
+        "lmmsgtypename": "示例名称",
+        "date": "2026-10-30 09:30:00",
+        "reply": "信件回复状态",
+        "clickcount": "12",
+        "leadermailid": "信件ID",
+        "title": "把课堂搬进山野，让知识连接更广阔的世界",
+        "pos": 1
+      },
+      {
+        "searchcode": "查询码",
+        "url": "#preview",
+        "showtitle": "校园开放日｜在这里，遇见新的可能",
+        "typename": "示例名称",
+        "lmmsgtypename": "示例名称",
+        "date": "2026-10-30 09:30:00",
+        "reply": "信件回复状态",
+        "clickcount": "12",
+        "leadermailid": "信件ID",
+        "title": "校园开放日｜在这里，遇见新的可能",
+        "pos": 2
+      },
+      {
+        "searchcode": "查询码",
+        "url": "#preview",
+        "showtitle": "关于举办青年学术交流活动的通知",
+        "typename": "示例名称",
+        "lmmsgtypename": "示例名称",
+        "date": "2026-10-30 09:30:00",
+        "reply": "信件回复状态",
+        "clickcount": "12",
+        "leadermailid": "信件ID",
+        "title": "关于举办青年学术交流活动的通知",
+        "pos": 3
+      },
+      {
+        "searchcode": "查询码",
+        "url": "#preview",
+        "showtitle": "图书馆秋季阅读计划正式启动",
+        "typename": "示例名称",
+        "lmmsgtypename": "示例名称",
+        "date": "2026-10-30 09:30:00",
+        "reply": "信件回复状态",
+        "clickcount": "12",
+        "leadermailid": "信件ID",
+        "title": "图书馆秋季阅读计划正式启动",
+        "pos": 4
+      },
+      {
+        "searchcode": "查询码",
+        "url": "#preview",
+        "showtitle": "探索与创新：青年研究者的校园故事",
+        "typename": "示例名称",
+        "lmmsgtypename": "示例名称",
+        "date": "2026-10-30 09:30:00",
+        "reply": "信件回复状态",
+        "clickcount": "12",
+        "leadermailid": "信件ID",
+        "title": "探索与创新：青年研究者的校园故事",
+        "pos": 5
+      }
+    ],
+    "includePageBarCss": "示例内容",
+    "totalCount": "12"
+  }
+}

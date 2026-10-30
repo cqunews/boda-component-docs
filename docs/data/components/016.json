@@ -1,0 +1,826 @@
+{
+  "id": "016",
+  "index": 16,
+  "name": "单篇正文",
+  "category": "文章列表",
+  "parameterCount": 38,
+  "hasScript": false,
+  "templateLength": 211,
+  "parameters": [
+    {
+      "name": "通用参数",
+      "parameter": "commonparam",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件id",
+      "parameter": "viewid",
+      "type": "String",
+      "syntax": "${viewid}",
+      "descriptionHtml": "组件本身的id，数字(形如 1001)",
+      "description": "组件本身的id，数字(形如 1001)",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件uid",
+      "parameter": "uid",
+      "type": "String",
+      "syntax": "${uid}",
+      "descriptionHtml": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "description": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "私有样式类名",
+      "parameter": "uniqueClassName",
+      "type": "String",
+      "syntax": "${uniqueClassName}",
+      "descriptionHtml": "用在私有样式表的类名上，字符串(形如 c10)，举例：<br>&lt;span class=\"<span style=\"color:red\">${uniqueClassName}</span>\" &gt;文字&lt;/span&gt;",
+      "description": "用在私有样式表的类名上，字符串(形如 c10)，举例：\n<span class=\"${uniqueClassName}\" >文字</span>",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<span class=\"${uniqueClassName}\" >文字</span>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "引入jQuery类库",
+      "parameter": "v_includeJquery",
+      "type": "Function",
+      "syntax": "${v_includeJquery()}",
+      "descriptionHtml": "引入系统自带的JQuery类库;<br> 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "description": "引入系统自带的JQuery类库;\n 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "\n<!--引入jQuery-->${v_includeJquery()}<!--引入jQuery完成-->\n",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "网站ID",
+      "parameter": "siteId",
+      "type": "String",
+      "syntax": "${siteId}",
+      "descriptionHtml": "网站ID",
+      "description": "网站ID",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "文章列表",
+      "parameter": "list_news",
+      "type": "List",
+      "syntax": "<#list list_news as news>\n</#list>",
+      "descriptionHtml": "文章列表",
+      "description": "文章列表",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<ul>\n    <#list list_news as news>\n    <li><a href=\"${news.url}\" target=_blank title=\"${news.tipsTitle}\">${news.showTitle}</a></li>\n    </#list>\n</ul>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "文章ID",
+      "parameter": "id",
+      "type": "String",
+      "syntax": "${news.id}",
+      "descriptionHtml": "文章编号ID",
+      "description": "文章编号ID",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "栏目ID",
+      "parameter": "treeId",
+      "type": "String",
+      "syntax": "${news.treeId}",
+      "descriptionHtml": "文章所在栏目ID",
+      "description": "文章所在栏目ID",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "原标题",
+      "parameter": "title",
+      "type": "String",
+      "syntax": "${news.title}",
+      "descriptionHtml": "文章的原始标题，不建议直接输出",
+      "description": "文章的原始标题，不建议直接输出",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "显示标题",
+      "parameter": "showTitle",
+      "type": "String",
+      "syntax": "${news.showTitle}",
+      "descriptionHtml": "显示用的标题，调整过格式并可配置长度限制",
+      "description": "显示用的标题，调整过格式并可配置长度限制",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<a href=\"${news.url}\" target=_blank title=\"${news.tipsTitle}\">${news.showTitle}</a>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "提示标题",
+      "parameter": "tipsTitle",
+      "type": "String",
+      "syntax": " title=\"${news.tipsTitle}\" ",
+      "descriptionHtml": "Html元素的\"title\"属性专用，显示提示，专门调整过格式",
+      "description": "Html元素的\"title\"属性专用，显示提示，专门调整过格式",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<a href=\"${news.url}\" target=_blank title=\"${news.tipsTitle}\">${news.showTitle}</a>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "文章链接",
+      "parameter": "url",
+      "type": "URL",
+      "syntax": "${news.url}",
+      "descriptionHtml": "文章的链接地址 (不带http和域名的部分)",
+      "description": "文章的链接地址 (不带http和域名的部分)",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "标题图地址",
+      "parameter": "picUrl",
+      "type": "String",
+      "syntax": "${news.picUrl}",
+      "descriptionHtml": "标题图地址",
+      "description": "标题图地址",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "标题视频地址",
+      "parameter": "videoUrl",
+      "type": "String",
+      "syntax": "${news.videoUrl}",
+      "descriptionHtml": "文章的标题视频地址",
+      "description": "文章的标题视频地址",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "原日期",
+      "parameter": "date",
+      "type": "String",
+      "syntax": "${news.date}",
+      "descriptionHtml": "文章原始日期，格式为 \"年年年年-月月-日日 时时:分分:秒秒\"，可转换格式",
+      "description": "文章原始日期，格式为 \"年年年年-月月-日日 时时:分分:秒秒\"，可转换格式",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "日期格式化",
+      "parameter": null,
+      "type": null,
+      "syntax": "${v_date(news.date, \"yyyy-MM-dd HH:mm\")}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "显示日期",
+      "parameter": "showDate",
+      "type": "String",
+      "syntax": "${news.showDate}",
+      "descriptionHtml": "显示用的文章日期，格式可配置",
+      "description": "显示用的文章日期，格式可配置",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "日期：${news.showDate}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "原点击数",
+      "parameter": "clickTimes",
+      "type": "String",
+      "syntax": "${news.clickTimes}",
+      "descriptionHtml": "文章的点击数量，不建议直接输出",
+      "description": "文章的点击数量，不建议直接输出",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "显示点击数",
+      "parameter": "showClickTimes",
+      "type": "String",
+      "syntax": "${news.showClickTimes}",
+      "descriptionHtml": "显示用的文章的点击数，采用ajax技术自动更新",
+      "description": "显示用的文章的点击数，采用ajax技术自动更新",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "点击：[${news.showClickTimes}] 次",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "显示摘要",
+      "parameter": "showAbstract",
+      "type": "String",
+      "syntax": "${news.showAbstract}",
+      "descriptionHtml": "文章的摘要,调整过格式",
+      "description": "文章的摘要,调整过格式",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "显示引题",
+      "parameter": "showIntroTitle",
+      "type": "String",
+      "syntax": "${news.showIntroTitle}",
+      "descriptionHtml": "文章的引题,调整过格式",
+      "description": "文章的引题,调整过格式",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "显示副标题",
+      "parameter": "showSubTitle",
+      "type": "String",
+      "syntax": "${news.showSubTitle}",
+      "descriptionHtml": "文章的副标题,调整过格式",
+      "description": "文章的副标题,调整过格式",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "显示资料来源",
+      "parameter": "showSource",
+      "type": "String",
+      "syntax": "${news.showSource}",
+      "descriptionHtml": "文章的资料来源,调整过格式",
+      "description": "文章的资料来源,调整过格式",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "显示文章作者",
+      "parameter": "showAuthor",
+      "type": "String",
+      "syntax": "${news.showAuthor}",
+      "descriptionHtml": "文章的作者,调整过格式",
+      "description": "文章的作者,调整过格式",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "显示责任编辑",
+      "parameter": "showEditor",
+      "type": "String",
+      "syntax": "${news.showEditor}",
+      "descriptionHtml": "文章的责任编辑,调整过格式",
+      "description": "文章的责任编辑,调整过格式",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "文章正文",
+      "parameter": "content",
+      "type": "String",
+      "syntax": "${news.content}",
+      "descriptionHtml": "文章正文, 超文本格式；<br>如果有分页，则为当前分页内容",
+      "description": "文章正文, 超文本格式；\n如果有分页，则为当前分页内容",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<div>${news.content}</div>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "是否置顶",
+      "parameter": "isTop",
+      "type": "Boolean",
+      "syntax": "<#if news.isTop></#if>",
+      "descriptionHtml": "是不是设置为置顶",
+      "description": "是不是设置为置顶",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if news.isTop>&nbsp;top</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "是否头条",
+      "parameter": "isHeadLine",
+      "type": "Boolean",
+      "syntax": "<#if news.isHeadLine></#if>",
+      "descriptionHtml": "是不是设置为头条",
+      "description": "是不是设置为头条",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if news.isHeadLine>&nbsp;headline</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "是否推荐",
+      "parameter": "isRecommend",
+      "type": "Boolean",
+      "syntax": "<#if news.isRecommend></#if>",
+      "descriptionHtml": "是不是设置为推荐",
+      "description": "是不是设置为推荐",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if news.isRecommend>&nbsp;recommend</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "是否图片文章",
+      "parameter": "isHaveImg",
+      "type": "Boolean",
+      "syntax": "<#if news.isHaveImg></#if>",
+      "descriptionHtml": "是否图片文章",
+      "description": "是否图片文章",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if news.isHaveImg>&nbsp;图片</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "是否视频文章",
+      "parameter": "isHaveVideo",
+      "type": "Boolean",
+      "syntax": "<#if news.isHaveVideo></#if>",
+      "descriptionHtml": "是否视频文章",
+      "description": "是否视频文章",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if news.isHaveVideo>&nbsp;视频</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "文章扩展字段",
+      "parameter": "showExtendField",
+      "type": "String",
+      "syntax": "${(news.fields.字段名称)!}",
+      "descriptionHtml": "显示一个扩展字段,“字段名称”需要替换成对应的字段英文名称。也可以使用类似<#if (news.fields.字段名称)>&nbsp;</#if>的语法",
+      "description": "显示一个扩展字段,“字段名称”需要替换成对应的字段英文名称。也可以使用类似<#if (news.fields.字段名称)> 的语法",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "${(news.fields.字段名称)!}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "文章附件",
+      "parameter": "attach",
+      "type": "String",
+      "syntax": "${news.attach}",
+      "descriptionHtml": "文章附件",
+      "description": "文章附件",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "${news.attach}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "文章分页",
+      "parameter": "page",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#list news.list_page as page>\n        ${page.content}\n    </#list>\n    ${news.pageBar}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "是否有分页",
+      "parameter": "hasPage",
+      "type": "Boolean",
+      "syntax": "<#if news.hasPage> </#if>",
+      "descriptionHtml": "文章是否有分页",
+      "description": "文章是否有分页",
+      "kind": "parameter",
+      "path": [
+        "page"
+      ]
+    },
+    {
+      "name": "分页数量",
+      "parameter": "pageSize",
+      "type": "Integer",
+      "syntax": "${news.pageSize}",
+      "descriptionHtml": "有几个分页",
+      "description": "有几个分页",
+      "kind": "parameter",
+      "path": [
+        "page"
+      ]
+    },
+    {
+      "name": "当前第几分页",
+      "parameter": "curPagePos",
+      "type": "Integer",
+      "syntax": "${news.curPagePos}",
+      "descriptionHtml": "当前是第几分页(从1开始)",
+      "description": "当前是第几分页(从1开始)",
+      "kind": "parameter",
+      "path": [
+        "page"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "第${news.curPagePos}分页",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "page"
+      ]
+    },
+    {
+      "name": "分页列表",
+      "parameter": "list_page",
+      "type": "List",
+      "syntax": "<#list news.list_page as page></#list>",
+      "descriptionHtml": "分页列表，和文章正文配合使用",
+      "description": "分页列表，和文章正文配合使用",
+      "kind": "parameter",
+      "path": [
+        "page"
+      ]
+    },
+    {
+      "name": "分页栏",
+      "parameter": "pageBar",
+      "type": "String",
+      "syntax": "${news.pageBar}",
+      "descriptionHtml": "翻页列表的翻页栏,简介有分页时起效",
+      "description": "翻页列表的翻页栏,简介有分页时起效",
+      "kind": "parameter",
+      "path": [
+        "page"
+      ]
+    },
+    {
+      "name": "分页内容",
+      "parameter": "content",
+      "type": "String",
+      "syntax": "${page.content}",
+      "descriptionHtml": "分页内容",
+      "description": "分页内容",
+      "kind": "parameter",
+      "path": [
+        "page",
+        "list_page"
+      ]
+    }
+  ],
+  "template": "<#list list_news as news>\n<p>\n    ${news.showTitle}<br/>\n    ${news.content}\n    <#list news.list_page as page>\n        ${page.content}\n    </#list>\n    ${news.pageBar}<br/><br/>\n    ${news.attach}\n</p>\n</#list>",
+  "exampleTemplate": "",
+  "previousFixtureHashes": [
+    "90184b35",
+    "b4a51a6"
+  ],
+  "css": ".vsbcontent-table-container-outer { position: relative;}\n.vsbcontent-table-container\n{\n    width: 98%;\n    overflow-y: auto;\n    _overflow: auto;\n    margin: 2px;\n}\n.vsbcontent-table-container::-webkit-scrollbar\n{\n    -webkit-appearance: none;\n    width: 14px;\n    height: 14px;\n}\n.vsbcontent-table-container::-webkit-scrollbar-thumb\n{\n    border-radius: 8px;\n    border: 3px solid #fff;\n    background-color: rgba(0, 0, 0, .3);\n}\n.vsbcontent-table-container-fade\n{\n    position: absolute;\n    right: 0;\n    width: 5px;\n    height: 100%;\n    background-image: -webkit-linear-gradient(0deg, rgba(255,255,255,.5), #fff);\n    background-image: -moz-linear-gradient(0deg, rgba(255,255,255,.5), #fff);\n    background-image: -ms-linear-gradient(0deg, rgba(255,255,255,.5), #fff);\n    background-image: -o-linear-gradient(0deg, rgba(255,255,255,.5), #fff);\n    background-image: linear-gradient(0deg, rgba(255,255,255,.5), #fff);\n}",
+  "fixture": {
+    "viewid": "1016",
+    "uid": "u_demo",
+    "uniqueClassName": "c_demo",
+    "siteId": "demo_siteId",
+    "list_news": [
+      {
+        "showTitle": "把课堂搬进山野，让知识连接更广阔的世界",
+        "content": "<p>这里是组件的示例正文。你可以修改模板结构和 CSS，实时观察内容排版的变化。</p><p>所有内容均为本地演示数据，可在“示例数据”中自由编辑。</p>",
+        "list_page": [
+          {
+            "content": "<p>这里是组件的示例正文。你可以修改模板结构和 CSS，实时观察内容排版的变化。</p><p>所有内容均为本地演示数据，可在“示例数据”中自由编辑。</p>"
+          },
+          {
+            "content": "<p>这里是组件的示例正文。你可以修改模板结构和 CSS，实时观察内容排版的变化。</p><p>所有内容均为本地演示数据，可在“示例数据”中自由编辑。</p>"
+          },
+          {
+            "content": "<p>这里是组件的示例正文。你可以修改模板结构和 CSS，实时观察内容排版的变化。</p><p>所有内容均为本地演示数据，可在“示例数据”中自由编辑。</p>"
+          },
+          {
+            "content": "<p>这里是组件的示例正文。你可以修改模板结构和 CSS，实时观察内容排版的变化。</p><p>所有内容均为本地演示数据，可在“示例数据”中自由编辑。</p>"
+          },
+          {
+            "content": "<p>这里是组件的示例正文。你可以修改模板结构和 CSS，实时观察内容排版的变化。</p><p>所有内容均为本地演示数据，可在“示例数据”中自由编辑。</p>"
+          }
+        ],
+        "pageBar": "分页栏",
+        "attach": "文章附件",
+        "id": "12",
+        "treeId": "demo_treeId_0",
+        "title": "把课堂搬进山野，让知识连接更广阔的世界",
+        "url": "#preview",
+        "picUrl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "videoUrl": "",
+        "date": "2026-10-30 09:30:00",
+        "showDate": "2026-10-30",
+        "clickTimes": "12",
+        "showClickTimes": "12",
+        "showAbstract": "在校园里记录发现，在探索中连接未来。这里是一段用于检查组件排版的示例摘要。",
+        "showIntroTitle": "把课堂搬进山野，让知识连接更广阔的世界",
+        "showSubTitle": "把课堂搬进山野，让知识连接更广阔的世界",
+        "showSource": "显示资料来源",
+        "showAuthor": "示例作者",
+        "showEditor": "示例作者",
+        "pageSize": 6,
+        "curPagePos": 6
+      },
+      {
+        "showTitle": "校园开放日｜在这里，遇见新的可能",
+        "content": "<p>这里是组件的示例正文。你可以修改模板结构和 CSS，实时观察内容排版的变化。</p><p>所有内容均为本地演示数据，可在“示例数据”中自由编辑。</p>",
+        "list_page": [
+          {
+            "content": "<p>这里是组件的示例正文。你可以修改模板结构和 CSS，实时观察内容排版的变化。</p><p>所有内容均为本地演示数据，可在“示例数据”中自由编辑。</p>"
+          },
+          {
+            "content": "<p>这里是组件的示例正文。你可以修改模板结构和 CSS，实时观察内容排版的变化。</p><p>所有内容均为本地演示数据，可在“示例数据”中自由编辑。</p>"
+          },
+          {
+            "content": "<p>这里是组件的示例正文。你可以修改模板结构和 CSS，实时观察内容排版的变化。</p><p>所有内容均为本地演示数据，可在“示例数据”中自由编辑。</p>"
+          },
+          {
+            "content": "<p>这里是组件的示例正文。你可以修改模板结构和 CSS，实时观察内容排版的变化。</p><p>所有内容均为本地演示数据，可在“示例数据”中自由编辑。</p>"
+          },
+          {
+            "content": "<p>这里是组件的示例正文。你可以修改模板结构和 CSS，实时观察内容排版的变化。</p><p>所有内容均为本地演示数据，可在“示例数据”中自由编辑。</p>"
+          }
+        ],
+        "pageBar": "分页栏",
+        "attach": "文章附件",
+        "id": "12",
+        "treeId": "demo_treeId_1",
+        "title": "校园开放日｜在这里，遇见新的可能",
+        "url": "#preview",
+        "picUrl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "videoUrl": "",
+        "date": "2026-10-30 09:30:00",
+        "showDate": "2026-10-30",
+        "clickTimes": "12",
+        "showClickTimes": "12",
+        "showAbstract": "在校园里记录发现，在探索中连接未来。这里是一段用于检查组件排版的示例摘要。",
+        "showIntroTitle": "校园开放日｜在这里，遇见新的可能",
+        "showSubTitle": "校园开放日｜在这里，遇见新的可能",
+        "showSource": "显示资料来源",
+        "showAuthor": "示例作者",
+        "showEditor": "示例作者",
+        "pageSize": 6,
+        "curPagePos": 6
+      },
+      {
+        "showTitle": "关于举办青年学术交流活动的通知",
+        "content": "<p>这里是组件的示例正文。你可以修改模板结构和 CSS，实时观察内容排版的变化。</p><p>所有内容均为本地演示数据，可在“示例数据”中自由编辑。</p>",
+        "list_page": [
+          {
+            "content": "<p>这里是组件的示例正文。你可以修改模板结构和 CSS，实时观察内容排版的变化。</p><p>所有内容均为本地演示数据，可在“示例数据”中自由编辑。</p>"
+          },
+          {
+            "content": "<p>这里是组件的示例正文。你可以修改模板结构和 CSS，实时观察内容排版的变化。</p><p>所有内容均为本地演示数据，可在“示例数据”中自由编辑。</p>"
+          },
+          {
+            "content": "<p>这里是组件的示例正文。你可以修改模板结构和 CSS，实时观察内容排版的变化。</p><p>所有内容均为本地演示数据，可在“示例数据”中自由编辑。</p>"
+          },
+          {
+            "content": "<p>这里是组件的示例正文。你可以修改模板结构和 CSS，实时观察内容排版的变化。</p><p>所有内容均为本地演示数据，可在“示例数据”中自由编辑。</p>"
+          },
+          {
+            "content": "<p>这里是组件的示例正文。你可以修改模板结构和 CSS，实时观察内容排版的变化。</p><p>所有内容均为本地演示数据，可在“示例数据”中自由编辑。</p>"
+          }
+        ],
+        "pageBar": "分页栏",
+        "attach": "文章附件",
+        "id": "12",
+        "treeId": "demo_treeId_2",
+        "title": "关于举办青年学术交流活动的通知",
+        "url": "#preview",
+        "picUrl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "videoUrl": "",
+        "date": "2026-10-30 09:30:00",
+        "showDate": "2026-10-30",
+        "clickTimes": "12",
+        "showClickTimes": "12",
+        "showAbstract": "在校园里记录发现，在探索中连接未来。这里是一段用于检查组件排版的示例摘要。",
+        "showIntroTitle": "关于举办青年学术交流活动的通知",
+        "showSubTitle": "关于举办青年学术交流活动的通知",
+        "showSource": "显示资料来源",
+        "showAuthor": "示例作者",
+        "showEditor": "示例作者",
+        "pageSize": 6,
+        "curPagePos": 6
+      },
+      {
+        "showTitle": "图书馆秋季阅读计划正式启动",
+        "content": "<p>这里是组件的示例正文。你可以修改模板结构和 CSS，实时观察内容排版的变化。</p><p>所有内容均为本地演示数据，可在“示例数据”中自由编辑。</p>",
+        "list_page": [
+          {
+            "content": "<p>这里是组件的示例正文。你可以修改模板结构和 CSS，实时观察内容排版的变化。</p><p>所有内容均为本地演示数据，可在“示例数据”中自由编辑。</p>"
+          },
+          {
+            "content": "<p>这里是组件的示例正文。你可以修改模板结构和 CSS，实时观察内容排版的变化。</p><p>所有内容均为本地演示数据，可在“示例数据”中自由编辑。</p>"
+          },
+          {
+            "content": "<p>这里是组件的示例正文。你可以修改模板结构和 CSS，实时观察内容排版的变化。</p><p>所有内容均为本地演示数据，可在“示例数据”中自由编辑。</p>"
+          },
+          {
+            "content": "<p>这里是组件的示例正文。你可以修改模板结构和 CSS，实时观察内容排版的变化。</p><p>所有内容均为本地演示数据，可在“示例数据”中自由编辑。</p>"
+          },
+          {
+            "content": "<p>这里是组件的示例正文。你可以修改模板结构和 CSS，实时观察内容排版的变化。</p><p>所有内容均为本地演示数据，可在“示例数据”中自由编辑。</p>"
+          }
+        ],
+        "pageBar": "分页栏",
+        "attach": "文章附件",
+        "id": "12",
+        "treeId": "demo_treeId_3",
+        "title": "图书馆秋季阅读计划正式启动",
+        "url": "#preview",
+        "picUrl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "videoUrl": "",
+        "date": "2026-10-30 09:30:00",
+        "showDate": "2026-10-30",
+        "clickTimes": "12",
+        "showClickTimes": "12",
+        "showAbstract": "在校园里记录发现，在探索中连接未来。这里是一段用于检查组件排版的示例摘要。",
+        "showIntroTitle": "图书馆秋季阅读计划正式启动",
+        "showSubTitle": "图书馆秋季阅读计划正式启动",
+        "showSource": "显示资料来源",
+        "showAuthor": "示例作者",
+        "showEditor": "示例作者",
+        "pageSize": 6,
+        "curPagePos": 6
+      },
+      {
+        "showTitle": "探索与创新：青年研究者的校园故事",
+        "content": "<p>这里是组件的示例正文。你可以修改模板结构和 CSS，实时观察内容排版的变化。</p><p>所有内容均为本地演示数据，可在“示例数据”中自由编辑。</p>",
+        "list_page": [
+          {
+            "content": "<p>这里是组件的示例正文。你可以修改模板结构和 CSS，实时观察内容排版的变化。</p><p>所有内容均为本地演示数据，可在“示例数据”中自由编辑。</p>"
+          },
+          {
+            "content": "<p>这里是组件的示例正文。你可以修改模板结构和 CSS，实时观察内容排版的变化。</p><p>所有内容均为本地演示数据，可在“示例数据”中自由编辑。</p>"
+          },
+          {
+            "content": "<p>这里是组件的示例正文。你可以修改模板结构和 CSS，实时观察内容排版的变化。</p><p>所有内容均为本地演示数据，可在“示例数据”中自由编辑。</p>"
+          },
+          {
+            "content": "<p>这里是组件的示例正文。你可以修改模板结构和 CSS，实时观察内容排版的变化。</p><p>所有内容均为本地演示数据，可在“示例数据”中自由编辑。</p>"
+          },
+          {
+            "content": "<p>这里是组件的示例正文。你可以修改模板结构和 CSS，实时观察内容排版的变化。</p><p>所有内容均为本地演示数据，可在“示例数据”中自由编辑。</p>"
+          }
+        ],
+        "pageBar": "分页栏",
+        "attach": "文章附件",
+        "id": "12",
+        "treeId": "demo_treeId_4",
+        "title": "探索与创新：青年研究者的校园故事",
+        "url": "#preview",
+        "picUrl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "videoUrl": "",
+        "date": "2026-10-30 09:30:00",
+        "showDate": "2026-10-30",
+        "clickTimes": "12",
+        "showClickTimes": "12",
+        "showAbstract": "在校园里记录发现，在探索中连接未来。这里是一段用于检查组件排版的示例摘要。",
+        "showIntroTitle": "探索与创新：青年研究者的校园故事",
+        "showSubTitle": "探索与创新：青年研究者的校园故事",
+        "showSource": "显示资料来源",
+        "showAuthor": "示例作者",
+        "showEditor": "示例作者",
+        "pageSize": 6,
+        "curPagePos": 6
+      }
+    ]
+  }
+}

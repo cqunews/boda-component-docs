@@ -1,0 +1,166 @@
+{
+  "id": "071",
+  "index": 71,
+  "name": "信息搜索",
+  "category": "公众参与",
+  "parameterCount": 8,
+  "hasScript": false,
+  "templateLength": 487,
+  "parameters": [
+    {
+      "name": "通用参数",
+      "parameter": "commonparam",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件id",
+      "parameter": "viewid",
+      "type": "String",
+      "syntax": "${viewid}",
+      "descriptionHtml": "组件本身的id，数字(形如 1001)",
+      "description": "组件本身的id，数字(形如 1001)",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件uid",
+      "parameter": "uid",
+      "type": "String",
+      "syntax": "${uid}",
+      "descriptionHtml": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "description": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "私有样式类名",
+      "parameter": "uniqueClassName",
+      "type": "String",
+      "syntax": "${uniqueClassName}",
+      "descriptionHtml": "用在私有样式表的类名上，字符串(形如 c10)，举例：<br>&lt;span class=\"<span style=\"color:red\">${uniqueClassName}</span>\" &gt;文字&lt;/span&gt;",
+      "description": "用在私有样式表的类名上，字符串(形如 c10)，举例：\n<span class=\"${uniqueClassName}\" >文字</span>",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<span class=\"${uniqueClassName}\" >文字</span>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "引入jQuery类库",
+      "parameter": "v_includeJquery",
+      "type": "Function",
+      "syntax": "${v_includeJquery()}",
+      "descriptionHtml": "引入系统自带的JQuery类库;<br> 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "description": "引入系统自带的JQuery类库;\n 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "\n<!--引入jQuery-->${v_includeJquery()}<!--引入jQuery完成-->\n",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "form表单",
+      "parameter": "form",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "搜索表单名称",
+      "parameter": "formName",
+      "type": "String",
+      "syntax": "${formName}",
+      "descriptionHtml": "搜索表单名称",
+      "description": "搜索表单名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<form  name=\"${formName}\" method=\"post\" action=\"${actionUrl}\"></form>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "表单提交地址",
+      "parameter": "actionUrl",
+      "type": "String",
+      "syntax": "${actionUrl}",
+      "descriptionHtml": "表单提交地址",
+      "description": "表单提交地址",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "表单搜索框名称",
+      "parameter": "formSearch",
+      "type": "String",
+      "syntax": "${formSearch}",
+      "descriptionHtml": "表单搜索框名称",
+      "description": "表单搜索框名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "唯一标识",
+      "parameter": "uuid",
+      "type": "String",
+      "syntax": "${uuid}",
+      "descriptionHtml": "唯一标识, 主要在拖放多个组件时使用,确保id,方法等唯一不会冲突。",
+      "description": "唯一标识, 主要在拖放多个组件时使用,确保id,方法等唯一不会冲突。",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "标识:${uuid}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    }
+  ],
+  "template": "<form name=\"${formName}\" method=\"post\" action=\"${actionUrl}\" style=\"display: inline;\">\n<table style=\"FONT-FAMILY: 宋体;FONT-SIZE: 9pt;\" align=\"center\">\n    <tr>\n        <td>\n            查询码：&nbsp;<input type=\"text\" name=\"${formSearch}\" style=\"width: 150px\">\n        </td>\n        <td align=\"absmiddle\">\n            <img src=\"/system/resource/images/default/anniu_cx2.jpg\" valign=\"bottom\" style=\"cursor:hand\" onClick=\"document.${formName}.submit()\">\n        </td>\n    </tr>\n</table>\n</form>",
+  "exampleTemplate": "",
+  "previousFixtureHashes": [
+    "f8d8db26"
+  ],
+  "css": "",
+  "fixture": {
+    "viewid": "1071",
+    "uid": "u_demo",
+    "uniqueClassName": "c_demo",
+    "formName": "boda_demo",
+    "actionUrl": "#preview",
+    "formSearch": "表单搜索框名称",
+    "uuid": "boda_demo"
+  }
+}

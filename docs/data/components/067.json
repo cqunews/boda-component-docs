@@ -1,0 +1,411 @@
+{
+  "id": "067",
+  "index": 67,
+  "name": "数据查询结果",
+  "category": "数据查询",
+  "parameterCount": 25,
+  "hasScript": false,
+  "templateLength": 1448,
+  "parameters": [
+    {
+      "name": "通用参数",
+      "parameter": "commonparam",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件id",
+      "parameter": "viewid",
+      "type": "String",
+      "syntax": "${viewid}",
+      "descriptionHtml": "组件本身的id，数字(形如 1001)",
+      "description": "组件本身的id，数字(形如 1001)",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件uid",
+      "parameter": "uid",
+      "type": "String",
+      "syntax": "${uid}",
+      "descriptionHtml": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "description": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "私有样式类名",
+      "parameter": "uniqueClassName",
+      "type": "String",
+      "syntax": "${uniqueClassName}",
+      "descriptionHtml": "用在私有样式表的类名上，字符串(形如 c10)，举例：<br>&lt;span class=\"<span style=\"color:red\">${uniqueClassName}</span>\" &gt;文字&lt;/span&gt;",
+      "description": "用在私有样式表的类名上，字符串(形如 c10)，举例：\n<span class=\"${uniqueClassName}\" >文字</span>",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<span class=\"${uniqueClassName}\" >文字</span>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "引入jQuery类库",
+      "parameter": "v_includeJquery",
+      "type": "Function",
+      "syntax": "${v_includeJquery()}",
+      "descriptionHtml": "引入系统自带的JQuery类库;<br> 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "description": "引入系统自带的JQuery类库;\n 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "\n<!--引入jQuery-->${v_includeJquery()}<!--引入jQuery完成-->\n",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "所有字段",
+      "parameter": "field_map",
+      "type": "Map",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "项目类型",
+      "parameter": "xmlx",
+      "type": "String",
+      "syntax": "${field_map.xmlx}",
+      "descriptionHtml": "项目类型",
+      "description": "项目类型",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "项目名称",
+      "parameter": "xmmc",
+      "type": "String",
+      "syntax": "${field_map.xmmc}",
+      "descriptionHtml": "项目名称",
+      "description": "项目名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "审计方式",
+      "parameter": "sjfs",
+      "type": "String",
+      "syntax": "${field_map.sjfs}",
+      "descriptionHtml": "审计方式",
+      "description": "审计方式",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "项目组长",
+      "parameter": "xmzz",
+      "type": "String",
+      "syntax": "${field_map.xmzz}",
+      "descriptionHtml": "项目组长",
+      "description": "项目组长",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "启动时间",
+      "parameter": "qdsj",
+      "type": "String",
+      "syntax": "${field_map.qdsj}",
+      "descriptionHtml": "启动时间",
+      "description": "启动时间",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "完成时间",
+      "parameter": "wcsj",
+      "type": "String",
+      "syntax": "${field_map.wcsj}",
+      "descriptionHtml": "完成时间",
+      "description": "完成时间",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "数据条数",
+      "parameter": "data_size",
+      "type": "Integer",
+      "syntax": "${data_size}",
+      "descriptionHtml": "数据条数",
+      "description": "数据条数",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "数据列表",
+      "parameter": "data_list",
+      "type": "List",
+      "syntax": "<#list data_list as data>\n</#list>",
+      "descriptionHtml": "数据列表",
+      "description": "数据列表",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "项目类型的值",
+      "parameter": "xmlxvalue",
+      "type": "String",
+      "syntax": "${data.value.xmlx}",
+      "descriptionHtml": "项目类型的值",
+      "description": "项目类型的值",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "项目名称的值",
+      "parameter": "xmmcvalue",
+      "type": "String",
+      "syntax": "${data.value.xmmc}",
+      "descriptionHtml": "项目名称的值",
+      "description": "项目名称的值",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "审计方式的值",
+      "parameter": "sjfsvalue",
+      "type": "String",
+      "syntax": "${data.value.sjfs}",
+      "descriptionHtml": "审计方式的值",
+      "description": "审计方式的值",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "项目组长的值",
+      "parameter": "xmzzvalue",
+      "type": "String",
+      "syntax": "${data.value.xmzz}",
+      "descriptionHtml": "项目组长的值",
+      "description": "项目组长的值",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "启动时间的值",
+      "parameter": "qdsjvalue",
+      "type": "String",
+      "syntax": "${data.value.qdsj}",
+      "descriptionHtml": "启动时间的值",
+      "description": "启动时间的值",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "完成时间的值",
+      "parameter": "wcsjvalue",
+      "type": "String",
+      "syntax": "${data.value.wcsj}",
+      "descriptionHtml": "完成时间的值",
+      "description": "完成时间的值",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "项目类型编码",
+      "parameter": "xmlxcode",
+      "type": "String",
+      "syntax": "${xmlx}",
+      "descriptionHtml": "项目类型编码",
+      "description": "项目类型编码",
+      "kind": "parameter",
+      "path": [
+        "xmlx"
+      ]
+    },
+    {
+      "name": "项目名称编码",
+      "parameter": "xmmccode",
+      "type": "String",
+      "syntax": "${xmmc}",
+      "descriptionHtml": "项目名称编码",
+      "description": "项目名称编码",
+      "kind": "parameter",
+      "path": [
+        "xmmc"
+      ]
+    },
+    {
+      "name": "审计方式编码",
+      "parameter": "sjfscode",
+      "type": "String",
+      "syntax": "${sjfs}",
+      "descriptionHtml": "审计方式编码",
+      "description": "审计方式编码",
+      "kind": "parameter",
+      "path": [
+        "sjfs"
+      ]
+    },
+    {
+      "name": "项目组长编码",
+      "parameter": "xmzzcode",
+      "type": "String",
+      "syntax": "${xmzz}",
+      "descriptionHtml": "项目组长编码",
+      "description": "项目组长编码",
+      "kind": "parameter",
+      "path": [
+        "xmzz"
+      ]
+    },
+    {
+      "name": "启动时间编码",
+      "parameter": "qdsjcode",
+      "type": "String",
+      "syntax": "${qdsj}",
+      "descriptionHtml": "启动时间编码",
+      "description": "启动时间编码",
+      "kind": "parameter",
+      "path": [
+        "qdsj"
+      ]
+    },
+    {
+      "name": "完成时间编码",
+      "parameter": "wcsjcode",
+      "type": "String",
+      "syntax": "${wcsj}",
+      "descriptionHtml": "完成时间编码",
+      "description": "完成时间编码",
+      "kind": "parameter",
+      "path": [
+        "wcsj"
+      ]
+    }
+  ],
+  "template": "<#if data_size <=0 >\n<table width=\"1000px\" align=\"center\" style=\"font:宋体; font-size:14px; line-height:28px;\">\n    <tr>\n        <td height=\"26\">\n            无该考生录取信息 或 输入查询信息错误，请核对考生号和身份证号。 \n        </td>\n    </tr>\n</table>\n<#else>\n<table width=\"300px\" align=\"center\"  style=\"font:宋体; font-size:14px; line-height:28px;\">\n    <tr>\n        <td colspan=2 align=\"center\" ><h1>录取结果查询</h1></td>\n    </tr>\n    <#list data_list as data>\n    <tr>\n        <td width=\"40%\" align=\"right\" ><strong>${field_map.ksh}:</strong></td>\n        <td width=\"60%\" align=\"left\" >${data.value.ksh}</td>\n    </tr>\n    <tr>\n        <td align=\"right\" ><strong>${field_map.xm}:</strong></td>\n        <td align=\"left\" >${data.value.xm}</td>\n    </tr>\n    <tr>\n        <td align=\"right\" ><strong>${field_map.sfzh}:</strong></td>\n        <td align=\"left\" >${data.value.sfzh}</td>\n    </tr>\n    <tr>\n        <td align=\"right\" ><strong>${field_map.zf}:</strong></td>\n        <td align=\"left\" >${data.value.zf}</td>\n    </tr>\n    <tr>\n        <td align=\"right\" ><strong>${field_map.lqzy}:</strong></td>\n        <td align=\"left\" >${data.value.lqzy}</td>\n    </tr>\n    <tr>\n        <td align=\"right\" ><strong>${field_map.yjh}:</strong></td>\n        <td align=\"left\" >${data.value.yjh}</td>\n    </tr>\n    </#list>\n    <tr>\n        <td colspan=2 align=\"left\" style=\"font:宋体; font-size:14px;color:#F00\">\n            注: 查询结果仅供参考，最终的录取结果请以收到的录取通知书为准。 \n        </td>\n    </tr>\n</table>\n</#if>",
+  "exampleTemplate": "",
+  "previousFixtureHashes": [
+    "69990cb2"
+  ],
+  "css": "",
+  "fixture": {
+    "viewid": "1067",
+    "uid": "u_demo",
+    "uniqueClassName": "c_demo",
+    "data_size": 6,
+    "xmlx": "项目类型编码",
+    "xmmc": "项目名称编码",
+    "sjfs": "审计方式编码",
+    "xmzz": "项目组长编码",
+    "qdsj": "启动时间编码",
+    "wcsj": "完成时间编码",
+    "data_list": [
+      {
+        "value": {
+          "ksh": "示例内容",
+          "xm": "示例内容",
+          "sfzh": "示例内容",
+          "zf": "示例内容",
+          "lqzy": "示例内容",
+          "yjh": "示例内容",
+          "xmlx": "项目类型的值",
+          "xmmc": "项目名称的值",
+          "sjfs": "审计方式的值",
+          "xmzz": "项目组长的值",
+          "qdsj": "启动时间的值",
+          "wcsj": "完成时间的值"
+        }
+      },
+      {
+        "value": {
+          "ksh": "示例内容",
+          "xm": "示例内容",
+          "sfzh": "示例内容",
+          "zf": "示例内容",
+          "lqzy": "示例内容",
+          "yjh": "示例内容",
+          "xmlx": "项目类型的值",
+          "xmmc": "项目名称的值",
+          "sjfs": "审计方式的值",
+          "xmzz": "项目组长的值",
+          "qdsj": "启动时间的值",
+          "wcsj": "完成时间的值"
+        }
+      },
+      {
+        "value": {
+          "ksh": "示例内容",
+          "xm": "示例内容",
+          "sfzh": "示例内容",
+          "zf": "示例内容",
+          "lqzy": "示例内容",
+          "yjh": "示例内容",
+          "xmlx": "项目类型的值",
+          "xmmc": "项目名称的值",
+          "sjfs": "审计方式的值",
+          "xmzz": "项目组长的值",
+          "qdsj": "启动时间的值",
+          "wcsj": "完成时间的值"
+        }
+      },
+      {
+        "value": {
+          "ksh": "示例内容",
+          "xm": "示例内容",
+          "sfzh": "示例内容",
+          "zf": "示例内容",
+          "lqzy": "示例内容",
+          "yjh": "示例内容",
+          "xmlx": "项目类型的值",
+          "xmmc": "项目名称的值",
+          "sjfs": "审计方式的值",
+          "xmzz": "项目组长的值",
+          "qdsj": "启动时间的值",
+          "wcsj": "完成时间的值"
+        }
+      },
+      {
+        "value": {
+          "ksh": "示例内容",
+          "xm": "示例内容",
+          "sfzh": "示例内容",
+          "zf": "示例内容",
+          "lqzy": "示例内容",
+          "yjh": "示例内容",
+          "xmlx": "项目类型的值",
+          "xmmc": "项目名称的值",
+          "sjfs": "审计方式的值",
+          "xmzz": "项目组长的值",
+          "qdsj": "启动时间的值",
+          "wcsj": "完成时间的值"
+        }
+      }
+    ],
+    "field_map": {
+      "ksh": "示例内容",
+      "xm": "示例内容",
+      "sfzh": "示例内容",
+      "zf": "示例内容",
+      "lqzy": "示例内容",
+      "yjh": "示例内容"
+    }
+  }
+}

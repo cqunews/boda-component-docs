@@ -1,0 +1,147 @@
+{
+  "id": "090",
+  "index": 90,
+  "name": "简单查询",
+  "category": "领导信箱",
+  "parameterCount": 9,
+  "hasScript": true,
+  "templateLength": 2646,
+  "parameters": [
+    {
+      "name": "通用参数",
+      "parameter": "commonparam",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件id",
+      "parameter": "viewid",
+      "type": "String",
+      "syntax": "${viewid}",
+      "descriptionHtml": "组件本身的id，数字(形如 1001)",
+      "description": "组件本身的id，数字(形如 1001)",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件uid",
+      "parameter": "uid",
+      "type": "String",
+      "syntax": "${uid}",
+      "descriptionHtml": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "description": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "私有样式类名",
+      "parameter": "uniqueClassName",
+      "type": "String",
+      "syntax": "${uniqueClassName}",
+      "descriptionHtml": "用在私有样式表的类名上，字符串(形如 c10)，举例：<br>&lt;span class=\"<span style=\"color:red\">${uniqueClassName}</span>\" &gt;文字&lt;/span&gt;",
+      "description": "用在私有样式表的类名上，字符串(形如 c10)，举例：\n<span class=\"${uniqueClassName}\" >文字</span>",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<span class=\"${uniqueClassName}\" >文字</span>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "引入jQuery类库",
+      "parameter": "v_includeJquery",
+      "type": "Function",
+      "syntax": "${v_includeJquery()}",
+      "descriptionHtml": "引入系统自带的JQuery类库;<br> 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "description": "引入系统自带的JQuery类库;\n 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "\n<!--引入jQuery-->${v_includeJquery()}<!--引入jQuery完成-->\n",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "唯一标识",
+      "parameter": "UUID",
+      "type": "String",
+      "syntax": "${UUID}",
+      "descriptionHtml": "唯一标识",
+      "description": "唯一标识",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "表单名称",
+      "parameter": "formname",
+      "type": "String",
+      "syntax": "${formname}",
+      "descriptionHtml": "form表单的名称",
+      "description": "form表单的名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "搜索表单跳转链接",
+      "parameter": "action",
+      "type": "String",
+      "syntax": "${action}",
+      "descriptionHtml": "搜索表单跳转链接",
+      "description": "搜索表单跳转链接",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "查询流水号输入文本框名称",
+      "parameter": "wbserialnum",
+      "type": "String",
+      "syntax": "${wbserialnum}",
+      "descriptionHtml": "查询流水号输入文本框名称",
+      "description": "查询流水号输入文本框名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "查询密码输入文本框名称",
+      "parameter": "wbsearchcode",
+      "type": "String",
+      "syntax": "${wbsearchcode}",
+      "descriptionHtml": "查询密码码输入文本框名称",
+      "description": "查询密码码输入文本框名称",
+      "kind": "parameter",
+      "path": []
+    }
+  ],
+  "template": "<script type=\"text/javascript\">\n    function _leadermail_search_changebase64_1()\n    {\n       if(document.getElementById(\"${wbserialnum}_temp\"))\n       {\n           var s_t = document.getElementById(\"${wbserialnum}_temp\").value;\n           if(s_t==null||s_t==\"\"||s_t==undefined)\n           {\n                alert(\"请输入流水号\");\n                document.getElementById(\"${wbserialnum}_temp\").focus();\n                return false;\n           } \n       } \n       if(document.getElementById(\"${wbsearchcode}_temp\"))\n       {\n           var s_t = document.getElementById(\"${wbsearchcode}_temp\").value;\n           if(s_t==null||s_t==\"\"||s_t==undefined)\n           {\n                alert(\"请输入查询密码\");\n                document.getElementById(\"${wbsearchcode}_temp\").focus();\n                return false;\n           } \n       } \n       if(document.getElementById(\"${wbserialnum}_temp\"))\n       {\n           document.getElementById(\"${wbserialnum}\").value=new  Base64().encode(document.getElementById(\"${wbserialnum}_temp\").value);\n           document.getElementById(\"${wbserialnum}_temp\").disabled=true;\n       }\n       if(document.getElementById(\"${wbsearchcode}_temp\"))\n       {\n           document.getElementById(\"${wbsearchcode}\").value=new  Base64().encode(document.getElementById(\"${wbsearchcode}_temp\").value);\n           document.getElementById(\"${wbsearchcode}_temp\").disabled=true;\n       }\n       return true;\n    }\n</script>\n<form  name=\"${formname}\" method=\"post\" action=${action} style=\"display: inline;\" onsubmit=\"return _leadermail_search_changebase64_1();\">\n<table>\n    <tr>\n       <td nowrap=\"nowrap\">\n            <span style='FONT-FAMILY: 宋体; FONT-SIZE: 9pt'>流水号：</span><input type=\"hidden\" name=\"${wbserialnum}\" id=\"${wbserialnum}\"  ><input type=\"text\" name=\"${wbserialnum}_temp\" id=\"${wbserialnum}_temp\"  style=\"width:100px;BORDER-BOTTOM: #d2eec6 1px solid;BORDER-LEFT: #d2eec6 1px solid;FONT-FAMILY: 宋体;HEIGHT: 12pt;FONT-SIZE: 9pt;BORDER-TOP: #d2eec6 1px solid;BORDER-RIGHT: #d2eec6 1px solid; \" >\n        </td>\n        <td nowrap=\"nowrap\">\n            <span style='FONT-FAMILY: 宋体; FONT-SIZE: 9pt'>查询密码：</span><input type=\"hidden\" name=\"${wbsearchcode}\" id=\"${wbsearchcode}\" ><input type=\"text\" name=\"${wbsearchcode}_temp\" id=\"${wbsearchcode}_temp\"   style=\"width:100px;BORDER-BOTTOM: #d2eec6 1px solid;BORDER-LEFT: #d2eec6 1px solid;FONT-FAMILY: 宋体;HEIGHT: 12pt;FONT-SIZE: 9pt;BORDER-TOP: #d2eec6 1px solid;BORDER-RIGHT: #d2eec6 1px solid; \" >\n        </td>\n        <td align=\"absmiddle\"><input type=\"image\"  src=\"/system/resource/images/leadermail/anniu_cx2.jpg\" valign=\"bottom\" style=\"cursor:hand\"></td>\n    </tr>\n</table>\n</form>",
+  "exampleTemplate": "",
+  "previousFixtureHashes": [
+    "e95df1c3"
+  ],
+  "css": "",
+  "fixture": {
+    "viewid": "1090",
+    "uid": "u_demo",
+    "uniqueClassName": "c_demo",
+    "UUID": "boda_demo",
+    "formname": "boda_demo",
+    "action": "#preview",
+    "wbserialnum": "boda_demo",
+    "wbsearchcode": "boda_demo"
+  }
+}

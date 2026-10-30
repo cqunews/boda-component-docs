@@ -1,0 +1,596 @@
+{
+  "id": "043",
+  "index": 43,
+  "name": "应聘信息",
+  "category": "人员招聘",
+  "parameterCount": 28,
+  "hasScript": true,
+  "templateLength": 15695,
+  "parameters": [
+    {
+      "name": "通用参数",
+      "parameter": "commonparam",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件id",
+      "parameter": "viewid",
+      "type": "String",
+      "syntax": "${viewid}",
+      "descriptionHtml": "组件本身的id，数字(形如 1001)",
+      "description": "组件本身的id，数字(形如 1001)",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件uid",
+      "parameter": "uid",
+      "type": "String",
+      "syntax": "${uid}",
+      "descriptionHtml": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "description": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "私有样式类名",
+      "parameter": "uniqueClassName",
+      "type": "String",
+      "syntax": "${uniqueClassName}",
+      "descriptionHtml": "用在私有样式表的类名上，字符串(形如 c10)，举例：<br>&lt;span class=\"<span style=\"color:red\">${uniqueClassName}</span>\" &gt;文字&lt;/span&gt;",
+      "description": "用在私有样式表的类名上，字符串(形如 c10)，举例：\n<span class=\"${uniqueClassName}\" >文字</span>",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<span class=\"${uniqueClassName}\" >文字</span>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "引入jQuery类库",
+      "parameter": "v_includeJquery",
+      "type": "Function",
+      "syntax": "${v_includeJquery()}",
+      "descriptionHtml": "引入系统自带的JQuery类库;<br> 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "description": "引入系统自带的JQuery类库;\n 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "\n<!--引入jQuery-->${v_includeJquery()}<!--引入jQuery完成-->\n",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "唯一性标识",
+      "parameter": "uuid ",
+      "type": "String",
+      "syntax": "${uuid}",
+      "descriptionHtml": "唯一性标识, 主要在拖放多个组件时使用,确保id,方法等唯一不会冲突。",
+      "description": "唯一性标识, 主要在拖放多个组件时使用,确保id,方法等唯一不会冲突。",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "标识:${uuid}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "提交是否成功",
+      "parameter": "issuccess",
+      "type": "Boolean",
+      "syntax": "<#if issuccess==1></#if>",
+      "descriptionHtml": "应聘信息是否提交成功",
+      "description": "应聘信息是否提交成功",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "应聘信息是否提交成功：<#if issuccess></#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "form表单",
+      "parameter": "form",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "应聘表单名称",
+      "parameter": "formName",
+      "type": "String",
+      "syntax": "${formName}",
+      "descriptionHtml": "应聘表单名称",
+      "description": "应聘表单名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<form  name=\"${formName}\" method=\"post\" action=\"${actionUrl}\"></form>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "表单提交地址",
+      "parameter": "actionUrl",
+      "type": "String",
+      "syntax": "${actionUrl}",
+      "descriptionHtml": "表单提交地址",
+      "description": "表单提交地址",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "应聘工作",
+      "parameter": "engageId",
+      "type": "String",
+      "syntax": "${engageId}",
+      "descriptionHtml": "应聘工作的id，放在from标签中",
+      "description": "应聘工作的id，放在from标签中",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "${engageId}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "姓名",
+      "parameter": "personName",
+      "type": "String",
+      "syntax": "${personName}",
+      "descriptionHtml": "应聘表单中姓名输入框的name值",
+      "description": "应聘表单中姓名输入框的name值",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "name=${personName}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "性别",
+      "parameter": "personSex",
+      "type": "String",
+      "syntax": "${personSex}",
+      "descriptionHtml": "应聘表单中性别输入框的name值",
+      "description": "应聘表单中性别输入框的name值",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "name=${personName}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "出生日期",
+      "parameter": "birthday",
+      "type": "String",
+      "syntax": "${birthday}",
+      "descriptionHtml": "应聘表单中出生日期输入框的name值",
+      "description": "应聘表单中出生日期输入框的name值",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "name=${birthday}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "工作年限",
+      "parameter": "workYears",
+      "type": "String",
+      "syntax": "${workYears}",
+      "descriptionHtml": "应聘表单中工作年限输入框的name值",
+      "description": "应聘表单中工作年限输入框的name值",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "name=${workYears}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "填写日期",
+      "parameter": "applyDate",
+      "type": "String",
+      "syntax": "${applyDate}",
+      "descriptionHtml": "应聘表单中填写日期输入框的name值",
+      "description": "应聘表单中填写日期输入框的name值",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "name=${applyDate}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "电子邮件",
+      "parameter": "email",
+      "type": "String",
+      "syntax": "${email}",
+      "descriptionHtml": "应聘表单中电子邮件输入框的name值",
+      "description": "应聘表单中电子邮件输入框的name值",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "name=${email}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "毕业时间",
+      "parameter": "graduateDate",
+      "type": "String",
+      "syntax": "${graduateDate}",
+      "descriptionHtml": "应聘表单中毕业时间输入框的name值",
+      "description": "应聘表单中毕业时间输入框的name值",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "name=${graduateDate}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "外语水平",
+      "parameter": "foreignLanguage",
+      "type": "String",
+      "syntax": "${foreignLanguage}",
+      "descriptionHtml": "应聘表单中外语水平输入框的name值",
+      "description": "应聘表单中外语水平输入框的name值",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "name=${foreignLanguage}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "期望薪资",
+      "parameter": "hopeSalary",
+      "type": "String",
+      "syntax": "${hopeSalary}",
+      "descriptionHtml": "应聘表单中期望薪资输入框的name值",
+      "description": "应聘表单中期望薪资输入框的name值",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "name=${hopeSalary}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "学历",
+      "parameter": "degree",
+      "type": "String",
+      "syntax": "${degree}",
+      "descriptionHtml": "应聘表单中学历输入框的name值",
+      "description": "应聘表单中学历输入框的name值",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "name=${degree}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "专业",
+      "parameter": "specialty",
+      "type": "String",
+      "syntax": "${specialty}",
+      "descriptionHtml": "应聘表单中专业输入框的name值",
+      "description": "应聘表单中专业输入框的name值",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "name=${specialty}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "毕业院校",
+      "parameter": "graduateUniversity",
+      "type": "String",
+      "syntax": "${graduateUniversity}",
+      "descriptionHtml": "应聘表单中毕业院校输入框的name值",
+      "description": "应聘表单中毕业院校输入框的name值",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "name=${graduateUniversity}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "现居住地",
+      "parameter": "personAddress",
+      "type": "String",
+      "syntax": "${personAddress}",
+      "descriptionHtml": "应聘表单中现居住地输入框的name值",
+      "description": "应聘表单中现居住地输入框的name值",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "name=${personAddress}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "户口所在地",
+      "parameter": "bornAddress",
+      "type": "String",
+      "syntax": "name=${bornAddress}",
+      "descriptionHtml": "应聘表单中户口所在地输入框的name值",
+      "description": "应聘表单中户口所在地输入框的name值",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<input type=type name=${bornAddress}>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "特长爱好",
+      "parameter": "interest",
+      "type": "String",
+      "syntax": "${interest}",
+      "descriptionHtml": "应聘表单中特长爱好输入框的name值",
+      "description": "应聘表单中特长爱好输入框的name值",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "name=${interest}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "联系方式",
+      "parameter": "contact",
+      "type": "String",
+      "syntax": "${contact}",
+      "descriptionHtml": "应聘表单中联系方式输入框的name值",
+      "description": "应聘表单中联系方式输入框的name值",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "name=${contact}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "工作经历",
+      "parameter": "workExperience",
+      "type": "String",
+      "syntax": "${workExperience}",
+      "descriptionHtml": "应聘表单中工作经历输入框的name值",
+      "description": "应聘表单中工作经历输入框的name值",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "name=${workExperience}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "自我评价",
+      "parameter": "introduceSelf",
+      "type": "String",
+      "syntax": "${introduceSelf}",
+      "descriptionHtml": "应聘表单中自我评价输入框的name值",
+      "description": "应聘表单中自我评价输入框的name值",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "name=${introduceSelf}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "当前时间",
+      "parameter": "nowDate",
+      "type": "String",
+      "syntax": "${nowDate}",
+      "descriptionHtml": "获得当前时间，给时间选择框提供默认值",
+      "description": "获得当前时间，给时间选择框提供默认值",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "${nowDate}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    }
+  ],
+  "template": "<#--\n    说明：表单项的name必须用给出的参数\n-->\n\n   \n<TABLE align=\"center\"   width=\"650\" height=\"350\" cellpadding=\"2\" cellspacing=\"1\" border=\"0\">    \n<FORM name=${formName} action=\"${actionUrl}\" method=\"post\" onsubmit=\"return _addjob_checkData${uuid}(this)\">    \n    ${engageId} \n    <tr>    \n        <td bgcolor=\"#F4FAFF\" align=\"center\">    \n            <DIV style=\"font-size:9pt\">    \n                    姓名   \n            </DIV>    \n        </td>    \n        <td align=\"left\">    \n            <input name=\"${personName}\" id=\"${personName}\" style=\"display: none;\" maxlength=\"10\"><input name=\"${personName}_temp\" id=\"${personName}_temp\" maxlength=\"10\">    \n                <FONT color=\"#FF0000\"> *</FONT>    \n        </td>    \n        <td bgcolor=\"#F4FAFF\" align=\"center\">    \n            <DIV style=\"font-size:9pt\">性别</DIV>    \n        </td>    \n        <td align=\"left\">    \n            <input type=radio checked value=男 name=${personSex} style=\"font-size:9pt\">    \n                <font size=2>男</font>    \n            <input type=radio value=女 name=${personSex} style=\"font-size:9pt\">    \n                <font size=2>女</font>    \n        </td>    \n    </tr>    \n    <tr>    \n        <td bgcolor=\"#F4FAFF\" align=\"center\"><DIV style=\"font-size:9pt\">出生日期</DIV></td>     \n        <td align=\"left\">    \n\n                <input type=text name=${birthday} id=${birthday} value=\"${nowDate}\" class=\"Wdate\" size=22 onfocus=\"WdatePicker({dateFmt:'yyyy-MM-dd',maxDate:'%y-%M-@{%d}'})\" />  \n                <FONT color=\"#FF0000\"><Font color=\"\"> *</FONT></FONT>    \n         </td>    \n         <td bgcolor=\"#F4FAFF\" align=\"center\"><DIV style=\"font-size:9pt\">工作经历</DIV></td>    \n         <td align=\"left\">    \n            <select name=${workYears}>    \n                <option value=0 selected>无</option>    \n                <option value=1>一年</option>    \n                <option value=2>二年</option>    \n                <option value=3>三年</option>    \n                <option value=4>四年</option>    \n                <option value=5>五年</option>    \n                <option value=6>六年</option>    \n                <option value=7>七年</option>    \n                <option value=8>八年</option>    \n                <option value=9>九年</option>    \n                <option value=10>十年</option>    \n            </select>    \n        </td>    \n    </tr>    \n    <tr>    \n        <td bgcolor=\"#F4FAFF\" align=\"center\">    \n            <DIV style=\"font-size:9pt\">电子邮件</DIV>    \n        </td>    \n        <td align=\"left\">    \n            <input name=\"${email}\" id=\"${email}\" style=\"display: none;\" maxlength=\"50\"><input name=\"${email}_temp\" id=\"${email}_temp\" maxlength=\"50\"><FONT color=\"#FF0000\"> *</FONT>    \n        </td>    \n        <td bgcolor=\"#F4FAFF\" align=\"center\">    \n            <DIV style=\"font-size:9pt\">联系方式</DIV> \n        </td>                       \n        <td align=\"left\">    \n            <input  name=\"${contact}\" id=\"${contact}\" style=\"display: none;\" maxlength=\"20\"><input  name=\"${contact}_temp\" id=\"${contact}_temp\" maxlength=\"20\"><FONT color=\"#FF0000\"> *</FONT>\n            \n            <input type=hidden name=${applyDate} id=${applyDate} value=\"${nowDate}\" />\n            <input type='hidden' class=\"text\" name=${graduateDate} value='${nowDate}'>\n            </td>              \n    </tr>    \n    <tr>    \n        <td  bgcolor=\"#F4FAFF\" align=\"center\">    \n            <DIV style=\"font-size:9pt\">外语水平</DIV>    \n        </td>    \n        <td align=\"left\">    \n            <input name=\"${foreignLanguage}\" id=\"${foreignLanguage}\" style=\"display: none;\" maxlength=\"20\"><input name=\"${foreignLanguage}_temp\" id=\"${foreignLanguage}_temp\" maxlength=\"20\"><FONT color=\"#FF0000\"> *</FONT>    \n        </td>    \n        <td bgcolor=\"#F4FAFF\" align=\"center\">    \n            <DIV style=\"font-size:9pt\">期望月薪</DIV>    \n        </td>    \n        <td align=\"left\">    \n            <input name=${hopeSalary} maxlength=\"6\"><font size=\"2\">元</font><FONT color=\"#FF0000\"> *</FONT>    \n        </td>    \n    </tr>    \n    <tr>    \n        <td bgcolor=\"#F4FAFF\" align=\"center\">    \n            <DIV style=\"font-size:9pt\">学历</DIV>    \n        </td>    \n        <td align=\"left\">    \n            <select  name=${degree}>    \n                <option value=中学 selected>中学</option>    \n                <option value=中专>中专</option>    \n                <option value=大专>大专</option>    \n                <option value=本科>本科</option>    \n                <option value=硕士>硕士</option>    \n                <option value=博士>博士</option>    \n                <option value=博士后>博士后</option>    \n            </select>    \n        </td>    \n        <td bgcolor=\"#F4FAFF\" align=\"center\" nowrap>    \n            <DIV style=\"font-size:9pt\">专业</DIV>    \n        </td>    \n        <td nowrap align=\"left\">    \n            <input name=\"${specialty}\" id=\"${specialty}\" style=\"display: none;\" maxlength=\"20\"><input name=\"${specialty}_temp\" id=\"${specialty}_temp\" maxlength=\"20\"><FONT color=\"#FF0000\"> *</FONT>    \n        </td>    \n    </tr>    \n    <tr>    \n        <td bgcolor=\"#F4FAFF\" align=\"center\" nowrap>    \n            <DIV style=\"font-size:9pt\">毕业院校</DIV>    \n        </td>    \n        <td nowrap align=\"left\">    \n            <input name=\"${graduateUniversity}\" id=\"${graduateUniversity}\" style=\"display: none;\" maxlength=\"20\"><input name=\"${graduateUniversity}_temp\" id=\"${graduateUniversity}_temp\" maxlength=\"20\"><FONT color=\"#FF0000\"> *</FONT>    \n        </td>    \n        <td bgcolor=\"#F4FAFF\" align=\"center\" nowrap>    \n            <DIV style=\"font-size:9pt\">现居住地</DIV>    \n        </td>    \n        <td nowrap align=\"left\">    \n            <input  name=\"${personAddress}\" id=\"${personAddress}\" style=\"display: none;\" maxlength=\"20\"><input  name=\"${personAddress}_temp\" id=\"${personAddress}_temp\" maxlength=\"20\"><FONT color=\"#FF0000\"> *</FONT>    \n        </td>    \n    </tr>    \n    <tr>    \n        <td bgcolor=\"#F4FAFF\" align=\"center\" nowrap>    \n            <DIV style=\"font-size:9pt\">户口所在地</DIV>    \n        </td>    \n        <td nowrap align=\"left\">    \n            <input  name=\"${bornAddress}\" id=\"${bornAddress}\" style=\"display: none;\" maxlength=\"20\"><input  name=\"${bornAddress}_temp\" id=\"${bornAddress}_temp\" maxlength=\"20\"><FONT color=\"#FF0000\"> *</FONT>    \n        </td>    \n        <td bgcolor=\"#F4FAFF\" align=\"center\" nowrap>    \n            <DIV style=\"font-size:9pt\">特长爱好</DIV>    \n        </td>    \n        <td nowrap align=\"left\">    \n            <input  name=\"${interest}\" id=\"${interest}\" style=\"display: none;\" maxlength=\"20\"><input  name=\"${interest}_temp\" id=\"${interest}_temp\" maxlength=\"20\"><FONT color=\"#FF0000\"></FONT>    \n        </td>    \n    </tr>        \n    <tr>    \n        <td bgcolor=\"#F4FAFF\" align=\"center\" nowrap>    \n            <DIV style=\"font-size:9pt\">工作经历</DIV>    \n        </td>    \n        <td colspan=\"3\" nowrap align=\"left\"><textarea name=\"${workExperience}\" id=\"${workExperience}\" style=\"display: none;\" rows=10 cols=75></textarea><textarea name=\"${workExperience}_temp\" id=\"${workExperience}_temp\" rows=10 cols=75></textarea></td>    \n    </tr>    \n    <tr>    \n        <td bgcolor=\"#F4FAFF\" align=\"center\" nowrap>    \n            <DIV style=\"font-size:9pt\">自我评价</DIV>    \n        </td>    \n        <td colspan=\"3\" nowrap align=\"left\"><textarea name=\"${introduceSelf}\" id=\"${introduceSelf}\" style=\"display: none;\" rows=10 cols=75></textarea><textarea name=\"${introduceSelf}_temp\" id=\"${introduceSelf}_temp\" rows=10 cols=75></textarea></td>    \n    </tr>    \n    <tr>    \n        <td colspan=\"7\" align=center nowrap>    \n            <input type=submit value=提交申请 name=Submit >    \n            <input id=reset type=reset value=重写 name=reset >        \n            <!--input id=closeBtt onClick=\"location.reload('/system/site/element/edit/runelement.jsp')\" type=button value=返回 name=close -->        \n        </td>    \n    </tr>    \n</FORM>\n</table>\n<script language=\"javascript\">    \nfunction _addjob_openBrowse()    \n{    \n    var s = window.showModalDialog(\"/system/resource/code/job/calendardlg.jsp?year=\" + document.all.year2.value + \"&month=\" + document.all.month2.value + \"&day=\" + document.all.day2.value, null, \"dialogHeight:200px;dialogWidth:300px;center:yes;status:no\");    \n    if(s == null)return;    \n    var d = new Date(s);    \n    var valdate=/^[1-9][1-9]$/;    \n    var showyear=d.getYear();    \n    if(valdate.test(showyear)){    \n        showyear=\"19\"+showyear;    \n    }                \n    document.all.year2.value =showyear;    \n    document.all.month2.value = d.getMonth() + 1;    \n    document.all.day2.value = d.getDate();    \n    document.all.${birthday}.value=document.all.year2.value+\"/\"+document.all.month2.value+\"/\"+document.all.day2.value;    \n}     \nfunction _addjob_openBrowse3()    \n{    \n    var s = window.showModalDialog(\"/system/resource/code/job/calendardlg.jsp?year=\" + document.all.year3.value + \"&month=\" + document.all.month3.value + \"&day=\" + document.all.day3.value, null, \"dialogHeight:200px;dialogWidth:300px;center:yes;status:no\");    \n    if(s == null)return;    \n    var d = new Date(s);    \n    var valdate=/^[1-9][1-9]$/;    \n    var showyear=d.getYear();    \n    if(valdate.test(showyear)){    \n        showyear=\"19\"+showyear;    \n    }                \n    document.all.year3.value = showyear;    \n    document.all.month3.value = d.getMonth() + 1;    \n    document.all.day3.value = d.getDate();    \n    document.all.${applyDate}.value=document.all.year3.value+\"/\"+document.all.month3.value+\"/\"+document.all.day3.value;    \n}     \nfunction _addjob_openBrowse4()    \n{    \n    var s = window.showModalDialog(\"/system/resource/code/job/calendardlg.jsp?year=\" + document.all.year4.value + \"&month=\" + document.all.month4.value + \"&day=\" + document.all.day4.value, null, \"dialogHeight:200px;dialogWidth:300px;center:yes;status:no\");    \n    if(s == null)return;    \n    var d = new Date(s);    \n    var valdate=/^[1-9][1-9]$/;    \n    var showyear=d.getYear();    \n    if(valdate.test(showyear)){    \n    showyear=\"19\"+showyear;    \n    }      \n    document.all.year4.value = showyear;    \n    document.all.month4.value = d.getMonth() + 1;    \n    document.all.day4.value = d.getDate();    \n    document.all.${graduateDate}.value=document.all.year4.value+\"/\"+document.all.month4.value+\"/\"+document.all.day4.value;    \n}                      \nfunction _addjob_checkData${uuid}(formname)    \n{        \n    if(formname.engageId.value==\"-1\" || formname.engageId.value==\"null\")    \n    {       \n        alert(\"请先选择所申请的职位，再提交信息\");    \n        return false;    \n    } \n    if(formname.${personName}_temp.value==\"\")    \n    {    \n        formname.${personName}_temp.focus();    \n        alert(\"姓名不能为空！\");    \n        return false;    \n    }      \n    var rex = /^\\w+([\\.\\-]\\w+)*\\@\\w+([\\.\\-]\\w+)*\\.\\w+$/;    \n    if(!rex.test(formname.${email}_temp.value))    \n    {    \n        formname.${email}_temp.value=\"\";    \n        formname.${email}_temp.focus();    \n        alert(\"电子邮件不合法！\");    \n        return false;    \n    }     \n    if(formname.${foreignLanguage}_temp.value==\"\")    \n    {    \n        formname.${foreignLanguage}_temp.focus();    \n        alert(\"外语水平必须填写！\");    \n        return false;    \n    }    \n    var rex1 = /^\\d+$/    \n    if(!rex1.test(formname.${hopeSalary}.value))    \n    {    \n        formname.${hopeSalary}.value = \"\";    \n        formname.${hopeSalary}.focus();    \n        alert(\"期望月薪必须是数字！\");    \n        return false;    \n    }    \n    if(formname.${specialty}_temp.value==\"\")    \n    {    \n        formname.${specialty}_temp.focus();    \n        alert(\"专业必须填写！\");    \n        return false;    \n    }    \n    if(formname.${graduateUniversity}_temp.value==\"\")    \n    {    \n        formname.${graduateUniversity}_temp.focus();    \n        alert(\"毕业院校必须填写！\");    \n        return false;    \n    }       \n    if(formname.${personAddress}_temp.value==\"\")    \n    {    \n        formname.${personAddress}_temp.focus();    \n        alert(\"现居住地必须填写！\");    \n        return false;    \n    }    \n    if(formname.${bornAddress}_temp.value==\"\")    \n    {    \n        formname.${bornAddress}_temp.focus();    \n        alert(\"户口所在地必须填写！\");    \n        return false;    \n    }    \n    if(formname.${contact}_temp.value==\"\")    \n    {    \n        formname.${contact}_temp.focus();    \n        alert(\"联系方式必须填写！\");    \n        return false;    \n    }    \n    if(formname.${workExperience}_temp .value.length > 1000)    \n    {    \n        alert('工作经历请限制在1000字以下');    \n        formname.${workExperience}_temp .focus();    \n        return false;    \n    }    \n    if(formname.${introduceSelf}_temp .value.length > 1000)    \n    {    \n        alert('自我评价请限制在1000字以下');    \n        formname.${introduceSelf}_temp .focus();    \n        return false;    \n    }  \n    if(document.getElementById(\"${personName}_temp\"))\n    {\n        document.getElementById(\"${personName}\").value=new  Base64().encode(document.getElementById(\"${personName}_temp\").value);\n        document.getElementById(\"${personName}_temp\").disabled=true;\n    }\n    if(document.getElementById(\"${email}_temp\"))\n    {\n        document.getElementById(\"${email}\").value=new  Base64().encode(document.getElementById(\"${email}_temp\").value);\n        document.getElementById(\"${email}_temp\").disabled=true;\n    }\n    if(document.getElementById(\"${contact}_temp\"))\n    {\n        document.getElementById(\"${contact}\").value=new  Base64().encode(document.getElementById(\"${contact}_temp\").value);\n        document.getElementById(\"${contact}_temp\").disabled=true;\n    }\n    if(document.getElementById(\"${foreignLanguage}_temp\"))\n    {\n        document.getElementById(\"${foreignLanguage}\").value=new  Base64().encode(document.getElementById(\"${foreignLanguage}_temp\").value);\n        document.getElementById(\"${foreignLanguage}_temp\").disabled=true;\n    }\n    if(document.getElementById(\"${specialty}_temp\"))\n    {\n        document.getElementById(\"${specialty}\").value=new  Base64().encode(document.getElementById(\"${specialty}_temp\").value);\n        document.getElementById(\"${specialty}_temp\").disabled=true;\n    }\n    if(document.getElementById(\"${graduateUniversity}_temp\"))\n    {\n        document.getElementById(\"${graduateUniversity}\").value=new  Base64().encode(document.getElementById(\"${graduateUniversity}_temp\").value);\n        document.getElementById(\"${graduateUniversity}_temp\").disabled=true;\n    }\n    if(document.getElementById(\"${personAddress}\"))\n    {\n        document.getElementById(\"${personAddress}\").value=new  Base64().encode(document.getElementById(\"${personAddress}_temp\").value);\n        document.getElementById(\"${personAddress}_temp\").disabled=true;\n    }\n    if(document.getElementById(\"${bornAddress}_temp\"))\n    {\n        document.getElementById(\"${bornAddress}\").value=new  Base64().encode(document.getElementById(\"${bornAddress}_temp\").value);\n        document.getElementById(\"${bornAddress}_temp\").disabled=true;\n    }\n    if(document.getElementById(\"${interest}_temp\"))\n    {\n        document.getElementById(\"${interest}\").value=new  Base64().encode(document.getElementById(\"${interest}_temp\").value);\n        document.getElementById(\"${interest}_temp\").disabled=true;\n    }\n    if(document.getElementById(\"${workExperience}_temp\"))\n    {\n        document.getElementById(\"${workExperience}\").value=new  Base64().encode(document.getElementById(\"${workExperience}_temp\").value);\n        document.getElementById(\"${workExperience}_temp\").disabled=true;\n    }\n    if(document.getElementById(\"${introduceSelf}_temp\"))\n    {\n        document.getElementById(\"${introduceSelf}\").value=new  Base64().encode(document.getElementById(\"${introduceSelf}_temp\").value);\n        document.getElementById(\"${introduceSelf}_temp\").disabled=true;\n    }  \n}    \n</script>",
+  "exampleTemplate": "",
+  "previousFixtureHashes": [
+    "cfaa975a",
+    "eb2614d"
+  ],
+  "css": "",
+  "fixture": {
+    "viewid": "1043",
+    "uid": "u_demo",
+    "uniqueClassName": "c_demo",
+    "uuid": "唯一性标识",
+    "formName": "boda_demo",
+    "actionUrl": "#preview",
+    "engageId": "demo_engageId",
+    "personName": "示例名称",
+    "personSex": "性别",
+    "birthday": "出生日期",
+    "workYears": "工作年限",
+    "applyDate": "2026-10-30 09:30:00",
+    "email": "",
+    "graduateDate": "2026-10-30 09:30:00",
+    "foreignLanguage": "外语水平",
+    "hopeSalary": "期望薪资",
+    "degree": "学历",
+    "specialty": "专业",
+    "graduateUniversity": "毕业院校",
+    "personAddress": "现居住地",
+    "interest": "特长爱好",
+    "contact": "联系方式",
+    "workExperience": "工作经历",
+    "introduceSelf": "在校园里记录发现，在探索中连接未来。这里是一段用于检查组件排版的示例摘要。",
+    "nowDate": "2026-10-30 09:30:00",
+    "bornAddress": "示例内容"
+  }
+}

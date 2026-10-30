@@ -1,0 +1,483 @@
+{
+  "id": "087",
+  "index": 87,
+  "name": "信件标题列表",
+  "category": "领导信箱",
+  "parameterCount": 26,
+  "hasScript": false,
+  "templateLength": 1400,
+  "parameters": [
+    {
+      "name": "通用参数",
+      "parameter": "commonparam",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件id",
+      "parameter": "viewid",
+      "type": "String",
+      "syntax": "${viewid}",
+      "descriptionHtml": "组件本身的id，数字(形如 1001)",
+      "description": "组件本身的id，数字(形如 1001)",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件uid",
+      "parameter": "uid",
+      "type": "String",
+      "syntax": "${uid}",
+      "descriptionHtml": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "description": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "私有样式类名",
+      "parameter": "uniqueClassName",
+      "type": "String",
+      "syntax": "${uniqueClassName}",
+      "descriptionHtml": "用在私有样式表的类名上，字符串(形如 c10)，举例：<br>&lt;span class=\"<span style=\"color:red\">${uniqueClassName}</span>\" &gt;文字&lt;/span&gt;",
+      "description": "用在私有样式表的类名上，字符串(形如 c10)，举例：\n<span class=\"${uniqueClassName}\" >文字</span>",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<span class=\"${uniqueClassName}\" >文字</span>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "引入jQuery类库",
+      "parameter": "v_includeJquery",
+      "type": "Function",
+      "syntax": "${v_includeJquery()}",
+      "descriptionHtml": "引入系统自带的JQuery类库;<br> 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "description": "引入系统自带的JQuery类库;\n 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "\n<!--引入jQuery-->${v_includeJquery()}<!--引入jQuery完成-->\n",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "唯一标识",
+      "parameter": "UUID",
+      "type": "String",
+      "syntax": "${UUID}",
+      "descriptionHtml": "唯一标识",
+      "description": "唯一标识",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "表单名称",
+      "parameter": "formName",
+      "type": "String",
+      "syntax": "${formName}",
+      "descriptionHtml": "表单名称",
+      "description": "表单名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "标题列表条数",
+      "parameter": "size",
+      "type": "String",
+      "syntax": "${size}",
+      "descriptionHtml": "标题列表条数",
+      "description": "标题列表条数",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "标题列表",
+      "parameter": "list_item",
+      "type": "List",
+      "syntax": "<#list list_item as list></#list>",
+      "descriptionHtml": "标题列表",
+      "description": "标题列表",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "列表位置参数",
+      "parameter": "listnogroup",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "流水号",
+      "parameter": "serialnum",
+      "type": "String",
+      "syntax": "${list.serialnum}",
+      "descriptionHtml": "流水号",
+      "description": "流水号",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "链接地址",
+      "parameter": "titleUrl",
+      "type": "String",
+      "syntax": "${list.titleUrl}",
+      "descriptionHtml": "链接地址",
+      "description": "链接地址",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "原标题",
+      "parameter": "title",
+      "type": "String",
+      "syntax": "${list.title}",
+      "descriptionHtml": "原标题，不建议直接输出",
+      "description": "原标题，不建议直接输出",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "显示标题",
+      "parameter": "showTitle",
+      "type": "String",
+      "syntax": "${list.showTitle}",
+      "descriptionHtml": "显示标题，进行过字数限制的标题",
+      "description": "显示标题，进行过字数限制的标题",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "原时间",
+      "parameter": "time",
+      "type": "String",
+      "syntax": "${list.time}",
+      "descriptionHtml": "原时间，不建议直接输出",
+      "description": "原时间，不建议直接输出",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "显示时间",
+      "parameter": "showTime",
+      "type": "String",
+      "syntax": "${list.showTime}",
+      "descriptionHtml": "显示时间，进行过格式处理的时间",
+      "description": "显示时间，进行过格式处理的时间",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "类别名称",
+      "parameter": "typeName",
+      "type": "String",
+      "syntax": "${list.typeName}",
+      "descriptionHtml": "类别名称",
+      "description": "类别名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "信件类型名称",
+      "parameter": "mailMsgTypeName",
+      "type": "String",
+      "syntax": "${list.mailMsgTypeName}",
+      "descriptionHtml": "信件类型名称",
+      "description": "信件类型名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "信件内容",
+      "parameter": "mailMsgContent",
+      "type": "String",
+      "syntax": "${list.mailMsgContent}",
+      "descriptionHtml": "信件内容",
+      "description": "信件内容",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "信件回复内容",
+      "parameter": "mailMsgRecontent",
+      "type": "String",
+      "syntax": "${list.mailMsgRecontent}",
+      "descriptionHtml": "信件回复内容",
+      "description": "信件回复内容",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "处理状态",
+      "parameter": "reply",
+      "type": "String",
+      "syntax": "${list.reply}",
+      "descriptionHtml": "处理状态",
+      "description": "处理状态",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "点击数",
+      "parameter": "clickCount",
+      "type": "String",
+      "syntax": "${list.clickCount}",
+      "descriptionHtml": "点击数",
+      "description": "点击数",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "分页",
+      "parameter": "pageBar",
+      "type": "String",
+      "syntax": "${pageBar}",
+      "descriptionHtml": "分页",
+      "description": "分页",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "是第几条",
+      "parameter": "pos",
+      "type": "Integer",
+      "syntax": "${list.pos}",
+      "descriptionHtml": "当前是列表的第几条(从1开始)",
+      "description": "当前是列表的第几条(从1开始)",
+      "kind": "parameter",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "第${list.pos}条",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否首条",
+      "parameter": "isFirst",
+      "type": "Boolean",
+      "syntax": "<#if list.isFirst></#if>",
+      "descriptionHtml": "当前是不是列表的第一条",
+      "description": "当前是不是列表的第一条",
+      "kind": "parameter",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if list.isFirst>首条</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否尾条",
+      "parameter": "isLast",
+      "type": "Boolean",
+      "syntax": "<#if list.isLast></#if>",
+      "descriptionHtml": "当前是不是列表的最后一条",
+      "description": "当前是不是列表的最后一条",
+      "kind": "parameter",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if list.isLast>尾条</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否奇数行",
+      "parameter": "isOdd",
+      "type": "Boolean",
+      "syntax": "<#if list.isOdd></#if>",
+      "descriptionHtml": "当前是不是奇数行",
+      "description": "当前是不是奇数行",
+      "kind": "parameter",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if list.isOdd>奇数行</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否偶数行",
+      "parameter": "isEven",
+      "type": "Boolean",
+      "syntax": "<#if list.isEven></#if>",
+      "descriptionHtml": "当前是不是偶数行",
+      "description": "当前是不是偶数行",
+      "kind": "parameter",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if list.isEven>偶数行</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listnogroup"
+      ]
+    }
+  ],
+  "template": "<div class=\"govitemcontent${uniqueClassName}\">\n    <TABLE style=\"FONT-SIZE: 9pt; COLOR: #6f6f6f; FONT-FAMILY: 宋体;word-break:break-all\" cellspacing=\"0\" cellpadding=\"5\" width=\"100%\" border=\"0\" >\n        <tr style=\"BACKGROUND-IMAGE: url(/system/resource/images/leadermail/ldxx_list_topbg.gif); POSITION: relative; FONT-FAMILY: 宋体; HEIGHT: 32px; COLOR: #ff6600; FONT-SIZE: 9pt; FONT-WEIGHT: bold\" >\n            <td align=\"center\">标题</td>\n            <td align=\"center\">时间</td>\n            <td align=\"center\">回复状态</td>\n        </tr>\n        <#list list_item as list>\n        <TR <#if list.isEven >style=\" BACKGROUND-COLOR: #fff9e7\"</#if> align=\"center\" >\n            <TD align=\"left\" nowrap=\"nowrap\"   style=\"padding-left:30px\">\n                <a href=\"${list.titleURL}\" style=\"text-decoration: none;\" >\n                <span  style=\"cursor: hand;FONT-SIZE: 9pt; COLOR: #6f6f6f; FONT-FAMILY: 宋体; POSITION: relative; TEXT-DECORATION: none\">\n                ${list.showTitle}\n                </span> </a>\n            </TD>\n            <TD align=\"center\" nowrap=\"nowrap\"  >\n                ${list.showTime}\n            </TD>\n            <TD align=\"center\" nowrap=\"nowrap\"  >\n                <span style=\"FONT-SIZE: 9pt; COLOR: #ff6600; FONT-FAMILY: 宋体\">\n                    <#if list.reply==\"0\">没有回复<#else>已经回复</#if>\n                </span>\n            </TD>\n        </tr>\n      </#list>\n    </TABLE>\n</div>",
+  "exampleTemplate": "",
+  "previousFixtureHashes": [
+    "b0cba8be"
+  ],
+  "css": ".govitemcontent${uniqueClassName} table {\n    border-collapse: collapse;\n    border:1px #FFA366 solid;\n}\n.govitemcontent${uniqueClassName} td {\n    border:1px #FFA366 solid;\n}",
+  "fixture": {
+    "viewid": "1087",
+    "uid": "u_demo",
+    "uniqueClassName": "c_demo",
+    "UUID": "boda_demo",
+    "formName": "boda_demo",
+    "size": "12",
+    "pageBar": "分页",
+    "list_item": [
+      {
+        "isEven": false,
+        "titleURL": "把课堂搬进山野，让知识连接更广阔的世界",
+        "showTitle": "把课堂搬进山野，让知识连接更广阔的世界",
+        "showTime": "2026-10-30",
+        "reply": "处理状态",
+        "serialnum": "12",
+        "titleUrl": "把课堂搬进山野，让知识连接更广阔的世界",
+        "title": "把课堂搬进山野，让知识连接更广阔的世界",
+        "time": "2026-10-30",
+        "typeName": "示例名称",
+        "mailMsgTypeName": "示例名称",
+        "mailMsgContent": "信件内容",
+        "mailMsgRecontent": "信件回复内容",
+        "clickCount": "12",
+        "pos": 1
+      },
+      {
+        "isEven": true,
+        "titleURL": "校园开放日｜在这里，遇见新的可能",
+        "showTitle": "校园开放日｜在这里，遇见新的可能",
+        "showTime": "2026-10-30",
+        "reply": "处理状态",
+        "serialnum": "12",
+        "titleUrl": "校园开放日｜在这里，遇见新的可能",
+        "title": "校园开放日｜在这里，遇见新的可能",
+        "time": "2026-10-30",
+        "typeName": "示例名称",
+        "mailMsgTypeName": "示例名称",
+        "mailMsgContent": "信件内容",
+        "mailMsgRecontent": "信件回复内容",
+        "clickCount": "12",
+        "pos": 2
+      },
+      {
+        "isEven": false,
+        "titleURL": "关于举办青年学术交流活动的通知",
+        "showTitle": "关于举办青年学术交流活动的通知",
+        "showTime": "2026-10-30",
+        "reply": "处理状态",
+        "serialnum": "12",
+        "titleUrl": "关于举办青年学术交流活动的通知",
+        "title": "关于举办青年学术交流活动的通知",
+        "time": "2026-10-30",
+        "typeName": "示例名称",
+        "mailMsgTypeName": "示例名称",
+        "mailMsgContent": "信件内容",
+        "mailMsgRecontent": "信件回复内容",
+        "clickCount": "12",
+        "pos": 3
+      },
+      {
+        "isEven": true,
+        "titleURL": "图书馆秋季阅读计划正式启动",
+        "showTitle": "图书馆秋季阅读计划正式启动",
+        "showTime": "2026-10-30",
+        "reply": "处理状态",
+        "serialnum": "12",
+        "titleUrl": "图书馆秋季阅读计划正式启动",
+        "title": "图书馆秋季阅读计划正式启动",
+        "time": "2026-10-30",
+        "typeName": "示例名称",
+        "mailMsgTypeName": "示例名称",
+        "mailMsgContent": "信件内容",
+        "mailMsgRecontent": "信件回复内容",
+        "clickCount": "12",
+        "pos": 4
+      },
+      {
+        "isEven": false,
+        "titleURL": "探索与创新：青年研究者的校园故事",
+        "showTitle": "探索与创新：青年研究者的校园故事",
+        "showTime": "2026-10-30",
+        "reply": "处理状态",
+        "serialnum": "12",
+        "titleUrl": "探索与创新：青年研究者的校园故事",
+        "title": "探索与创新：青年研究者的校园故事",
+        "time": "2026-10-30",
+        "typeName": "示例名称",
+        "mailMsgTypeName": "示例名称",
+        "mailMsgContent": "信件内容",
+        "mailMsgRecontent": "信件回复内容",
+        "clickCount": "12",
+        "pos": 5
+      }
+    ]
+  }
+}

@@ -1,0 +1,513 @@
+{
+  "id": "024",
+  "index": 24,
+  "name": "图片列表",
+  "category": "图片列表",
+  "parameterCount": 23,
+  "hasScript": false,
+  "templateLength": 783,
+  "parameters": [
+    {
+      "name": "通用参数",
+      "parameter": "commonparam",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件id",
+      "parameter": "viewid",
+      "type": "String",
+      "syntax": "${viewid}",
+      "descriptionHtml": "组件本身的id，数字(形如 1001)",
+      "description": "组件本身的id，数字(形如 1001)",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件uid",
+      "parameter": "uid",
+      "type": "String",
+      "syntax": "${uid}",
+      "descriptionHtml": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "description": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "私有样式类名",
+      "parameter": "uniqueClassName",
+      "type": "String",
+      "syntax": "${uniqueClassName}",
+      "descriptionHtml": "用在私有样式表的类名上，字符串(形如 c10)，举例：<br>&lt;span class=\"<span style=\"color:red\">${uniqueClassName}</span>\" &gt;文字&lt;/span&gt;",
+      "description": "用在私有样式表的类名上，字符串(形如 c10)，举例：\n<span class=\"${uniqueClassName}\" >文字</span>",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<span class=\"${uniqueClassName}\" >文字</span>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "引入jQuery类库",
+      "parameter": "v_includeJquery",
+      "type": "Function",
+      "syntax": "${v_includeJquery()}",
+      "descriptionHtml": "引入系统自带的JQuery类库;<br> 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "description": "引入系统自带的JQuery类库;\n 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "\n<!--引入jQuery-->${v_includeJquery()}<!--引入jQuery完成-->\n",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "图片条数",
+      "parameter": "size",
+      "type": "Integer",
+      "syntax": "${size}",
+      "descriptionHtml": "图片条数，可以在配置中修改",
+      "description": "图片条数，可以在配置中修改",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "图片列数",
+      "parameter": "colSize",
+      "type": "Integer",
+      "syntax": "${colSize}",
+      "descriptionHtml": "图片列数，可以在配置中修改",
+      "description": "图片列数，可以在配置中修改",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "图片列表",
+      "parameter": "list_images",
+      "type": "List",
+      "syntax": "<#list list_images as image></#list>",
+      "descriptionHtml": "图片列表",
+      "description": "图片列表",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#list list_images as image>\n\t\t   <td align=\"center\"><a href=\"${image.linkUrl}\"><img src=\"${image.picUrl}\" border=\"0\"></a></td>\n\t\t</#list>\n\t\t",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "列表位置参数",
+      "parameter": "listnogroup",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "图片链接指向",
+      "parameter": "linkUrl",
+      "type": "String",
+      "syntax": "${image.linkUrl}",
+      "descriptionHtml": "图片链接指向",
+      "description": "图片链接指向",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<a href=\"${image.linkUrl}\"><img src=\"${image.picUrl}\" border=\"0\"></a>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "图片地址",
+      "parameter": "picUrl",
+      "type": "String",
+      "syntax": "${image.picUrl}",
+      "descriptionHtml": "图片地址",
+      "description": "图片地址",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<img src=\"${image.picUrl}\" border=\"0\">",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "原图片说明",
+      "parameter": "title",
+      "type": "String",
+      "syntax": "${image.title}",
+      "descriptionHtml": "图片说明",
+      "description": "图片说明",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "图片说明",
+      "parameter": "showTitle",
+      "type": "String",
+      "syntax": "${image.showTitle}",
+      "descriptionHtml": "图片说明,去过格式并限制长度的标题",
+      "description": "图片说明,去过格式并限制长度的标题",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "提示图片说明",
+      "parameter": "tipsTitle",
+      "type": "String",
+      "syntax": "${image.tipsTitle}",
+      "descriptionHtml": "图片说明，用以tips输出的标题",
+      "description": "图片说明，用以tips输出的标题",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "${image.tipsTitle}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "原图片点击数",
+      "parameter": "clickTimes",
+      "type": "Integer",
+      "syntax": "${image.clickTimes}",
+      "descriptionHtml": "原图片点击数，不建议直接输出",
+      "description": "原图片点击数，不建议直接输出",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "加点击数方法",
+      "parameter": "addClicksFun ",
+      "type": "String",
+      "syntax": "${image.addClicksFun}",
+      "descriptionHtml": "增加点击数方法，点击用来增加点击数，放在点击事件中",
+      "description": "增加点击数方法，点击用来增加点击数，放在点击事件中",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<a href=\"${image.linkUrl}\" onclick=\"${image.addClicksFun}\"><img src=\"${image.picUrl}\" border=\"0\"></a>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "显示图片点击数",
+      "parameter": "showClickTimes ",
+      "type": "String",
+      "syntax": "${image.showClickTimes}",
+      "descriptionHtml": "显示图片点击数，使用ajax技术更新",
+      "description": "显示图片点击数，使用ajax技术更新",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "图片点击数:${image.showClickTimes}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "原始图片日期",
+      "parameter": "date",
+      "type": "String",
+      "syntax": "${image.date}",
+      "descriptionHtml": "原始图片日期 格式为 2010-01-03 09:42:00",
+      "description": "原始图片日期 格式为 2010-01-03 09:42:00",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "显示图片日期",
+      "parameter": "showDate ",
+      "type": "String",
+      "syntax": "${image.showDate}",
+      "descriptionHtml": "图片日期, 格式化过的",
+      "description": "图片日期, 格式化过的",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "图片日期:${image.showDate}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "唯一标识",
+      "parameter": "uuid",
+      "type": "String",
+      "syntax": "${uuid}",
+      "descriptionHtml": "唯一标识, 主要在拖放多个组件时使用,确保id,方法等唯一不会冲突。",
+      "description": "唯一标识, 主要在拖放多个组件时使用,确保id,方法等唯一不会冲突。",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "标识:${uuid}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "是第几条",
+      "parameter": "pos",
+      "type": "Integer",
+      "syntax": "${image.pos}",
+      "descriptionHtml": "当前是列表的第几条(从1开始)",
+      "description": "当前是列表的第几条(从1开始)",
+      "kind": "parameter",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "第${image.pos}条",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否首条",
+      "parameter": "isFirst",
+      "type": "Boolean",
+      "syntax": "<#if image.isFirst></#if>",
+      "descriptionHtml": "当前是不是列表的第一条",
+      "description": "当前是不是列表的第一条",
+      "kind": "parameter",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if image.isFirst>首条</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否尾条",
+      "parameter": "isLast",
+      "type": "Boolean",
+      "syntax": "<#if image.isLast></#if>",
+      "descriptionHtml": "当前是不是列表的最后一条",
+      "description": "当前是不是列表的最后一条",
+      "kind": "parameter",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if image.isLast>尾条</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否奇数行",
+      "parameter": "isOdd",
+      "type": "Boolean",
+      "syntax": "<#if image.isOdd></#if>",
+      "descriptionHtml": "当前是不是奇数行",
+      "description": "当前是不是奇数行",
+      "kind": "parameter",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if image.isOdd>奇数行</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否偶数行",
+      "parameter": "isEven",
+      "type": "Boolean",
+      "syntax": "<#if image.isEven></#if>",
+      "descriptionHtml": "当前是不是偶数行",
+      "description": "当前是不是偶数行",
+      "kind": "parameter",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if image.isEven>偶数行</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listnogroup"
+      ]
+    }
+  ],
+  "template": "<table align=\"center\">\n    <#list list_images?chunk(colSize) as list_chunk>\n        <tr>\n            <#list list_chunk as image>\n                <td>\n                    <#if image.linkUrl!=''>\n                        <a href=\"${image.linkUrl}\" title=\"${image.showTitle}\" onclick=\"${image.addClicksFun}\" target=\"_blank\">\n                            <#--修改width和height值可以改变图片的大小-->\n                            <img src=\"${image.picUrl}\" border=\"0\" width=\"200\" height=\"150\">\n                        </a>  \n                    <#else>\n                        <#--修改width和height值可以改变图片的大小-->\n                        <img src=\"${image.picUrl}\" border=\"0\" width=\"200\" height=\"150\">\n                    </#if>  \n                </td>\n            </#list>\n        </tr>\n    </#list>\n</table>",
+  "exampleTemplate": "",
+  "previousFixtureHashes": [
+    "f4f584da",
+    "9173077d"
+  ],
+  "css": "",
+  "fixture": {
+    "viewid": "1024",
+    "uid": "u_demo",
+    "uniqueClassName": "c_demo",
+    "size": 6,
+    "colSize": 3,
+    "uuid": "boda_demo",
+    "list_images": [
+      {
+        "linkUrl": "#preview",
+        "showTitle": "把课堂搬进山野，让知识连接更广阔的世界",
+        "addClicksFun": "12",
+        "picUrl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "title": "把课堂搬进山野，让知识连接更广阔的世界",
+        "tipsTitle": "把课堂搬进山野，让知识连接更广阔的世界",
+        "clickTimes": 6,
+        "showClickTimes": "12",
+        "date": "2026-10-30 09:30:00",
+        "showDate": "2026-10-30",
+        "pos": 1
+      },
+      {
+        "linkUrl": "#preview",
+        "showTitle": "校园开放日｜在这里，遇见新的可能",
+        "addClicksFun": "12",
+        "picUrl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "title": "校园开放日｜在这里，遇见新的可能",
+        "tipsTitle": "校园开放日｜在这里，遇见新的可能",
+        "clickTimes": 6,
+        "showClickTimes": "12",
+        "date": "2026-10-30 09:30:00",
+        "showDate": "2026-10-30",
+        "pos": 2
+      },
+      {
+        "linkUrl": "#preview",
+        "showTitle": "关于举办青年学术交流活动的通知",
+        "addClicksFun": "12",
+        "picUrl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "title": "关于举办青年学术交流活动的通知",
+        "tipsTitle": "关于举办青年学术交流活动的通知",
+        "clickTimes": 6,
+        "showClickTimes": "12",
+        "date": "2026-10-30 09:30:00",
+        "showDate": "2026-10-30",
+        "pos": 3
+      },
+      {
+        "linkUrl": "#preview",
+        "showTitle": "图书馆秋季阅读计划正式启动",
+        "addClicksFun": "12",
+        "picUrl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "title": "图书馆秋季阅读计划正式启动",
+        "tipsTitle": "图书馆秋季阅读计划正式启动",
+        "clickTimes": 6,
+        "showClickTimes": "12",
+        "date": "2026-10-30 09:30:00",
+        "showDate": "2026-10-30",
+        "pos": 4
+      },
+      {
+        "linkUrl": "#preview",
+        "showTitle": "探索与创新：青年研究者的校园故事",
+        "addClicksFun": "12",
+        "picUrl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "title": "探索与创新：青年研究者的校园故事",
+        "tipsTitle": "探索与创新：青年研究者的校园故事",
+        "clickTimes": 6,
+        "showClickTimes": "12",
+        "date": "2026-10-30 09:30:00",
+        "showDate": "2026-10-30",
+        "pos": 5
+      }
+    ]
+  }
+}

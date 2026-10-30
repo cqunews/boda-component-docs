@@ -1,0 +1,472 @@
+{
+  "id": "055",
+  "index": 55,
+  "name": "问卷归档列表",
+  "category": "调查问卷",
+  "parameterCount": 25,
+  "hasScript": false,
+  "templateLength": 869,
+  "parameters": [
+    {
+      "name": "通用参数",
+      "parameter": "commonparam",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件id",
+      "parameter": "viewid",
+      "type": "String",
+      "syntax": "${viewid}",
+      "descriptionHtml": "组件本身的id，数字(形如 1001)",
+      "description": "组件本身的id，数字(形如 1001)",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件uid",
+      "parameter": "uid",
+      "type": "String",
+      "syntax": "${uid}",
+      "descriptionHtml": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "description": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "私有样式类名",
+      "parameter": "uniqueClassName",
+      "type": "String",
+      "syntax": "${uniqueClassName}",
+      "descriptionHtml": "用在私有样式表的类名上，字符串(形如 c10)，举例：<br>&lt;span class=\"<span style=\"color:red\">${uniqueClassName}</span>\" &gt;文字&lt;/span&gt;",
+      "description": "用在私有样式表的类名上，字符串(形如 c10)，举例：\n<span class=\"${uniqueClassName}\" >文字</span>",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<span class=\"${uniqueClassName}\" >文字</span>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "引入jQuery类库",
+      "parameter": "v_includeJquery",
+      "type": "Function",
+      "syntax": "${v_includeJquery()}",
+      "descriptionHtml": "引入系统自带的JQuery类库;<br> 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "description": "引入系统自带的JQuery类库;\n 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "\n<!--引入jQuery-->${v_includeJquery()}<!--引入jQuery完成-->\n",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "唯一标识",
+      "parameter": "UUID",
+      "type": "String",
+      "syntax": "${UUID}",
+      "descriptionHtml": "唯一标识",
+      "description": "唯一标识",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "归档问卷总条数",
+      "parameter": "totleNum",
+      "type": "Integer",
+      "syntax": "${totleNum}",
+      "descriptionHtml": "归档问卷总条数",
+      "description": "归档问卷总条数",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "归档问卷列表",
+      "parameter": "resultList",
+      "type": "List",
+      "syntax": "<#list resultList as list></#list>",
+      "descriptionHtml": "检索结果",
+      "description": "检索结果",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#list resultList as list></#list>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "列表位置参数",
+      "parameter": "listnogroup",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "问卷编号",
+      "parameter": "id",
+      "type": "String",
+      "syntax": "${list.id}",
+      "descriptionHtml": "问卷编号",
+      "description": "问卷编号",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "问卷结果链接地址",
+      "parameter": "url",
+      "type": "String",
+      "syntax": "${list.url}",
+      "descriptionHtml": "问卷结果链接地址",
+      "description": "问卷结果链接地址",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "原标题",
+      "parameter": "title",
+      "type": "String",
+      "syntax": "${list.title}",
+      "descriptionHtml": "调查问卷原始标题，不建议直接输出",
+      "description": "调查问卷原始标题，不建议直接输出",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "显示标题",
+      "parameter": "showTitle",
+      "type": "String",
+      "syntax": "${list.showTitle}",
+      "descriptionHtml": "显示用的问卷标题，调整过格式并可配置长度限制",
+      "description": "显示用的问卷标题，调整过格式并可配置长度限制",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "提示标题",
+      "parameter": "tipsTitle",
+      "type": "String",
+      "syntax": "${list.tipsTitle}",
+      "descriptionHtml": "Html元素的\"title\"属性专用，显示提示，专门调整过格式",
+      "description": "Html元素的\"title\"属性专用，显示提示，专门调整过格式",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "时间",
+      "parameter": "time",
+      "type": "String",
+      "syntax": "${list.time}",
+      "descriptionHtml": "时间",
+      "description": "时间",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "分页",
+      "parameter": "pagegroup",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "是第几条",
+      "parameter": "pos",
+      "type": "Integer",
+      "syntax": "${list.pos}",
+      "descriptionHtml": "当前是列表的第几条(从1开始)",
+      "description": "当前是列表的第几条(从1开始)",
+      "kind": "parameter",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "第${list.pos}条",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否首条",
+      "parameter": "isFirst",
+      "type": "Boolean",
+      "syntax": "<#if list.isFirst></#if>",
+      "descriptionHtml": "当前是不是列表的第一条",
+      "description": "当前是不是列表的第一条",
+      "kind": "parameter",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if list.isFirst>首条</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否尾条",
+      "parameter": "isLast",
+      "type": "Boolean",
+      "syntax": "<#if list.isLast></#if>",
+      "descriptionHtml": "当前是不是列表的最后一条",
+      "description": "当前是不是列表的最后一条",
+      "kind": "parameter",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if list.isLast>尾条</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否奇数行",
+      "parameter": "isOdd",
+      "type": "Boolean",
+      "syntax": "<#if list.isOdd></#if>",
+      "descriptionHtml": "当前是不是奇数行",
+      "description": "当前是不是奇数行",
+      "kind": "parameter",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if list.isOdd>奇数行</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否偶数行",
+      "parameter": "isEven",
+      "type": "Boolean",
+      "syntax": "<#if list.isEven></#if>",
+      "descriptionHtml": "当前是不是偶数行",
+      "description": "当前是不是偶数行",
+      "kind": "parameter",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if list.isEven>偶数行</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "总页数",
+      "parameter": "totlePages",
+      "type": "Integer",
+      "syntax": "${totlePages}",
+      "descriptionHtml": "总页数",
+      "description": "总页数",
+      "kind": "parameter",
+      "path": [
+        "pagegroup"
+      ]
+    },
+    {
+      "name": "当前页数",
+      "parameter": "currentPage",
+      "type": "Integer",
+      "syntax": "${currentPage}",
+      "descriptionHtml": "当前页数",
+      "description": "当前页数",
+      "kind": "parameter",
+      "path": [
+        "pagegroup"
+      ]
+    },
+    {
+      "name": "每页显示条数",
+      "parameter": "pageSize",
+      "type": "Integer",
+      "syntax": "${pageSize}",
+      "descriptionHtml": "每页显示条数",
+      "description": "每页显示条数",
+      "kind": "parameter",
+      "path": [
+        "pagegroup"
+      ]
+    },
+    {
+      "name": "首页链接地址",
+      "parameter": "firstPageUrl",
+      "type": "String",
+      "syntax": "${firstPageUrl}",
+      "descriptionHtml": "首页链接地址",
+      "description": "首页链接地址",
+      "kind": "parameter",
+      "path": [
+        "pagegroup"
+      ]
+    },
+    {
+      "name": "上一页链接地址",
+      "parameter": "priUrl",
+      "type": "String",
+      "syntax": "${priUrl}",
+      "descriptionHtml": "上一页链接地址",
+      "description": "上一页链接地址",
+      "kind": "parameter",
+      "path": [
+        "pagegroup"
+      ]
+    },
+    {
+      "name": "下一页链接地址",
+      "parameter": "nextUrl",
+      "type": "String",
+      "syntax": "${nextUrl}",
+      "descriptionHtml": "下一页链接地址",
+      "description": "下一页链接地址",
+      "kind": "parameter",
+      "path": [
+        "pagegroup"
+      ]
+    },
+    {
+      "name": "尾页链接地址",
+      "parameter": "lastPageUrl",
+      "type": "String",
+      "syntax": "${lastPageUrl}",
+      "descriptionHtml": "尾页链接地址",
+      "description": "尾页链接地址",
+      "kind": "parameter",
+      "path": [
+        "pagegroup"
+      ]
+    }
+  ],
+  "template": "<table width=100%   cellspacing=1 cellpadding=0 border=0 >   \n<#list resultList as list>\n<tr>\n<td align=\"left\"><a href=\"${list.url}\">${list.showTitle}</a></td>\n<td align=\"right\">${list.time}</td>\n</tr>\n</#list>\n</table>\n<table cellspacing=1 cellpadding=0 border=0 width=\"100%\"> \n    <tr> \n        <td align=\"center\"> \n            共有 ${totleNum} 条&nbsp;&nbsp; <#if 1<currentPage><a href=\"${firstPageUrl}\"> 首页</a><#else> 首页</#if> &nbsp;&nbsp;&nbsp;&nbsp; \n            <#if 1<currentPage ><a href=\"${priUrl}\">上一页</a><#else>上一页</#if>&nbsp;&nbsp;&nbsp;&nbsp; \n            <#if currentPage<totlePages ><a href=\"${nextUrl}\">下一页</a><#else>下一页</#if>&nbsp;&nbsp;&nbsp;&nbsp; \n            <#if currentPage<totlePages ><a href=\"${lastPageUrl}\">尾页</a><#else>尾页</#if>&nbsp;&nbsp; \n            共有 ${totlePages} 页&nbsp;&nbsp; 当前第 ${currentPage} 页 \n        </td> \n    </tr> \n</table> \n\n",
+  "exampleTemplate": "",
+  "previousFixtureHashes": [
+    "52eee4a4"
+  ],
+  "css": "",
+  "fixture": {
+    "viewid": "1055",
+    "uid": "u_demo",
+    "uniqueClassName": "c_demo",
+    "UUID": "boda_demo",
+    "totleNum": 6,
+    "totlePages": 6,
+    "currentPage": 6,
+    "pageSize": 6,
+    "firstPageUrl": "#preview",
+    "priUrl": "#preview",
+    "nextUrl": "#preview",
+    "lastPageUrl": "#preview",
+    "resultList": [
+      {
+        "url": "#preview",
+        "showTitle": "把课堂搬进山野，让知识连接更广阔的世界",
+        "time": "2026-10-30",
+        "id": "12",
+        "title": "把课堂搬进山野，让知识连接更广阔的世界",
+        "tipsTitle": "把课堂搬进山野，让知识连接更广阔的世界",
+        "pos": 1
+      },
+      {
+        "url": "#preview",
+        "showTitle": "校园开放日｜在这里，遇见新的可能",
+        "time": "2026-10-30",
+        "id": "12",
+        "title": "校园开放日｜在这里，遇见新的可能",
+        "tipsTitle": "校园开放日｜在这里，遇见新的可能",
+        "pos": 2
+      },
+      {
+        "url": "#preview",
+        "showTitle": "关于举办青年学术交流活动的通知",
+        "time": "2026-10-30",
+        "id": "12",
+        "title": "关于举办青年学术交流活动的通知",
+        "tipsTitle": "关于举办青年学术交流活动的通知",
+        "pos": 3
+      },
+      {
+        "url": "#preview",
+        "showTitle": "图书馆秋季阅读计划正式启动",
+        "time": "2026-10-30",
+        "id": "12",
+        "title": "图书馆秋季阅读计划正式启动",
+        "tipsTitle": "图书馆秋季阅读计划正式启动",
+        "pos": 4
+      },
+      {
+        "url": "#preview",
+        "showTitle": "探索与创新：青年研究者的校园故事",
+        "time": "2026-10-30",
+        "id": "12",
+        "title": "探索与创新：青年研究者的校园故事",
+        "tipsTitle": "探索与创新：青年研究者的校园故事",
+        "pos": 5
+      }
+    ]
+  }
+}

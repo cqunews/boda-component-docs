@@ -1,0 +1,196 @@
+{
+  "id": "081",
+  "index": 81,
+  "name": "部门列表",
+  "category": "领导信箱",
+  "parameterCount": 11,
+  "hasScript": false,
+  "templateLength": 1051,
+  "parameters": [
+    {
+      "name": "通用参数",
+      "parameter": "commonparam",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件id",
+      "parameter": "viewid",
+      "type": "String",
+      "syntax": "${viewid}",
+      "descriptionHtml": "组件本身的id，数字(形如 1001)",
+      "description": "组件本身的id，数字(形如 1001)",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件uid",
+      "parameter": "uid",
+      "type": "String",
+      "syntax": "${uid}",
+      "descriptionHtml": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "description": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "私有样式类名",
+      "parameter": "uniqueClassName",
+      "type": "String",
+      "syntax": "${uniqueClassName}",
+      "descriptionHtml": "用在私有样式表的类名上，字符串(形如 c10)，举例：<br>&lt;span class=\"<span style=\"color:red\">${uniqueClassName}</span>\" &gt;文字&lt;/span&gt;",
+      "description": "用在私有样式表的类名上，字符串(形如 c10)，举例：\n<span class=\"${uniqueClassName}\" >文字</span>",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<span class=\"${uniqueClassName}\" >文字</span>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "引入jQuery类库",
+      "parameter": "v_includeJquery",
+      "type": "Function",
+      "syntax": "${v_includeJquery()}",
+      "descriptionHtml": "引入系统自带的JQuery类库;<br> 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "description": "引入系统自带的JQuery类库;\n 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "\n<!--引入jQuery-->${v_includeJquery()}<!--引入jQuery完成-->\n",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "唯一标识",
+      "parameter": "UUID",
+      "type": "String",
+      "syntax": "${UUID}",
+      "descriptionHtml": "唯一标识",
+      "description": "唯一标识",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "显示列数",
+      "parameter": "columnNumber",
+      "type": "Integer",
+      "syntax": "${columnNumber}",
+      "descriptionHtml": "显示列数",
+      "description": "显示列数",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "部门列表",
+      "parameter": "null",
+      "type": "String",
+      "syntax": "<#list typelist?chunk(columnNumber) as list_type><#list list_type as list></#list></#list>",
+      "descriptionHtml": "部门列表",
+      "description": "部门列表",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "当前部门代码",
+      "parameter": "typeCode",
+      "type": "String",
+      "syntax": "${list.typeCode}",
+      "descriptionHtml": "当前部门代码",
+      "description": "当前部门代码",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "原始名称",
+      "parameter": "title",
+      "type": "String",
+      "syntax": "${list.title}",
+      "descriptionHtml": "分类原始名称,不推荐使用",
+      "description": "分类原始名称,不推荐使用",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "显示名称",
+      "parameter": "showTitle",
+      "type": "String",
+      "syntax": "${list.showTitle}",
+      "descriptionHtml": "显示名称",
+      "description": "显示名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "详细信息链接",
+      "parameter": "msgURL",
+      "type": "String",
+      "syntax": "${list.msgURL}",
+      "descriptionHtml": "详细信息链接",
+      "description": "详细信息链接",
+      "kind": "parameter",
+      "path": []
+    }
+  ],
+  "template": "<FORM method=\"post\"  style=\"display: inline;\">\n    <div class=\"govitemcontent${uniqueClassName}\">\n        <TABLE cellspacing=\"0\" cellpadding=\"5\" width=\"100%\" border=\"0\" style=\"word-break: break-all\">\n             <#list typelist?chunk(columnNumber) as list_type>\n                <TR align=\"center\">\n                     <#list list_type as list>\n                        <td align=\"absmiddle\" width=\"1%\" nowrap=\"nowrap\">\n                            <img src=\"/system/resource/images/leadermail/ico4.gif\" align=\"absmiddle\">\n                        </td>\n                        <TD height=5 align=\"left\" nowrap=\"nowrap\">\n                            <a href=\"${list.msgURL}\" target=_blank style=\"text-decoration: none;\"> <span\n                                style=\"cursor: hand; FONT-FAMILY: 宋体; COLOR: #ff6600; FONT-SIZE: 9pt; FONT-WEIGHT: bold\">\n                                    ${list.showTitle}</span> </a>\n                        </TD>\n                     </#list>\n                </TR>\n             </#list>\n        </TABLE>\n    </div>\n</FORM>",
+  "exampleTemplate": "",
+  "previousFixtureHashes": [
+    "be67c7"
+  ],
+  "css": ".govitemcontent${uniqueClassName} table {\n    border-collapse: collapse;\n    border: 0px #FFA366 solid;\n}\n\n.govitemcontent${uniqueClassName} td {\n    border: 0px #FFA366 solid;\n}",
+  "fixture": {
+    "viewid": "1081",
+    "uid": "u_demo",
+    "uniqueClassName": "c_demo",
+    "UUID": "boda_demo",
+    "columnNumber": 3,
+    "typelist": [
+      {
+        "msgURL": "#preview",
+        "showTitle": "把课堂搬进山野，让知识连接更广阔的世界",
+        "typeCode": "当前部门代码",
+        "title": "把课堂搬进山野，让知识连接更广阔的世界"
+      },
+      {
+        "msgURL": "#preview",
+        "showTitle": "校园开放日｜在这里，遇见新的可能",
+        "typeCode": "当前部门代码",
+        "title": "校园开放日｜在这里，遇见新的可能"
+      },
+      {
+        "msgURL": "#preview",
+        "showTitle": "关于举办青年学术交流活动的通知",
+        "typeCode": "当前部门代码",
+        "title": "关于举办青年学术交流活动的通知"
+      },
+      {
+        "msgURL": "#preview",
+        "showTitle": "图书馆秋季阅读计划正式启动",
+        "typeCode": "当前部门代码",
+        "title": "图书馆秋季阅读计划正式启动"
+      },
+      {
+        "msgURL": "#preview",
+        "showTitle": "探索与创新：青年研究者的校园故事",
+        "typeCode": "当前部门代码",
+        "title": "探索与创新：青年研究者的校园故事"
+      }
+    ]
+  }
+}

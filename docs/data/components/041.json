@@ -1,0 +1,504 @@
+{
+  "id": "041",
+  "index": 41,
+  "name": "在线投稿",
+  "category": "在线投稿",
+  "parameterCount": 21,
+  "hasScript": true,
+  "templateLength": 14421,
+  "parameters": [
+    {
+      "name": "通用参数",
+      "parameter": "commonparam",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件id",
+      "parameter": "viewid",
+      "type": "String",
+      "syntax": "${viewid}",
+      "descriptionHtml": "组件本身的id，数字(形如 1001)",
+      "description": "组件本身的id，数字(形如 1001)",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件uid",
+      "parameter": "uid",
+      "type": "String",
+      "syntax": "${uid}",
+      "descriptionHtml": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "description": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "私有样式类名",
+      "parameter": "uniqueClassName",
+      "type": "String",
+      "syntax": "${uniqueClassName}",
+      "descriptionHtml": "用在私有样式表的类名上，字符串(形如 c10)，举例：<br>&lt;span class=\"<span style=\"color:red\">${uniqueClassName}</span>\" &gt;文字&lt;/span&gt;",
+      "description": "用在私有样式表的类名上，字符串(形如 c10)，举例：\n<span class=\"${uniqueClassName}\" >文字</span>",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<span class=\"${uniqueClassName}\" >文字</span>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "引入jQuery类库",
+      "parameter": "v_includeJquery",
+      "type": "Function",
+      "syntax": "${v_includeJquery()}",
+      "descriptionHtml": "引入系统自带的JQuery类库;<br> 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "description": "引入系统自带的JQuery类库;\n 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "\n<!--引入jQuery-->${v_includeJquery()}<!--引入jQuery完成-->\n",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "在线投稿表单",
+      "parameter": "formgroup",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "表单名称",
+      "parameter": "formname",
+      "type": "String",
+      "syntax": "${formname}",
+      "descriptionHtml": "在线投稿的表单名称",
+      "description": "在线投稿的表单名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<form name=\"${formname}\" method=\"post\" id=\"${formname}\" style=\"display:inline;\"></form>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "表单提交地址",
+      "parameter": "action",
+      "type": "String",
+      "syntax": "${action}",
+      "descriptionHtml": "表单提交地址",
+      "description": "表单提交地址",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<form name=\"${formname}\" method=\"post\" id=\"${formname}\" action=\"${action}\" style=\"display:inline;\"></form>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "表单隐藏域",
+      "parameter": "actiontypestr",
+      "type": "String",
+      "syntax": "${actiontypestr}",
+      "descriptionHtml": "表单隐藏域，必加",
+      "description": "表单隐藏域，必加",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<input type=hidden name='${actiontypestr}'>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "投稿标题",
+      "parameter": "title",
+      "type": "String",
+      "syntax": "${title}",
+      "descriptionHtml": "在表单中投稿标题输入框使用的名称",
+      "description": "在表单中投稿标题输入框使用的名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<input type='text' name='${title}'>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "投稿人名字",
+      "parameter": "author",
+      "type": "String",
+      "syntax": "${author}",
+      "descriptionHtml": "在表单中名字输入框使用的名称",
+      "description": "在表单中名字输入框使用的名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<input type='text' name='${author}'>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "关键字",
+      "parameter": "keyword",
+      "type": "String",
+      "syntax": "${keyword}",
+      "descriptionHtml": "在表单中标签输入框使用的名字",
+      "description": "在表单中标签输入框使用的名字",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<input type='text' name='${keyword}'>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "生成标题",
+      "parameter": "keyworda",
+      "type": "String",
+      "syntax": "${keyworda}",
+      "descriptionHtml": "根据标题生成标签连接的id值",
+      "description": "根据标题生成标签连接的id值",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<input type='text' name='${keyworda}'>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "投稿栏目",
+      "parameter": "treelist",
+      "type": "List",
+      "syntax": "${treelist}",
+      "descriptionHtml": "投稿栏目",
+      "description": "投稿栏目",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#list treelist as tree></#list>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "投稿内容",
+      "parameter": "content",
+      "type": "String",
+      "syntax": "${content}",
+      "descriptionHtml": "表单中投稿内容文本框的名字",
+      "description": "表单中投稿内容文本框的名字",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<textarea name='${content}'></textarea>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "留言编辑器iframe框架名称",
+      "parameter": "webberedit",
+      "type": "String",
+      "syntax": "${webberedit}",
+      "descriptionHtml": "在表单中编辑器iframe框架使用的名称",
+      "description": "在表单中编辑器iframe框架使用的名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<iframe id=\"${webberedit}\" name=\"${webberedit}\"></iframe>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "编辑器地址",
+      "parameter": "reeditsrc",
+      "type": "String",
+      "syntax": "${reeditsrc}",
+      "descriptionHtml": "编辑器地址",
+      "description": "编辑器地址",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<iframe id=\"${webberedit}\" name=\"${webberedit}\" src=\"${reeditsrc}\"></iframe>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "验证码",
+      "parameter": "yanzheng",
+      "type": "String",
+      "syntax": "${yanzheng}",
+      "descriptionHtml": "验证码",
+      "description": "验证码",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<input type=text name='${yanzheng}'>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "验证码图片",
+      "parameter": "yanzhengma",
+      "type": "String",
+      "syntax": "${yanzhengma}",
+      "descriptionHtml": "表单中验证码图片的名称，放在img标签中",
+      "description": "表单中验证码图片的名称，放在img标签中",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<img id=${yanzhengma } name=${yanzhengma } src=${yanzhengsrc} />",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "验证码图片src",
+      "parameter": "yanzhengsrc",
+      "type": "String",
+      "syntax": "src = ${yanzhengma}",
+      "descriptionHtml": "验证码图片引用位置，放在img标签中",
+      "description": "验证码图片引用位置，放在img标签中",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<img id=${yanzhengma } name=${yanzhengma } src=${yanzhengsrc} />",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "投稿栏目",
+      "parameter": "contentid",
+      "type": "String",
+      "syntax": "${contentid}",
+      "descriptionHtml": "表单中投稿栏目select标签的名字",
+      "description": "表单中投稿栏目select标签的名字",
+      "kind": "parameter",
+      "path": [
+        "treelist"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "${contentid}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "treelist"
+      ]
+    },
+    {
+      "name": "栏目id",
+      "parameter": "treeid",
+      "type": "String",
+      "syntax": "${treelist.treeid}",
+      "descriptionHtml": "option标签的value值",
+      "description": "option标签的value值",
+      "kind": "parameter",
+      "path": [
+        "treelist"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<option value=${tree.treeid}>${tree.posion}</option>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "treelist"
+      ]
+    },
+    {
+      "name": "栏目名称",
+      "parameter": "postion",
+      "type": "String",
+      "syntax": "${treelist.postion}",
+      "descriptionHtml": "栏目名称，放在option中显示",
+      "description": "栏目名称，放在option中显示",
+      "kind": "parameter",
+      "path": [
+        "treelist"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<option value=${tree.treeid}>${tree.postion}</option>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "treelist"
+      ]
+    }
+  ],
+  "template": "<form name=\"${formname}\" method=\"post\" id=\"${formname}\" style=\"display:inline;\"  enctype=\"multipart/form-data\">\n    <input type='hidden' name='${actiontypestr}' id=\"${actiontypestr}\">\n    <input type='hidden' name='wbsummary' id=\"wbsummary\">\n    <input type='hidden' name='wbsummary_temp' id=\"wbsummary_temp\">\n    ${storageInputHidden}\n    ${treeidHidden}\n    ${filesumHidden}\n    ${uploadpathHidden}\n    ${statusdiv}\n\n    <DIV ID=_online_Div style=\"display:none\"></DIV>\n    <div class=\"tgcontent${viewid}\" id=\"tgcontent${viewid}\">\n    <table width= height= border=0>\n         <tr>\n            <td colspan=4 style=\"TEXT-DECORATION: none;FONT-FAMILY: 宋体;FONT-SIZE: 9pt;\">\n                <b>欢迎你的来稿，来稿要经过我们的审核才可以通过，请仔细填写，带*号的为必填项。</b>\n            </td>\n         </tr>\n         <tr>\n            <td valign=\"middle\"  width=\"80\" style=\"TEXT-DECORATION: none;FONT-FAMILY: 宋体;FONT-SIZE: 9pt;\">投稿标题：</td>\n            <td valign=\"middle\"><span style=\"color:#FF8000\">*</span></td>\n            <td valign=\"middle\" colspan=2><input name='${title}' id='${title}' style=\"display: none;\" value=\"\" size='45'><input name='${title}_temp' id='${title}_temp' value=\"\" size='45'></td>\n         </tr>\n         <tr>\n            <td valign=\"middle\"  width=\"80\" style=\"TEXT-DECORATION: none;FONT-FAMILY: 宋体;FONT-SIZE: 9pt;\">你的名字：</td>\n            <td valign=\"middle\" >&nbsp;</td>\n            <td valign=\"middle\" colspan=2><input type='text' name='${author}' id=\"${author}\" style=\"display: none;\" value=\"\" size='45'><input type='text' name='${author}_temp' id=\"${author}_temp\" value=\"\" size='45'></td>\n         </tr>\n         <tr>\n            <td valign=\"middle\"  width=\"80\" style=\"TEXT-DECORATION: none;FONT-FAMILY: 宋体;FONT-SIZE: 9pt;\">关&nbsp;键&nbsp;字：</td>\n            <td valign=\"middle\"><span style=\"color:#FF8000\">*</span></td>\n            <td valign=\"middle\"><input  name=\"${keyword}\" id=\"${keyword}\" value=\"\" style=\"display: none;\" size='45'><input  name=\"${keyword}_temp\" id=\"${keyword}_temp\" value=\"\" size='45'></td>\n            <td valign=\"middle\" style=\"TEXT-DECORATION: none;FONT-FAMILY: 宋体;FONT-SIZE: 9pt;\">\n            <a href=\"javascript:getKeyWord();\" style=\"color:#5E5E5E;text-decoration:none\" id=\"${keyworda}\" title=\"从标题中提取关键字\">[根据标题生成]</a>&nbsp;&nbsp;&nbsp;</td>\n         </tr>\n         <tr>\n            <td valign=\"middle\"  width=\"80\" style=\"TEXT-DECORATION: none;FONT-FAMILY: 宋体;FONT-SIZE: 9pt;\">投稿栏目：</td>\n            <td valign=\"middle\"><span style=\"color:#FF8000\">*</span></td>\n            <td valign=\"middle\" colspan=2>\n                <select name=${contentid } id=${contentid} size='6'  style='width:306;'>\n                    <#list treelist as tree>\n                        <option value=${tree.treeid}>${tree.postion}</option>\n                    </#list>\n                </select>&nbsp;&nbsp;&nbsp;\n            </td>\n         </tr>\n         <tr>\n            <td colspan=\"4\"  style=\"TEXT-DECORATION: none;FONT-FAMILY: 宋体;FONT-SIZE: 9pt;\">投稿内容：&nbsp;<span style=\"color:#FF8000\" style=\"TEXT-DECORATION: none;FONT-FAMILY: 宋体;FONT-SIZE: 9pt;\">*(请认真填写投稿内容)</span></td>\n         </tr>\n         <tr>\n            <td colspan=\"4\" >\n                <textarea style=\"width:400px;display:none\" name=${content} id=\"${content}\"></textarea><textarea style=\"width:400px;height:400px;display:none\" name=\"${content}_temp\" id=\"${content}_temp\"></textarea>\n            </td>\n         </tr>\n         <tr>\n            <td colspan=4><input type=\"button\" name=\"button\" value=\"添加附件\" onclick=\"addFiles()\" ${diskfullvalue}>&nbsp;<input type=\"button\" name=\"button\" value=\"删除附件\" onclick=\"deleteInput()\" ${diskfullvalue}>&nbsp;&nbsp;&nbsp;(只允许上传rar,zip,doc,docx,xls,xlsx,jpg,gif格式的文件)</td>\n        </tr>\n        <tr>\n            <td valign=\"middle\" width=\"80\">上传附件：</td>\n            <td valign=\"middle\" >&nbsp;</td>\n            <td valign=\"middle\" colspan=2><span id=\"uploadfiles\"><input type=\"file\" name=\"wordfile\" id=\"wordfile\"  onchange=\"addWordFile(this);\" ${diskfullvalue}><input type='hidden' name='uploadfileurl' id=\"uploadfileurl\" value=''></span></td>\n        </tr>\n         <tr>\n            <td colspan=4>\n                <table>\n                    <tr>\n                        <td  style=\"TEXT-DECORATION: none;FONT-FAMILY: 宋体;FONT-SIZE: 9pt;\">验证码：&nbsp;</td>\n                        <td valign=\"middle\"><input name=${yanzheng } id=${yanzheng} value=\"\" size=\"6\" maxlength=\"4\"></td>\n                        <td valign=\"middle\"><img id=${yanzhengma } name=${yanzhengma } border=\"1\" src=${yanzhengsrc} /></td>\n                        <td valign=\"middle\"><a href=\"javascript:reloadcode();\" style=\"color:#5E5E5E;text-decoration:none\" style=\"TEXT-DECORATION: none;FONT-FAMILY: 宋体;FONT-SIZE: 9pt;\">[看不清楚,换一个验证码!]</a></td>\n                    </tr>\n                </table>\n            </td>\n         </tr>\n         <tr>\n            <td colspan=4 align=center height=\"35\">\n                <input type=image src=\"/system/resource/images/message/TG.jpg\" style=\"cursor:pointer\" onclick=\"return check${formname}();\">\n            </td>\n         </tr>\n    </table>\n    </div>\n</form>\n<script>\nvar editor;\nKindEditor.ready(function(K) {\n        editor = K.create('#${content}_temp', {\n            resizeType : 2,\n            uploadJson : '/system/resource/kindeditor/plugins/image/uploadfile.jsp',\n            fileManagerJson : '/system/resource/kindeditor/plugins/image/filelist.jsp',\n            allowFileManager : true\n        });\n    });\nvar filename = \"wordfile\";\nvar filespanname = \"spanfile\";\nvar i=1;\nfunction getSummary(len)\n{\n    var _online_Div = document.getElementById(\"_online_Div\");\n    _online_Div.innerHTML = editor.html();\n\n    var str = editor.html();\n    document.getElementById(\"wbsummary_temp\").value = filterEnterStr(fixstringlen(str, len * 2));\n}\nfunction filterEnterStr(strHtml)\n{\n    strHtml = strHtml.replace(/[\\r\\n]/g,\"\");\n    return strHtml;\n}\nfunction check${formname}()\n{\n    var wbtitle = document.getElementById(\"${title}_temp\").value;\n    if(trim(wbtitle)=='')\n    {\n        alert('投稿标题不能为空！');\n        return false;\n    }\n    var wbkeyword = document.getElementById(\"${keyword}_temp\").value;\n    if(wbkeyword=='')\n    {\n        alert('投稿关键字不能为空！');\n        return false;\n    }\n    var wbcontentid = document.getElementById(\"${contentid}\").value;\n    if(wbcontentid=='')\n    {\n        alert('必须选择投稿所属栏目！');\n        return false;\n    }\n    if(trim(editor.html()) == \"\")\n    {\n        alert('投稿内容不能为空！');\n        return false;\n    }\n    var _online_Div = document.getElementById(\"_online_Div\");\n    _online_Div.innerHTML = editor.html();\n\n    var yanzheng = document.getElementById(\"${yanzheng}\").value;\n    if(yanzheng=='')\n    {\n        alert('必须填写验证码！');\n        return false;\n    }\n    document.getElementById(\"${actiontypestr}\").value = \"tj\";  \n    if(yanzheng!='')\n    {\n        Contribute.getRand(yanzheng,callbackdata);\n        return false;\n    }\n}\nfunction callbackdata(data)\n{\n    if(data==false)\n    {\n        alert('验证码错误！');\n    }else\n    {\n        getSummary(200);\n        if(document.getElementById(\"${title}_temp\"))\n        {\n            document.getElementById(\"${title}\").value=new  Base64().encode(document.getElementById(\"${title}_temp\").value);\n            document.getElementById(\"${title}_temp\").disabled=true;\n        }\n        if(document.getElementById(\"${author}_temp\"))\n        {\n            document.getElementById(\"${author}\").value=new  Base64().encode(document.getElementById(\"${author}_temp\").value);\n            document.getElementById(\"${author}_temp\").disabled=true;\n        }\n        if(document.getElementById(\"${keyword}_temp\"))\n        {\n            document.getElementById(\"${keyword}\").value=new  Base64().encode(document.getElementById(\"${keyword}_temp\").value);\n            document.getElementById(\"${keyword}_temp\").disabled=true;\n        }\n        if(document.getElementById(\"${content}_temp\"))\n        {\n            document.getElementById(\"${content}\").value=new  Base64().encode(editor.html());\n            document.getElementById(\"${content}_temp\").disabled=true;\n        }\n        if(document.getElementById(\"wbsummary_temp\"))\n        {\n            document.getElementById(\"wbsummary\").value=new  Base64().encode(document.getElementById(\"wbsummary_temp\").value);\n            document.getElementById(\"wbsummary_temp\").disabled=true;\n        }\n\n        if(data==false)\n        {\n            alert('${noaudittitle}');\n        }else\n        {\n            getSummary(200);\n            if(document.getElementById(\"wbsummary_temp\"))\n            {\n                document.getElementById(\"wbsummary\").value=new  Base64().encode(document.getElementById(\"wbsummary_temp\").value);\n                document.getElementById(\"wbsummary_temp\").disabled=true;\n            }\n            ${formname}.action=\"${actionurl}&filesum=\"+i+\"&yanzheng=\"+document.getElementById(\"yanzheng\").value+\"&actiontypestr=\"+document.${formname}.actiontypestr.value;\n            document.getElementById(\"filesum\").value = i;\n            <#if (storageIsOpen==\"true\")>\n                var obj = document.getElementById(\"uploadfileurl\");\n                if(obj&&obj.value!=null&&obj.value!=\"\"&&obj.value.length>0)\n                {\n                    //启动云存储调用\n                    storage.startStatusCheck();\n                    handleshow();\n                }\n            </#if>\n            document.getElementById(\"${formname}\").submit();\n        }\n    }\n}\nfunction reloadcode()\n{\n    var verify=document.getElementById('${yanzhengma}');\n    verify.setAttribute('src','/system/resource/js/message/createimage.jsp?'+Math.random());\n}\nfunction getKeyWord()\n{\n    var str =document.getElementById(\"${title}_temp\").value;\n    if(str == \"\")\n    {\n        alert('请先填写标题!');\n        document.getElementById(\"${title}_temp\").focus();\n        return;\n    }\n    //回调callparserGBKPhrase函数\n    \n    document.getElementById(\"${keyworda}\").disabled = true;\n    document.getElementById(\"${keyworda}\").innerHTML = \"处理中...&nbsp;&nbsp;&nbsp;\";\n    GBKAnalyzer.parserGBKPhrase(document.getElementById(\"${title}_temp\").value,callparserGBKPhrase);\n}\nfunction callparserGBKPhrase(data)\n{\n    document.getElementById(\"${keyworda}\").disabled = false;\n    document.getElementById(\"${keyworda}\").innerHTML = \"根据标题生成\";\n    document.getElementById(\"${keyworda}\").value=\"\";\n    for(var i = 0; i < data.length; i++)\n    {\n        var temp=document.getElementById(\"${keyword}_temp\").value + data[i];\n        if(temp.length <255)\n        {\n            document.getElementById(\"${keyword}_temp\").value += data[i] + \" \";\n        }else\n        {\n            return;\n        }  \n    }\n}\n//添加word文件\nfunction addWordFile(o,number)\n{\n    var uploadfileurlname = \"uploadfileurl\" + number; \n    var filepath = o.value;\n    var extpics = \".rar.zip.doc.docx.xls.xlsx.jpg.gif.\";\n    var index = filepath.lastIndexOf(\"\\\\\");//将文件名称所在的位置找到\n    var filename = filepath.substr(index + 1);//获取文件的全名称(包括扩展名)\n\n    var index = filename.lastIndexOf(\".\");//获取文件扩展名的.位置\n    //不允许添加文件名为\"\"的文件\n    if(filepath!=\"\" && index == -1)\n    {\n        alert(\"只允许上传rar,zip,doc,docx,xls,xlsx,jpg,gif文件\");\n        o.outerHTML = o.outerHTML;\n        return;\n    }\n    var filetitle = filename.substring(0, index);//获取文件名称\n    \n    var fileext = filename.substr(index).toLowerCase();//获取文件的扩展名 例如：.jsp并将其转化为小写\n    var fileextdot = fileext + \".\";//文件扩展名改为.jsp.\n    //验证上传文件是否属于允许上传的格式文件\n    if(extpics.indexOf(fileextdot) == -1)\n    {\n        alert(\"只允许上传rar,zip,doc,docx,xls,xlsx,jpg,gif文件\");\n        o.outerHTML = o.outerHTML;\n        return;\n    }\n    if(number>0)\n    {\n        document.getElementById(uploadfileurlname).value = filename;\n    }else\n    {\n        document.getElementById(\"uploadfileurl\").value = filename;\n    }\n}\nfunction addFiles()\n{\n    if(i>0 && i<${attachmentsnum})\n    {\n        var fileInputName = filename + i ;\n        if(createFileInput(fileInputName))\n            i=i+1;\n    }\n} \nfunction deleteInput()\n{\n    if(i>1)\n    {\n        i=i-1;\n        if(!removeInput())\n        {\n            i=i+1;\n        }\n    }\n}\nfunction createFileInput(fn)\n{   \n    var fileSpanInputName = filespanname + i;\n    var uploadfileurlname = \"uploadfileurl\" + i; \n    var spanElement = document.createElement(\"span\");\n    spanElement.name = fileSpanInputName;\n    spanElement.id = fileSpanInputName;\n    document.getElementById(\"uploadfiles\").appendChild(spanElement);\n    \n    document.getElementById(fileSpanInputName).innerHTML = \"<br><input type=\\\"file\\\" name=\\\"\"+fn+\"\\\" id=\\\"\"+fn+\"\\\"  onchange=\\\"addWordFile(this,\"+i+\");\\\"><input type=\\\"hidden\\\" name=\\\"\"+uploadfileurlname+\"\\\" id=\\\"\"+uploadfileurlname+\"\\\" value=\\\"\\\">\";\n    return true;\n}\nfunction removeInput(fn)\n{\n    var aElement = document.getElementById(\"uploadfiles\");\n    var fileSpanInputName = filespanname + i;\n    if(aElement.removeChild(document.getElementById(fileSpanInputName)) == null)\n    {\n        return false;\n    }\n    return true;   \n}\n//显示上传进度\nfunction handleshow()\n{\n    document.getElementById(\"status\").style.display=\"\";\n    document.getElementById(\"tgcontent${viewid}\").style.display=\"none\";\n}\n//隐藏上传进度\nfunction handlehidden()\n{\n    document.getElementById(\"status\").style.display=\"none\";\n    document.getElementById(\"tgcontent${viewid}\").style.display=\"\";\n}\n//云存储处理完成后回调的参数\nfunction handlesucceedfunction(json)\n{\n    if(json.file.length>0)\n    { \n        var fileinfo = \"\";\n        for(var i=0;i<json.file.length;i++)\n        {\n             var file = json.file[i];\n             var showname = file.wbshowname;\n             var fileext  = file.wbfileext;\n             var filelength = file.wblength;\n             var shorturl = file.wbshorturl;\n             fileinfo = fileinfo+shorturl+\";\"+showname+\";\"+fileext+\";\"+filelength+\"@\";\n        } \n        document.getElementById(\"wbuploadpath\").value = fileinfo;\n    } \n    storage.recoverForm();\n    if(json.errorinfo==\"\")\n    {\n        document.getElementById('${formname}').submit();\n    }\n}\n//云存储js需要设置的值\nstorage = new storageServices();\nstorage.formid = \"${formname}\";//表单编号 之前没有设置的需要设置下\nstorage.uploadurl = \"${storageUploadurl}\";//上传提交地址\nstorage.uploadResultAjaxUrl = \"${storageUploadresultAjaxURL}\";//获取返回结果地址\nstorage.uploadStateAjaxUrl = \"${storageUploadstateAjaxURL}\";//获取上传状态地址\nstorage.uploadStateEchoDivId = \"status\";//回显状态对象的编号\nstorage.formtargetname = \"${storageTargetObjName}\";//提交target编号\nstorage.handleerrfunction = \"handlehidden\";//出现错误回调的函数名称\nstorage.handlesucceedfunction = \"handlesucceedfunction\";//上传成功回调函数名称\n</script>",
+  "exampleTemplate": "",
+  "previousFixtureHashes": [
+    "a92a4803"
+  ],
+  "css": "",
+  "fixture": {
+    "viewid": "1041",
+    "uid": "u_demo",
+    "uniqueClassName": "c_demo",
+    "formname": "boda_demo",
+    "action": "#preview",
+    "actiontypestr": "#preview",
+    "title": "把课堂搬进山野，让知识连接更广阔的世界",
+    "author": "示例作者",
+    "keyword": "关键字",
+    "keyworda": "生成标题",
+    "treelist": [
+      {
+        "treeid": "示例内容",
+        "postion": "示例内容"
+      },
+      {
+        "treeid": "示例内容",
+        "postion": "示例内容"
+      },
+      {
+        "treeid": "示例内容",
+        "postion": "示例内容"
+      },
+      {
+        "treeid": "示例内容",
+        "postion": "示例内容"
+      },
+      {
+        "treeid": "示例内容",
+        "postion": "示例内容"
+      }
+    ],
+    "content": "<p>这里是组件的示例正文。你可以修改模板结构和 CSS，实时观察内容排版的变化。</p><p>所有内容均为本地演示数据，可在“示例数据”中自由编辑。</p>",
+    "webberedit": "留言编辑器iframe框架名称",
+    "reeditsrc": "编辑器地址",
+    "yanzheng": "验证码",
+    "yanzhengma": "验证码图片",
+    "contentid": "投稿栏目",
+    "storageInputHidden": "示例内容",
+    "treeidHidden": "示例内容",
+    "filesumHidden": "示例内容",
+    "uploadpathHidden": "示例内容",
+    "statusdiv": "示例内容",
+    "diskfullvalue": "示例内容",
+    "yanzhengsrc": "示例内容",
+    "noaudittitle": "把课堂搬进山野，让知识连接更广阔的世界",
+    "actionurl": "#preview",
+    "storageIsOpen": "示例内容",
+    "attachmentsnum": "12",
+    "storageUploadurl": "#preview",
+    "storageUploadresultAjaxURL": "#preview",
+    "storageUploadstateAjaxURL": "#preview",
+    "storageTargetObjName": "示例名称"
+  }
+}

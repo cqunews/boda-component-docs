@@ -1,0 +1,332 @@
+{
+  "id": "095",
+  "index": 95,
+  "name": "领导统计",
+  "category": "领导信箱",
+  "parameterCount": 15,
+  "hasScript": false,
+  "templateLength": 1355,
+  "parameters": [
+    {
+      "name": "通用参数",
+      "parameter": "commonparam",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件id",
+      "parameter": "viewid",
+      "type": "String",
+      "syntax": "${viewid}",
+      "descriptionHtml": "组件本身的id，数字(形如 1001)",
+      "description": "组件本身的id，数字(形如 1001)",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件uid",
+      "parameter": "uid",
+      "type": "String",
+      "syntax": "${uid}",
+      "descriptionHtml": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "description": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "私有样式类名",
+      "parameter": "uniqueClassName",
+      "type": "String",
+      "syntax": "${uniqueClassName}",
+      "descriptionHtml": "用在私有样式表的类名上，字符串(形如 c10)，举例：<br>&lt;span class=\"<span style=\"color:red\">${uniqueClassName}</span>\" &gt;文字&lt;/span&gt;",
+      "description": "用在私有样式表的类名上，字符串(形如 c10)，举例：\n<span class=\"${uniqueClassName}\" >文字</span>",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<span class=\"${uniqueClassName}\" >文字</span>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "引入jQuery类库",
+      "parameter": "v_includeJquery",
+      "type": "Function",
+      "syntax": "${v_includeJquery()}",
+      "descriptionHtml": "引入系统自带的JQuery类库;<br> 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "description": "引入系统自带的JQuery类库;\n 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "\n<!--引入jQuery-->${v_includeJquery()}<!--引入jQuery完成-->\n",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "唯一标识",
+      "parameter": "UUID",
+      "type": "String",
+      "syntax": "${UUID}",
+      "descriptionHtml": "唯一标识",
+      "description": "唯一标识",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "分类列表",
+      "parameter": "null",
+      "type": "String",
+      "syntax": "<#list list_link as list></#list>",
+      "descriptionHtml": "分类列表",
+      "description": "分类列表",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "列表位置参数",
+      "parameter": "listnogroup",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "领导编码",
+      "parameter": "leadercode",
+      "type": "String",
+      "syntax": "${list.leadercode}",
+      "descriptionHtml": "领导编码",
+      "description": "领导编码",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "领导名称",
+      "parameter": "leadername",
+      "type": "String",
+      "syntax": "${list.leadername}",
+      "descriptionHtml": "领导名称",
+      "description": "领导名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "总数",
+      "parameter": "totlenum",
+      "type": "Integer",
+      "syntax": "${list.totlenum}",
+      "descriptionHtml": "部门信息的总条数",
+      "description": "部门信息的总条数",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "${list.totlenum}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "已回复条数",
+      "parameter": "replynum",
+      "type": "Integer",
+      "syntax": "${list.replynum}",
+      "descriptionHtml": "部门信息的已回复条数",
+      "description": "部门信息的已回复条数",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "${list.replynum}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "未回复条数",
+      "parameter": "noreplynum",
+      "type": "Integer",
+      "syntax": "${list.noreplynum}",
+      "descriptionHtml": "部门信息的未回复条数",
+      "description": "部门信息的未回复条数",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "${list.noreplynum}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "回复率",
+      "parameter": "percentagechar",
+      "type": "String",
+      "syntax": "${list.percentagechar}",
+      "descriptionHtml": "部门信息的回复率",
+      "description": "部门信息的回复率",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "是第几条",
+      "parameter": "pos",
+      "type": "Integer",
+      "syntax": "${list.pos}",
+      "descriptionHtml": "当前是列表的第几条(从1开始)",
+      "description": "当前是列表的第几条(从1开始)",
+      "kind": "parameter",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "第${list.pos}条",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否首条",
+      "parameter": "isFirst",
+      "type": "Boolean",
+      "syntax": "<#if list.isFirst></#if>",
+      "descriptionHtml": "当前是不是列表的第一条",
+      "description": "当前是不是列表的第一条",
+      "kind": "parameter",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if list.isFirst>首条</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否尾条",
+      "parameter": "isLast",
+      "type": "Boolean",
+      "syntax": "<#if list.isLast></#if>",
+      "descriptionHtml": "当前是不是列表的最后一条",
+      "description": "当前是不是列表的最后一条",
+      "kind": "parameter",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if list.isLast>尾条</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listnogroup"
+      ]
+    }
+  ],
+  "template": "<div class=\"govinfolist${uniqueClassName}\">\n   <table class= cellspacing=\"0\" cellpadding=\"5\" width=\"100%\" border=0 style=\"word-break: break-all;\" >\n        <tr align=\"center\">\n        <td class=\"headtitletdstyle788656362_16001\">名次</td>\n        <td class=\"headtitletdstyle788656362_16001\">领导</td>\n        <td class=\"headtitletdstyle788656362_16001\">总数</td>\n        <td class=\"headtitletdstyle788656362_16001\">未回复数</td>\n        <td class=\"headtitletdstyle788656362_16001\">回复数</td>\n        <td class=\"headtitletdstyle788656362_16001\">回复率</td>\n        </tr>\n        <#list list_link as list>\n        <tr align=\"center\">\n            <td nowrap class=\"showmingcistyle788656362_16001\">\n                ${list.pos}\n            </td>\n            <td nowrap class=\"showmingcistyle788656362_16001\">\n                ${list.leadername}\n            </td>\n            <td nowrap class=\"showmingcistyle788656362_16001\">\n                ${list.totlenum}\n            </td>\n            <td nowrap class=\"showmingcistyle788656362_16001\">\n                ${list.noreplynum}\n            </td>\n            <td nowrap class=\"showmingcistyle788656362_16001\">\n                ${list.replynum}\n            </td>\n            <td nowrap class=\"showmingcistyle788656362_16001\">\n                ${list.percentagechar}\n            </td>\n        </tr>\n        </#list>\n    </table>\n</div>",
+  "exampleTemplate": "",
+  "previousFixtureHashes": [
+    "8f4cfef"
+  ],
+  "css": ".govinfolist${uniqueClassName} table\n{\n    border-collapse:collapse;\n    border:1px #ecc197 solid;\n}                                                                          \n.govinfolist${uniqueClassName} td\n{\n    border:1px #ecc197 solid;\n} \n.headtitletdstyle788656362_16001\n{\nbackground: -moz-linear-gradient(top, #ffffff, #feeecd); FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0,,StartColorStr=#ffffff,, EndColorStr=#feeecd);FONT-FAMILY: 宋体;COLOR: #ff6600;FONT-SIZE: 9pt;FONT-WEIGHT: bold; \n}\n.showmingcistyle788656362_16001\n{\n FONT-FAMILY: 宋体;COLOR: #222222;FONT-SIZE: 9pt; \n}",
+  "fixture": {
+    "viewid": "1095",
+    "uid": "u_demo",
+    "uniqueClassName": "c_demo",
+    "UUID": "boda_demo",
+    "list_link": [
+      {
+        "pos": 1,
+        "leadername": "示例名称",
+        "totlenum": 6,
+        "noreplynum": 6,
+        "replynum": 6,
+        "percentagechar": "回复率",
+        "leadercode": "领导编码"
+      },
+      {
+        "pos": 2,
+        "leadername": "示例名称",
+        "totlenum": 6,
+        "noreplynum": 6,
+        "replynum": 6,
+        "percentagechar": "回复率",
+        "leadercode": "领导编码"
+      },
+      {
+        "pos": 3,
+        "leadername": "示例名称",
+        "totlenum": 6,
+        "noreplynum": 6,
+        "replynum": 6,
+        "percentagechar": "回复率",
+        "leadercode": "领导编码"
+      },
+      {
+        "pos": 4,
+        "leadername": "示例名称",
+        "totlenum": 6,
+        "noreplynum": 6,
+        "replynum": 6,
+        "percentagechar": "回复率",
+        "leadercode": "领导编码"
+      },
+      {
+        "pos": 5,
+        "leadername": "示例名称",
+        "totlenum": 6,
+        "noreplynum": 6,
+        "replynum": 6,
+        "percentagechar": "回复率",
+        "leadercode": "领导编码"
+      }
+    ]
+  }
+}

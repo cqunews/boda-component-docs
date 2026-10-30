@@ -1,0 +1,370 @@
+{
+  "id": "078",
+  "index": 78,
+  "name": "公众参与统计",
+  "category": "公众参与",
+  "parameterCount": 18,
+  "hasScript": false,
+  "templateLength": 3822,
+  "parameters": [
+    {
+      "name": "通用参数",
+      "parameter": "commonparam",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件id",
+      "parameter": "viewid",
+      "type": "String",
+      "syntax": "${viewid}",
+      "descriptionHtml": "组件本身的id，数字(形如 1001)",
+      "description": "组件本身的id，数字(形如 1001)",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件uid",
+      "parameter": "uid",
+      "type": "String",
+      "syntax": "${uid}",
+      "descriptionHtml": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "description": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "私有样式类名",
+      "parameter": "uniqueClassName",
+      "type": "String",
+      "syntax": "${uniqueClassName}",
+      "descriptionHtml": "用在私有样式表的类名上，字符串(形如 c10)，举例：<br>&lt;span class=\"<span style=\"color:red\">${uniqueClassName}</span>\" &gt;文字&lt;/span&gt;",
+      "description": "用在私有样式表的类名上，字符串(形如 c10)，举例：\n<span class=\"${uniqueClassName}\" >文字</span>",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<span class=\"${uniqueClassName}\" >文字</span>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "引入jQuery类库",
+      "parameter": "v_includeJquery",
+      "type": "Function",
+      "syntax": "${v_includeJquery()}",
+      "descriptionHtml": "引入系统自带的JQuery类库;<br> 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "description": "引入系统自带的JQuery类库;\n 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "\n<!--引入jQuery-->${v_includeJquery()}<!--引入jQuery完成-->\n",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "唯一标识",
+      "parameter": "UUID",
+      "type": "String",
+      "syntax": "${UUID}",
+      "descriptionHtml": "唯一标识",
+      "description": "唯一标识",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "统计信箱列表",
+      "parameter": "statlist",
+      "type": "list",
+      "syntax": "<#list statlist as list></#list>",
+      "descriptionHtml": "统计信箱列表",
+      "description": "统计信箱列表",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "列表位置参数",
+      "parameter": "listnogroup",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "名次",
+      "parameter": "rank",
+      "type": "String",
+      "syntax": "${list.rank}",
+      "descriptionHtml": "名次",
+      "description": "名次",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "部门编码",
+      "parameter": "deptcode",
+      "type": "String",
+      "syntax": "${list.deptcode}",
+      "descriptionHtml": "部门编码",
+      "description": "部门编码",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "部门名称",
+      "parameter": "deptname",
+      "type": "String",
+      "syntax": "${list.deptname}",
+      "descriptionHtml": "部门名称",
+      "description": "部门名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "总数",
+      "parameter": "totlenum",
+      "type": "String",
+      "syntax": "${list.totlenum}",
+      "descriptionHtml": "总数",
+      "description": "总数",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "未回复数",
+      "parameter": "noreplynum",
+      "type": "String",
+      "syntax": "${list.noreplynum}",
+      "descriptionHtml": "未回复数",
+      "description": "未回复数",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "回复数",
+      "parameter": "replynum",
+      "type": "String",
+      "syntax": "${list.replynum}",
+      "descriptionHtml": "回复数",
+      "description": "回复数",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "回复率",
+      "parameter": "per",
+      "type": "String",
+      "syntax": "${list.per}",
+      "descriptionHtml": "回复率",
+      "description": "回复率",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "是第几条",
+      "parameter": "pos",
+      "type": "Integer",
+      "syntax": "${list.pos}",
+      "descriptionHtml": "当前是列表的第几条(从1开始)",
+      "description": "当前是列表的第几条(从1开始)",
+      "kind": "parameter",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "第${list.pos}条",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否首条",
+      "parameter": "isFirst",
+      "type": "Boolean",
+      "syntax": "<#if list.isFirst></#if>",
+      "descriptionHtml": "当前是不是列表的第一条",
+      "description": "当前是不是列表的第一条",
+      "kind": "parameter",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if list.isFirst>首条</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否尾条",
+      "parameter": "isLast",
+      "type": "Boolean",
+      "syntax": "<#if list.isLast></#if>",
+      "descriptionHtml": "当前是不是列表的最后一条",
+      "description": "当前是不是列表的最后一条",
+      "kind": "parameter",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if list.isLast>尾条</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否奇数行",
+      "parameter": "isOdd",
+      "type": "Boolean",
+      "syntax": "<#if list.isOdd></#if>",
+      "descriptionHtml": "当前是不是奇数行",
+      "description": "当前是不是奇数行",
+      "kind": "parameter",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if list.isOdd>奇数行</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否偶数行",
+      "parameter": "isEven",
+      "type": "Boolean",
+      "syntax": "<#if list.isEven></#if>",
+      "descriptionHtml": "当前是不是偶数行",
+      "description": "当前是不是偶数行",
+      "kind": "parameter",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if list.isEven>偶数行</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listnogroup"
+      ]
+    }
+  ],
+  "template": "<table  cellspacing=\"0\" cellpadding=\"0\" width=\"100%\" border=\"0\" style=\"word-wrap: break-word;word-break:break-all;border-collapse:collapse;border:1px #ebbd63 solid;FONT-FAMILY: 宋体;LINE-HEIGHT: 2;FONT-SIZE: 9pt;\">\n        <tr align=\"center\" >\n        <td align=\"center\" style=\"background:-moz-linear-gradient(top, #ffffff, #fff5d7);border:1px #ebbd63 solid;COLOR: #ff6600;BORDER-TOP: #ecc197 1px solid;PADDING-BOTTOM: 5px;BORDER-RIGHT: #ecc197 1px solid;BORDER-LEFT: #ecc197 1px solid;BACKGROUND-COLOR: #def1fe;FONT-WEIGHT: bold;FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0,,StartColorStr=#ffffff,, EndColorStr=#fff5d7);BORDER-BOTTOM: #ecc197 1px solid;PADDING-TOP: 5px;\">\n             名次\n         </td>\n        <td align=\"center\" style=\"background:-moz-linear-gradient(top, #ffffff, #fff5d7);border:1px #ebbd63 solid;COLOR: #ff6600;BORDER-TOP: #ecc197 1px solid;PADDING-BOTTOM: 5px;BORDER-RIGHT: #ecc197 1px solid;BORDER-LEFT: #ecc197 1px solid;BACKGROUND-COLOR: #def1fe;FONT-WEIGHT: bold;FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0,,StartColorStr=#ffffff,, EndColorStr=#fff5d7);BORDER-BOTTOM: #ecc197 1px solid;PADDING-TOP: 5px;\">\n             部门\n         </td>\n        <td align=\"center\" style=\"background:-moz-linear-gradient(top, #ffffff, #fff5d7);border:1px #ebbd63 solid;COLOR: #ff6600;BORDER-TOP: #ecc197 1px solid;PADDING-BOTTOM: 5px;BORDER-RIGHT: #ecc197 1px solid;BORDER-LEFT: #ecc197 1px solid;BACKGROUND-COLOR: #def1fe;FONT-WEIGHT: bold;FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0,,StartColorStr=#ffffff,, EndColorStr=#fff5d7);BORDER-BOTTOM: #ecc197 1px solid;PADDING-TOP: 5px;\">\n             总数\n         </td>\n        <td align=\"center\" style=\"background:-moz-linear-gradient(top, #ffffff, #fff5d7);border:1px #ebbd63 solid;COLOR: #ff6600;BORDER-TOP: #ecc197 1px solid;PADDING-BOTTOM: 5px;BORDER-RIGHT: #ecc197 1px solid;BORDER-LEFT: #ecc197 1px solid;BACKGROUND-COLOR: #def1fe;FONT-WEIGHT: bold;FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0,,StartColorStr=#ffffff,, EndColorStr=#fff5d7);BORDER-BOTTOM: #ecc197 1px solid;PADDING-TOP: 5px;\">\n             未回复数\n         </td>\n        <td align=\"center\" style=\"background:-moz-linear-gradient(top, #ffffff, #fff5d7);border:1px #ebbd63 solid;COLOR: #ff6600;BORDER-TOP: #ecc197 1px solid;PADDING-BOTTOM: 5px;BORDER-RIGHT: #ecc197 1px solid;BORDER-LEFT: #ecc197 1px solid;BACKGROUND-COLOR: #def1fe;FONT-WEIGHT: bold;FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0,,StartColorStr=#ffffff,, EndColorStr=#fff5d7);BORDER-BOTTOM: #ecc197 1px solid;PADDING-TOP: 5px;\">\n             回复数\n         </td>\n        <td align=\"center\" style=\"background:-moz-linear-gradient(top, #ffffff, #fff5d7);border:1px #ebbd63 solid;COLOR: #ff6600;BORDER-TOP: #ecc197 1px solid;PADDING-BOTTOM: 5px;BORDER-RIGHT: #ecc197 1px solid;BORDER-LEFT: #ecc197 1px solid;BACKGROUND-COLOR: #def1fe;FONT-WEIGHT: bold;FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0,,StartColorStr=#ffffff,, EndColorStr=#fff5d7);BORDER-BOTTOM: #ecc197 1px solid;PADDING-TOP: 5px;\">\n             回复率\n         </td>\n        </tr>\n        <#list statlist as list>\n        <tr style=\"BACKGROUND-COLOR: <#if list.isOdd>#ffffff<#else>#ffffec</#if>;\">\n            <td align=\"center\" style=\"border:1px #ebbd63 solid;\">${list.pos}</td>\n            <td align=\"center\" style=\"border:1px #ebbd63 solid;\">${list.deptname}</td>\n            <td align=\"center\" style=\"border:1px #ebbd63 solid;\">${list.totlenum}</td>\n            <td align=\"center\" style=\"border:1px #ebbd63 solid;\">${list.noreplynum}</td>\n            <td align=\"center\" style=\"border:1px #ebbd63 solid;\">${list.replynum}</td>\n            <td align=\"center\" style=\"border:1px #ebbd63 solid;\">${list.per}</td>\n        </tr>\n        </#list>\n</table>",
+  "exampleTemplate": "",
+  "previousFixtureHashes": [
+    "a92efeae"
+  ],
+  "css": "",
+  "fixture": {
+    "viewid": "1078",
+    "uid": "u_demo",
+    "uniqueClassName": "c_demo",
+    "UUID": "boda_demo",
+    "statlist": [
+      {
+        "isOdd": true,
+        "pos": 1,
+        "deptname": "示例名称",
+        "totlenum": "12",
+        "noreplynum": "12",
+        "replynum": "12",
+        "per": "回复率",
+        "rank": "名次",
+        "deptcode": "部门编码"
+      },
+      {
+        "isOdd": false,
+        "pos": 2,
+        "deptname": "示例名称",
+        "totlenum": "12",
+        "noreplynum": "12",
+        "replynum": "12",
+        "per": "回复率",
+        "rank": "名次",
+        "deptcode": "部门编码"
+      },
+      {
+        "isOdd": true,
+        "pos": 3,
+        "deptname": "示例名称",
+        "totlenum": "12",
+        "noreplynum": "12",
+        "replynum": "12",
+        "per": "回复率",
+        "rank": "名次",
+        "deptcode": "部门编码"
+      },
+      {
+        "isOdd": false,
+        "pos": 4,
+        "deptname": "示例名称",
+        "totlenum": "12",
+        "noreplynum": "12",
+        "replynum": "12",
+        "per": "回复率",
+        "rank": "名次",
+        "deptcode": "部门编码"
+      },
+      {
+        "isOdd": true,
+        "pos": 5,
+        "deptname": "示例名称",
+        "totlenum": "12",
+        "noreplynum": "12",
+        "replynum": "12",
+        "per": "回复率",
+        "rank": "名次",
+        "deptcode": "部门编码"
+      }
+    ]
+  }
+}

@@ -1,0 +1,271 @@
+{
+  "id": "040",
+  "index": 40,
+  "name": "第三方搜索",
+  "category": "第三方检索",
+  "parameterCount": 15,
+  "hasScript": false,
+  "templateLength": 800,
+  "parameters": [
+    {
+      "name": "通用参数",
+      "parameter": "commonparam",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件id",
+      "parameter": "viewid",
+      "type": "String",
+      "syntax": "${viewid}",
+      "descriptionHtml": "组件本身的id，数字(形如 1001)",
+      "description": "组件本身的id，数字(形如 1001)",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件uid",
+      "parameter": "uid",
+      "type": "String",
+      "syntax": "${uid}",
+      "descriptionHtml": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "description": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "私有样式类名",
+      "parameter": "uniqueClassName",
+      "type": "String",
+      "syntax": "${uniqueClassName}",
+      "descriptionHtml": "用在私有样式表的类名上，字符串(形如 c10)，举例：<br>&lt;span class=\"<span style=\"color:red\">${uniqueClassName}</span>\" &gt;文字&lt;/span&gt;",
+      "description": "用在私有样式表的类名上，字符串(形如 c10)，举例：\n<span class=\"${uniqueClassName}\" >文字</span>",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<span class=\"${uniqueClassName}\" >文字</span>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "引入jQuery类库",
+      "parameter": "v_includeJquery",
+      "type": "Function",
+      "syntax": "${v_includeJquery()}",
+      "descriptionHtml": "引入系统自带的JQuery类库;<br> 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "description": "引入系统自带的JQuery类库;\n 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "\n<!--引入jQuery-->${v_includeJquery()}<!--引入jQuery完成-->\n",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "唯一标识",
+      "parameter": "UUID",
+      "type": "String",
+      "syntax": "标识:${UUID}",
+      "descriptionHtml": "唯一标识, 主要在拖放多个组件时使用,确保id、方法等唯一不会冲突。",
+      "description": "唯一标识, 主要在拖放多个组件时使用,确保id、方法等唯一不会冲突。",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "form表单",
+      "parameter": "form",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "搜索表单名称",
+      "parameter": "formName",
+      "type": "String",
+      "syntax": "${formName}",
+      "descriptionHtml": "搜索表单名称",
+      "description": "搜索表单名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "百度搜索",
+      "parameter": "baiduSearch",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "Google搜索",
+      "parameter": "gooleSearch",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "Yahoo搜索",
+      "parameter": "yahooSearch",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "百度搜索提交地址",
+      "parameter": "baiduactionURL",
+      "type": "String",
+      "syntax": "${baiduactionURL}",
+      "descriptionHtml": "百度搜索提交地址",
+      "description": "百度搜索提交地址",
+      "kind": "parameter",
+      "path": [
+        "baiduSearch"
+      ]
+    },
+    {
+      "name": "百度搜索隐藏表单",
+      "parameter": "baiduHidden",
+      "type": "String",
+      "syntax": "${baiduHidden}",
+      "descriptionHtml": "百度搜索隐藏表单",
+      "description": "百度搜索隐藏表单",
+      "kind": "parameter",
+      "path": [
+        "baiduSearch"
+      ]
+    },
+    {
+      "name": "百度查询输入文本框名称",
+      "parameter": "baiduIntext",
+      "type": "String",
+      "syntax": "${baiduIntext}",
+      "descriptionHtml": "百度查询输入文本框名称",
+      "description": "百度查询输入文本框名称",
+      "kind": "parameter",
+      "path": [
+        "baiduSearch"
+      ]
+    },
+    {
+      "name": "google搜索提交地址",
+      "parameter": "googleActionURL",
+      "type": "String",
+      "syntax": "${googleActionURL}",
+      "descriptionHtml": "google搜索提交地址",
+      "description": "google搜索提交地址",
+      "kind": "parameter",
+      "path": [
+        "gooleSearch"
+      ]
+    },
+    {
+      "name": "google搜索隐藏表单",
+      "parameter": "googleHidden",
+      "type": "String",
+      "syntax": "${googleHidden}",
+      "descriptionHtml": "google搜索隐藏表单",
+      "description": "google搜索隐藏表单",
+      "kind": "parameter",
+      "path": [
+        "gooleSearch"
+      ]
+    },
+    {
+      "name": "Google查询输入文本框名称",
+      "parameter": "googleIntext",
+      "type": "String",
+      "syntax": "${googleIntext}",
+      "descriptionHtml": "Google查询输入文本框名称",
+      "description": "Google查询输入文本框名称",
+      "kind": "parameter",
+      "path": [
+        "gooleSearch"
+      ]
+    },
+    {
+      "name": "yahoo搜索提交地址",
+      "parameter": "yahooActionURL",
+      "type": "String",
+      "syntax": "${yahooActionURL}",
+      "descriptionHtml": "yahoo搜索提交地址",
+      "description": "yahoo搜索提交地址",
+      "kind": "parameter",
+      "path": [
+        "yahooSearch"
+      ]
+    },
+    {
+      "name": "yahoo搜索隐藏表单",
+      "parameter": "yahooHidden",
+      "type": "String",
+      "syntax": "${yahooHidden}",
+      "descriptionHtml": "yahoo搜索隐藏表单",
+      "description": "yahoo搜索隐藏表单",
+      "kind": "parameter",
+      "path": [
+        "yahooSearch"
+      ]
+    },
+    {
+      "name": "Yahoo查询输入文本框名称",
+      "parameter": "yahooIntext",
+      "type": "String",
+      "syntax": "${yahooIntext}",
+      "descriptionHtml": "Yahoo查询输入文本框名称",
+      "description": "Yahoo查询输入文本框名称",
+      "kind": "parameter",
+      "path": [
+        "yahooSearch"
+      ]
+    }
+  ],
+  "template": "<form name=\"${formName}\" method=get action=\"${baiduActionURL}\"  style=\"display: inline;\">\n    ${baiduHidden}\n    <table border='0' cellspacing=\"1\" cellpadding=\"5\" >\n        <tr height=\"1px\">\n            <td align=\"right\" style=\"FONT-SIZE: 10pt;\">百度搜索：</td>\n            <td align=\"absmiddle\">\n                <input type=text name=${baiduIntext} size='25' style=\"COLOR: #222222;FONT-SIZE: 10pt;BORDER-TOP: #878787 1px solid;BORDER-RIGHT: #878787 1px solid;BORDER-LEFT: #878787 1px solid;FONT-FAMILY: 宋体;HEIGHT: 22px;POSITION: relative;PADDING-TOP: 3px;BORDER-BOTTOM: #878787 1px solid; \">\n            </td>\n            <td>\n            <img src=\"/system/resource/images/research/seach22.gif\" valign=\"bottom\" style=\"cursor: hand\" onclick=\"${formName}.submit();\"></td>\n        </tr>\n    </table>\n</form>",
+  "exampleTemplate": "",
+  "previousFixtureHashes": [
+    "954a2467"
+  ],
+  "css": "",
+  "fixture": {
+    "viewid": "1040",
+    "uid": "u_demo",
+    "uniqueClassName": "c_demo",
+    "formName": "boda_demo",
+    "baiduactionURL": "#preview",
+    "baiduHidden": "百度搜索隐藏表单",
+    "baiduIntext": "百度查询输入文本框名称",
+    "googleActionURL": "#preview",
+    "googleHidden": "google搜索隐藏表单",
+    "googleIntext": "Google查询输入文本框名称",
+    "yahooActionURL": "#preview",
+    "yahooHidden": "yahoo搜索隐藏表单",
+    "yahooIntext": "Yahoo查询输入文本框名称",
+    "baiduActionURL": "#preview"
+  }
+}

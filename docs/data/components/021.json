@@ -1,0 +1,156 @@
+{
+  "id": "021",
+  "index": 21,
+  "name": "相关组图",
+  "category": "文章内容",
+  "parameterCount": 8,
+  "hasScript": true,
+  "templateLength": 788,
+  "parameters": [
+    {
+      "name": "通用参数",
+      "parameter": "commonparam",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件id",
+      "parameter": "viewid",
+      "type": "String",
+      "syntax": "${viewid}",
+      "descriptionHtml": "组件本身的id，数字(形如 1001)",
+      "description": "组件本身的id，数字(形如 1001)",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件uid",
+      "parameter": "uid",
+      "type": "String",
+      "syntax": "${uid}",
+      "descriptionHtml": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "description": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "私有样式类名",
+      "parameter": "uniqueClassName",
+      "type": "String",
+      "syntax": "${uniqueClassName}",
+      "descriptionHtml": "用在私有样式表的类名上，字符串(形如 c10)，举例：<br>&lt;span class=\"<span style=\"color:red\">${uniqueClassName}</span>\" &gt;文字&lt;/span&gt;",
+      "description": "用在私有样式表的类名上，字符串(形如 c10)，举例：\n<span class=\"${uniqueClassName}\" >文字</span>",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<span class=\"${uniqueClassName}\" >文字</span>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "引入jQuery类库",
+      "parameter": "v_includeJquery",
+      "type": "Function",
+      "syntax": "${v_includeJquery()}",
+      "descriptionHtml": "引入系统自带的JQuery类库;<br> 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "description": "引入系统自带的JQuery类库;\n 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "\n<!--引入jQuery-->${v_includeJquery()}<!--引入jQuery完成-->\n",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "文章编号",
+      "parameter": "newsId",
+      "type": "String",
+      "syntax": "${newsId}",
+      "descriptionHtml": "文章编号",
+      "description": "文章编号",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "栏目编号",
+      "parameter": "treeId",
+      "type": "String",
+      "syntax": "${treeId}",
+      "descriptionHtml": "栏目编号",
+      "description": "栏目编号",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "网站编号",
+      "parameter": "owner",
+      "type": "String",
+      "syntax": "${owner}",
+      "descriptionHtml": "网站编号",
+      "description": "网站编号",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "客户端IP",
+      "parameter": "ip",
+      "type": "String",
+      "syntax": "${ip}",
+      "descriptionHtml": "客户端IP",
+      "description": "客户端IP",
+      "kind": "parameter",
+      "path": []
+    }
+  ],
+  "template": "<span id=\"relateNews${uid}\">读取内容中,请等待...</span>\n<script language=javascript src=${v_link(\"/system/resource/js/ajax.js\")}></script>\n<script language=javascript src=${v_link(\"/system/resource/js/gallery/relationimage.js\")}></script>\n<script>\nfunction init${uid}()\n{\n    var xmlhttp = createXMLHttpRequest()\n    var url=\"/system/resource/code/pagepicrelatenews.jsp?owner=${owner}\";\n    url+=\"&newsid=${newsId}\";\n    url+=\"&treeid=${treeId}\";\n    url+=\"&mode=${mode}\";\n    url+=\"&pageUrl=${pageUrl}\";\n    url+=\"&strlen=${strlen}\"\n    url+=\"&countsize=${countsize}\"    \n    url+=\"&isshowcurrentcolumn=${isshowcurrentcolumn}\"\n    var rpi = new relationpagepicimage();\n    rpi.uid= \"${uid}\";\n    rpi.sendurl=url;\n    rpi.relateNewsdiv=\"relateNews${uid}\";\n    rpi.show();\n}\ninit${uid}()\n</script>",
+  "exampleTemplate": "",
+  "previousFixtureHashes": [
+    "696cdf4a",
+    "63cc484e"
+  ],
+  "css": "/*相关组图表格样式*/\n.pagepic_relatenews_table\n{ \n    padding:5px;\n    height:120px;\n}\n/*相关组图图片样式*/\n.pagepic_relatenews_image\n{\n    border:1px solid #d6d6d6; \n    padding:5px;\n    background-color:#f2f2f2;\n    height:120px;\n}\n/*相关组图标题样式*/\n.pagepic_relatenews_tilte\n{\n    font-size:12px; \n    text-align:center;\n    line-height: 150%;\n    background-color:#ffffff;\n  \n}\n/*相关组图超链接样式*/\nA.pagepic_relatenews_a_f_0{\nfont-size:9pt;\nline-height:150%;\ncolor:#333333;\nTEXT-DECORATION: none;\n}\nA.pagepic_relatenews_a_f_0:link{COLOR: #000000;}  \nA.pagepic_relatenews_a_f_0:visited{COLOR: #000000;}  \nA.pagepic_relatenews_a_f_0:active{COLOR: #000000;}  \nA.pagepic_relatenews_a_f_0:hover{COLOR: #cc0000;}  ",
+  "fixture": {
+    "viewid": "1021",
+    "uid": "u_demo",
+    "uniqueClassName": "c_demo",
+    "newsId": "demo_newsId",
+    "treeId": "demo_treeId",
+    "owner": "网站编号",
+    "ip": "客户端IP",
+    "mode": "示例内容",
+    "pageUrl": "#preview",
+    "strlen": "示例内容",
+    "countsize": "12",
+    "isshowcurrentcolumn": "校园动态",
+    "_previewRelatedNews": [
+      {
+        "showTitle": "把课堂搬进山野，让知识连接更广阔的世界",
+        "picUrl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E"
+      },
+      {
+        "showTitle": "校园开放日｜在这里，遇见新的可能",
+        "picUrl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E"
+      },
+      {
+        "showTitle": "关于举办青年学术交流活动的通知",
+        "picUrl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E"
+      }
+    ]
+  }
+}

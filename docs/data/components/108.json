@@ -1,0 +1,1214 @@
+{
+  "id": "108",
+  "index": 108,
+  "name": "高级检索结果",
+  "category": "教师风采",
+  "parameterCount": 88,
+  "hasScript": false,
+  "templateLength": 1614,
+  "parameters": [
+    {
+      "name": "通用参数",
+      "parameter": "commonparam",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件id",
+      "parameter": "viewid",
+      "type": "String",
+      "syntax": "${viewid}",
+      "descriptionHtml": "组件本身的id，数字(形如 1001)",
+      "description": "组件本身的id，数字(形如 1001)",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件uid",
+      "parameter": "uid",
+      "type": "String",
+      "syntax": "${uid}",
+      "descriptionHtml": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "description": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "私有样式类名",
+      "parameter": "uniqueClassName",
+      "type": "String",
+      "syntax": "${uniqueClassName}",
+      "descriptionHtml": "用在私有样式表的类名上，字符串(形如 c10)，举例：<br>&lt;span class=\"<span style=\"color:red\">${uniqueClassName}</span>\" &gt;文字&lt;/span&gt;",
+      "description": "用在私有样式表的类名上，字符串(形如 c10)，举例：\n<span class=\"${uniqueClassName}\" >文字</span>",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<span class=\"${uniqueClassName}\" >文字</span>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "引入jQuery类库",
+      "parameter": "v_includeJquery",
+      "type": "Function",
+      "syntax": "${v_includeJquery()}",
+      "descriptionHtml": "引入系统自带的JQuery类库;<br> 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "description": "引入系统自带的JQuery类库;\n 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "\n<!--引入jQuery-->${v_includeJquery()}<!--引入jQuery完成-->\n",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "字段显示标题",
+      "parameter": "标题参数",
+      "type": "List",
+      "syntax": "\n\t\t",
+      "descriptionHtml": "字段显示标题，显示内容请在系统端“系统配置”-“内容显示标题设置”对应栏目中设置中英文显示标题",
+      "description": "字段显示标题，显示内容请在系统端“系统配置”-“内容显示标题设置”对应栏目中设置中英文显示标题",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "教师英文名",
+      "parameter": "enameTitle",
+      "type": "String",
+      "syntax": "${enameTitle}",
+      "descriptionHtml": "教师英文名，显示内容请在系统端“系统配置”-“内容显示标题设置”对应栏目中设置中英文显示标题",
+      "description": "教师英文名，显示内容请在系统端“系统配置”-“内容显示标题设置”对应栏目中设置中英文显示标题",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "教师名称",
+      "parameter": "nameTitle",
+      "type": "String",
+      "syntax": "${nameTitle}",
+      "descriptionHtml": "教师名称，显示内容请在系统端“系统配置”-“内容显示标题设置”对应栏目中设置中英文显示标题",
+      "description": "教师名称，显示内容请在系统端“系统配置”-“内容显示标题设置”对应栏目中设置中英文显示标题",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "拼音名称",
+      "parameter": "namePinYinTitle",
+      "type": "String",
+      "syntax": "${namePinYinTitle}",
+      "descriptionHtml": "拼音名称，显示内容请在系统端“系统配置”-“内容显示标题设置”对应栏目中设置中英文显示标题",
+      "description": "拼音名称，显示内容请在系统端“系统配置”-“内容显示标题设置”对应栏目中设置中英文显示标题",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "电子邮件",
+      "parameter": "emailTitle",
+      "type": "String",
+      "syntax": "${emailTitle}",
+      "descriptionHtml": "电子邮件，显示内容请在系统端“系统配置”-“内容显示标题设置”对应栏目中设置中英文显示标题",
+      "description": "电子邮件，显示内容请在系统端“系统配置”-“内容显示标题设置”对应栏目中设置中英文显示标题",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "出生日期",
+      "parameter": "birthdayTitle",
+      "type": "String",
+      "syntax": "${birthdayTitle}",
+      "descriptionHtml": "出生日期，显示内容请在系统端“系统配置”-“内容显示标题设置”对应栏目中设置中英文显示标题",
+      "description": "出生日期，显示内容请在系统端“系统配置”-“内容显示标题设置”对应栏目中设置中英文显示标题",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "入职日期",
+      "parameter": "entryTimeTitle",
+      "type": "String",
+      "syntax": "${entryTimeTitle}",
+      "descriptionHtml": "入职日期，显示内容请在系统端“系统配置”-“内容显示标题设置”对应栏目中设置中英文显示标题",
+      "description": "入职日期，显示内容请在系统端“系统配置”-“内容显示标题设置”对应栏目中设置中英文显示标题",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "所在单位",
+      "parameter": "unitTitle",
+      "type": "String",
+      "syntax": "${unitTitle}",
+      "descriptionHtml": "所在单位，显示内容请在系统端“系统配置”-“内容显示标题设置”对应栏目中设置中英文显示标题",
+      "description": "所在单位，显示内容请在系统端“系统配置”-“内容显示标题设置”对应栏目中设置中英文显示标题",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "职务",
+      "parameter": "jobTitle",
+      "type": "String",
+      "syntax": "${jobTitle}",
+      "descriptionHtml": "职务，显示内容请在系统端“系统配置”-“内容显示标题设置”对应栏目中设置中英文显示标题",
+      "description": "职务，显示内容请在系统端“系统配置”-“内容显示标题设置”对应栏目中设置中英文显示标题",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "学历",
+      "parameter": "educationTitle",
+      "type": "String",
+      "syntax": "${educationTitle}",
+      "descriptionHtml": "学历，显示内容请在系统端“系统配置”-“内容显示标题设置”对应栏目中设置中英文显示标题",
+      "description": "学历，显示内容请在系统端“系统配置”-“内容显示标题设置”对应栏目中设置中英文显示标题",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "主要任职",
+      "parameter": "workexperienceTitle",
+      "type": "String",
+      "syntax": "${workexperienceTitle}",
+      "descriptionHtml": "主要任职，显示内容请在系统端“系统配置”-“内容显示标题设置”对应栏目中设置中英文显示标题",
+      "description": "主要任职，显示内容请在系统端“系统配置”-“内容显示标题设置”对应栏目中设置中英文显示标题",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "其他任职",
+      "parameter": "otherworkexpTitle",
+      "type": "String",
+      "syntax": "${otherworkexpTitle}",
+      "descriptionHtml": "其他任职，显示内容请在系统端“系统配置”-“内容显示标题设置”对应栏目中设置中英文显示标题",
+      "description": "其他任职，显示内容请在系统端“系统配置”-“内容显示标题设置”对应栏目中设置中英文显示标题",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "获得荣誉",
+      "parameter": "tshonorTitle",
+      "type": "String",
+      "syntax": "${tshonorTitle}",
+      "descriptionHtml": "获得荣誉，显示内容请在系统端“系统配置”-“内容显示标题设置”对应栏目中设置中英文显示标题",
+      "description": "获得荣誉，显示内容请在系统端“系统配置”-“内容显示标题设置”对应栏目中设置中英文显示标题",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "办公地点",
+      "parameter": "officeLocationTitle",
+      "type": "String",
+      "syntax": "${officeLocationTitle}",
+      "descriptionHtml": "办公地点，显示内容请在系统端“系统配置”-“内容显示标题设置”对应栏目中设置中英文显示标题",
+      "description": "办公地点，显示内容请在系统端“系统配置”-“内容显示标题设置”对应栏目中设置中英文显示标题",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "联系方式",
+      "parameter": "contactTitle",
+      "type": "String",
+      "syntax": "${contactTitle}",
+      "descriptionHtml": "联系方式，显示内容请在系统端“系统配置”-“内容显示标题设置”对应栏目中设置中英文显示标题",
+      "description": "联系方式，显示内容请在系统端“系统配置”-“内容显示标题设置”对应栏目中设置中英文显示标题",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "个人简介",
+      "parameter": "profileTitle",
+      "type": "String",
+      "syntax": "${profileTitle}",
+      "descriptionHtml": "个人简介，显示内容请在系统端“系统配置”-“内容显示标题设置”对应栏目中设置中英文显示标题",
+      "description": "个人简介，显示内容请在系统端“系统配置”-“内容显示标题设置”对应栏目中设置中英文显示标题",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "性别",
+      "parameter": "sexTitle",
+      "type": "String",
+      "syntax": "${sexTitle}",
+      "descriptionHtml": "性别，显示内容请在系统端“系统配置”-“内容显示标题设置”对应栏目中设置中英文显示标题",
+      "description": "性别，显示内容请在系统端“系统配置”-“内容显示标题设置”对应栏目中设置中英文显示标题",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "学位",
+      "parameter": "degreeTitle",
+      "type": "String",
+      "syntax": "${degreeTitle}",
+      "descriptionHtml": "学位，显示内容请在系统端“系统配置”-“内容显示标题设置”对应栏目中设置中英文显示标题",
+      "description": "学位，显示内容请在系统端“系统配置”-“内容显示标题设置”对应栏目中设置中英文显示标题",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "在职信息",
+      "parameter": "jobTypeTitle",
+      "type": "String",
+      "syntax": "${jobTypeTitle}",
+      "descriptionHtml": "在职信息，显示内容请在系统端“系统配置”-“内容显示标题设置”对应栏目中设置中英文显示标题",
+      "description": "在职信息，显示内容请在系统端“系统配置”-“内容显示标题设置”对应栏目中设置中英文显示标题",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "所属学科",
+      "parameter": "jobTypeTitle",
+      "type": "String",
+      "syntax": "${jobTypeTitle}",
+      "descriptionHtml": "所属学科，显示内容请在系统端“系统配置”-“内容显示标题设置”对应栏目中设置中英文显示标题",
+      "description": "所属学科，显示内容请在系统端“系统配置”-“内容显示标题设置”对应栏目中设置中英文显示标题",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "职称",
+      "parameter": "prorankTitle",
+      "type": "String",
+      "syntax": "${prorankTitle}",
+      "descriptionHtml": "职称，显示内容请在系统端“系统配置”-“内容显示标题设置”对应栏目中设置中英文显示标题",
+      "description": "职称，显示内容请在系统端“系统配置”-“内容显示标题设置”对应栏目中设置中英文显示标题",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "学位",
+      "parameter": "degreeTitle",
+      "type": "String",
+      "syntax": "${degreeTitle}",
+      "descriptionHtml": "学位，显示内容请在系统端“系统配置”-“内容显示标题设置”对应栏目中设置中英文显示标题",
+      "description": "学位，显示内容请在系统端“系统配置”-“内容显示标题设置”对应栏目中设置中英文显示标题",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "在职信息",
+      "parameter": "jobTypeTitle",
+      "type": "String",
+      "syntax": "${jobTypeTitle}",
+      "descriptionHtml": "在职信息，显示内容请在系统端“系统配置”-“内容显示标题设置”对应栏目中设置中英文显示标题",
+      "description": "在职信息，显示内容请在系统端“系统配置”-“内容显示标题设置”对应栏目中设置中英文显示标题",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "所属学科",
+      "parameter": "jobTypeTitle",
+      "type": "String",
+      "syntax": "${jobTypeTitle}",
+      "descriptionHtml": "所属学科，显示内容请在系统端“系统配置”-“内容显示标题设置”对应栏目中设置中英文显示标题",
+      "description": "所属学科，显示内容请在系统端“系统配置”-“内容显示标题设置”对应栏目中设置中英文显示标题",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "职称",
+      "parameter": "prorankTitle",
+      "type": "String",
+      "syntax": "${prorankTitle}",
+      "descriptionHtml": "职称，显示内容请在系统端“系统配置”-“内容显示标题设置”对应栏目中设置中英文显示标题",
+      "description": "职称，显示内容请在系统端“系统配置”-“内容显示标题设置”对应栏目中设置中英文显示标题",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "毕业院校",
+      "parameter": "graduatedUniversityTitle",
+      "type": "String",
+      "syntax": "${graduatedUniversityTitle}",
+      "descriptionHtml": "毕业院校，显示内容请在系统端“系统配置”-“内容显示标题设置”对应栏目中设置中英文显示标题",
+      "description": "毕业院校，显示内容请在系统端“系统配置”-“内容显示标题设置”对应栏目中设置中英文显示标题",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "是否已故",
+      "parameter": "deceasedTitle",
+      "type": "String",
+      "syntax": "${deceasedTitle}",
+      "descriptionHtml": "是否已故，显示内容请在系统端“系统配置”-“内容显示标题设置”对应栏目中设置中英文显示标题",
+      "description": "是否已故，显示内容请在系统端“系统配置”-“内容显示标题设置”对应栏目中设置中英文显示标题",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "是否在职",
+      "parameter": "isRetiredTitle",
+      "type": "String",
+      "syntax": "${isRetiredTitle}",
+      "descriptionHtml": "是否在职，显示内容请在系统端“系统配置”-“内容显示标题设置”对应栏目中设置中英文显示标题",
+      "description": "是否在职，显示内容请在系统端“系统配置”-“内容显示标题设置”对应栏目中设置中英文显示标题",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "上一页",
+      "parameter": "tssyyTitle",
+      "type": "String",
+      "syntax": "${tssyyTitle}",
+      "descriptionHtml": "上一页，显示内容请在系统端“系统配置”-“内容显示标题设置”对应栏目中设置中英文显示标题",
+      "description": "上一页，显示内容请在系统端“系统配置”-“内容显示标题设置”对应栏目中设置中英文显示标题",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "下一页",
+      "parameter": "tsxyyTitle",
+      "type": "String",
+      "syntax": "${tsxyyTitle}",
+      "descriptionHtml": "下一页，显示内容请在系统端“系统配置”-“内容显示标题设置”对应栏目中设置中英文显示标题",
+      "description": "下一页，显示内容请在系统端“系统配置”-“内容显示标题设置”对应栏目中设置中英文显示标题",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "首页",
+      "parameter": "tssyTitle",
+      "type": "String",
+      "syntax": "${tssyTitle}",
+      "descriptionHtml": "首页，显示内容请在系统端“系统配置”-“内容显示标题设置”对应栏目中设置中英文显示标题",
+      "description": "首页，显示内容请在系统端“系统配置”-“内容显示标题设置”对应栏目中设置中英文显示标题",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "尾页",
+      "parameter": "tswyTitle",
+      "type": "String",
+      "syntax": "${tswyTitle}",
+      "descriptionHtml": "尾页，显示内容请在系统端“系统配置”-“内容显示标题设置”对应栏目中设置中英文显示标题",
+      "description": "尾页，显示内容请在系统端“系统配置”-“内容显示标题设置”对应栏目中设置中英文显示标题",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "内容参数",
+      "parameter": "内容参数",
+      "type": "List",
+      "syntax": "\n\t\t",
+      "descriptionHtml": "内容参数",
+      "description": "内容参数",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "回调函数名称，数据加载一条后自动回调当前函数",
+      "parameter": "callBackFunName",
+      "type": "String",
+      "syntax": "${callBackFunName}",
+      "descriptionHtml": "回调函数名称，数据加载一条后自动回调当前函数",
+      "description": "回调函数名称，数据加载一条后自动回调当前函数",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<script type=\"text/javascript\">\n\t\t\t\tfunction ${callBackFunName}(onedata,dataindex)\n\t\t\t\t{\n\t\t\t\t    \n\t\t\t\t}\n\t\t\t</script>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "教师列表",
+      "parameter": "teachersList",
+      "type": "List",
+      "syntax": "<#list teachersList as teacher></#list>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#list teachersList as teacher><li id=\"${teacher.lineID}\" style=\"${teacher.lineShowStyle}\"><a href=\"${teacher.url}\"  target=_blank title=\"${teacher.tipName}\" >${teacher.showName}</a></li></#list>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "每页多少条ID",
+      "parameter": "pageBarPageNumberId",
+      "type": "String",
+      "syntax": "${pageBarPageNumberId}",
+      "descriptionHtml": "每页多少条ID",
+      "description": "每页多少条ID",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "一共多少条ID",
+      "parameter": "pageBarTotalNumberId",
+      "type": "String",
+      "syntax": "${pageBarTotalNumberId}",
+      "descriptionHtml": "一共多少条ID",
+      "description": "一共多少条ID",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "当前第几页ID",
+      "parameter": "pageBarCurPageId",
+      "type": "String",
+      "syntax": "${pageBarCurPageId}",
+      "descriptionHtml": "当前第几页ID",
+      "description": "当前第几页ID",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "一共多少页ID",
+      "parameter": "pageBarTotalPageId",
+      "type": "String",
+      "syntax": "${pageBarTotalPageId}",
+      "descriptionHtml": "一共多少页ID",
+      "description": "一共多少页ID",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "首页ID",
+      "parameter": "pageBarFirstPageId",
+      "type": "String",
+      "syntax": "${pageBarFirstPageId}",
+      "descriptionHtml": "首页ID",
+      "description": "首页ID",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "尾页ID",
+      "parameter": "pageBarLastPageId",
+      "type": "String",
+      "syntax": "${pageBarLastPageId}",
+      "descriptionHtml": "尾页ID",
+      "description": "尾页ID",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "上一页ID",
+      "parameter": "pageBarPrePageId",
+      "type": "String",
+      "syntax": "${pageBarPrePageId}",
+      "descriptionHtml": "上一页ID",
+      "description": "上一页ID",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "下一页ID",
+      "parameter": "pageBarNextPageId",
+      "type": "String",
+      "syntax": "${pageBarNextPageId}",
+      "descriptionHtml": "下一页ID",
+      "description": "下一页ID",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "转到第几页的输入框ID",
+      "parameter": "pageBarCustomPageId",
+      "type": "String",
+      "syntax": "${pageBarCustomPageId}",
+      "descriptionHtml": "转到第几页的输入框ID",
+      "description": "转到第几页的输入框ID",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "转到第几页的按钮ID",
+      "parameter": "pageBarGotoPageId",
+      "type": "String",
+      "syntax": "${pageBarGotoPageId}",
+      "descriptionHtml": "转到第几页的按钮ID",
+      "description": "转到第几页的按钮ID",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "教师编号",
+      "parameter": "teacherId",
+      "type": "String",
+      "syntax": "${teacher.teacherId}",
+      "descriptionHtml": "教师编号",
+      "description": "教师编号",
+      "kind": "parameter",
+      "path": [
+        "teachersList"
+      ]
+    },
+    {
+      "name": "教师名称",
+      "parameter": "name",
+      "type": "String",
+      "syntax": "${teacher.name}",
+      "descriptionHtml": "教师名称,原始名称不建议直接输出",
+      "description": "教师名称,原始名称不建议直接输出",
+      "kind": "parameter",
+      "path": [
+        "teachersList"
+      ]
+    },
+    {
+      "name": "教师提示名称",
+      "parameter": "tipName",
+      "type": "String",
+      "syntax": "${teacher.tipName}",
+      "descriptionHtml": "教师提示名称",
+      "description": "教师提示名称",
+      "kind": "parameter",
+      "path": [
+        "teachersList"
+      ]
+    },
+    {
+      "name": "教师显示名称",
+      "parameter": "showName",
+      "type": "String",
+      "syntax": "${teacher.showName}",
+      "descriptionHtml": "教师显示名称",
+      "description": "教师显示名称",
+      "kind": "parameter",
+      "path": [
+        "teachersList"
+      ]
+    },
+    {
+      "name": "教师个人主页链接",
+      "parameter": "url",
+      "type": "Url",
+      "syntax": "${teacher.url}",
+      "descriptionHtml": "教师个人主页链接",
+      "description": "教师个人主页链接",
+      "kind": "parameter",
+      "path": [
+        "teachersList"
+      ]
+    },
+    {
+      "name": "教师英文名称",
+      "parameter": "ename",
+      "type": "String",
+      "syntax": "${teacher.ename}",
+      "descriptionHtml": "教师英文名称",
+      "description": "教师英文名称",
+      "kind": "parameter",
+      "path": [
+        "teachersList"
+      ]
+    },
+    {
+      "name": "出生年份",
+      "parameter": "birthday",
+      "type": "String",
+      "syntax": "${teacher.birthday}",
+      "descriptionHtml": "出生年份",
+      "description": "出生年份",
+      "kind": "parameter",
+      "path": [
+        "teachersList"
+      ]
+    },
+    {
+      "name": "电子邮件",
+      "parameter": "email",
+      "type": "String",
+      "syntax": "${teacher.email}",
+      "descriptionHtml": "电子邮件",
+      "description": "电子邮件",
+      "kind": "parameter",
+      "path": [
+        "teachersList"
+      ]
+    },
+    {
+      "name": "入职时间",
+      "parameter": "entryTime",
+      "type": "String",
+      "syntax": "${teacher.entryTime}",
+      "descriptionHtml": "入职时间",
+      "description": "入职时间",
+      "kind": "parameter",
+      "path": [
+        "teachersList"
+      ]
+    },
+    {
+      "name": "所在单位",
+      "parameter": "unit",
+      "type": "String",
+      "syntax": "${teacher.unit}",
+      "descriptionHtml": "所在单位",
+      "description": "所在单位",
+      "kind": "parameter",
+      "path": [
+        "teachersList"
+      ]
+    },
+    {
+      "name": "所在学院",
+      "parameter": "collegeName",
+      "type": "String",
+      "syntax": "${teacher.collegeName}",
+      "descriptionHtml": "所在学院",
+      "description": "所在学院",
+      "kind": "parameter",
+      "path": [
+        "teachersList"
+      ]
+    },
+    {
+      "name": "职务",
+      "parameter": "job",
+      "type": "String",
+      "syntax": "${teacher.job}",
+      "descriptionHtml": "职务",
+      "description": "职务",
+      "kind": "parameter",
+      "path": [
+        "teachersList"
+      ]
+    },
+    {
+      "name": "学历",
+      "parameter": "education",
+      "type": "String",
+      "syntax": "${teacher.education}",
+      "descriptionHtml": "学历",
+      "description": "学历",
+      "kind": "parameter",
+      "path": [
+        "teachersList"
+      ]
+    },
+    {
+      "name": "曾获荣誉",
+      "parameter": "honor",
+      "type": "String",
+      "syntax": "${teacher.honor}",
+      "descriptionHtml": "曾获荣誉",
+      "description": "曾获荣誉",
+      "kind": "parameter",
+      "path": [
+        "teachersList"
+      ]
+    },
+    {
+      "name": "个人简介",
+      "parameter": "profile",
+      "type": "String",
+      "syntax": "${teacher.profile}",
+      "descriptionHtml": "个人简介",
+      "description": "个人简介",
+      "kind": "parameter",
+      "path": [
+        "teachersList"
+      ]
+    },
+    {
+      "name": "办公地点",
+      "parameter": "officeLocation",
+      "type": "String",
+      "syntax": "${teacher.officeLocation}",
+      "descriptionHtml": "办公地点",
+      "description": "办公地点",
+      "kind": "parameter",
+      "path": [
+        "teachersList"
+      ]
+    },
+    {
+      "name": "性别",
+      "parameter": "sex",
+      "type": "String",
+      "syntax": "${teacher.sex}",
+      "descriptionHtml": "教师性别",
+      "description": "教师性别",
+      "kind": "parameter",
+      "path": [
+        "teachersList"
+      ]
+    },
+    {
+      "name": "联系方式",
+      "parameter": "contact",
+      "type": "String",
+      "syntax": "${teacher.contact}",
+      "descriptionHtml": "联系方式",
+      "description": "联系方式",
+      "kind": "parameter",
+      "path": [
+        "teachersList"
+      ]
+    },
+    {
+      "name": "学位",
+      "parameter": "degree",
+      "type": "String",
+      "syntax": "${teacher.degree}",
+      "descriptionHtml": "学位",
+      "description": "学位",
+      "kind": "parameter",
+      "path": [
+        "teachersList"
+      ]
+    },
+    {
+      "name": "专业/学科",
+      "parameter": "discipline",
+      "type": "String",
+      "syntax": "${teacher.discipline}",
+      "descriptionHtml": "专业/学科",
+      "description": "专业/学科",
+      "kind": "parameter",
+      "path": [
+        "teachersList"
+      ]
+    },
+    {
+      "name": "职称",
+      "parameter": "prorank",
+      "type": "String",
+      "syntax": "${teacher.prorank}",
+      "descriptionHtml": "职称",
+      "description": "职称",
+      "kind": "parameter",
+      "path": [
+        "teachersList"
+      ]
+    },
+    {
+      "name": "毕业院校",
+      "parameter": "graduatedUniversity",
+      "type": "String",
+      "syntax": "${teacher.graduatedUniversity}",
+      "descriptionHtml": "毕业院校",
+      "description": "毕业院校",
+      "kind": "parameter",
+      "path": [
+        "teachersList"
+      ]
+    },
+    {
+      "name": "院士类型",
+      "parameter": "academician",
+      "type": "String",
+      "syntax": "${teacher.academician}",
+      "descriptionHtml": "院士类型\\",
+      "description": "院士类型\\",
+      "kind": "parameter",
+      "path": [
+        "teachersList"
+      ]
+    },
+    {
+      "name": "研究生导师",
+      "parameter": "gtutor",
+      "type": "String",
+      "syntax": "${teacher.gtutor}",
+      "descriptionHtml": "研究生导师",
+      "description": "研究生导师",
+      "kind": "parameter",
+      "path": [
+        "teachersList"
+      ]
+    },
+    {
+      "name": "博士生导师",
+      "parameter": "doctorTutor",
+      "type": "String",
+      "syntax": "${teacher.doctorTutor}",
+      "descriptionHtml": "博士生导师",
+      "description": "博士生导师",
+      "kind": "parameter",
+      "path": [
+        "teachersList"
+      ]
+    },
+    {
+      "name": "教师图片ID",
+      "parameter": "picurl",
+      "type": "String",
+      "syntax": "${teacher.picId}",
+      "descriptionHtml": "教室图片ID",
+      "description": "教室图片ID",
+      "kind": "parameter",
+      "path": [
+        "teachersList"
+      ]
+    },
+    {
+      "name": "教师图片地址",
+      "parameter": "picUrl",
+      "type": "String",
+      "syntax": "${teacher.picUrl}",
+      "descriptionHtml": "教师图片地址",
+      "description": "教师图片地址",
+      "kind": "parameter",
+      "path": [
+        "teachersList"
+      ]
+    },
+    {
+      "name": "原点击数",
+      "parameter": "clickTimes",
+      "type": "String",
+      "syntax": "${teacher.clickTimes}",
+      "descriptionHtml": "最新更新内容的点击数量，不建议直接输出",
+      "description": "最新更新内容的点击数量，不建议直接输出",
+      "kind": "parameter",
+      "path": [
+        "teachersList"
+      ]
+    },
+    {
+      "name": "显示点击数",
+      "parameter": "showClickTimes",
+      "type": "String",
+      "syntax": "${teacher.showClickTimes}",
+      "descriptionHtml": "显示用的最新更新内容的点击数，采用ajax技术自动更新",
+      "description": "显示用的最新更新内容的点击数，采用ajax技术自动更新",
+      "kind": "parameter",
+      "path": [
+        "teachersList"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "点击：[${teacher.showClickTimes}]次",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "teachersList"
+      ]
+    },
+    {
+      "name": "主页最新更新年份",
+      "parameter": "latestUpdateYear",
+      "type": "String",
+      "syntax": "${teacher.latestUpdateYear}",
+      "descriptionHtml": "主页最新更新年份",
+      "description": "主页最新更新年份",
+      "kind": "parameter",
+      "path": [
+        "teachersList"
+      ]
+    },
+    {
+      "name": "主页最新更新月份",
+      "parameter": "latestUpdateMonth",
+      "type": "String",
+      "syntax": "${teacher.latestUpdateMonth}",
+      "descriptionHtml": "主页最新更新月份",
+      "description": "主页最新更新月份",
+      "kind": "parameter",
+      "path": [
+        "teachersList"
+      ]
+    },
+    {
+      "name": "主页最新更新日",
+      "parameter": "latestUpdateDay",
+      "type": "String",
+      "syntax": "${teacher.latestUpdateDay}",
+      "descriptionHtml": "主页最新更新日",
+      "description": "主页最新更新日",
+      "kind": "parameter",
+      "path": [
+        "teachersList"
+      ]
+    },
+    {
+      "name": "教师点赞次数",
+      "parameter": "tspraisecount",
+      "type": "String",
+      "syntax": "${teacher.tspraisecount}",
+      "descriptionHtml": "教师点赞次数",
+      "description": "教师点赞次数",
+      "kind": "parameter",
+      "path": [
+        "teachersList"
+      ]
+    },
+    {
+      "name": "其他联系方式-邮箱",
+      "parameter": "mail",
+      "type": "String",
+      "syntax": "${teacher.mail}",
+      "descriptionHtml": "其他联系方式-邮箱",
+      "description": "其他联系方式-邮箱",
+      "kind": "parameter",
+      "path": [
+        "teachersList"
+      ]
+    },
+    {
+      "name": "其他联系方式-移动电话",
+      "parameter": "mobilephone",
+      "type": "String",
+      "syntax": "${teacher.mobilephone}",
+      "descriptionHtml": "其他联系方式-移动电话",
+      "description": "其他联系方式-移动电话",
+      "kind": "parameter",
+      "path": [
+        "teachersList"
+      ]
+    },
+    {
+      "name": "其他联系方式-办公电话",
+      "parameter": "phone",
+      "type": "String",
+      "syntax": "${teacher.phone}",
+      "descriptionHtml": "其他联系方式-办公电话",
+      "description": "其他联系方式-办公电话",
+      "kind": "parameter",
+      "path": [
+        "teachersList"
+      ]
+    },
+    {
+      "name": "其他联系方式-地址",
+      "parameter": "address",
+      "type": "String",
+      "syntax": "${teacher.address}",
+      "descriptionHtml": "其他联系方式-地址",
+      "description": "其他联系方式-地址",
+      "kind": "parameter",
+      "path": [
+        "teachersList"
+      ]
+    },
+    {
+      "name": "其他联系方式-传真",
+      "parameter": "fax",
+      "type": "String",
+      "syntax": "${teacher.fax}",
+      "descriptionHtml": "其他联系方式-传真",
+      "description": "其他联系方式-传真",
+      "kind": "parameter",
+      "path": [
+        "teachersList"
+      ]
+    },
+    {
+      "name": "其他联系方式-邮箱",
+      "parameter": "zipcode",
+      "type": "String",
+      "syntax": "${teacher.zipcode}",
+      "descriptionHtml": "其他联系方式-邮箱",
+      "description": "其他联系方式-邮箱",
+      "kind": "parameter",
+      "path": [
+        "teachersList"
+      ]
+    }
+  ],
+  "template": "<div>\n                    <div>\n    <#list teachersList as teacher>\n       <div id=\"${teacher.lineID}\" style=\"${teacher.lineShowStyle};\">\n                            <div>\n                                <a href=\"${teacher.url}\">\n                                    <div><span><img id=\"${teacher.picId}\" /></span></div>\n                                    <div>\n                                        <div><span><i class=\"icon-heart2\"></i>${teacher.tspraisecount}</span>${teacher.showName}</div>    \n                                        <div>\n                                             \n                                         {{if unit}} <p>${teacher.unit}</p>{{/if}}\n                                           {{if prorank}}<p>${teacher.prorank}</p>{{/if}}\n                                            \n                                        </div>\n                                    </div>\n                                </a>\n                            </div>\n                        </div>\n    </#list>       \n       </div>\n    <div class=\"page\">\n                        <span>共有<span  id=\"${pageBarTotalPageId}\"></span>页</span>\n                        <span id=\"${pageBarCurPageId}\"></span>/<span id=\"${pageBarTotalNumberId}\"></span> \n                        <a id=\"${pageBarFirstPageId}\">首页</a>\n                        <a id=\"${pageBarPrePageId}\">上一页</a>\n                        <a id=\"${pageBarNextPageId}\">下一页</a>\n                        <a id=\"${pageBarLastPageId}\">尾页</a>\n                    </div>\n\n</div>\n<style>\na {\n    color: #333;\n    text-decoration: none;\n    cursor: pointer;\n}\n</style>",
+  "exampleTemplate": "",
+  "previousFixtureHashes": [
+    "1e88baa8",
+    "897dfd5c"
+  ],
+  "css": "",
+  "fixture": {
+    "viewid": "1108",
+    "uid": "u_demo",
+    "uniqueClassName": "c_demo",
+    "enameTitle": "把课堂搬进山野，让知识连接更广阔的世界",
+    "nameTitle": "把课堂搬进山野，让知识连接更广阔的世界",
+    "namePinYinTitle": "把课堂搬进山野，让知识连接更广阔的世界",
+    "emailTitle": "把课堂搬进山野，让知识连接更广阔的世界",
+    "birthdayTitle": "把课堂搬进山野，让知识连接更广阔的世界",
+    "entryTimeTitle": "2026-10-30",
+    "unitTitle": "把课堂搬进山野，让知识连接更广阔的世界",
+    "jobTitle": "把课堂搬进山野，让知识连接更广阔的世界",
+    "educationTitle": "把课堂搬进山野，让知识连接更广阔的世界",
+    "workexperienceTitle": "把课堂搬进山野，让知识连接更广阔的世界",
+    "otherworkexpTitle": "把课堂搬进山野，让知识连接更广阔的世界",
+    "tshonorTitle": "把课堂搬进山野，让知识连接更广阔的世界",
+    "officeLocationTitle": "把课堂搬进山野，让知识连接更广阔的世界",
+    "contactTitle": "把课堂搬进山野，让知识连接更广阔的世界",
+    "profileTitle": "把课堂搬进山野，让知识连接更广阔的世界",
+    "sexTitle": "把课堂搬进山野，让知识连接更广阔的世界",
+    "degreeTitle": "把课堂搬进山野，让知识连接更广阔的世界",
+    "jobTypeTitle": "把课堂搬进山野，让知识连接更广阔的世界",
+    "prorankTitle": "把课堂搬进山野，让知识连接更广阔的世界",
+    "graduatedUniversityTitle": "把课堂搬进山野，让知识连接更广阔的世界",
+    "deceasedTitle": "把课堂搬进山野，让知识连接更广阔的世界",
+    "isRetiredTitle": "把课堂搬进山野，让知识连接更广阔的世界",
+    "tssyyTitle": "把课堂搬进山野，让知识连接更广阔的世界",
+    "tsxyyTitle": "把课堂搬进山野，让知识连接更广阔的世界",
+    "tssyTitle": "把课堂搬进山野，让知识连接更广阔的世界",
+    "tswyTitle": "把课堂搬进山野，让知识连接更广阔的世界",
+    "callBackFunName": "示例名称",
+    "pageBarPageNumberId": "demo_pageBarPageNumberId",
+    "pageBarTotalNumberId": "demo_pageBarTotalNumberId",
+    "pageBarCurPageId": "demo_pageBarCurPageId",
+    "pageBarTotalPageId": "demo_pageBarTotalPageId",
+    "pageBarFirstPageId": "demo_pageBarFirstPageId",
+    "pageBarLastPageId": "demo_pageBarLastPageId",
+    "pageBarPrePageId": "demo_pageBarPrePageId",
+    "pageBarNextPageId": "demo_pageBarNextPageId",
+    "pageBarCustomPageId": "demo_pageBarCustomPageId",
+    "pageBarGotoPageId": "demo_pageBarGotoPageId",
+    "teachersList": [
+      {
+        "lineID": "teacher_row_1",
+        "lineShowStyle": "",
+        "url": "#preview",
+        "picId": "teacher_photo_1",
+        "tspraisecount": "12",
+        "showName": "陈明",
+        "unit": "示例单位一",
+        "prorank": "职称",
+        "teacherId": "demo_teacherId_0",
+        "name": "陈明",
+        "tipName": "陈明",
+        "ename": "示例名称",
+        "birthday": "出生年份",
+        "email": "",
+        "entryTime": "2026-10-30",
+        "collegeName": "示例名称",
+        "job": "职务",
+        "education": "学历",
+        "honor": "曾获荣誉",
+        "profile": "个人简介",
+        "officeLocation": "办公地点",
+        "sex": "性别",
+        "contact": "联系方式",
+        "degree": "学位",
+        "discipline": "专业/学科",
+        "graduatedUniversity": "毕业院校",
+        "academician": "院士类型",
+        "gtutor": "研究生导师",
+        "doctorTutor": "博士生导师",
+        "picUrl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "clickTimes": "12",
+        "showClickTimes": "12",
+        "latestUpdateYear": "2026-10-30",
+        "latestUpdateMonth": "2026-10-30",
+        "latestUpdateDay": "2026-10-30",
+        "mail": "其他联系方式-邮箱",
+        "mobilephone": "",
+        "phone": "",
+        "address": "其他联系方式-地址",
+        "fax": "其他联系方式-传真",
+        "zipcode": "其他联系方式-邮箱",
+        "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+      },
+      {
+        "lineID": "teacher_row_2",
+        "lineShowStyle": "",
+        "url": "#preview",
+        "picId": "teacher_photo_2",
+        "tspraisecount": "12",
+        "showName": "李文",
+        "unit": "示例单位二",
+        "prorank": "职称",
+        "teacherId": "demo_teacherId_1",
+        "name": "李文",
+        "tipName": "李文",
+        "ename": "示例名称",
+        "birthday": "出生年份",
+        "email": "",
+        "entryTime": "2026-10-30",
+        "collegeName": "示例名称",
+        "job": "职务",
+        "education": "学历",
+        "honor": "曾获荣誉",
+        "profile": "个人简介",
+        "officeLocation": "办公地点",
+        "sex": "性别",
+        "contact": "联系方式",
+        "degree": "学位",
+        "discipline": "专业/学科",
+        "graduatedUniversity": "毕业院校",
+        "academician": "院士类型",
+        "gtutor": "研究生导师",
+        "doctorTutor": "博士生导师",
+        "picUrl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "clickTimes": "12",
+        "showClickTimes": "12",
+        "latestUpdateYear": "2026-10-30",
+        "latestUpdateMonth": "2026-10-30",
+        "latestUpdateDay": "2026-10-30",
+        "mail": "其他联系方式-邮箱",
+        "mobilephone": "",
+        "phone": "",
+        "address": "其他联系方式-地址",
+        "fax": "其他联系方式-传真",
+        "zipcode": "其他联系方式-邮箱",
+        "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+      },
+      {
+        "lineID": "teacher_row_3",
+        "lineShowStyle": "",
+        "url": "#preview",
+        "picId": "teacher_photo_3",
+        "tspraisecount": "12",
+        "showName": "张晓",
+        "unit": "示例单位五",
+        "prorank": "职称",
+        "teacherId": "demo_teacherId_2",
+        "name": "张晓",
+        "tipName": "张晓",
+        "ename": "示例名称",
+        "birthday": "出生年份",
+        "email": "",
+        "entryTime": "2026-10-30",
+        "collegeName": "示例名称",
+        "job": "职务",
+        "education": "学历",
+        "honor": "曾获荣誉",
+        "profile": "个人简介",
+        "officeLocation": "办公地点",
+        "sex": "性别",
+        "contact": "联系方式",
+        "degree": "学位",
+        "discipline": "专业/学科",
+        "graduatedUniversity": "毕业院校",
+        "academician": "院士类型",
+        "gtutor": "研究生导师",
+        "doctorTutor": "博士生导师",
+        "picUrl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "clickTimes": "12",
+        "showClickTimes": "12",
+        "latestUpdateYear": "2026-10-30",
+        "latestUpdateMonth": "2026-10-30",
+        "latestUpdateDay": "2026-10-30",
+        "mail": "其他联系方式-邮箱",
+        "mobilephone": "",
+        "phone": "",
+        "address": "其他联系方式-地址",
+        "fax": "其他联系方式-传真",
+        "zipcode": "其他联系方式-邮箱",
+        "picurl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22300%22%3E%3Crect%20width%3D%22240%22%20height%3D%22300%22%20fill%3D%22%23e8eeea%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22100%22%20r%3D%2247%22%20fill%3D%22%23a2b4a6%22%2F%3E%3Cpath%20d%3D%22M30%20300v-45c0-100%20180-100%20180%200v45%22%20fill%3D%22%23819a89%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22285%22%20fill%3D%22%23f1f5f0%22%20font-size%3D%2213%22%20font-family%3D%22sans-serif%22%3ETEACHER%20DEMO%3C%2Ftext%3E%3C%2Fsvg%3E"
+      }
+    ]
+  }
+}

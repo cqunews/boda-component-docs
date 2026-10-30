@@ -1,0 +1,930 @@
+{
+  "id": "068",
+  "index": 68,
+  "name": "提交信息",
+  "category": "公众参与",
+  "parameterCount": 58,
+  "hasScript": true,
+  "templateLength": 17343,
+  "parameters": [
+    {
+      "name": "通用参数",
+      "parameter": "commonparam",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件id",
+      "parameter": "viewid",
+      "type": "String",
+      "syntax": "${viewid}",
+      "descriptionHtml": "组件本身的id，数字(形如 1001)",
+      "description": "组件本身的id，数字(形如 1001)",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件uid",
+      "parameter": "uid",
+      "type": "String",
+      "syntax": "${uid}",
+      "descriptionHtml": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "description": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "私有样式类名",
+      "parameter": "uniqueClassName",
+      "type": "String",
+      "syntax": "${uniqueClassName}",
+      "descriptionHtml": "用在私有样式表的类名上，字符串(形如 c10)，举例：<br>&lt;span class=\"<span style=\"color:red\">${uniqueClassName}</span>\" &gt;文字&lt;/span&gt;",
+      "description": "用在私有样式表的类名上，字符串(形如 c10)，举例：\n<span class=\"${uniqueClassName}\" >文字</span>",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<span class=\"${uniqueClassName}\" >文字</span>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "引入jQuery类库",
+      "parameter": "v_includeJquery",
+      "type": "Function",
+      "syntax": "${v_includeJquery()}",
+      "descriptionHtml": "引入系统自带的JQuery类库;<br> 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "description": "引入系统自带的JQuery类库;\n 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "\n<!--引入jQuery-->${v_includeJquery()}<!--引入jQuery完成-->\n",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "查询码",
+      "parameter": "searchcode",
+      "type": "String",
+      "syntax": "${searchcode}",
+      "descriptionHtml": "查询码，提交后获得的查询码",
+      "description": "查询码，提交后获得的查询码",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "部门参数",
+      "parameter": "deptCode",
+      "type": "String",
+      "syntax": "${deptCode}",
+      "descriptionHtml": "部门参数",
+      "description": "部门参数",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "是否显示部门下拉框",
+      "parameter": "showselectdept",
+      "type": "Boolean",
+      "syntax": "${showselectdept}",
+      "descriptionHtml": "是否显示部门下拉框",
+      "description": "是否显示部门下拉框",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "留言表单",
+      "parameter": "msgform",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<FORM method=\"post\" name=\"${form}\" enctype=\"multipart/form-data\" action=\"\"></FORM>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "表单名称",
+      "parameter": "form",
+      "type": "String",
+      "syntax": "${form}",
+      "descriptionHtml": "表单名称",
+      "description": "表单名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "是否需要登陆",
+      "parameter": "isLogin",
+      "type": "String",
+      "syntax": "${isLogin}",
+      "descriptionHtml": "发表留言是否需要登陆",
+      "description": "发表留言是否需要登陆",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "是否需要设置栏目绑定部门",
+      "parameter": "isSetDept",
+      "type": "Boolean",
+      "syntax": "${isSetDept}",
+      "descriptionHtml": "发表留言是否需要设置栏目绑定部门",
+      "description": "发表留言是否需要设置栏目绑定部门",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "是否需要显示附件",
+      "parameter": "isattach",
+      "type": "Integer",
+      "syntax": "${isattach}",
+      "descriptionHtml": "发表留言是否需要显示附件",
+      "description": "发表留言是否需要显示附件",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "是否需要验证码",
+      "parameter": "ischeckcode",
+      "type": "Boolean",
+      "syntax": "${ischeckcode}",
+      "descriptionHtml": "发表留言是否需要验证码",
+      "description": "发表留言是否需要验证码",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "是否按照栏目绑定的部门",
+      "parameter": "deptconfig",
+      "type": "String",
+      "syntax": "${deptconfig}",
+      "descriptionHtml": "是否按照栏目绑定的部门",
+      "description": "是否按照栏目绑定的部门",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "提交部门与维护部门是否一致",
+      "parameter": "isExistDept",
+      "type": "Boolean",
+      "syntax": "${isExistDept}",
+      "descriptionHtml": "提交部门与维护部门是否一致",
+      "description": "提交部门与维护部门是否一致",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "隐藏表单",
+      "parameter": "hiddenFiled",
+      "type": "String",
+      "syntax": "${hiddenFiled}",
+      "descriptionHtml": "发表留言所需要的隐藏表单",
+      "description": "发表留言所需要的隐藏表单",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "部门表单名称",
+      "parameter": "formDept",
+      "type": "String",
+      "syntax": "${formDept}",
+      "descriptionHtml": "部门表单名称",
+      "description": "部门表单名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "部门列表总数",
+      "parameter": "deptSize",
+      "type": "String",
+      "syntax": "${deptSize}",
+      "descriptionHtml": "部门列表总数",
+      "description": "部门列表总数",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "部门列表",
+      "parameter": "list_dept",
+      "type": "List",
+      "syntax": "<#list list_dept as dept>\n    </#list>",
+      "descriptionHtml": "部门列表",
+      "description": "部门列表",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "姓名表单名称",
+      "parameter": "formName",
+      "type": "String",
+      "syntax": "${formName}",
+      "descriptionHtml": "姓名表单名称",
+      "description": "姓名表单名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "姓名",
+      "parameter": "name",
+      "type": "String",
+      "syntax": "${name}",
+      "descriptionHtml": "姓名",
+      "description": "姓名",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "性别表单名称",
+      "parameter": "formSex",
+      "type": "String",
+      "syntax": "${formSex}",
+      "descriptionHtml": "性别表单名称",
+      "description": "性别表单名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "性别",
+      "parameter": "sex",
+      "type": "String",
+      "syntax": "${sex}",
+      "descriptionHtml": "性别",
+      "description": "性别",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "身份证号表单名称",
+      "parameter": "formIdcard",
+      "type": "String",
+      "syntax": "${formIdcard}",
+      "descriptionHtml": "身份证号表单名称",
+      "description": "身份证号表单名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "身份证号",
+      "parameter": "idCard",
+      "type": "String",
+      "syntax": "${idCard}",
+      "descriptionHtml": "身份证号",
+      "description": "身份证号",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "手机表单名称",
+      "parameter": "formTelphone",
+      "type": "String",
+      "syntax": "${formTelphone}",
+      "descriptionHtml": "手机表单名称",
+      "description": "手机表单名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "手机",
+      "parameter": "telphone",
+      "type": "String",
+      "syntax": "${telphone}",
+      "descriptionHtml": "手机",
+      "description": "手机",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "联系方式表单名称",
+      "parameter": "formAddress",
+      "type": "String",
+      "syntax": "${formAddress}",
+      "descriptionHtml": "联系方式表单名称",
+      "description": "联系方式表单名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "联系方式",
+      "parameter": "address",
+      "type": "String",
+      "syntax": "${address}",
+      "descriptionHtml": "联系方式",
+      "description": "联系方式",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "固定电话表单名称",
+      "parameter": "formPhone",
+      "type": "String",
+      "syntax": "${formPhone}",
+      "descriptionHtml": "固定电话表单名称",
+      "description": "固定电话表单名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "固定电话",
+      "parameter": "phone",
+      "type": "String",
+      "syntax": "${phone}",
+      "descriptionHtml": "固定电话",
+      "description": "固定电话",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "Email表单名称",
+      "parameter": "formEmail",
+      "type": "String",
+      "syntax": "${formEmail}",
+      "descriptionHtml": "Email表单名称",
+      "description": "Email表单名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "Email",
+      "parameter": "email",
+      "type": "String",
+      "syntax": "${email}",
+      "descriptionHtml": "Email",
+      "description": "Email",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "单位表单名称",
+      "parameter": "formUnit",
+      "type": "String",
+      "syntax": "${formUnit}",
+      "descriptionHtml": "单位表单名称",
+      "description": "单位表单名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "单位",
+      "parameter": "unit",
+      "type": "String",
+      "syntax": "${unit}",
+      "descriptionHtml": "单位",
+      "description": "单位",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "附件列表数",
+      "parameter": "attachSize",
+      "type": "String",
+      "syntax": "${attachSize}",
+      "descriptionHtml": "附件列表数",
+      "description": "附件列表数",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "附件列表",
+      "parameter": "list_attach",
+      "type": "List",
+      "syntax": "<#list list_attach as attach>\n    </#list>",
+      "descriptionHtml": "附件列表",
+      "description": "附件列表",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "标题表单名称",
+      "parameter": "formTitle",
+      "type": "String",
+      "syntax": "${formTitle}",
+      "descriptionHtml": "标题表单名称",
+      "description": "标题表单名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "标题",
+      "parameter": "title",
+      "type": "String",
+      "syntax": "${title}",
+      "descriptionHtml": "标题",
+      "description": "标题",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "内容表单名称",
+      "parameter": "formContent",
+      "type": "String",
+      "syntax": "${formContent}",
+      "descriptionHtml": "内容表单名称",
+      "description": "内容表单名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "内容",
+      "parameter": "content",
+      "type": "String",
+      "syntax": "${content}",
+      "descriptionHtml": "内容",
+      "description": "内容",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "内容编辑器地址",
+      "parameter": "contentEditUrl",
+      "type": "String",
+      "syntax": "${contentEditUrl}",
+      "descriptionHtml": "内容编辑器地址",
+      "description": "内容编辑器地址",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "内容编辑器Iframe名称",
+      "parameter": "formFrameContent",
+      "type": "String",
+      "syntax": "${formFrameContent}",
+      "descriptionHtml": "内容编辑器Iframe名称",
+      "description": "内容编辑器Iframe名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "验证码表单名称",
+      "parameter": "formYanzheng",
+      "type": "String",
+      "syntax": "${formYanzheng}",
+      "descriptionHtml": "验证码表单名称",
+      "description": "验证码表单名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "验证码图片地址",
+      "parameter": "YanzhengImgSrc",
+      "type": "String",
+      "syntax": "${YanzhengImgSrc}",
+      "descriptionHtml": "验证码图片地址",
+      "description": "验证码图片地址",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "唯一标识",
+      "parameter": "uuid",
+      "type": "String",
+      "syntax": "${uuid}",
+      "descriptionHtml": "唯一标识, 主要在拖放多个组件时使用,确保id,方法等唯一不会冲突。",
+      "description": "唯一标识, 主要在拖放多个组件时使用,确保id,方法等唯一不会冲突。",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "标识:${uuid}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "列表位置参数",
+      "parameter": "listnogroup",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": [
+        "list_dept"
+      ]
+    },
+    {
+      "name": "部门名称",
+      "parameter": "name",
+      "type": "String",
+      "syntax": "${dept.name}",
+      "descriptionHtml": "部门名称",
+      "description": "部门名称",
+      "kind": "parameter",
+      "path": [
+        "list_dept"
+      ]
+    },
+    {
+      "name": "部门编码",
+      "parameter": "code",
+      "type": "String",
+      "syntax": "${dept.code}",
+      "descriptionHtml": "部门编码",
+      "description": "部门编码",
+      "kind": "parameter",
+      "path": [
+        "list_dept"
+      ]
+    },
+    {
+      "name": "是第几条",
+      "parameter": "pos",
+      "type": "Integer",
+      "syntax": "${dept.pos}",
+      "descriptionHtml": "当前是列表的第几条(从1开始)",
+      "description": "当前是列表的第几条(从1开始)",
+      "kind": "parameter",
+      "path": [
+        "list_dept",
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "第${dept.pos}条",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "list_dept",
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否首条",
+      "parameter": "isFirst",
+      "type": "Boolean",
+      "syntax": "<#if dept.isFirst></#if>",
+      "descriptionHtml": "当前是不是列表的第一条",
+      "description": "当前是不是列表的第一条",
+      "kind": "parameter",
+      "path": [
+        "list_dept",
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if dept.isFirst>首条</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "list_dept",
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否尾条",
+      "parameter": "isLast",
+      "type": "Boolean",
+      "syntax": "<#if dept.isLast></#if>",
+      "descriptionHtml": "当前是不是列表的最后一条",
+      "description": "当前是不是列表的最后一条",
+      "kind": "parameter",
+      "path": [
+        "list_dept",
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if dept.isLast>尾条</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "list_dept",
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否奇数行",
+      "parameter": "isOdd",
+      "type": "Boolean",
+      "syntax": "<#if dept.isOdd></#if>",
+      "descriptionHtml": "当前是不是奇数行",
+      "description": "当前是不是奇数行",
+      "kind": "parameter",
+      "path": [
+        "list_dept",
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if dept.isOdd>奇数行</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "list_dept",
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否偶数行",
+      "parameter": "isEven",
+      "type": "Boolean",
+      "syntax": "<#if dept.isEven></#if>",
+      "descriptionHtml": "当前是不是偶数行",
+      "description": "当前是不是偶数行",
+      "kind": "parameter",
+      "path": [
+        "list_dept",
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if dept.isEven>偶数行</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "list_dept",
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "列表位置参数",
+      "parameter": "listnogroup",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": [
+        "list_attach"
+      ]
+    },
+    {
+      "name": "附件表单名称",
+      "parameter": "formAttach",
+      "type": "String",
+      "syntax": "${attach.formAttach}",
+      "descriptionHtml": "附件表单名称",
+      "description": "附件表单名称",
+      "kind": "parameter",
+      "path": [
+        "list_attach"
+      ]
+    },
+    {
+      "name": "是第几条",
+      "parameter": "pos",
+      "type": "Integer",
+      "syntax": "${dept.pos}",
+      "descriptionHtml": "当前是列表的第几条(从1开始)",
+      "description": "当前是列表的第几条(从1开始)",
+      "kind": "parameter",
+      "path": [
+        "list_attach",
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "第${dept.pos}条",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "list_attach",
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否首条",
+      "parameter": "isFirst",
+      "type": "Boolean",
+      "syntax": "<#if dept.isFirst></#if>",
+      "descriptionHtml": "当前是不是列表的第一条",
+      "description": "当前是不是列表的第一条",
+      "kind": "parameter",
+      "path": [
+        "list_attach",
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if dept.isFirst>首条</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "list_attach",
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否尾条",
+      "parameter": "isLast",
+      "type": "Boolean",
+      "syntax": "<#if dept.isLast></#if>",
+      "descriptionHtml": "当前是不是列表的最后一条",
+      "description": "当前是不是列表的最后一条",
+      "kind": "parameter",
+      "path": [
+        "list_attach",
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if dept.isLast>尾条</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "list_attach",
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否奇数行",
+      "parameter": "isOdd",
+      "type": "Boolean",
+      "syntax": "<#if dept.isOdd></#if>",
+      "descriptionHtml": "当前是不是奇数行",
+      "description": "当前是不是奇数行",
+      "kind": "parameter",
+      "path": [
+        "list_attach",
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if dept.isOdd>奇数行</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "list_attach",
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否偶数行",
+      "parameter": "isEven",
+      "type": "Boolean",
+      "syntax": "<#if dept.isEven></#if>",
+      "descriptionHtml": "当前是不是偶数行",
+      "description": "当前是不是偶数行",
+      "kind": "parameter",
+      "path": [
+        "list_attach",
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if dept.isEven>偶数行</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "list_attach",
+        "listnogroup"
+      ]
+    }
+  ],
+  "template": "<#if searchcode!=''>\n<table  cellpadding=\"5\" cellspacing=\"0\"   width=\"100%\"><tr><td align=\"center\" style=\"font-size: 9pt\">您的查询码为：${searchcode}</td></tr></table>\n<#else>\n<FORM method=\"post\"   enctype=\"multipart/form-data\" action=\"${action}\" id=\"${form}\" name=\"${form}\" onsubmit=\"return _tpladdmsg_sendmessage${uuid}(this)\" style=\"display: inline;\">\n    ${hiddenFiled}\n    <div class=\"govitemcontent{uuid}\" id=\"govitemcontent{uuid}\">\n    <TABLE cellspacing=\"0\" cellpadding=\"3\" width=\"100%\" style=\"background: -moz-linear-gradient(top, #ffffff, #fff5d6);border-collapse:collapse;border:1px #ecc197 solid;FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0,,StartColorStr=#ffffff,, EndColorStr=#fff5d6);\">\n    <#if showselectdept>\n        <tr>\n            <td style=\"border:1px #ecc197 solid;COLOR: #ff6600;FONT-SIZE: 9pt;PADDING-BOTTOM: 3px;PADDING-LEFT: 3px;BACKGROUND-COLOR: #ffffec;PADDING-RIGHT: 3px;FONT-FAMILY: 宋体;FONT-WEIGHT: bold;PADDING-TOP: 3px;\">\n                部门\n            </td>\n            <td style=\"border:1px #ecc197 solid;\">\n                <select name=\"${formDept}\">\n                    <#list list_dept as dept>\n                        <option value=\"${dept.code}\" <#if dept.code==deptCode>selected</#if>>${dept.name}</option>\n                    </#list>\n                </select>\n            </td>\n        </tr>\n    <#else>\n    <input type='hidden' name='wbdeptcode' value='${deptCode}'></#if>\n        <tr>\n            <td style=\"border:1px #ecc197 solid;COLOR: #ff6600;FONT-SIZE: 9pt;PADDING-BOTTOM: 3px;PADDING-LEFT: 3px;BACKGROUND-COLOR: #ffffec;PADDING-RIGHT: 3px;FONT-FAMILY: 宋体;FONT-WEIGHT: bold;PADDING-TOP: 3px;\">\n                姓名\n            </td>\n            <td style=\"border:1px #ecc197 solid;\"><input type=\"text\" name=\"${formName}\" id=\"${formName}\" maxlength=\"50\" value=\"${name}\" style=\"BORDER-TOP: #d5d5d5 1px solid;PADDING-BOTTOM: 0px;BORDER-RIGHT: #d5d5d5 1px solid;BORDER-LEFT: #d5d5d5 1px solid;PADDING-LEFT: 3px;BACKGROUND-COLOR: #ffffff;PADDING-RIGHT: 8px;HEIGHT: 18px;PADDING-TOP: 2px;BORDER-BOTTOM: #d5d5d5 1px solid;display: none;\"\n            ><input type=\"text\" name=\"${formName}_temp\" id=\"${formName}_temp\" maxlength=\"50\" value=\"${name}\" style=\"BORDER-TOP: #d5d5d5 1px solid;PADDING-BOTTOM: 0px;BORDER-RIGHT: #d5d5d5 1px solid;BORDER-LEFT: #d5d5d5 1px solid;PADDING-LEFT: 3px;BACKGROUND-COLOR: #ffffff;PADDING-RIGHT: 8px;HEIGHT: 18px;PADDING-TOP: 2px;BORDER-BOTTOM: #d5d5d5 1px solid;\"></td>\n        </tr>\n        <tr>\n            <td style=\"border:1px #ecc197 solid;COLOR: #ff6600;FONT-SIZE: 9pt;PADDING-BOTTOM: 3px;PADDING-LEFT: 3px;BACKGROUND-COLOR: #ffffec;PADDING-RIGHT: 3px;FONT-FAMILY: 宋体;FONT-WEIGHT: bold;PADDING-TOP: 3px;\">\n                性别\n            </td>\n            <td style=\"border:1px #ecc197 solid;\">\n             <select name=\"${formSex}\">\n                 <option value=\"男\" <#if sex='男'>selected</#if>>男</option>\n                 <option value=\"女\" <#if sex='女'>selected</#if>>女</option>\n             </select>\n            </td>\n        </tr>\n        <tr>\n            <td style=\"border:1px #ecc197 solid;COLOR: #ff6600;FONT-SIZE: 9pt;PADDING-BOTTOM: 3px;PADDING-LEFT: 3px;BACKGROUND-COLOR: #ffffec;PADDING-RIGHT: 3px;FONT-FAMILY: 宋体;FONT-WEIGHT: bold;PADDING-TOP: 3px;\">\n                身份证号\n            </td>\n            <td style=\"border:1px #ecc197 solid;\"><input type=\"text\" name=\"${formIdcard}\" id=\"${formIdcard}\" value=\"${idCard}\" maxlength=\"20\" style=\"BORDER-TOP: #d5d5d5 1px solid;PADDING-BOTTOM: 0px;BORDER-RIGHT: #d5d5d5 1px solid;BORDER-LEFT: #d5d5d5 1px solid;PADDING-LEFT: 3px;BACKGROUND-COLOR: #ffffff;PADDING-RIGHT: 8px;HEIGHT: 18px;PADDING-TOP: 2px;BORDER-BOTTOM: #d5d5d5 1px solid;\"></td>\n        </tr>\n        <tr>\n            <td style=\"border:1px #ecc197 solid;COLOR: #ff6600;FONT-SIZE: 9pt;PADDING-BOTTOM: 3px;PADDING-LEFT: 3px;BACKGROUND-COLOR: #ffffec;PADDING-RIGHT: 3px;FONT-FAMILY: 宋体;FONT-WEIGHT: bold;PADDING-TOP: 3px;\">\n                手机\n            </td>\n            <td style=\"border:1px #ecc197 solid;\"><input type=\"text\" name=\"${formTelphone}\" id=\"${formTelphone}\" value=\"${telphone}\" maxlength=\"50\" style=\"BORDER-TOP: #d5d5d5 1px solid;PADDING-BOTTOM: 0px;BORDER-RIGHT: #d5d5d5 1px solid;BORDER-LEFT: #d5d5d5 1px solid;PADDING-LEFT: 3px;BACKGROUND-COLOR: #ffffff;PADDING-RIGHT: 8px;HEIGHT: 18px;PADDING-TOP: 2px;BORDER-BOTTOM: #d5d5d5 1px solid;\"></td>\n        </tr>\n        <tr>\n            <td style=\"border:1px #ecc197 solid;COLOR: #ff6600;FONT-SIZE: 9pt;PADDING-BOTTOM: 3px;PADDING-LEFT: 3px;BACKGROUND-COLOR: #ffffec;PADDING-RIGHT: 3px;FONT-FAMILY: 宋体;FONT-WEIGHT: bold;PADDING-TOP: 3px;\">\n                联系方式\n            </td>\n            <td style=\"border:1px #ecc197 solid;\"><input type=\"text\" name=\"${formAddress}\" id=\"${formAddress}\" value=\"${address}\" maxlength=\"200\" style=\"BORDER-TOP: #d5d5d5 1px solid;PADDING-BOTTOM: 0px;BORDER-RIGHT: #d5d5d5 1px solid;BORDER-LEFT: #d5d5d5 1px solid;PADDING-LEFT: 3px;BACKGROUND-COLOR: #ffffff;PADDING-RIGHT: 8px;HEIGHT: 18px;PADDING-TOP: 2px;BORDER-BOTTOM: #d5d5d5 1px solid;display: none;\"\n            ><input type=\"text\" name=\"${formAddress}_temp\" id=\"${formAddress}_temp\" value=\"${address}\" maxlength=\"200\" style=\"BORDER-TOP: #d5d5d5 1px solid;PADDING-BOTTOM: 0px;BORDER-RIGHT: #d5d5d5 1px solid;BORDER-LEFT: #d5d5d5 1px solid;PADDING-LEFT: 3px;BACKGROUND-COLOR: #ffffff;PADDING-RIGHT: 8px;HEIGHT: 18px;PADDING-TOP: 2px;BORDER-BOTTOM: #d5d5d5 1px solid;\"></td>\n        </tr>\n        <tr>\n            <td style=\"border:1px #ecc197 solid;COLOR: #ff6600;FONT-SIZE: 9pt;PADDING-BOTTOM: 3px;PADDING-LEFT: 3px;BACKGROUND-COLOR: #ffffec;PADDING-RIGHT: 3px;FONT-FAMILY: 宋体;FONT-WEIGHT: bold;PADDING-TOP: 3px;\">\n                固定电话\n            </td>\n            <td style=\"border:1px #ecc197 solid;\"><input type=\"text\" name=\"${formPhone}\" id=\"${formPhone}\" value=\"${phone}\" maxlength=\"50\" style=\"BORDER-TOP: #d5d5d5 1px solid;PADDING-BOTTOM: 0px;BORDER-RIGHT: #d5d5d5 1px solid;BORDER-LEFT: #d5d5d5 1px solid;PADDING-LEFT: 3px;BACKGROUND-COLOR: #ffffff;PADDING-RIGHT: 8px;HEIGHT: 18px;PADDING-TOP: 2px;BORDER-BOTTOM: #d5d5d5 1px solid;\"></td>\n        </tr>\n        <tr>\n            <td style=\"border:1px #ecc197 solid;COLOR: #ff6600;FONT-SIZE: 9pt;PADDING-BOTTOM: 3px;PADDING-LEFT: 3px;BACKGROUND-COLOR: #ffffec;PADDING-RIGHT: 3px;FONT-FAMILY: 宋体;FONT-WEIGHT: bold;PADDING-TOP: 3px;\">\n                Email\n            </td>\n            <td style=\"border:1px #ecc197 solid;\"><input type=\"text\" name=\"${formEmail}\" id=\"${formEmail}\" value=\"${email}\" maxlength=\"100\" style=\"BORDER-TOP: #d5d5d5 1px solid;PADDING-BOTTOM: 0px;BORDER-RIGHT: #d5d5d5 1px solid;BORDER-LEFT: #d5d5d5 1px solid;PADDING-LEFT: 3px;BACKGROUND-COLOR: #ffffff;PADDING-RIGHT: 8px;HEIGHT: 18px;PADDING-TOP: 2px;BORDER-BOTTOM: #d5d5d5 1px solid;display: none;\"\n            ><input type=\"text\" name=\"${formEmail}_temp\" id=\"${formEmail}_temp\" value=\"${email}\" maxlength=\"100\" style=\"BORDER-TOP: #d5d5d5 1px solid;PADDING-BOTTOM: 0px;BORDER-RIGHT: #d5d5d5 1px solid;BORDER-LEFT: #d5d5d5 1px solid;PADDING-LEFT: 3px;BACKGROUND-COLOR: #ffffff;PADDING-RIGHT: 8px;HEIGHT: 18px;PADDING-TOP: 2px;BORDER-BOTTOM: #d5d5d5 1px solid;\"></td>\n        </tr>\n        <tr>\n            <td style=\"border:1px #ecc197 solid;COLOR: #ff6600;FONT-SIZE: 9pt;PADDING-BOTTOM: 3px;PADDING-LEFT: 3px;BACKGROUND-COLOR: #ffffec;PADDING-RIGHT: 3px;FONT-FAMILY: 宋体;FONT-WEIGHT: bold;PADDING-TOP: 3px;\">\n                单位\n            </td>\n            <td style=\"border:1px #ecc197 solid;\"><input type=\"text\" name=\"${formUnit}\" id=\"${formUnit}\" value=\"${unit}\" maxlength=\"100\" style=\"BORDER-TOP: #d5d5d5 1px solid;PADDING-BOTTOM: 0px;BORDER-RIGHT: #d5d5d5 1px solid;BORDER-LEFT: #d5d5d5 1px solid;PADDING-LEFT: 3px;BACKGROUND-COLOR: #ffffff;PADDING-RIGHT: 8px;HEIGHT: 18px;PADDING-TOP: 2px;BORDER-BOTTOM: #d5d5d5 1px solid;display: none;\"\n            ><input type=\"text\" name=\"${formUnit}_temp\" id=\"${formUnit}_temp\" value=\"${unit}\" maxlength=\"100\" style=\"BORDER-TOP: #d5d5d5 1px solid;PADDING-BOTTOM: 0px;BORDER-RIGHT: #d5d5d5 1px solid;BORDER-LEFT: #d5d5d5 1px solid;PADDING-LEFT: 3px;BACKGROUND-COLOR: #ffffff;PADDING-RIGHT: 8px;HEIGHT: 18px;PADDING-TOP: 2px;BORDER-BOTTOM: #d5d5d5 1px solid;\"></td>\n        </tr>\n        <#if isattach==1>\n        <tr>\n            <td valign=\"top\" style=\"border:1px #ecc197 solid;COLOR: #ff6600;FONT-SIZE: 9pt;PADDING-BOTTOM: 3px;PADDING-LEFT: 3px;BACKGROUND-COLOR: #ffffec;PADDING-RIGHT: 3px;FONT-FAMILY: 宋体;FONT-WEIGHT: bold;PADDING-TOP: 3px;\">\n                附件\n            </td>\n            <td style=\"border:1px #ecc197 solid;\">\n                <#list list_attach as attach>\n                    <input type=\"file\" name=\"${attach.formAttach}\" id=\"${attach.formAttach}\"><br>\n                </#list>\n            </td>\n        </tr>\n        </#if>\n        <tr>\n            <td style=\"border:1px #ecc197 solid;COLOR: #ff6600;FONT-SIZE: 9pt;PADDING-BOTTOM: 3px;PADDING-LEFT: 3px;BACKGROUND-COLOR: #ffffec;PADDING-RIGHT: 3px;FONT-FAMILY: 宋体;FONT-WEIGHT: bold;PADDING-TOP: 3px;\">\n                标题 <span style=\"color: red\">*</span>\n            </td>\n            <td style=\"border:1px #ecc197 solid;\"><input type=\"text\" name=\"${formTitle}\" id=\"${formTitle}\" value=\"${title}\" size=\"50\" maxlength=\"200\" style=\"BORDER-TOP: #d5d5d5 1px solid;PADDING-BOTTOM: 0px;BORDER-RIGHT: #d5d5d5 1px solid;BORDER-LEFT: #d5d5d5 1px solid;PADDING-LEFT: 3px;BACKGROUND-COLOR: #ffffff;PADDING-RIGHT: 8px;HEIGHT: 18px;PADDING-TOP: 2px;BORDER-BOTTOM: #d5d5d5 1px solid;display: none;\"\n            ><input type=\"text\" name=\"${formTitle}_temp\" id=\"${formTitle}_temp\" value=\"${title}\" size=\"50\" maxlength=\"200\" style=\"BORDER-TOP: #d5d5d5 1px solid;PADDING-BOTTOM: 0px;BORDER-RIGHT: #d5d5d5 1px solid;BORDER-LEFT: #d5d5d5 1px solid;PADDING-LEFT: 3px;BACKGROUND-COLOR: #ffffff;PADDING-RIGHT: 8px;HEIGHT: 18px;PADDING-TOP: 2px;BORDER-BOTTOM: #d5d5d5 1px solid;\"></td>\n        </tr>\n        <tr>\n            <td style=\"border:1px #ecc197 solid;COLOR: #ff6600;FONT-SIZE: 9pt;PADDING-BOTTOM: 3px;PADDING-LEFT: 3px;BACKGROUND-COLOR: #ffffec;PADDING-RIGHT: 3px;FONT-FAMILY: 宋体;FONT-WEIGHT: bold;PADDING-TOP: 3px;\">\n                内容 <span style=\"color: red\">*</span>\n            </td>\n            <td style=\"border:1px #ecc197 solid;\">\n                <textarea style=\"display: none;\"  name=\"${formContent}\" id=\"${formContent}\" >${content}</textarea>\n                <textarea    id=\"${formContent}_temp\" rows='10' cols='76'>${content}</textarea>\n            </td>\n        </tr>\n        <tr>\n            <td colspan=\"2\" style=\"border:1px #ecc197 solid;COLOR: #ff6600;FONT-SIZE: 9pt;PADDING-BOTTOM: 3px;PADDING-LEFT: 3px;BACKGROUND-COLOR: #ffffec;PADDING-RIGHT: 3px;FONT-FAMILY: 宋体;FONT-WEIGHT: bold;PADDING-TOP: 3px;\">\n               <#if ischeckcode> <SPAN style=\"FONT-WEIGHT: bold; FONT-SIZE: 9pt; COLOR: #2f7195; TEXT-DECORATION: none\">请输入验证码：</SPAN>\n                <input name=\"${formYanzheng}\" id=\"${formYanzheng}\" type=\"text\" style=\"background-color: #FFFFFF;height: 20px;width: 100px;border: 1px solid #BAD3E6;\" size=\"6\" maxlength=\"4\" /> \n                <img border=\"0\" src=\"${YanzhengImgSrc}\"/></#if>\n                <#if isLogin=='1'>\n                    <#if isSetDept=='1'>\n                        <span>请先设置本栏目绑定的部门</span>\n                    <#else>\n                        <INPUT type=\"submit\" value=\"提交\" style=\"cursor: hand;\">\n                    </#if>\n                <#else>\n                    <span>请先登录</span>\n                </#if>\n            </td>\n        </tr>\n    </TABLE>\n</FORM>\n<script type=\"text/javascript\">\nfunction _tpladdmsg_sendmessage${uuid}(obj)\n{\n    <#if isExistDept>\n         alert(\"提交部门与维护部门不一致,请联系管理员!\");\n         return false;\n    </#if>\n    <#if isSetDept=='1'>\n    if(obj.${formDept})\n    {\n        var wbdeptcode = obj.${formDept}.value;\n        if(wbdeptcode==null||wbdeptcode==\"\"||wbdeptcode==\"-1\")\n        {\n            alert(\"请选择部门!\");\n            return false;\n        }\n    }\n    </#if>\n    if(obj.${formIdcard})\n    {\n        var value = obj.${formIdcard}.value;\n        if(value!=null&&value!=\"\")\n        {\n            var re = /^[0-9][0-9a-z]*$/;\n            if(!re.test(value))\n            {\n                alert(\"身份证号码是15或18位的数字或数字加字母\");\n                obj.${formIdcard}.focus();\n                return false;\n            }\n            if(value.length!=15 && value.length != 18)\n            {\n                alert(\"身份证长度不对\");\n                obj.${formIdcard}.focus();\n                return false;\n            }\n        }\n    }\n    if(obj.${formTelphone})\n    {\n        var wbtelphone = obj.${formTelphone}.value;\n        if(wbtelphone!=\"\"&&wbtelphone!=null)\n        {\n             if(!ValidateUtil.isMobile(wbtelphone))\n             {\n                alert(\"请输入正确的手机号码!\");\n                return false;\n             }\n        }\n    }\n    if(obj.${formPhone})\n    {\n        var wbphone = obj.${formPhone}.value;\n        if(wbphone!=\"\"&&wbphone!=null)\n        {\n           var reg1 =/^\\d{7,8}|\\d{2,5}-\\d{7,8}|\\d{2,5}-\\d{7,8}(-\\d{1,})?$/;\n           if(!reg1.test(wbphone))\n           {\n               alert(\"固定电话可以是7或8位的座机号，可以是000-00000000-000格式的号码\");\n               return false;\n           }\n        }\n    }\n    var email = obj.${formEmail}_temp.value;\n    if(email!=\"\"&&email!=null)\n    {\n        if(!ValidateUtil.isEmail(email))\n        {\n            alert(\"邮箱格式有误!\");\n            return false;\n        }\n    }\n    var wbtitle = obj.${formTitle}_temp.value;\n    wbtitle = trim(wbtitle);\n    if(wbtitle==\"\"||wbtitle==null){\n        alert(\"标题不能为空!\");\n        return false;\n    }\n    \n   var content_temp_value = ValidateUtil.trim(document.getElementById(\"${formContent}_temp\").value);\n   if(content_temp_value==null||content_temp_value==undefined||content_temp_value == \"\")\n    {\n          alert(\"发言内容不能为空!\");\n          return false;\n    }\n\n    if(obj.${formYanzheng})\n    {\n        var yanzheng = obj.${formYanzheng}.value;\n        yanzheng = trim(yanzheng);\n        if(yanzheng==\"\"||yanzheng==null){\n            alert(\"验证码不能为空!\");\n            return false;\n        }\n    }\n    if(document.getElementById(\"${formName}_temp\"))\n    {\n        document.getElementById(\"${formName}\").value=new  Base64().encode(document.getElementById(\"${formName}_temp\").value);\n        document.getElementById(\"${formName}_temp\").disabled=true;\n    }\n    if(document.getElementById(\"${formAddress}_temp\"))\n    {\n        document.getElementById(\"${formAddress}\").value=new  Base64().encode(document.getElementById(\"${formAddress}_temp\").value);\n        document.getElementById(\"${formAddress}_temp\").disabled=true;\n    }\n    if(document.getElementById(\"${formEmail}_temp\"))\n    {\n        document.getElementById(\"${formEmail}\").value=new  Base64().encode(document.getElementById(\"${formEmail}_temp\").value);\n        document.getElementById(\"${formEmail}_temp\").disabled=true;\n    }\n    if(document.getElementById(\"${formUnit}_temp\"))\n    {\n        document.getElementById(\"${formUnit}\").value=new  Base64().encode(document.getElementById(\"${formUnit}_temp\").value);\n        document.getElementById(\"${formUnit}_temp\").disabled=true;\n    }\n    if(document.getElementById(\"${formTitle}_temp\"))\n    {\n        document.getElementById(\"${formTitle}\").value=new  Base64().encode(document.getElementById(\"${formTitle}_temp\").value);\n        document.getElementById(\"${formTitle}_temp\").disabled=true;\n    }\n    document.getElementById(\"${formContent}\").value=new  Base64().encode(document.getElementById(\"${formContent}_temp\").value);\n    document.getElementById(\"${formContent}_temp\").disabled=true;\n    <#if storageOpen >\n       var attachsize = ${attachSize};\n       var needuploadfilesize = 0;\n       for(var i=0;i<attachsize;i++)\n       {  \n           var obj = document.getElementById(\"attach\"+i);\n\t\t   var objv = obj.value;\n\t\t   if(objv.lastIndexOf(\"\\\\\")>0&&objv.lastIndexOf(\",\")>0){\n\t\t\t  var attav = objv.substr(objv.lastIndexOf(\"\\\\\")+1);\n\t\t\t  if(attav.lastIndexOf(\",\")>0){\n\t\t\t \t alert(\"附件名称中不能带有英文逗号!\");\n\t\t\t\t return false;\n\t\t\t  }\n\t\t   }\n           if(obj&&obj.value!=null&&obj.value!=\"\"&&obj.value.length>0)\n           {\n               needuploadfilesize++;  \n           }  \n       }\n       if(needuploadfilesize>0)\n       {\n           //启动云存储调用\n           storage.startStatusCheck();\n           handleshow();\n       }\n    </#if>    \n    return true;\n}\n//显示上传进度\nfunction handleshow()\n{\n    document.getElementById(\"status\").style.display=\"\";\n    document.getElementById(\"govitemcontent{uuid}\").style.display=\"none\";\n}\n//隐藏上传进度\nfunction handlehidden()\n{\n    document.getElementById(\"status\").style.display=\"none\";\n    document.getElementById(\"govitemcontent{uuid}\").style.display=\"\";\n}\n//云存储处理完成后回调的参数\nfunction handlesucceedfunction(json)\n{\n    if(json.file.length>0)\n    { \n        var fileinfo = \"\";\n        for(var i=0;i<json.file.length;i++)\n        {\n             var file = json.file[i];\n             var showname = file.wbshowname;\n             var fileext  = file.wbfileext;\n             var filelength = file.wblength;\n             var shorturl = file.wbshorturl;\n             fileinfo = fileinfo+shorturl+\";\"+showname+\";\"+fileext+\";\"+filelength+\"@\";\n        } \n        document.getElementById(\"wbuploadpath\").value = fileinfo;\n    } \n    storage.recoverForm();\n    if(json.errorinfo==\"\")\n    {\n        document.getElementById('${form}').submit();\n    }\n}\n${storgeFun}\n</script>\n</#if>",
+  "exampleTemplate": "",
+  "previousFixtureHashes": [
+    "5c261f9e",
+    "29ce5b26"
+  ],
+  "css": "",
+  "fixture": {
+    "viewid": "1068",
+    "uid": "u_demo",
+    "uniqueClassName": "c_demo",
+    "searchcode": "查询码",
+    "deptCode": "部门参数",
+    "showselectdept": true,
+    "form": "表单名称",
+    "isLogin": "是否需要登陆",
+    "isSetDept": "是否需要设置栏目绑定部门",
+    "isattach": 6,
+    "ischeckcode": true,
+    "deptconfig": "是否按照栏目绑定的部门",
+    "isExistDept": true,
+    "hiddenFiled": "隐藏表单",
+    "formDept": "部门表单名称",
+    "deptSize": "12",
+    "formName": "boda_demo",
+    "name": "示例名称",
+    "formSex": "性别表单名称",
+    "sex": "性别",
+    "formIdcard": "身份证号表单名称",
+    "idCard": "身份证号",
+    "formTelphone": "",
+    "telphone": "",
+    "formAddress": "联系方式表单名称",
+    "address": "联系方式",
+    "formPhone": "",
+    "phone": "",
+    "formEmail": "",
+    "email": "",
+    "formUnit": "单位表单名称",
+    "unit": "单位",
+    "attachSize": "12",
+    "formTitle": "把课堂搬进山野，让知识连接更广阔的世界",
+    "title": "把课堂搬进山野，让知识连接更广阔的世界",
+    "formContent": "内容表单名称",
+    "content": "<p>这里是组件的示例正文。你可以修改模板结构和 CSS，实时观察内容排版的变化。</p><p>所有内容均为本地演示数据，可在“示例数据”中自由编辑。</p>",
+    "contentEditUrl": "#preview",
+    "formFrameContent": "内容编辑器Iframe名称",
+    "formYanzheng": "验证码表单名称",
+    "YanzhengImgSrc": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+    "uuid": "boda_demo",
+    "action": "#preview",
+    "list_dept": [
+      {
+        "code": "部门编码",
+        "name": "示例名称",
+        "pos": 1
+      },
+      {
+        "code": "部门编码",
+        "name": "示例名称",
+        "pos": 2
+      },
+      {
+        "code": "部门编码",
+        "name": "示例名称",
+        "pos": 3
+      },
+      {
+        "code": "部门编码",
+        "name": "示例名称",
+        "pos": 4
+      },
+      {
+        "code": "部门编码",
+        "name": "示例名称",
+        "pos": 5
+      }
+    ],
+    "list_attach": [
+      {
+        "formAttach": "附件表单名称"
+      },
+      {
+        "formAttach": "附件表单名称"
+      }
+    ],
+    "storageOpen": true,
+    "storgeFun": "示例内容"
+  }
+}

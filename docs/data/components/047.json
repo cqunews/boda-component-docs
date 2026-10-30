@@ -1,0 +1,103 @@
+{
+  "id": "047",
+  "index": 47,
+  "name": "自定义查询入口",
+  "category": "自定义组件",
+  "parameterCount": 5,
+  "hasScript": false,
+  "templateLength": 610,
+  "parameters": [
+    {
+      "name": "通用参数",
+      "parameter": "commonparam",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件id",
+      "parameter": "viewid",
+      "type": "String",
+      "syntax": "${viewid}",
+      "descriptionHtml": "组件本身的id，数字(形如 1001)",
+      "description": "组件本身的id，数字(形如 1001)",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件uid",
+      "parameter": "uid",
+      "type": "String",
+      "syntax": "${uid}",
+      "descriptionHtml": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "description": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "私有样式类名",
+      "parameter": "uniqueClassName",
+      "type": "String",
+      "syntax": "${uniqueClassName}",
+      "descriptionHtml": "用在私有样式表的类名上，字符串(形如 c10)，举例：<br>&lt;span class=\"<span style=\"color:red\">${uniqueClassName}</span>\" &gt;文字&lt;/span&gt;",
+      "description": "用在私有样式表的类名上，字符串(形如 c10)，举例：\n<span class=\"${uniqueClassName}\" >文字</span>",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<span class=\"${uniqueClassName}\" >文字</span>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "引入jQuery类库",
+      "parameter": "v_includeJquery",
+      "type": "Function",
+      "syntax": "${v_includeJquery()}",
+      "descriptionHtml": "引入系统自带的JQuery类库;<br> 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "description": "引入系统自带的JQuery类库;\n 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "\n<!--引入jQuery-->${v_includeJquery()}<!--引入jQuery完成-->\n",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "查询结果页地址",
+      "parameter": "resultUrl",
+      "type": "URL",
+      "syntax": "${resultUrl}",
+      "descriptionHtml": "查询结果页地址",
+      "description": "查询结果页地址",
+      "kind": "parameter",
+      "path": []
+    }
+  ],
+  "template": "<#-- \n以下所有代码是一段样例代码，您可以按照您的需求，去编写样式代码。\n-->\n<form action='${resultUrl}' method='post' name='custom_search_vsb'  style=\"display: inline;\">\n <table border='0' cellspacing=\"1\" cellpadding=\"0\" >\n  <tr>\n   <td Valign=\"middle\" nowrap=\"nowrap\" height=\"22\">\n         <span style=\"font-size:9pt;\">站内搜索：</span>\n   </td>\n   <td>\n       <input size='12' name='wbtitle' style=\"height:22px\"  >\n   </td>\n   <td align=\"absmiddle\" nowrap=\"nowrap\" height=\"1\">\n       <input type=\"image\" src=\"/system/resource/images/research/seach22.gif\" align=\"absmiddle\" valign=\"bottom\" style=\"cursor: hand\" >\n   </td>\n  </tr>\n </table>\n</form>",
+  "exampleTemplate": "",
+  "previousFixtureHashes": [
+    "1caf7ec"
+  ],
+  "css": "",
+  "fixture": {
+    "viewid": "1047",
+    "uid": "u_demo",
+    "uniqueClassName": "c_demo",
+    "resultUrl": "#preview"
+  }
+}

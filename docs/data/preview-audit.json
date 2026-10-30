@@ -1,0 +1,1217 @@
+{
+  "total": 122,
+  "originalEmpty": 3,
+  "previewEmpty": 8,
+  "invalidImages": 0,
+  "adapted": 49,
+  "rows": [
+    {
+      "id": "001",
+      "name": "LOGO",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [],
+      "invalidImages": 0,
+      "images": 1
+    },
+    {
+      "id": "002",
+      "name": "主页|收藏",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "003",
+      "name": "版权",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "004",
+      "name": "文字计数器",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [
+        "访问计数使用 _previewVisitCount 演示数值，未连接统计接口"
+      ],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "005",
+      "name": "计数器",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [],
+      "invalidImages": 0,
+      "images": 1
+    },
+    {
+      "id": "006",
+      "name": "外部计数器",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "007",
+      "name": "单位简介",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "008",
+      "name": "二维码",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [
+        "二维码由浏览器根据示例 text 生成，未执行原模板脚本"
+      ],
+      "invalidImages": 0,
+      "images": 1
+    },
+    {
+      "id": "009",
+      "name": "多屏切换",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "010",
+      "name": "网站导航",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "011",
+      "name": "当前位置",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "012",
+      "name": "栏目名称",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "013",
+      "name": "标题列表",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "014",
+      "name": "静态翻页列表",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "015",
+      "name": "翻页标题列表",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "016",
+      "name": "单篇正文",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "017",
+      "name": "多列标题列表",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "018",
+      "name": "图片文章列表",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [],
+      "invalidImages": 0,
+      "images": 6
+    },
+    {
+      "id": "019",
+      "name": "文章心情列表",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [],
+      "invalidImages": 0,
+      "images": 1
+    },
+    {
+      "id": "020",
+      "name": "文章内容",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "021",
+      "name": "相关组图",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [
+        "相关组图使用 _previewRelatedNews 演示数据填充，未访问博达接口"
+      ],
+      "invalidImages": 0,
+      "images": 3
+    },
+    {
+      "id": "022",
+      "name": "组图内容",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [
+        "2 张图片依赖原站资源或缺少地址，已使用演示图片替代",
+        "组图展示示例数据中的首图和缩略图，切换行为依赖博达运行环境"
+      ],
+      "invalidImages": 0,
+      "images": 3
+    },
+    {
+      "id": "023",
+      "name": "链接列表",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "024",
+      "name": "图片列表",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [],
+      "invalidImages": 0,
+      "images": 5
+    },
+    {
+      "id": "025",
+      "name": "图片翻页列表",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [],
+      "invalidImages": 0,
+      "images": 5
+    },
+    {
+      "id": "026",
+      "name": "滚动图片",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [],
+      "invalidImages": 0,
+      "images": 5
+    },
+    {
+      "id": "027",
+      "name": "超文本",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "028",
+      "name": "装饰图片",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [],
+      "invalidImages": 0,
+      "images": 1
+    },
+    {
+      "id": "029",
+      "name": "装饰文字",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "030",
+      "name": "会员登录入口",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [
+        "已将 1 个依赖博达图片资源的按钮显示为文字按钮"
+      ],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "031",
+      "name": "用户注册",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [
+        "2 张图片依赖原站资源或缺少地址，已使用演示图片替代"
+      ],
+      "invalidImages": 0,
+      "images": 2
+    },
+    {
+      "id": "032",
+      "name": "简单检索",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "033",
+      "name": "复杂检索",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [
+        "已将 1 个依赖博达图片资源的按钮显示为文字按钮"
+      ],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "034",
+      "name": "全文检索",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [
+        "已将 1 个依赖博达图片资源的按钮显示为文字按钮"
+      ],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "035",
+      "name": "检索结果",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [
+        "1 处原站背景图未连接，已移除；白色文字区域使用演示底色",
+        "已将 1 个依赖博达图片资源的按钮显示为文字按钮"
+      ],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "036",
+      "name": "简单检索",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [
+        "1 处原站背景图未连接，已移除；白色文字区域使用演示底色",
+        "已将 1 个依赖博达图片资源的按钮显示为文字按钮"
+      ],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "037",
+      "name": "简单检索结果",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "038",
+      "name": "复杂检索",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [
+        "已将 1 个依赖博达图片资源的按钮显示为文字按钮"
+      ],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "039",
+      "name": "复杂检索结果",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "040",
+      "name": "第三方搜索",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [
+        "1 张图片依赖原站资源或缺少地址，已使用演示图片替代"
+      ],
+      "invalidImages": 0,
+      "images": 1
+    },
+    {
+      "id": "041",
+      "name": "在线投稿",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [
+        "1 张图片依赖原站资源或缺少地址，已使用演示图片替代",
+        "已将 1 个依赖博达图片资源的按钮显示为文字按钮"
+      ],
+      "invalidImages": 0,
+      "images": 1
+    },
+    {
+      "id": "042",
+      "name": "招聘信息",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "043",
+      "name": "应聘信息",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "044",
+      "name": "静态自定义DIV组件",
+      "originalEmpty": false,
+      "previewEmpty": true,
+      "adaptations": [],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "045",
+      "name": "动态自定义DIV组件",
+      "originalEmpty": false,
+      "previewEmpty": true,
+      "adaptations": [],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "046",
+      "name": "外部广告代码",
+      "originalEmpty": false,
+      "previewEmpty": true,
+      "adaptations": [],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "047",
+      "name": "自定义查询入口",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [
+        "已将 1 个依赖博达图片资源的按钮显示为文字按钮"
+      ],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "048",
+      "name": "自定义查询结果",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "049",
+      "name": "栏目文章数统计",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "050",
+      "name": "在线人数统计",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "051",
+      "name": "栏目点击统计",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "052",
+      "name": "管理员文章数统计",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "053",
+      "name": "站点访问量排名",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "054",
+      "name": "站点信息量排名",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "055",
+      "name": "问卷归档列表",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "056",
+      "name": "网站列表",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [],
+      "invalidImages": 0,
+      "images": 5
+    },
+    {
+      "id": "057",
+      "name": "网站翻页列表",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [],
+      "invalidImages": 0,
+      "images": 5
+    },
+    {
+      "id": "058",
+      "name": "腾讯微博秀",
+      "originalEmpty": false,
+      "previewEmpty": true,
+      "adaptations": [],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "059",
+      "name": "新浪微博秀",
+      "originalEmpty": false,
+      "previewEmpty": true,
+      "adaptations": [],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "060",
+      "name": "类型列表",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "061",
+      "name": "检索范围",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "062",
+      "name": "时间范围",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "063",
+      "name": "排序方式",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "064",
+      "name": "检索入口",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "065",
+      "name": "检索结果",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "066",
+      "name": "数据查询入口",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "067",
+      "name": "数据查询结果",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "068",
+      "name": "提交信息",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "069",
+      "name": "翻页列表",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "070",
+      "name": "信息详细",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "071",
+      "name": "信息搜索",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [
+        "1 张图片依赖原站资源或缺少地址，已使用演示图片替代"
+      ],
+      "invalidImages": 0,
+      "images": 1
+    },
+    {
+      "id": "072",
+      "name": "搜索结果",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [
+        "1 张图片依赖原站资源或缺少地址，已使用演示图片替代"
+      ],
+      "invalidImages": 0,
+      "images": 1
+    },
+    {
+      "id": "073",
+      "name": "标题列表",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [
+        "5 张图片依赖原站资源或缺少地址，已使用演示图片替代"
+      ],
+      "invalidImages": 0,
+      "images": 5
+    },
+    {
+      "id": "074",
+      "name": "标题带回复列表",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [
+        "10 张图片依赖原站资源或缺少地址，已使用演示图片替代"
+      ],
+      "invalidImages": 0,
+      "images": 10
+    },
+    {
+      "id": "075",
+      "name": "部门列表",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [
+        "5 张图片依赖原站资源或缺少地址，已使用演示图片替代"
+      ],
+      "invalidImages": 0,
+      "images": 5
+    },
+    {
+      "id": "076",
+      "name": "部门信息列表",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "077",
+      "name": "公众参与个人信息列表",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [
+        "1 处原站背景图未连接，已移除；白色文字区域使用演示底色"
+      ],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "078",
+      "name": "公众参与统计",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "079",
+      "name": "公众参与全文检索",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [
+        "已将 1 个依赖博达图片资源的按钮显示为文字按钮"
+      ],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "080",
+      "name": "公众参与全文检索结果",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [
+        "10 张图片依赖原站资源或缺少地址，已使用演示图片替代",
+        "已将 1 个依赖博达图片资源的按钮显示为文字按钮"
+      ],
+      "invalidImages": 0,
+      "images": 10
+    },
+    {
+      "id": "081",
+      "name": "部门列表",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [
+        "5 张图片依赖原站资源或缺少地址，已使用演示图片替代"
+      ],
+      "invalidImages": 0,
+      "images": 5
+    },
+    {
+      "id": "082",
+      "name": "领导列表",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [
+        "5 张图片依赖原站资源或缺少地址，已使用演示图片替代"
+      ],
+      "invalidImages": 0,
+      "images": 5
+    },
+    {
+      "id": "083",
+      "name": "信件类型列表",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [
+        "5 张图片依赖原站资源或缺少地址，已使用演示图片替代"
+      ],
+      "invalidImages": 0,
+      "images": 5
+    },
+    {
+      "id": "084",
+      "name": "信件列表",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [
+        "1 处原站背景图未连接，已移除；白色文字区域使用演示底色"
+      ],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "085",
+      "name": "典型信件翻页列表",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [
+        "1 处原站背景图未连接，已移除；白色文字区域使用演示底色"
+      ],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "086",
+      "name": "典型信件标题列表",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [
+        "1 处原站背景图未连接，已移除；白色文字区域使用演示底色"
+      ],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "087",
+      "name": "信件标题列表",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [
+        "1 处原站背景图未连接，已移除；白色文字区域使用演示底色"
+      ],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "088",
+      "name": "信件详细",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [
+        "2 张图片依赖原站资源或缺少地址，已使用演示图片替代"
+      ],
+      "invalidImages": 0,
+      "images": 2
+    },
+    {
+      "id": "089",
+      "name": "信件投票",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [
+        "3 处原站背景图未连接，已移除；白色文字区域使用演示底色",
+        "已将 1 个依赖博达图片资源的按钮显示为文字按钮"
+      ],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "090",
+      "name": "简单查询",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [
+        "已将 1 个依赖博达图片资源的按钮显示为文字按钮"
+      ],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "091",
+      "name": "简单查询结果",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [
+        "2 张图片依赖原站资源或缺少地址，已使用演示图片替代",
+        "已将 1 个依赖博达图片资源的按钮显示为文字按钮"
+      ],
+      "invalidImages": 0,
+      "images": 2
+    },
+    {
+      "id": "092",
+      "name": "复杂查询",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [
+        "已将 1 个依赖博达图片资源的按钮显示为文字按钮"
+      ],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "093",
+      "name": "复杂查询结果",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [
+        "1 处原站背景图未连接，已移除；白色文字区域使用演示底色"
+      ],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "094",
+      "name": "部门统计",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "095",
+      "name": "领导统计",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "096",
+      "name": "部门领导统计",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "097",
+      "name": "信件审核状态列表",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "098",
+      "name": "信件处理流程",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [
+        "4 张图片依赖原站资源或缺少地址，已使用演示图片替代"
+      ],
+      "invalidImages": 0,
+      "images": 4
+    },
+    {
+      "id": "099",
+      "name": "信件内容列表",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "100",
+      "name": "个人信件列表",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [
+        "1 处原站背景图未连接，已移除；白色文字区域使用演示底色"
+      ],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "101",
+      "name": "领导信箱全文检索",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [
+        "已将 1 个依赖博达图片资源的按钮显示为文字按钮"
+      ],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "102",
+      "name": "领导信箱全文检索结果",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [
+        "10 张图片依赖原站资源或缺少地址，已使用演示图片替代",
+        "已将 1 个依赖博达图片资源的按钮显示为文字按钮"
+      ],
+      "invalidImages": 0,
+      "images": 10
+    },
+    {
+      "id": "103",
+      "name": "博硕导教师列表",
+      "originalEmpty": true,
+      "previewEmpty": true,
+      "adaptations": [],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "104",
+      "name": "学院列表",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "105",
+      "name": "职称教师列表",
+      "originalEmpty": true,
+      "previewEmpty": true,
+      "adaptations": [],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "106",
+      "name": "系所教师列表",
+      "originalEmpty": true,
+      "previewEmpty": true,
+      "adaptations": [],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "107",
+      "name": "高级检索入口",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "108",
+      "name": "高级检索结果",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [
+        "已根据示例数据补全 3 张由博达脚本加载的教师图片，并提供基础列表排版",
+        "已填充教师列表的模拟分页计数"
+      ],
+      "invalidImages": 0,
+      "images": 3
+    },
+    {
+      "id": "109",
+      "name": "学科列表",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "110",
+      "name": "系列表",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "111",
+      "name": "职称列表",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "112",
+      "name": "教师翻页列表",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [
+        "已根据示例数据补全 3 张由博达脚本加载的教师图片，并提供基础列表排版",
+        "已填充教师列表的模拟分页计数"
+      ],
+      "invalidImages": 0,
+      "images": 3
+    },
+    {
+      "id": "113",
+      "name": "拼音列表",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "114",
+      "name": "拼音教师翻页列表",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [
+        "已根据示例数据补全 3 张由博达脚本加载的教师图片，并提供基础列表排版",
+        "已填充教师列表的模拟分页计数"
+      ],
+      "invalidImages": 0,
+      "images": 3
+    },
+    {
+      "id": "115",
+      "name": "最近更新教师列表",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [
+        "已根据示例数据补全 3 张由博达脚本加载的教师图片，并提供基础列表排版"
+      ],
+      "invalidImages": 0,
+      "images": 3
+    },
+    {
+      "id": "116",
+      "name": "热点教师列表",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [
+        "已根据示例数据补全 3 张由博达脚本加载的教师图片，并提供基础列表排版"
+      ],
+      "invalidImages": 0,
+      "images": 3
+    },
+    {
+      "id": "117",
+      "name": "学院荣誉列表",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [],
+      "invalidImages": 0,
+      "images": 0
+    },
+    {
+      "id": "119",
+      "name": "教师类型学院教师列表",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [
+        "已根据示例数据补全 6 张由博达脚本加载的教师图片，并提供基础列表排版"
+      ],
+      "invalidImages": 0,
+      "images": 6
+    },
+    {
+      "id": "120",
+      "name": "职称学院教师列表",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [
+        "已根据示例数据补全 75 张由博达脚本加载的教师图片，并提供基础列表排版"
+      ],
+      "invalidImages": 0,
+      "images": 75
+    },
+    {
+      "id": "121",
+      "name": "学院学科教师翻页列表",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [
+        "已根据示例数据补全 3 张由博达脚本加载的教师图片，并提供基础列表排版",
+        "已填充教师列表的模拟分页计数"
+      ],
+      "invalidImages": 0,
+      "images": 3
+    },
+    {
+      "id": "122",
+      "name": "学院职称教师列表",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [
+        "已根据示例数据补全 15 张由博达脚本加载的教师图片，并提供基础列表排版"
+      ],
+      "invalidImages": 0,
+      "images": 15
+    },
+    {
+      "id": "123",
+      "name": "学院学科教师列表",
+      "originalEmpty": false,
+      "previewEmpty": false,
+      "adaptations": [
+        "已根据示例数据补全 15 张由博达脚本加载的教师图片，并提供基础列表排版"
+      ],
+      "invalidImages": 0,
+      "images": 15
+    }
+  ]
+}

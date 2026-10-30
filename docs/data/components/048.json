@@ -1,0 +1,185 @@
+{
+  "id": "048",
+  "index": 48,
+  "name": "自定义查询结果",
+  "category": "自定义组件",
+  "parameterCount": 9,
+  "hasScript": false,
+  "templateLength": 607,
+  "parameters": [
+    {
+      "name": "通用参数",
+      "parameter": "commonparam",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件id",
+      "parameter": "viewid",
+      "type": "String",
+      "syntax": "${viewid}",
+      "descriptionHtml": "组件本身的id，数字(形如 1001)",
+      "description": "组件本身的id，数字(形如 1001)",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件uid",
+      "parameter": "uid",
+      "type": "String",
+      "syntax": "${uid}",
+      "descriptionHtml": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "description": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "私有样式类名",
+      "parameter": "uniqueClassName",
+      "type": "String",
+      "syntax": "${uniqueClassName}",
+      "descriptionHtml": "用在私有样式表的类名上，字符串(形如 c10)，举例：<br>&lt;span class=\"<span style=\"color:red\">${uniqueClassName}</span>\" &gt;文字&lt;/span&gt;",
+      "description": "用在私有样式表的类名上，字符串(形如 c10)，举例：\n<span class=\"${uniqueClassName}\" >文字</span>",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<span class=\"${uniqueClassName}\" >文字</span>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "引入jQuery类库",
+      "parameter": "v_includeJquery",
+      "type": "Function",
+      "syntax": "${v_includeJquery()}",
+      "descriptionHtml": "引入系统自带的JQuery类库;<br> 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "description": "引入系统自带的JQuery类库;\n 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "\n<!--引入jQuery-->${v_includeJquery()}<!--引入jQuery完成-->\n",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "错误信息",
+      "parameter": "errormessage",
+      "type": "String",
+      "syntax": "${errormessage}",
+      "descriptionHtml": "其他参数",
+      "description": "其他参数",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "结果条数",
+      "parameter": "count",
+      "type": "Integer",
+      "syntax": "${count}",
+      "descriptionHtml": "查询的结果条数",
+      "description": "查询的结果条数",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "是否预览",
+      "parameter": "ispreview",
+      "type": "Boolean",
+      "syntax": "${ispreview}",
+      "descriptionHtml": "是否预览",
+      "description": "是否预览",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "CSS分页栏",
+      "parameter": "cssPageBar",
+      "type": "cssPageBar",
+      "syntax": "${cssPageBar}",
+      "descriptionHtml": "可以使用css样式表定义的翻页列表的分页栏, 请使用右侧按钮配置要使用的样式",
+      "description": "可以使用css样式表定义的翻页列表的分页栏, 请使用右侧按钮配置要使用的样式",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "${includePageBarCss}<div style=\"margin-top:10px;text-align:center;\" class=\"pb_sys_common pb_sys_normal pb_sys_style1\"><span class=\"p_t\">共${totalCount}条</span> ${cssPageBar}</div><#--分页表头-->",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "配置样式",
+      "parameter": null,
+      "type": null,
+      "syntax": "${cssPageBar}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "结果列表",
+      "parameter": "list_result",
+      "type": "List",
+      "syntax": "<#list list_result as result>\n</#list>",
+      "descriptionHtml": "结果列表",
+      "description": "结果列表",
+      "kind": "parameter",
+      "path": []
+    }
+  ],
+  "template": "<#--\n以下所有代码是一段样例代码，您可以按照您的需求，去编写样式代码。\n编写说明：首先要在样式配置里配置好sql语句的查询条件字段和查询结果字段，\n然后在内容配置里写好你的sql语句，sql语句的条件字段和结果字段必须和样式配置里的保持一致\n例如：select wbtitle from wbnews where wbtitle like '%$wbtitle%'；\n条件内所用到的值都用$和字段来表示\n查询的结果字段在展现的时候直接用 ${result.结果字段}。\n您也可以不带查询条件，直接写好sql，就可以直接展示一些内容，类似于标题列表，翻页列表。\n前提是您对表结构和sql语句必须熟悉\n-->\n<div style=\"font-size:9pt\">\n<ul>\n<#list list_result as result>\n<li>${result.wbtitle}</li>\n</#list>\n</ul>\n</div>\n ${includePageBarCss}<div style=\"margin-top:10px;text-align:center;\" class=\"pb_sys_common pb_sys_normal pb_sys_style1\"><span class=\"p_t\">共${totalCount}条</span> ${cssPageBar}</div><#--分页表头-->",
+  "exampleTemplate": "",
+  "previousFixtureHashes": [
+    "f1661740"
+  ],
+  "css": "",
+  "fixture": {
+    "viewid": "1048",
+    "uid": "u_demo",
+    "uniqueClassName": "c_demo",
+    "errormessage": "错误信息",
+    "count": 6,
+    "ispreview": true,
+    "cssPageBar": "CSS分页栏",
+    "list_result": [
+      {
+        "wbtitle": "把课堂搬进山野，让知识连接更广阔的世界"
+      },
+      {
+        "wbtitle": "校园开放日｜在这里，遇见新的可能"
+      },
+      {
+        "wbtitle": "关于举办青年学术交流活动的通知"
+      },
+      {
+        "wbtitle": "图书馆秋季阅读计划正式启动"
+      },
+      {
+        "wbtitle": "探索与创新：青年研究者的校园故事"
+      }
+    ],
+    "includePageBarCss": "示例内容",
+    "totalCount": "12"
+  }
+}

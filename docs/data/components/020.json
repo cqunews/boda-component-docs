@@ -1,0 +1,1713 @@
+{
+  "id": "020",
+  "index": 20,
+  "name": "文章内容",
+  "category": "文章内容",
+  "parameterCount": 101,
+  "hasScript": false,
+  "templateLength": 2447,
+  "parameters": [
+    {
+      "name": "通用参数",
+      "parameter": "commonparam",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件id",
+      "parameter": "viewid",
+      "type": "String",
+      "syntax": "${viewid}",
+      "descriptionHtml": "组件本身的id，数字(形如 1001)",
+      "description": "组件本身的id，数字(形如 1001)",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件uid",
+      "parameter": "uid",
+      "type": "String",
+      "syntax": "${uid}",
+      "descriptionHtml": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "description": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "私有样式类名",
+      "parameter": "uniqueClassName",
+      "type": "String",
+      "syntax": "${uniqueClassName}",
+      "descriptionHtml": "用在私有样式表的类名上，字符串(形如 c10)，举例：<br>&lt;span class=\"<span style=\"color:red\">${uniqueClassName}</span>\" &gt;文字&lt;/span&gt;",
+      "description": "用在私有样式表的类名上，字符串(形如 c10)，举例：\n<span class=\"${uniqueClassName}\" >文字</span>",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<span class=\"${uniqueClassName}\" >文字</span>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "引入jQuery类库",
+      "parameter": "v_includeJquery",
+      "type": "Function",
+      "syntax": "${v_includeJquery()}",
+      "descriptionHtml": "引入系统自带的JQuery类库;<br> 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "description": "引入系统自带的JQuery类库;\n 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "\n<!--引入jQuery-->${v_includeJquery()}<!--引入jQuery完成-->\n",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "文章ID",
+      "parameter": "id",
+      "type": "String",
+      "syntax": "${id}",
+      "descriptionHtml": "文章编号ID",
+      "description": "文章编号ID",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "栏目ID",
+      "parameter": "treeId",
+      "type": "String",
+      "syntax": "${treeId}",
+      "descriptionHtml": "文章所在栏目ID",
+      "description": "文章所在栏目ID",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "原标题",
+      "parameter": "title",
+      "type": "String",
+      "syntax": "${title}",
+      "descriptionHtml": "文章的原始标题，不建议直接输出",
+      "description": "文章的原始标题，不建议直接输出",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "显示标题",
+      "parameter": "showTitle",
+      "type": "String",
+      "syntax": "${showTitle}",
+      "descriptionHtml": "显示用的标题，调整过格式并可配置长度限制",
+      "description": "显示用的标题，调整过格式并可配置长度限制",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<h1 style=\"${cssTitleColor}\">${showTitle}</h1>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "脚本标题",
+      "parameter": "jsTitle",
+      "type": "String",
+      "syntax": " title=\"${jsTitle}\" ",
+      "descriptionHtml": "Html元素的\"title\"用于js脚本调用时使用",
+      "description": "Html元素的\"title\"用于js脚本调用时使用",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "提示标题",
+      "parameter": "tipsTitle",
+      "type": "String",
+      "syntax": "${tipsTitle}",
+      "descriptionHtml": "Html元素的\"title\"属性专用，显示提示，专门调整过格式",
+      "description": "Html元素的\"title\"属性专用，显示提示，专门调整过格式",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "标题颜色",
+      "parameter": "titleColor",
+      "type": "String",
+      "syntax": "${titleColor}",
+      "descriptionHtml": "文章标题的颜色，未设置则为空",
+      "description": "文章标题的颜色，未设置则为空",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "标题样式颜色",
+      "parameter": "cssTitleColor",
+      "type": "String",
+      "syntax": "${cssTitleColor}",
+      "descriptionHtml": "适合放在样式内的文章标题颜色<br><br>未设置时为空字符串<br>设置的话形如 \"color:#FF8000;\"",
+      "description": "适合放在样式内的文章标题颜色\n\n未设置时为空字符串\n设置的话形如 \"color:#FF8000;\"",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<h1 style=\"${cssTitleColor}\">${showTitle}</h1>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "文章下载链接",
+      "parameter": "downloadLink",
+      "type": "URL",
+      "syntax": "${downloadLink}",
+      "descriptionHtml": "文章下载链接(完整的下载链接)",
+      "description": "文章下载链接(完整的下载链接)",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "文章链接",
+      "parameter": "url",
+      "type": "URL",
+      "syntax": "${url}",
+      "descriptionHtml": "文章的链接地址 (不带http和域名的部分)",
+      "description": "文章的链接地址 (不带http和域名的部分)",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "原日期",
+      "parameter": "date",
+      "type": "String",
+      "syntax": "${date}",
+      "descriptionHtml": "文章原始日期，格式为 \"年年年年-月月-日日 时时:分分:秒秒\"，可转换格式",
+      "description": "文章原始日期，格式为 \"年年年年-月月-日日 时时:分分:秒秒\"，可转换格式",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "日期格式化",
+      "parameter": null,
+      "type": null,
+      "syntax": "${v_date(date, \"yyyy-MM-dd HH:mm\")}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "显示日期",
+      "parameter": "showDate",
+      "type": "String",
+      "syntax": "${showDate}",
+      "descriptionHtml": "显示用的文章日期，格式可配置",
+      "description": "显示用的文章日期，格式可配置",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "日期：${showDate}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "原点击数",
+      "parameter": "clickTimes",
+      "type": "String",
+      "syntax": "${clickTimes}",
+      "descriptionHtml": "文章的点击数量，不建议直接输出",
+      "description": "文章的点击数量，不建议直接输出",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "显示点击数",
+      "parameter": "showClickTimes",
+      "type": "String",
+      "syntax": "${showClickTimes}",
+      "descriptionHtml": "显示用的文章的点击数，采用ajax技术自动更新",
+      "description": "显示用的文章的点击数，采用ajax技术自动更新",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "点击：[${showClickTimes}]次",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "栏目名",
+      "parameter": "columnName",
+      "type": "String",
+      "syntax": "${columnName}",
+      "descriptionHtml": "文章所在栏目名称，可配置栏目的层级",
+      "description": "文章所在栏目名称，可配置栏目的层级",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<a href=\"${columnUrl}\">[${columnName}]</a>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "栏目地址",
+      "parameter": "columnUrl",
+      "type": "URL",
+      "syntax": "${columnUrl}",
+      "descriptionHtml": "文章所在栏目地址，可配置栏目的层级",
+      "description": "文章所在栏目地址，可配置栏目的层级",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<a href=\"${columnUrl}\">[${columnName}]</a>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "显示关键字",
+      "parameter": "showTag",
+      "type": "String",
+      "syntax": "${showTag}",
+      "descriptionHtml": "文章的关键字,调整过格式",
+      "description": "文章的关键字,调整过格式",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "显示摘要",
+      "parameter": "showAbstract",
+      "type": "String",
+      "syntax": "${showAbstract}",
+      "descriptionHtml": "文章的摘要,调整过格式",
+      "description": "文章的摘要,调整过格式",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "显示引题",
+      "parameter": "showIntroTitle",
+      "type": "String",
+      "syntax": "${showIntroTitle}",
+      "descriptionHtml": "文章的引题,调整过格式",
+      "description": "文章的引题,调整过格式",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "显示副标题",
+      "parameter": "showSubTitle",
+      "type": "String",
+      "syntax": "${showSubTitle}",
+      "descriptionHtml": "文章的副标题,调整过格式",
+      "description": "文章的副标题,调整过格式",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "标题图地址",
+      "parameter": "titleImgUrl",
+      "type": "String",
+      "syntax": "${titleImgUrl}",
+      "descriptionHtml": "文章的标题图地址",
+      "description": "文章的标题图地址",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "标题视频地址",
+      "parameter": "titleVideoUrl",
+      "type": "String",
+      "syntax": "${titleVideoUrl}",
+      "descriptionHtml": "文章的标题视频地址",
+      "description": "文章的标题视频地址",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "显示资料来源",
+      "parameter": "showSource",
+      "type": "String",
+      "syntax": "<#if hasSourceLink>\n        <a href=\"${sourceLink}\">${showSource}</a>\n        \t<#else>${showSource}\n    </#if>",
+      "descriptionHtml": "文章的资料来源,调整过格式",
+      "description": "文章的资料来源,调整过格式",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "显示文章作者",
+      "parameter": "showAuthor",
+      "type": "String",
+      "syntax": "${showAuthor}",
+      "descriptionHtml": "文章的作者,调整过格式",
+      "description": "文章的作者,调整过格式",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "显示责任编辑",
+      "parameter": "showEditor",
+      "type": "String",
+      "syntax": "${showEditor}",
+      "descriptionHtml": "文章的责任编辑,调整过格式",
+      "description": "文章的责任编辑,调整过格式",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "显示审核人",
+      "parameter": "showAudit",
+      "type": "String",
+      "syntax": "${showAudit}",
+      "descriptionHtml": "文章的审核人,调整过格式",
+      "description": "文章的审核人,调整过格式",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "签收应用",
+      "parameter": "showSignString",
+      "type": "String",
+      "syntax": "${showSignString}",
+      "descriptionHtml": "文章的签收应用按钮，包括了签收和查看",
+      "description": "文章的签收应用按钮，包括了签收和查看",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "文章正文",
+      "parameter": "content",
+      "type": "String",
+      "syntax": "<div id='${vsb_contentid}'>${content}</div>",
+      "descriptionHtml": "如果正文使用了一键排版功能，需要使用此参数，其中的id=${vsb_contentid}参数必须保留",
+      "description": "如果正文使用了一键排版功能，需要使用此参数，其中的id=${vsb_contentid}参数必须保留",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<div id='${vsb_contentid}'>${content}</div>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "是否置顶",
+      "parameter": "isTop",
+      "type": "Boolean",
+      "syntax": "<#if isTop></#if>",
+      "descriptionHtml": "是不是设置为置顶",
+      "description": "是不是设置为置顶",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if isTop>&nbsp;top</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "是否头条",
+      "parameter": "isHeadLine",
+      "type": "Boolean",
+      "syntax": "<#if isHeadLine></#if>",
+      "descriptionHtml": "是不是设置为头条",
+      "description": "是不是设置为头条",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if isHeadLine>&nbsp;headline</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "是否推荐",
+      "parameter": "isRecommend",
+      "type": "Boolean",
+      "syntax": "<#if isRecommend></#if>",
+      "descriptionHtml": "是不是设置为推荐",
+      "description": "是不是设置为推荐",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if isRecommend>&nbsp;recommend</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "是否图片文章",
+      "parameter": "isHaveImg",
+      "type": "Boolean",
+      "syntax": "<#if isHaveImg></#if>",
+      "descriptionHtml": "是否图片文章",
+      "description": "是否图片文章",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if isHaveImg>&nbsp;图片</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "是否视频文章",
+      "parameter": "isHaveVideo",
+      "type": "Boolean",
+      "syntax": "<#if isHaveVideo></#if>",
+      "descriptionHtml": "是否视频文章",
+      "description": "是否视频文章",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if isHaveVideo>&nbsp;视频</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "显示网站广告图片",
+      "parameter": "advertisement",
+      "type": "String",
+      "syntax": "${advertisement}",
+      "descriptionHtml": "显示网站广告图片",
+      "description": "显示网站广告图片",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "文章扩展字段",
+      "parameter": "showExtendField",
+      "type": "String",
+      "syntax": "${(fields.字段名称)!}",
+      "descriptionHtml": "显示一个扩展字段,“字段名称”需要替换成对应的字段英文名称。也可以使用类似<#if (fields.字段名称)>&nbsp;</#if>的语法",
+      "description": "显示一个扩展字段,“字段名称”需要替换成对应的字段英文名称。也可以使用类似<#if (fields.字段名称)> 的语法",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "${(fields.字段名称)!}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "文章扩展字段列表",
+      "parameter": "extend",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "是否有扩展字段",
+      "parameter": "hasExtend",
+      "type": "Boolean",
+      "syntax": "<#if hasExtend>\n</#if>",
+      "descriptionHtml": "文章是否有扩展字段",
+      "description": "文章是否有扩展字段",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "扩展字段个数",
+      "parameter": "extendSize",
+      "type": "Integer",
+      "syntax": "${extendSize}",
+      "descriptionHtml": "扩展字段数量",
+      "description": "扩展字段数量",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "扩展字段列表",
+      "parameter": "list_extend",
+      "type": "List",
+      "syntax": "<#list list_extend as extend>\n</#list>",
+      "descriptionHtml": "扩展字段列表",
+      "description": "扩展字段列表",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "微博分享",
+      "parameter": "attach",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "\n<!-- 分享功能的开始-->\n<style>\n.moreDiv {\nborder: 1px #b3b3b3 solid;padding: 0 10px;border-radius: 3px;width:230px;\n}\n#outputwexin {\nborder: 1px #b3b3b3 solid;padding: 0 10px;border-radius: 6px;width:380px;height:420px;z-index:1002;position:fixed;left:50%; margin-left:-190px;bottom:30%;\n}\n.vsbshare {\n    overflow: hidden;\n    text-align: right;\n    font-size: 12px;\n    line-height: 33px;\n    color: #ccc;\n}\n.vsbshare .vsbimg{float: left;border: 1px #b3b3b3 solid;padding: 0 10px;border-radius: 3px;}\n.vsbshare span {\n    color: #333;padding: 0 5px 0 5px;\n}\n.vsbshare img {\n    color: #333;padding: 0 5px 0 5px;\n}\n.moreDiv img {\n    color: #333;padding: 5px 5px 5px 5px;\n}\n.vsbshare img:hover {\n    -webkit-transform: scale(0.8);\n    -moz-transform: scale(0.8); \n    -ms-transform: scale(0.8); \n    -o-transform: scale(0.8); \n    transform: scale(0.8);\n    transform-origin: center center;\n}\n.vsbshare  img{\n    display: inline-block;\n    vertical-align: middle;\n    width: 20px;\n    height: 20px;\n    -webkit-background-size: cover;\n    -moz-background-size: cover;\n    -o-background-size: cover;\n    background-size: cover;\n    background-position: center center;\n    background-repeat: no-repeat;\n    -o-transition:.4s;\n    -ms-transition:.4s;\n    -moz-transition:.4s;\n    -webkit-transition:.4s;\n    transition:.4s;\n    margin-top: -1px;\n}\n.moreDiv  img{\n    display: inline-block;\n    vertical-align: middle;\n    width: 20px;\n    height: 20px;\n    -webkit-background-size: cover;\n    -moz-background-size: cover;\n    -o-background-size: cover;\n    background-size: cover;\n    background-position: center center;\n    background-repeat: no-repeat;\n    -o-transition:.4s;\n    -ms-transition:.4s;\n    -moz-transition:.4s;\n    -webkit-transition:.4s;\n    transition:.4s;\n    margin-top: -1px;\n}\n.share-background {\n    position: fixed;\n    top: 0;\n    right: 0;\n    bottom: 0;\n    left: 0;\n    z-index: 1001;\n    background-color: #000;\n}\n.share-background {\n    filter: alpha(opacity=50);\n    opacity: .8;\n}\n</style>\n\n<script>\nfunction shareTo${uniqueClassName}(a)\n{\n        var ec = encodeURIComponent,\n        U = window.location,\n        T = \"${jsTitle}\",\n        S = \"\",\n        key = \"\";\n        shareto(a,U,T,S,key); \n}\nfunction changeshare()\n{\n    var sharestuts = document.getElementById(\"moreDiv\").style.display;\n    if(sharestuts==''){\n        document.getElementById(\"moreDiv\").style.display='none';\n    }else{\n        document.getElementById(\"moreDiv\").style.display='';\n    }\n}\nfunction changesharewx()\n{\n    var sharestuts = document.getElementById(\"outputwexin\").style.display;\n    if(sharestuts==''){\n        document.getElementById(\"outputwexin\").style.display='none';\n        document.getElementById(\"share-background\").className='';\n        \n    }else{\n        document.getElementById(\"outputwexin\").style.display='';\n        document.getElementById(\"share-background\").className='share-background';\n    }\n}\n</script> \n<div id=\"share-background\"></div>\n<div id=\"outputwexin\" style=\"display:none;background:#FFF;\">\n<a  style=\"color: #000000; line-height: 30px; font-size: 13px; font-weight: bold; text-decoration: none; margin-top: 2px; float: right; cursor: pointer; opacity: 0.2;font-weight:bold;\" onclick=\"changesharewx()\" target=\"_self\">关闭</a><br/><br/><br/>\n<!-- 下面这个div是二维码容器,ID不能变-->\n<div id=\"outputshare\" style=\"width:256px;margin:auto;\" ></div><br><br><br>\n<span style=\"display：block;line-height:20px;font-weight:0;font-size:12px;color:#333333;padding: 0 5px 0 5px;\">点击微信底部的\"发现\",使用\"扫一扫\"即可将网页分享到我的朋友圈。</span>\n</div>\n\n<div class=\"vsbshare\" id=\"vsbshare\">\n    <#if (weibo?size>0)>\n    <div class=\"vsbimg\" id=\"vsbimg\" <#if (weibo?size>3)>style=\"width:230px;\"</#if>>\n        <span>分享</span>|\n        <#list weibo as wb>\n        <#if (wb_index>3)><#break></#if>\n            <#if (wb.weiboName != \"weixin\")>\n            <img align=absmiddle src=\"${wb.weiboIcon16}\" style=\"cursor:pointer\"  onclick=\"shareTo${uniqueClassName}('${wb.weiboName}')\" title=\"分享至${wb.weiboShowName}\">\n            <#else>\n            <img align=absmiddle src=\"${wb.weiboIcon16}\" style=\"cursor:pointer\"   onclick=\"changesharewx()\" title=\"分享至${wb.weiboShowName}\">\n            </#if>\n        </#list>\n        <#if (weibo?size>3)>\n        <img id=\"imgshare\" align=absmiddle src=\"/system/resource/images/icon/jiahao_16.gif\" style=\"cursor:pointer;\" onclick=\"changeshare()\"  title=\"更多\">\n        </#if>\n    </div>\n    </#if>\n</div>\n\n<div class=\"moreDiv\" id=\"moreDiv\" style=\"display:none;z-index:1000;position:absolute;background:#FFF;\" >\n    <div><span style=\"display：block;line-height:25px;font-weight:900;font-size:14px\">分享到...</span><hr style=\"border:none;background-color:#b3b3b3;height:1px;\" /></div>\n    <#list weibo as wb>\n    <#if wb_index==2><br></#if>\n    <span style=\"display:inline-block;width:95px;\">\n        <#if (wb.weiboName != \"weixin\")>\n            <img align=absmiddle src=\"${wb.weiboIcon16}\" style=\"cursor:pointer\"  onclick=\"shareTo${uniqueClassName}('${wb.weiboName}')\" title=\"分享至${wb.weiboShowName}\">\n        <span style=\"cursor:pointer;font-size:12px\" onclick=\"shareTo${uniqueClassName}('${wb.weiboName}')\" >${wb.weiboShowName}</span>\n        <#else>\n            <img align=absmiddle src=\"${wb.weiboIcon16}\" style=\"cursor:pointer\"  onclick=\"changesharewx()\" title=\"分享至${wb.weiboShowName}\">\n        <span style=\"cursor:pointer;font-size:12px\" onclick=\"changesharewx()\" >${wb.weiboShowName}</span>\n        </#if>\n            \n    </span>\n    </#list>\n</div>\n\n<!-- 下面是生成二维码调用的JS，不要动-->\n<script src=\"/system/resource/qrcode/js/jquery.qrcode.js\"></script>\n<script src=\"/system/resource/qrcode/js/qrcode.js\"></script>\n<script>\nvar codeInfo = window.location.href;\n<#if elementRunMode == 1>\n    codeInfo = \"https://example.invalid/\";\n</#if>\njQuery(function(){\n    jQuery('#outputshare').qrcode({\n        text:codeInfo,\n        render: !!document.createElement('canvas').getContext?\"canvas\":\"table\",//设置渲染方式  \n        width: 256,     //设置宽度  \n        height: 256,     //设置高度  \n        correctLevel: 2,//纠错等级  \n        background: \"#ffffff\",//背景颜色  \n        foreground: \"#000000\",//前景颜色  \n        logo:\"\"//图像logo\n    });\n})\n\n</script>\n<!-- 分享功能的结束-->\n",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "微博列表",
+      "parameter": "weiboarray",
+      "type": "List",
+      "syntax": "<#list weibo as wb>\n    </#list>",
+      "descriptionHtml": "可分享的微博列表",
+      "description": "可分享的微博列表",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "微博名称",
+      "parameter": "weiboShowName",
+      "type": "String",
+      "syntax": "${wb.weiboShowName}",
+      "descriptionHtml": "微博英文名称",
+      "description": "微博英文名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "微博类型",
+      "parameter": "weiboName",
+      "type": "String",
+      "syntax": "${wb.weiboName}",
+      "descriptionHtml": "微博类型",
+      "description": "微博类型",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "微博大图标",
+      "parameter": "weibbigcss",
+      "type": "String",
+      "syntax": "${weiboIcon32}",
+      "descriptionHtml": "微博大图标",
+      "description": "微博大图标",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "微博小图标",
+      "parameter": "weibsmallcss",
+      "type": "String",
+      "syntax": "${weiboIcon16}",
+      "descriptionHtml": "微博小图标",
+      "description": "微博小图标",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "微博图标样式",
+      "parameter": "weibostyle",
+      "type": "String",
+      "syntax": "class=\"weibo_inner weibo_${wb.weiboName}\"",
+      "descriptionHtml": "微博样式",
+      "description": "微博样式",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "文章附件",
+      "parameter": "attach",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if hasAttach><#--附件-->\n<p>\n    <UL style=\"list-style-type:none;\"> \n    <#list list_attach as attach>\n        <li>附件【<a href=\"${attach.fileUrl}\" target=\"_blank\">${attach.fileName}</a>】</li>\n    </#list>\n    </UL>\n</p>\n</#if>\n",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "是否有附件",
+      "parameter": "hasAttach",
+      "type": "Boolean",
+      "syntax": "<#if hasAttach>\n</#if>",
+      "descriptionHtml": "文章是否有附件",
+      "description": "文章是否有附件",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "附件下载次数脚本",
+      "parameter": "attachJs",
+      "type": "Boolean",
+      "syntax": "${attachJs}",
+      "descriptionHtml": "文章附件下载次数执行脚本",
+      "description": "文章附件下载次数执行脚本",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "附件数量",
+      "parameter": "attachSize",
+      "type": "Integer",
+      "syntax": "${attachSize}",
+      "descriptionHtml": "有几个附件",
+      "description": "有几个附件",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "附件列表",
+      "parameter": "list_attach",
+      "type": "List",
+      "syntax": "<#list list_attach as attach>\n</#list>",
+      "descriptionHtml": "附件列表",
+      "description": "附件列表",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "文章分页",
+      "parameter": "page",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if hasPage><#--分页-->\n<p>\n    <select onchange=\"document.location.href=this.value\">\n    <#list list_page as page>\n        <option value=\"${page.url}\" <#if page.pos==curPagePos>selected</#if>>第${page.pos}页&nbsp;${page.showTitle}</option>\n    </#list>\n    </select>\n</p>\n</#if>\n<#if hasPage><#--上一页下一页-->\n<p align=right>\n    <#if hasPrePage>\n    <a href=\"${prePageUrl}\" title=\"${prePageTipsTitle}\">上一页</a>\n    </#if>\n    <#list list_page as page>\n        <#if page.pos == curPagePos>\n        <span style=\"font-weight:bold\" title=\"${page.tipsTitle}\">[${page.pos}]</span>\n        <#else>\n        <a href=\"${page.url}\" title=\"${page.tipsTitle}\">[${page.pos}]</a>\n        </#if>\n    </#list>\n    <#if hasNextPage>\n    <a href=\"${nextPageUrl}\" title=\"${nextPageTipsTitle}\">下一页</a>\n    </#if>\n</p>\n</#if>\n<#if hasPage><#--分页导航-->\n<table cellspacing=0 cellpadding=3 border=0 align=center>\n    <tr><td colspan=2>文章内容导航:</td></tr>\n    <tr>\n        <td width=50% valign=top>\n        <#list list_page as page>\n            <#if page.pos == curPagePos>\n            第${page.pos}页&nbsp;${page.showTitle}<br>\n            <#else>\n            第${page.pos}页&nbsp;<a href=\"${page.url}\">${page.showTitle}</a><br>\n            </#if>\n            <#if page.pos == ((pageSize+1)/2)></td><td width=50% valign=top></#if>\n        </#list>\n        </td>\n    </tr>\n</table>\n</#if>\n",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "是否有分页",
+      "parameter": "hasPage",
+      "type": "Boolean",
+      "syntax": "<#if hasPage>\n</#if>",
+      "descriptionHtml": "文章是否有分页",
+      "description": "文章是否有分页",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "分页数量",
+      "parameter": "pageSize",
+      "type": "Integer",
+      "syntax": "${pageSize}",
+      "descriptionHtml": "有几个分页（包含正文）",
+      "description": "有几个分页（包含正文）",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "当前第几分页",
+      "parameter": "curPagePos",
+      "type": "Integer",
+      "syntax": "${curPagePos}",
+      "descriptionHtml": "当前是第几分页(从1开始,包含正文)",
+      "description": "当前是第几分页(从1开始,包含正文)",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "第${curPagePos}分页",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "分页列表",
+      "parameter": "list_page",
+      "type": "List",
+      "syntax": "<#list list_page as page>\n</#list>",
+      "descriptionHtml": "分页列表（包含正文）",
+      "description": "分页列表（包含正文）",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "上一分页",
+      "parameter": "prepage",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "下一分页",
+      "parameter": "nextpage",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "上一条下一条",
+      "parameter": "prenextnews",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if hasPreNews || hasNextNews><#--上一条 下一条-->\n<p align=right>\n    <#if hasPreNews>上一条：<a href=\"${preNewsUrl}\" >${preNewsShowTitle}</a></#if>\n    <#if hasNextNews>下一条：<a href=\"${nextNewsUrl}\" >${nextNewsShowTitle}</a></#if>\n</p>\n</#if>\n",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "上一条文章",
+      "parameter": "prenews",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "下一条文章",
+      "parameter": "nextnews",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "显示打印收藏",
+      "parameter": "voteDivName",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<script>\n        function dosub${uniqueClassName}()\n        {\n            try{\n                var ua = navigator.userAgent.toLowerCase();\n                if(ua.indexOf(\"msie 8\")>-1)\n                {\n                    window.external.AddToFavoritesBar(document.location.href,document.title,\"\");//IE8\n                }else{\n                    if (window.external || document.all) \n                    {\n                        window.external.addFavorite(document.location.href, document.title);\n                    }else if(window.sidebar)\n                    {\n                        window.sidebar.addPanel( document.title, document.location.href, \"\");//firefox\n                    }\n                }\n        \n            }\n            catch (e){alert(\"无法自动添加到收藏夹，请使用 Ctrl + d 手动添加\");}\n        }</script>\n        <a href=\"javascript:window.print()\">打印</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"javascript:dosub${uniqueClassName}()\">收藏</a>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "关闭",
+      "parameter": "closeFun",
+      "type": "String",
+      "syntax": "<a href=\"javascript:void();\" onclick=\"${closeFun}\">关闭</a>",
+      "descriptionHtml": "关闭当前页面",
+      "description": "关闭当前页面",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "列表位置参数",
+      "parameter": "extendlistnogroup",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": [
+        "list_extend"
+      ]
+    },
+    {
+      "name": "字段名称",
+      "parameter": "name",
+      "type": "String",
+      "syntax": "${extend.name}",
+      "descriptionHtml": "字段的名称",
+      "description": "字段的名称",
+      "kind": "parameter",
+      "path": [
+        "list_extend"
+      ]
+    },
+    {
+      "name": "字段值",
+      "parameter": "value",
+      "type": "String",
+      "syntax": "${extend.value}",
+      "descriptionHtml": "字段值，不建议直接输出",
+      "description": "字段值，不建议直接输出",
+      "kind": "parameter",
+      "path": [
+        "list_extend"
+      ]
+    },
+    {
+      "name": "显示字段值",
+      "parameter": "showValue",
+      "type": "String",
+      "syntax": "${extend.showValue}",
+      "descriptionHtml": "显示用的字段值，处理过格式",
+      "description": "显示用的字段值，处理过格式",
+      "kind": "parameter",
+      "path": [
+        "list_extend"
+      ]
+    },
+    {
+      "name": "是第几个字段",
+      "parameter": "pos",
+      "type": "Integer",
+      "syntax": "${extend.pos}",
+      "descriptionHtml": "是第几个字段(从1开始)",
+      "description": "是第几个字段(从1开始)",
+      "kind": "parameter",
+      "path": [
+        "list_extend",
+        "extendlistnogroup"
+      ]
+    },
+    {
+      "name": "是否首字段",
+      "parameter": "isFirst",
+      "type": "Boolean",
+      "syntax": "<#if extend.isFirst></#if>",
+      "descriptionHtml": "是不是第一个字段",
+      "description": "是不是第一个字段",
+      "kind": "parameter",
+      "path": [
+        "list_extend",
+        "extendlistnogroup"
+      ]
+    },
+    {
+      "name": "是否尾字段",
+      "parameter": "isLast",
+      "type": "Boolean",
+      "syntax": "<#if extend.isLast></#if>",
+      "descriptionHtml": "是不是最后一个字段",
+      "description": "是不是最后一个字段",
+      "kind": "parameter",
+      "path": [
+        "list_extend",
+        "extendlistnogroup"
+      ]
+    },
+    {
+      "name": "列表位置参数",
+      "parameter": "attachlistnogroup",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": [
+        "list_attach"
+      ]
+    },
+    {
+      "name": "附件名称",
+      "parameter": "fileName",
+      "type": "String",
+      "syntax": "${attach.fileName}",
+      "descriptionHtml": "附件的名称",
+      "description": "附件的名称",
+      "kind": "parameter",
+      "path": [
+        "list_attach"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "附件【<a href=\"${attach.fileUrl}\" target=\"_blank\">${attach.fileName}</a>】",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "list_attach"
+      ]
+    },
+    {
+      "name": "附件地址",
+      "parameter": "fileUrl",
+      "type": "URL",
+      "syntax": "${attach.fileUrl}",
+      "descriptionHtml": "附件的下载地址",
+      "description": "附件的下载地址",
+      "kind": "parameter",
+      "path": [
+        "list_attach"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "附件【<a href=\"${attach.fileUrl}\" target=\"_blank\">${attach.fileName}</a>】",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "list_attach"
+      ]
+    },
+    {
+      "name": "附件点击次数",
+      "parameter": "fileUrl",
+      "type": "URL",
+      "syntax": "已下载${attach.downloadTime}次",
+      "descriptionHtml": "附件的点击次数",
+      "description": "附件的点击次数",
+      "kind": "parameter",
+      "path": [
+        "list_attach"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "附件【已下载${attach.fileName}次】",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "list_attach"
+      ]
+    },
+    {
+      "name": "是第几条",
+      "parameter": "pos",
+      "type": "Integer",
+      "syntax": "${attach.pos}",
+      "descriptionHtml": "当前是列表的第几条(从1开始)",
+      "description": "当前是列表的第几条(从1开始)",
+      "kind": "parameter",
+      "path": [
+        "list_attach",
+        "attachlistnogroup"
+      ]
+    },
+    {
+      "name": "是否首条",
+      "parameter": "isFirst",
+      "type": "Boolean",
+      "syntax": "<#if attach.isFirst></#if>",
+      "descriptionHtml": "当前是不是列表的第一条",
+      "description": "当前是不是列表的第一条",
+      "kind": "parameter",
+      "path": [
+        "list_attach",
+        "attachlistnogroup"
+      ]
+    },
+    {
+      "name": "是否尾条",
+      "parameter": "isLast",
+      "type": "Boolean",
+      "syntax": "<#if attach.isLast></#if>",
+      "descriptionHtml": "当前是不是列表的最后一条",
+      "description": "当前是不是列表的最后一条",
+      "kind": "parameter",
+      "path": [
+        "list_attach",
+        "attachlistnogroup"
+      ]
+    },
+    {
+      "name": "分页位置参数",
+      "parameter": "pagelistnogroup",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": [
+        "list_page"
+      ]
+    },
+    {
+      "name": "分页编号",
+      "parameter": "id",
+      "type": "String",
+      "syntax": "${page.id}",
+      "descriptionHtml": "分页编号",
+      "description": "分页编号",
+      "kind": "parameter",
+      "path": [
+        "list_page"
+      ]
+    },
+    {
+      "name": "分页标题",
+      "parameter": "title",
+      "type": "String",
+      "syntax": "${page.title}",
+      "descriptionHtml": "分页标题, 不建议直接输出",
+      "description": "分页标题, 不建议直接输出",
+      "kind": "parameter",
+      "path": [
+        "list_page"
+      ]
+    },
+    {
+      "name": "分页显示标题",
+      "parameter": "showTitle",
+      "type": "String",
+      "syntax": "${page.showTitle}",
+      "descriptionHtml": "显示用的分页标题，调整过格式",
+      "description": "显示用的分页标题，调整过格式",
+      "kind": "parameter",
+      "path": [
+        "list_page"
+      ]
+    },
+    {
+      "name": "分页提示标题",
+      "parameter": "tipsTitle",
+      "type": "String",
+      "syntax": "${page.tipsTitle}",
+      "descriptionHtml": "Html元素的\"title\"属性专用，显示提示，专门调整过格式",
+      "description": "Html元素的\"title\"属性专用，显示提示，专门调整过格式",
+      "kind": "parameter",
+      "path": [
+        "list_page"
+      ]
+    },
+    {
+      "name": "分页地址",
+      "parameter": "url",
+      "type": "URL",
+      "syntax": "${page.url}",
+      "descriptionHtml": "分页链接地址",
+      "description": "分页链接地址",
+      "kind": "parameter",
+      "path": [
+        "list_page"
+      ]
+    },
+    {
+      "name": "是第几分页",
+      "parameter": "pos",
+      "type": "Integer",
+      "syntax": "${page.pos}",
+      "descriptionHtml": "是第几个分页(从1开始)",
+      "description": "是第几个分页(从1开始)",
+      "kind": "parameter",
+      "path": [
+        "list_page",
+        "pagelistnogroup"
+      ]
+    },
+    {
+      "name": "是否首分页",
+      "parameter": "isFirst",
+      "type": "Boolean",
+      "syntax": "<#if page.isFirst></#if>",
+      "descriptionHtml": "是不是第一个分页(即正文)",
+      "description": "是不是第一个分页(即正文)",
+      "kind": "parameter",
+      "path": [
+        "list_page",
+        "pagelistnogroup"
+      ]
+    },
+    {
+      "name": "是否尾分页",
+      "parameter": "isLast",
+      "type": "Boolean",
+      "syntax": "<#if page.isLast></#if>",
+      "descriptionHtml": "是不是最后一个分页",
+      "description": "是不是最后一个分页",
+      "kind": "parameter",
+      "path": [
+        "list_page",
+        "pagelistnogroup"
+      ]
+    },
+    {
+      "name": "是否有上一分页",
+      "parameter": "hasPrePage",
+      "type": "Boolean",
+      "syntax": "<#if hasPrePage>\n</#if>",
+      "descriptionHtml": "是否有上一分页",
+      "description": "是否有上一分页",
+      "kind": "parameter",
+      "path": [
+        "prepage"
+      ]
+    },
+    {
+      "name": "分页位置参数",
+      "parameter": "prepagelistnogroup",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": [
+        "prepage"
+      ]
+    },
+    {
+      "name": "分页标题",
+      "parameter": "prePageTitle",
+      "type": "String",
+      "syntax": "${prePageTitle}",
+      "descriptionHtml": "上一分页的标题，不建议直接输出<br>只有在有上一分页时才有效",
+      "description": "上一分页的标题，不建议直接输出\n只有在有上一分页时才有效",
+      "kind": "parameter",
+      "path": [
+        "prepage"
+      ]
+    },
+    {
+      "name": "分页显示标题",
+      "parameter": "prePageShowTitle",
+      "type": "String",
+      "syntax": "${prePageShowTitle}",
+      "descriptionHtml": "上一分页显示用的标题，调整过格式<br>只有在有上一分页时才有效",
+      "description": "上一分页显示用的标题，调整过格式\n只有在有上一分页时才有效",
+      "kind": "parameter",
+      "path": [
+        "prepage"
+      ]
+    },
+    {
+      "name": "分页提示标题",
+      "parameter": "prePageTipsTitle",
+      "type": "String",
+      "syntax": "${prePageTipsTitle}",
+      "descriptionHtml": "Html元素的\"title\"属性专用，显示上一分页提示用的标题，专门调整过格式<br>只有在有上一分页时才有效",
+      "description": "Html元素的\"title\"属性专用，显示上一分页提示用的标题，专门调整过格式\n只有在有上一分页时才有效",
+      "kind": "parameter",
+      "path": [
+        "prepage"
+      ]
+    },
+    {
+      "name": "分页地址",
+      "parameter": "prePageUrl",
+      "type": "URL",
+      "syntax": "${prePageUrl}",
+      "descriptionHtml": "上一分页链接地址<br>只有在有上一分页时才有效",
+      "description": "上一分页链接地址\n只有在有上一分页时才有效",
+      "kind": "parameter",
+      "path": [
+        "prepage"
+      ]
+    },
+    {
+      "name": "是第几分页",
+      "parameter": "prePagePos",
+      "type": "Integer",
+      "syntax": "${prePagePos}",
+      "descriptionHtml": "上一分页是第几个分页(从1开始)<br>只有在有上一分页时才有效",
+      "description": "上一分页是第几个分页(从1开始)\n只有在有上一分页时才有效",
+      "kind": "parameter",
+      "path": [
+        "prepage",
+        "prepagelistnogroup"
+      ]
+    },
+    {
+      "name": "是否首分页",
+      "parameter": "prePageIsFirst",
+      "type": "Boolean",
+      "syntax": "<#if prePageIsFirst></#if>",
+      "descriptionHtml": "上一分页是不是第一个分页(即正文)<br>只有在有上一分页时才有效",
+      "description": "上一分页是不是第一个分页(即正文)\n只有在有上一分页时才有效",
+      "kind": "parameter",
+      "path": [
+        "prepage",
+        "prepagelistnogroup"
+      ]
+    },
+    {
+      "name": "是否有下一分页",
+      "parameter": "hasNextPage",
+      "type": "Boolean",
+      "syntax": "<#if hasNextPage>\n</#if>",
+      "descriptionHtml": "是否有下一分页",
+      "description": "是否有下一分页",
+      "kind": "parameter",
+      "path": [
+        "nextpage"
+      ]
+    },
+    {
+      "name": "分页位置参数",
+      "parameter": "nextpagelistnogroup",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": [
+        "nextpage"
+      ]
+    },
+    {
+      "name": "分页标题",
+      "parameter": "nextPageTitle",
+      "type": "String",
+      "syntax": "${nextPageTitle}",
+      "descriptionHtml": "下一分页的标题，不建议直接输出<br>只有在有下一分页时才有效",
+      "description": "下一分页的标题，不建议直接输出\n只有在有下一分页时才有效",
+      "kind": "parameter",
+      "path": [
+        "nextpage"
+      ]
+    },
+    {
+      "name": "分页显示标题",
+      "parameter": "nextPageShowTitle",
+      "type": "String",
+      "syntax": "${nextPageShowTitle}",
+      "descriptionHtml": "下一分页显示用的标题，调整过格式<br>只有在有下一分页时才有效",
+      "description": "下一分页显示用的标题，调整过格式\n只有在有下一分页时才有效",
+      "kind": "parameter",
+      "path": [
+        "nextpage"
+      ]
+    },
+    {
+      "name": "分页提示标题",
+      "parameter": "nextPageTipsTitle",
+      "type": "String",
+      "syntax": "${nextPageTipsTitle}",
+      "descriptionHtml": "Html元素的\"title\"属性专用，显示下一分页提示用的标题，专门调整过格式<br>只有在有下一分页时才有效",
+      "description": "Html元素的\"title\"属性专用，显示下一分页提示用的标题，专门调整过格式\n只有在有下一分页时才有效",
+      "kind": "parameter",
+      "path": [
+        "nextpage"
+      ]
+    },
+    {
+      "name": "分页地址",
+      "parameter": "nextPageUrl",
+      "type": "URL",
+      "syntax": "${nextPageUrl}",
+      "descriptionHtml": "下一分页链接地址<br>只有在有下一分页时才有效",
+      "description": "下一分页链接地址\n只有在有下一分页时才有效",
+      "kind": "parameter",
+      "path": [
+        "nextpage"
+      ]
+    },
+    {
+      "name": "是第几分页",
+      "parameter": "nextPagePos",
+      "type": "Integer",
+      "syntax": "${nextPagePos}",
+      "descriptionHtml": "下一分页是第几个分页(从1开始)<br>只有在有下一分页时才有效",
+      "description": "下一分页是第几个分页(从1开始)\n只有在有下一分页时才有效",
+      "kind": "parameter",
+      "path": [
+        "nextpage",
+        "nextpagelistnogroup"
+      ]
+    },
+    {
+      "name": "是否尾分页",
+      "parameter": "nextPageIsLast",
+      "type": "Boolean",
+      "syntax": "<#if nextPageIsFirst></#if>",
+      "descriptionHtml": "下一分页是不是最后一个分页<br>只有在有下一分页时才有效",
+      "description": "下一分页是不是最后一个分页\n只有在有下一分页时才有效",
+      "kind": "parameter",
+      "path": [
+        "nextpage",
+        "nextpagelistnogroup"
+      ]
+    },
+    {
+      "name": "是否有上一条",
+      "parameter": "hasPreNews",
+      "type": "Boolean",
+      "syntax": "<#if hasPreNews>\n</#if>",
+      "descriptionHtml": "是否有上一条文章",
+      "description": "是否有上一条文章",
+      "kind": "parameter",
+      "path": [
+        "prenews"
+      ]
+    },
+    {
+      "name": "上一条文章标题",
+      "parameter": "preNewsTitle",
+      "type": "String",
+      "syntax": "${preNewsTitle}",
+      "descriptionHtml": "上一条文章的标题，不建议直接输出<br>只有在有上一条时才有效",
+      "description": "上一条文章的标题，不建议直接输出\n只有在有上一条时才有效",
+      "kind": "parameter",
+      "path": [
+        "prenews"
+      ]
+    },
+    {
+      "name": "上一条文章显示标题",
+      "parameter": "preNewsShowTitle",
+      "type": "String",
+      "syntax": "${preNewsShowTitle}",
+      "descriptionHtml": "上一条文章显示用的标题，调整过格式<br>只有在有上一条时才有效",
+      "description": "上一条文章显示用的标题，调整过格式\n只有在有上一条时才有效",
+      "kind": "parameter",
+      "path": [
+        "prenews"
+      ]
+    },
+    {
+      "name": "上一条文章提示标题",
+      "parameter": "preNewsTipsTitle",
+      "type": "String",
+      "syntax": "${preNewsTipsTitle}",
+      "descriptionHtml": "Html元素的\"title\"属性专用，显示上一条文章提示用的标题，专门调整过格式<br>只有在有上一条时才有效",
+      "description": "Html元素的\"title\"属性专用，显示上一条文章提示用的标题，专门调整过格式\n只有在有上一条时才有效",
+      "kind": "parameter",
+      "path": [
+        "prenews"
+      ]
+    },
+    {
+      "name": "上一条文章地址",
+      "parameter": "preNewsUrl",
+      "type": "URL",
+      "syntax": "${preNewsUrl}",
+      "descriptionHtml": "上一条文章链接地址<br>只有在有上一条时才有效",
+      "description": "上一条文章链接地址\n只有在有上一条时才有效",
+      "kind": "parameter",
+      "path": [
+        "prenews"
+      ]
+    },
+    {
+      "name": "是否有下一条",
+      "parameter": "hasNextNews",
+      "type": "Boolean",
+      "syntax": "<#if hasNextNews>\n</#if>",
+      "descriptionHtml": "是否有下一条文章",
+      "description": "是否有下一条文章",
+      "kind": "parameter",
+      "path": [
+        "nextnews"
+      ]
+    },
+    {
+      "name": "下一条文章标题",
+      "parameter": "nextNewsTitle",
+      "type": "String",
+      "syntax": "${nextNewsTitle}",
+      "descriptionHtml": "下一条文章的标题，不建议直接输出<br>只有在有下一条时才有效",
+      "description": "下一条文章的标题，不建议直接输出\n只有在有下一条时才有效",
+      "kind": "parameter",
+      "path": [
+        "nextnews"
+      ]
+    },
+    {
+      "name": "下一条文章显示标题",
+      "parameter": "nextNewsShowTitle",
+      "type": "String",
+      "syntax": "${nextNewsShowTitle}",
+      "descriptionHtml": "下一条文章显示用的标题，调整过格式<br>只有在有下一条时才有效",
+      "description": "下一条文章显示用的标题，调整过格式\n只有在有下一条时才有效",
+      "kind": "parameter",
+      "path": [
+        "nextnews"
+      ]
+    },
+    {
+      "name": "下一条文章提示标题",
+      "parameter": "nextNewsTipsTitle",
+      "type": "String",
+      "syntax": "${nextNewsTipsTitle}",
+      "descriptionHtml": "Html元素的\"title\"属性专用，显示下一条文章提示用的标题，专门调整过格式<br>只有在有下一条时才有效",
+      "description": "Html元素的\"title\"属性专用，显示下一条文章提示用的标题，专门调整过格式\n只有在有下一条时才有效",
+      "kind": "parameter",
+      "path": [
+        "nextnews"
+      ]
+    },
+    {
+      "name": "下一条文章地址",
+      "parameter": "nextNewsUrl",
+      "type": "URL",
+      "syntax": "${nextNewsUrl}",
+      "descriptionHtml": "下一条文章链接地址<br>只有在有下一条时才有效",
+      "description": "下一条文章链接地址\n只有在有下一条时才有效",
+      "kind": "parameter",
+      "path": [
+        "nextnews"
+      ]
+    }
+  ],
+  "template": "<form name=\"_newscontent_fromname\">${v_includeJquery()}\n<div>\n    <h1 align=center style=\"${cssTitleColor}\">${showTitle}</h1><#--标题-->\n    <div align=center>${showDate}&nbsp;${showAuthor}&nbsp;点击：[${showClickTimes}] </div>\n    <hr>\n    <#if hasExtend><#--自定义属性-->\n    <table cellspacing=0 cellpadding=3 border=0 align=center style=\"border-collapse:collapse\">\n        <#list list_extend as extend>\n            <#if extend.pos%2==1><tr></#if>\n                <td style=\"border:1px solid gray\" width=20% >${extend.name}</td>\n                <td style=\"border:1px solid gray\" width=30% >${extend.showValue}</td>\n            <#if extend.pos%2==0 || extend.isLast></tr></#if>\n        </#list>\n    </table>\n    </#if>\n    <#if hasPage><#--分页-->\n    <p>\n        <select onchange=\"document.location.href=this.value\">\n        <#list list_page as page>\n            <option value=\"${page.url}\" <#if page.pos==curPagePos>selected</#if>>第${page.pos}页&nbsp;${page.showTitle}</option>\n        </#list>\n        </select>\n    </p>\n    </#if>\n    <div id='${vsb_contentid}' >${content}</div><#--内容 (如果正文要使用一键排版样式，必须使用 id='${vsb_contentid}' 这个属性)--><div id=\"div_vote_id\"></div>\n    <#if hasAttach><#--附件-->${attachJs}\n    <p>\n        <UL style=\"list-style-type:none;\"> \n        <#list list_attach as attach>\n            <li>附件【<a href=\"${attach.fileUrl}\" target=\"_blank\">${attach.fileName}</a>】已下载${attach.downloadTime}次</li>\n        </#list>\n        </UL>\n    </p>\n    </#if>\n    <#if hasPage><#--上一页下一页-->\n    <p align=right>\n        <#if hasPrePage>\n        <a href=\"${prePageUrl}\" title=\"${prePageTipsTitle}\">上一页</a>\n        </#if>\n        <#list list_page as page>\n            <#if page.pos == curPagePos>\n            <span style=\"font-weight:bold\" title=\"${page.tipsTitle}\">[${page.pos}]</span>\n            <#else>\n            <a href=\"${page.url}\" title=\"${page.tipsTitle}\">[${page.pos}]</a>\n            </#if>\n        </#list>\n        <#if hasNextPage>\n        <a href=\"${nextPageUrl}\" title=\"${nextPageTipsTitle}\">下一页</a>\n        </#if>\n    </p>\n    </#if>\n    <#if hasPreNews || hasNextNews><#--上一条 下一条-->\n    <p align=right>\n        <#if hasPreNews>上一条：<a href=\"${preNewsUrl}\" >${preNewsShowTitle}</a></#if>\n        <#if hasNextNews>下一条：<a href=\"${nextNewsUrl}\" >${nextNewsShowTitle}</a></#if>\n    </p>\n    </#if>\n    <#--关闭按钮-->\n    <p align=right>【<a href=\"javascript:window.opener=null;window.open('','_self');window.close();\">关闭</a>】</p>\n</div>\n</form>",
+  "exampleTemplate": "",
+  "previousFixtureHashes": [
+    "491df3d6",
+    "624543e3"
+  ],
+  "css": ".tpcontent{FONT-WEIGHT: bold; FONT-SIZE: 11pt; COLOR: #2b2b2b; FONT-FAMILY: 宋体}\n.cytpstyle{FONT-SIZE: 9pt; COLOR: #2b2b2b; FONT-FAMILY: 宋体}\n.content{margin:auto;text-align:left;line-height:18px;padding:3px 0 0 0;color:#727272}\n.process{width:162px;height:11px;background:#EDEDED;overflow:hidden;float:left;margin-left:26px !important;margin-left:13px;margin-right:10px}\n.process div{width:160px;height:11px;background:url(/system/resource/images/newsvote/bg.gif) repeat-x;border-left:1px solid #000;border-right:1px solid #000}\n.process .style7{border-left-color:#ff0000;border-right-color:#ff0000;background-position:0 -77px}\n",
+  "fixture": {
+    "viewid": "1020",
+    "uid": "u_demo",
+    "uniqueClassName": "c_demo",
+    "id": "12",
+    "treeId": "demo_treeId",
+    "title": "把课堂搬进山野，让知识连接更广阔的世界",
+    "showTitle": "把课堂搬进山野，让知识连接更广阔的世界",
+    "tipsTitle": "把课堂搬进山野，让知识连接更广阔的世界",
+    "titleColor": "",
+    "cssTitleColor": "",
+    "downloadLink": "#preview",
+    "url": "#preview",
+    "date": "2026-10-30 09:30:00",
+    "showDate": "2026-10-30",
+    "clickTimes": "12",
+    "showClickTimes": "12",
+    "columnName": "校园动态",
+    "columnUrl": "#preview",
+    "showTag": "显示关键字",
+    "showAbstract": "在校园里记录发现，在探索中连接未来。这里是一段用于检查组件排版的示例摘要。",
+    "showIntroTitle": "把课堂搬进山野，让知识连接更广阔的世界",
+    "showSubTitle": "把课堂搬进山野，让知识连接更广阔的世界",
+    "titleImgUrl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+    "titleVideoUrl": "#preview",
+    "showAuthor": "示例作者",
+    "showEditor": "示例作者",
+    "showAudit": "显示审核人",
+    "showSignString": "签收应用",
+    "advertisement": "显示网站广告图片",
+    "extendSize": 6,
+    "weiboIcon32": "微博大图标",
+    "weiboIcon16": "微博小图标",
+    "attachJs": true,
+    "attachSize": 6,
+    "pageSize": 6,
+    "curPagePos": 6,
+    "prePageTitle": "把课堂搬进山野，让知识连接更广阔的世界",
+    "prePageShowTitle": "把课堂搬进山野，让知识连接更广阔的世界",
+    "prePageTipsTitle": "把课堂搬进山野，让知识连接更广阔的世界",
+    "prePageUrl": "#preview",
+    "prePagePos": 6,
+    "nextPageTitle": "把课堂搬进山野，让知识连接更广阔的世界",
+    "nextPageShowTitle": "把课堂搬进山野，让知识连接更广阔的世界",
+    "nextPageTipsTitle": "把课堂搬进山野，让知识连接更广阔的世界",
+    "nextPageUrl": "#preview",
+    "nextPagePos": 6,
+    "preNewsTitle": "把课堂搬进山野，让知识连接更广阔的世界",
+    "preNewsShowTitle": "把课堂搬进山野，让知识连接更广阔的世界",
+    "preNewsTipsTitle": "把课堂搬进山野，让知识连接更广阔的世界",
+    "preNewsUrl": "#preview",
+    "nextNewsTitle": "把课堂搬进山野，让知识连接更广阔的世界",
+    "nextNewsShowTitle": "把课堂搬进山野，让知识连接更广阔的世界",
+    "nextNewsTipsTitle": "把课堂搬进山野，让知识连接更广阔的世界",
+    "nextNewsUrl": "#preview",
+    "hasExtend": false,
+    "list_extend": [
+      {
+        "pos": 1,
+        "name": "示例名称",
+        "showValue": "显示字段值",
+        "isLast": false,
+        "value": "字段值"
+      },
+      {
+        "pos": 2,
+        "name": "示例名称",
+        "showValue": "显示字段值",
+        "isLast": false,
+        "value": "字段值"
+      },
+      {
+        "pos": 3,
+        "name": "示例名称",
+        "showValue": "显示字段值",
+        "isLast": false,
+        "value": "字段值"
+      },
+      {
+        "pos": 4,
+        "name": "示例名称",
+        "showValue": "显示字段值",
+        "isLast": false,
+        "value": "字段值"
+      },
+      {
+        "pos": 5,
+        "name": "示例名称",
+        "showValue": "显示字段值",
+        "isLast": true,
+        "value": "字段值"
+      }
+    ],
+    "hasPage": false,
+    "list_page": [
+      {
+        "url": "#preview",
+        "pos": 1,
+        "showTitle": "把课堂搬进山野，让知识连接更广阔的世界",
+        "tipsTitle": "把课堂搬进山野，让知识连接更广阔的世界",
+        "id": "12",
+        "title": "把课堂搬进山野，让知识连接更广阔的世界"
+      },
+      {
+        "url": "#preview",
+        "pos": 2,
+        "showTitle": "校园开放日｜在这里，遇见新的可能",
+        "tipsTitle": "校园开放日｜在这里，遇见新的可能",
+        "id": "12",
+        "title": "校园开放日｜在这里，遇见新的可能"
+      },
+      {
+        "url": "#preview",
+        "pos": 3,
+        "showTitle": "关于举办青年学术交流活动的通知",
+        "tipsTitle": "关于举办青年学术交流活动的通知",
+        "id": "12",
+        "title": "关于举办青年学术交流活动的通知"
+      },
+      {
+        "url": "#preview",
+        "pos": 4,
+        "showTitle": "图书馆秋季阅读计划正式启动",
+        "tipsTitle": "图书馆秋季阅读计划正式启动",
+        "id": "12",
+        "title": "图书馆秋季阅读计划正式启动"
+      },
+      {
+        "url": "#preview",
+        "pos": 5,
+        "showTitle": "探索与创新：青年研究者的校园故事",
+        "tipsTitle": "探索与创新：青年研究者的校园故事",
+        "id": "12",
+        "title": "探索与创新：青年研究者的校园故事"
+      }
+    ],
+    "vsb_contentid": "示例内容",
+    "content": "<p>这里是组件的示例正文。你可以修改模板结构和 CSS，实时观察内容排版的变化。</p><p>所有内容均为本地演示数据，可在“示例数据”中自由编辑。</p>",
+    "hasAttach": false,
+    "list_attach": [
+      {
+        "fileUrl": "#preview",
+        "fileName": "活动指南.pdf",
+        "downloadTime": "2026-10-30",
+        "pos": 1
+      },
+      {
+        "fileUrl": "#preview",
+        "fileName": "活动指南.pdf",
+        "downloadTime": "2026-10-30",
+        "pos": 2
+      }
+    ],
+    "hasPrePage": true,
+    "hasNextPage": true,
+    "hasPreNews": true,
+    "hasNextNews": true
+  }
+}

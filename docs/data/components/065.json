@@ -1,0 +1,644 @@
+{
+  "id": "065",
+  "index": 65,
+  "name": "检索结果",
+  "category": "综合检索",
+  "parameterCount": 34,
+  "hasScript": true,
+  "templateLength": 3496,
+  "parameters": [
+    {
+      "name": "通用参数",
+      "parameter": "commonparam",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件id",
+      "parameter": "viewid",
+      "type": "String",
+      "syntax": "${viewid}",
+      "descriptionHtml": "组件本身的id，数字(形如 1001)",
+      "description": "组件本身的id，数字(形如 1001)",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件uid",
+      "parameter": "uid",
+      "type": "String",
+      "syntax": "${uid}",
+      "descriptionHtml": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "description": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "私有样式类名",
+      "parameter": "uniqueClassName",
+      "type": "String",
+      "syntax": "${uniqueClassName}",
+      "descriptionHtml": "用在私有样式表的类名上，字符串(形如 c10)，举例：<br>&lt;span class=\"<span style=\"color:red\">${uniqueClassName}</span>\" &gt;文字&lt;/span&gt;",
+      "description": "用在私有样式表的类名上，字符串(形如 c10)，举例：\n<span class=\"${uniqueClassName}\" >文字</span>",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<span class=\"${uniqueClassName}\" >文字</span>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "引入jQuery类库",
+      "parameter": "v_includeJquery",
+      "type": "Function",
+      "syntax": "${v_includeJquery()}",
+      "descriptionHtml": "引入系统自带的JQuery类库;<br> 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "description": "引入系统自带的JQuery类库;\n 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "\n<!--引入jQuery-->${v_includeJquery()}<!--引入jQuery完成-->\n",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "唯一标识",
+      "parameter": "UUID",
+      "type": "String",
+      "syntax": "${UUID}",
+      "descriptionHtml": "唯一标识",
+      "description": "唯一标识",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "文章总条数",
+      "parameter": "newNums",
+      "type": "Integer",
+      "syntax": "${newNums}",
+      "descriptionHtml": "文章总条数",
+      "description": "文章总条数",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "检索内容",
+      "parameter": "kw",
+      "type": "String",
+      "syntax": "${kw}",
+      "descriptionHtml": "检索内容",
+      "description": "检索内容",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "文章列表",
+      "parameter": "newList",
+      "type": "List",
+      "syntax": "<#list newList as list></#list>",
+      "descriptionHtml": "文章列表",
+      "description": "文章列表",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#list newList as list></#list>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "列表位置参数",
+      "parameter": "listnogroup",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "文章编号",
+      "parameter": "id",
+      "type": "String",
+      "syntax": "${list.id}",
+      "descriptionHtml": "文章编号",
+      "description": "文章编号",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "文章详细内容链接地址",
+      "parameter": "url",
+      "type": "String",
+      "syntax": "${list.url}",
+      "descriptionHtml": "文章详细内容链接地址",
+      "description": "文章详细内容链接地址",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "文章原始标题",
+      "parameter": "title",
+      "type": "String",
+      "syntax": "${list.title}",
+      "descriptionHtml": "文章原始标题,不推荐使用！",
+      "description": "文章原始标题,不推荐使用！",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "文章标题",
+      "parameter": "showTitle",
+      "type": "String",
+      "syntax": "${list.showTitle}",
+      "descriptionHtml": "文章标题",
+      "description": "文章标题",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "标题图地址",
+      "parameter": "picUrl",
+      "type": "URL",
+      "syntax": "${list.picUrl}",
+      "descriptionHtml": "文章标题图的地址，可能为图片，可能为视频，也可能为空",
+      "description": "文章标题图的地址，可能为图片，可能为视频，也可能为空",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "文章内容",
+      "parameter": "content",
+      "type": "String",
+      "syntax": "${list.content}",
+      "descriptionHtml": "文章内容",
+      "description": "文章内容",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "原始日期",
+      "parameter": "date",
+      "type": "String",
+      "syntax": "${list.date}",
+      "descriptionHtml": "原始日期,不推荐使用！",
+      "description": "原始日期,不推荐使用！",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "格式化日期",
+      "parameter": "dateShow",
+      "type": "String",
+      "syntax": "${list.dateShow}",
+      "descriptionHtml": "格式化日期",
+      "description": "格式化日期",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "引题",
+      "parameter": "showIntroTitle",
+      "type": "String",
+      "syntax": "${list.showIntroTitle}",
+      "descriptionHtml": "显示用的引题，调整过格式并可配置长度限制",
+      "description": "显示用的引题，调整过格式并可配置长度限制",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "作者",
+      "parameter": "showAuthor",
+      "type": "String",
+      "syntax": "${list.showAuthor}",
+      "descriptionHtml": "文章作者",
+      "description": "文章作者",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "编辑",
+      "parameter": "showEditor",
+      "type": "String",
+      "syntax": "${list.showEditor}",
+      "descriptionHtml": "文章编辑",
+      "description": "文章编辑",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "来源",
+      "parameter": "showSourceName",
+      "type": "String",
+      "syntax": "${list.showSourceName}",
+      "descriptionHtml": "文章来源",
+      "description": "文章来源",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "显示点击数",
+      "parameter": "showClickTimes",
+      "type": "String",
+      "syntax": "${list.showClickTimes}",
+      "descriptionHtml": "显示用的文章的点击数，采用ajax技术自动更新",
+      "description": "显示用的文章的点击数，采用ajax技术自动更新",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "点击：[${list.showClickTimes}]次",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "附件",
+      "parameter": "attachcontent",
+      "type": "String",
+      "syntax": "${list.attachcontent}",
+      "descriptionHtml": "附件",
+      "description": "附件",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "显示栏目名",
+      "parameter": "showColumnName",
+      "type": "String",
+      "syntax": "${list.showColumnName}",
+      "descriptionHtml": "文章所在栏目名称，可配置栏目的层级，调整过格式",
+      "description": "文章所在栏目名称，可配置栏目的层级，调整过格式",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<a href=\"${list.columnUrl}\">[${list.showColumnName}]</a>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "栏目地址",
+      "parameter": "columnUrl",
+      "type": "URL",
+      "syntax": "${list.columnUrl}",
+      "descriptionHtml": "文章所在栏目地址，可配置栏目的层级",
+      "description": "文章所在栏目地址，可配置栏目的层级",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<a href=\"${list.columnUrl}\">[${list.showColumnName}]</a>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "分页",
+      "parameter": "pagegroup",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "是第几条",
+      "parameter": "pos",
+      "type": "Integer",
+      "syntax": "${list.pos}",
+      "descriptionHtml": "当前是列表的第几条(从1开始)",
+      "description": "当前是列表的第几条(从1开始)",
+      "kind": "parameter",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "第${list.pos}条",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否首条",
+      "parameter": "isFirst",
+      "type": "Boolean",
+      "syntax": "<#if list.isFirst></#if>",
+      "descriptionHtml": "当前是不是列表的第一条",
+      "description": "当前是不是列表的第一条",
+      "kind": "parameter",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if list.isFirst>首条</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否尾条",
+      "parameter": "isLast",
+      "type": "Boolean",
+      "syntax": "<#if list.isLast></#if>",
+      "descriptionHtml": "当前是不是列表的最后一条",
+      "description": "当前是不是列表的最后一条",
+      "kind": "parameter",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if list.isLast>尾条</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否奇数行",
+      "parameter": "isOdd",
+      "type": "Boolean",
+      "syntax": "<#if list.isOdd></#if>",
+      "descriptionHtml": "当前是不是奇数行",
+      "description": "当前是不是奇数行",
+      "kind": "parameter",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if list.isOdd>奇数行</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否偶数行",
+      "parameter": "isEven",
+      "type": "Boolean",
+      "syntax": "<#if list.isEven></#if>",
+      "descriptionHtml": "当前是不是偶数行",
+      "description": "当前是不是偶数行",
+      "kind": "parameter",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if list.isEven>偶数行</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "当前页面地址",
+      "parameter": "pageUrl",
+      "type": "String",
+      "syntax": "${pageUrl}",
+      "descriptionHtml": "当前页面地址",
+      "description": "当前页面地址",
+      "kind": "parameter",
+      "path": [
+        "pagegroup"
+      ]
+    },
+    {
+      "name": "用户输入检索内容",
+      "parameter": "key",
+      "type": "String",
+      "syntax": "${key}",
+      "descriptionHtml": "经过base64编码后的用户输入检索内容",
+      "description": "经过base64编码后的用户输入检索内容",
+      "kind": "parameter",
+      "path": [
+        "pagegroup"
+      ]
+    },
+    {
+      "name": "总页数",
+      "parameter": "totalPages",
+      "type": "Integer",
+      "syntax": "${totalPages}",
+      "descriptionHtml": "总页数",
+      "description": "总页数",
+      "kind": "parameter",
+      "path": [
+        "pagegroup"
+      ]
+    },
+    {
+      "name": "当前页数",
+      "parameter": "currentpage",
+      "type": "Integer",
+      "syntax": "${currentpage}",
+      "descriptionHtml": "当前页数",
+      "description": "当前页数",
+      "kind": "parameter",
+      "path": [
+        "pagegroup"
+      ]
+    },
+    {
+      "name": "每页显示条数",
+      "parameter": "number",
+      "type": "Integer",
+      "syntax": "${number}",
+      "descriptionHtml": "每页显示条数",
+      "description": "每页显示条数",
+      "kind": "parameter",
+      "path": [
+        "pagegroup"
+      ]
+    }
+  ],
+  "template": "<script type=\"text/javascript\">\nvar ot = 1;\nif(document.getElementById(\"ot\"))\n{\n    ot = document.getElementById(\"ot\").value;\n}\nvar rg = 4;\nif(document.getElementById(\"rg\"))\n{\n    rg = document.getElementById(\"rg\").value;\n}\nvar tg = 5;\nif(document.getElementById(\"tg\"))\n{\n    tg = document.getElementById(\"tg\").value;\n}\nvar clid = 0;\nif(document.getElementById(\"clid\"))\n{\n    clid =  document.getElementById(\"clid\").value;\n}\nfunction getIndexpage${uid}(aobj)\n{\n    var url = \"${pageUrl}&currentnum=1&kw=${key}&ot=\"+ot+\"&rg=\"+rg+\"&tg=\"+tg+\"&clid=\"+clid;\n    aobj.setAttribute(\"href\",url);\n}\nfunction getPripage${uid}(aobj)\n{\n    var curpage = parseInt(${currentPage});\n    curpage = (curpage - 1) <= 0 ? 1 : (curpage - 1)\n    var url = \"${pageUrl}&currentnum=\"+curpage+\"&kw=${key}&ot=\"+ot+\"&rg=\"+rg+\"&tg=\"+tg+\"&clid=\"+clid;\n    aobj.setAttribute(\"href\",url);\n}\nfunction getNextpage${uid}(aobj)\n{\n    var curpage = parseInt(${currentPage});\n    var totalpage = parseInt(${totalPages});\n    curpage = (curpage + 1) > totalpage ? totalpage : (curpage+ 1)\n    var url = \"${pageUrl}&currentnum=\"+curpage+\"&kw=${key}&ot=\"+ot+\"&rg=\"+rg+\"&tg=\"+tg+\"&clid=\"+clid;\n    aobj.setAttribute(\"href\",url);\n}\nfunction getLastpage${uid}(aobj)\n{\n    var totalpage = parseInt(${totalPages});\n    var url = \"${pageUrl}&currentnum=\"+totalpage+\"&kw=${key}&ot=\"+ot+\"&rg=\"+rg+\"&tg=\"+tg+\"&clid=\"+clid;\n    aobj.setAttribute(\"href\",url);\n}\n</script>\n<#if newNums!=0 >\n    <table class=listFrame cellspacing=1 cellpadding=0 width=\"100%\" border=0>\n        <#list newList as list>\n        <tr>\n            <td>\n                <a href=\"${list.url}\" style=\"text-decoration: none\">${list.showTitle}</a>\n            </td>\n        </tr>\n        <tr>\n            <td>${list.content}</td>\n        </tr>\n        <tr>\n            <td>${list.attachContent}</td>\n        </tr>\n        <tr>\n            <td>发表时间:${list.dateShow}</td>\n        </tr>\n        <tr>\n            <td>\n                <br>\n            </td>\n        </tr>\n        </#list>\n    </table>\n    <#if number <newNums >\n    <table class=listFrame cellspacing=1 cellpadding=0 border=0\n        width=\"100%\">\n        <tr>\n            <td align=\"center\">\n                共有 ${newNums} 条&nbsp;&nbsp; \n                <a href=\"javascript:return void(0);\" onclick=\"getIndexpage${uid}(this)\"> 首页</a>\n                &nbsp;&nbsp;&nbsp;&nbsp; \n                <a href=\"javascript:return void(0);\" onclick=\"getPripage${uid}(this)\">上一页</a>&nbsp;&nbsp;&nbsp;&nbsp;\n                <a href=\"javascript:return void(0);\" onclick=\"getNextpage${uid}(this)\">下一页</a>\n                &nbsp;&nbsp;&nbsp;&nbsp;\n                <a href=\"javascript:return void(0);\" onclick=\"getLastpage${uid}(this)\">尾页</a>&nbsp;&nbsp; 共有\n                ${totalPages} 页&nbsp;&nbsp; 当前第 ${currentPage} 页\n            </td>\n        </tr>\n    </table>\n    </#if> <#else>\n    <table style=\"FONT-FAMILY: 宋体; COLOR: #222222; FONT-SIZE: 9pt;\" cellspacing=1 cellpadding=0 border=0 width=\"100%\">\n        <tr>\n            <td>\n                找不到和您的查询&nbsp;\"\n                <B> ${kw} </B> \" &nbsp;相符的新闻。\n                <br>\n                <br>\n            </td>\n        </tr>\n        <tr>\n            <td>建议:</td>\n        </tr>\n        <tr>\n            <td>\n                <ul>\n                    &nbsp;&nbsp;&nbsp;&nbsp;\n                    <li>请检查输入字词有无错误。</li>\n                    <li>请换用另外的查询字词。</li>\n                    <li>请改用较常见的字词。</li>\n                </ul>\n            </td>\n        </tr>\n    </table>\n</#if>",
+  "exampleTemplate": "",
+  "previousFixtureHashes": [
+    "5d290be5",
+    "70aab6e0"
+  ],
+  "css": "",
+  "fixture": {
+    "viewid": "1065",
+    "uid": "u_demo",
+    "uniqueClassName": "c_demo",
+    "UUID": "boda_demo",
+    "newNums": 6,
+    "kw": "检索内容",
+    "pageUrl": "#preview",
+    "key": "用户输入检索内容",
+    "totalPages": 6,
+    "currentpage": 6,
+    "number": 6,
+    "currentPage": "示例内容",
+    "newList": [
+      {
+        "url": "#preview",
+        "showTitle": "把课堂搬进山野，让知识连接更广阔的世界",
+        "content": "<p>这里是组件的示例正文。你可以修改模板结构和 CSS，实时观察内容排版的变化。</p><p>所有内容均为本地演示数据，可在“示例数据”中自由编辑。</p>",
+        "attachContent": "示例内容",
+        "dateShow": "2026-10-30",
+        "id": "12",
+        "title": "把课堂搬进山野，让知识连接更广阔的世界",
+        "picUrl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "date": "2026-10-30 09:30:00",
+        "showIntroTitle": "把课堂搬进山野，让知识连接更广阔的世界",
+        "showAuthor": "示例作者",
+        "showEditor": "示例作者",
+        "showSourceName": "示例名称",
+        "showClickTimes": "12",
+        "attachcontent": "附件",
+        "showColumnName": "校园动态",
+        "columnUrl": "#preview",
+        "pos": 1
+      },
+      {
+        "url": "#preview",
+        "showTitle": "校园开放日｜在这里，遇见新的可能",
+        "content": "<p>这里是组件的示例正文。你可以修改模板结构和 CSS，实时观察内容排版的变化。</p><p>所有内容均为本地演示数据，可在“示例数据”中自由编辑。</p>",
+        "attachContent": "示例内容",
+        "dateShow": "2026-10-30",
+        "id": "12",
+        "title": "校园开放日｜在这里，遇见新的可能",
+        "picUrl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "date": "2026-10-30 09:30:00",
+        "showIntroTitle": "校园开放日｜在这里，遇见新的可能",
+        "showAuthor": "示例作者",
+        "showEditor": "示例作者",
+        "showSourceName": "示例名称",
+        "showClickTimes": "12",
+        "attachcontent": "附件",
+        "showColumnName": "校园动态",
+        "columnUrl": "#preview",
+        "pos": 2
+      },
+      {
+        "url": "#preview",
+        "showTitle": "关于举办青年学术交流活动的通知",
+        "content": "<p>这里是组件的示例正文。你可以修改模板结构和 CSS，实时观察内容排版的变化。</p><p>所有内容均为本地演示数据，可在“示例数据”中自由编辑。</p>",
+        "attachContent": "示例内容",
+        "dateShow": "2026-10-30",
+        "id": "12",
+        "title": "关于举办青年学术交流活动的通知",
+        "picUrl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "date": "2026-10-30 09:30:00",
+        "showIntroTitle": "关于举办青年学术交流活动的通知",
+        "showAuthor": "示例作者",
+        "showEditor": "示例作者",
+        "showSourceName": "示例名称",
+        "showClickTimes": "12",
+        "attachcontent": "附件",
+        "showColumnName": "校园动态",
+        "columnUrl": "#preview",
+        "pos": 3
+      },
+      {
+        "url": "#preview",
+        "showTitle": "图书馆秋季阅读计划正式启动",
+        "content": "<p>这里是组件的示例正文。你可以修改模板结构和 CSS，实时观察内容排版的变化。</p><p>所有内容均为本地演示数据，可在“示例数据”中自由编辑。</p>",
+        "attachContent": "示例内容",
+        "dateShow": "2026-10-30",
+        "id": "12",
+        "title": "图书馆秋季阅读计划正式启动",
+        "picUrl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "date": "2026-10-30 09:30:00",
+        "showIntroTitle": "图书馆秋季阅读计划正式启动",
+        "showAuthor": "示例作者",
+        "showEditor": "示例作者",
+        "showSourceName": "示例名称",
+        "showClickTimes": "12",
+        "attachcontent": "附件",
+        "showColumnName": "校园动态",
+        "columnUrl": "#preview",
+        "pos": 4
+      },
+      {
+        "url": "#preview",
+        "showTitle": "探索与创新：青年研究者的校园故事",
+        "content": "<p>这里是组件的示例正文。你可以修改模板结构和 CSS，实时观察内容排版的变化。</p><p>所有内容均为本地演示数据，可在“示例数据”中自由编辑。</p>",
+        "attachContent": "示例内容",
+        "dateShow": "2026-10-30",
+        "id": "12",
+        "title": "探索与创新：青年研究者的校园故事",
+        "picUrl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+        "date": "2026-10-30 09:30:00",
+        "showIntroTitle": "探索与创新：青年研究者的校园故事",
+        "showAuthor": "示例作者",
+        "showEditor": "示例作者",
+        "showSourceName": "示例名称",
+        "showClickTimes": "12",
+        "attachcontent": "附件",
+        "showColumnName": "校园动态",
+        "columnUrl": "#preview",
+        "pos": 5
+      }
+    ]
+  }
+}

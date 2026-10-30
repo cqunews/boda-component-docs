@@ -1,0 +1,570 @@
+{
+  "id": "080",
+  "index": 80,
+  "name": "公众参与全文检索结果",
+  "category": "公众参与",
+  "parameterCount": 32,
+  "hasScript": true,
+  "templateLength": 4693,
+  "parameters": [
+    {
+      "name": "通用参数",
+      "parameter": "commonparam",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件id",
+      "parameter": "viewid",
+      "type": "String",
+      "syntax": "${viewid}",
+      "descriptionHtml": "组件本身的id，数字(形如 1001)",
+      "description": "组件本身的id，数字(形如 1001)",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件uid",
+      "parameter": "uid",
+      "type": "String",
+      "syntax": "${uid}",
+      "descriptionHtml": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "description": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "私有样式类名",
+      "parameter": "uniqueClassName",
+      "type": "String",
+      "syntax": "${uniqueClassName}",
+      "descriptionHtml": "用在私有样式表的类名上，字符串(形如 c10)，举例：<br>&lt;span class=\"<span style=\"color:red\">${uniqueClassName}</span>\" &gt;文字&lt;/span&gt;",
+      "description": "用在私有样式表的类名上，字符串(形如 c10)，举例：\n<span class=\"${uniqueClassName}\" >文字</span>",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<span class=\"${uniqueClassName}\" >文字</span>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "引入jQuery类库",
+      "parameter": "v_includeJquery",
+      "type": "Function",
+      "syntax": "${v_includeJquery()}",
+      "descriptionHtml": "引入系统自带的JQuery类库;<br> 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "description": "引入系统自带的JQuery类库;\n 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "\n<!--引入jQuery-->${v_includeJquery()}<!--引入jQuery完成-->\n",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "唯一标识",
+      "parameter": "UUID",
+      "type": "String",
+      "syntax": "${UUID}",
+      "descriptionHtml": "唯一标识",
+      "description": "唯一标识",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "form表单",
+      "parameter": "form",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "搜索表单名称",
+      "parameter": "formName",
+      "type": "String",
+      "syntax": "${formName}",
+      "descriptionHtml": "搜索表单名称",
+      "description": "搜索表单名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "搜索提交地址",
+      "parameter": "actionURL",
+      "type": "String",
+      "syntax": "${actionURL}",
+      "descriptionHtml": "搜索提交地址",
+      "description": "搜索提交地址",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "搜索隐藏表单",
+      "parameter": "hidden",
+      "type": "String",
+      "syntax": "${hidden}",
+      "descriptionHtml": "搜索隐藏表单",
+      "description": "搜索隐藏表单",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "查询输入文本框名称",
+      "parameter": "newsKeyCode",
+      "type": "String",
+      "syntax": "${newsKeyCode}",
+      "descriptionHtml": "查询输入文本框名称",
+      "description": "查询输入文本框名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "查询输入文本框值",
+      "parameter": "inValue",
+      "type": "String",
+      "syntax": "${inValue}",
+      "descriptionHtml": "查询输入文本框值",
+      "description": "查询输入文本框值",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "查询结果总条数",
+      "parameter": "totleNum",
+      "type": "Integer",
+      "syntax": "${totleNum}",
+      "descriptionHtml": "查询结果总条数",
+      "description": "查询结果总条数",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "检索结果",
+      "parameter": "resultList",
+      "type": "List",
+      "syntax": "<#list resultList as list></#list>",
+      "descriptionHtml": "检索结果",
+      "description": "检索结果",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#list resultList as list></#list>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "列表位置参数",
+      "parameter": "listnogroup",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "公众参与编号",
+      "parameter": "id",
+      "type": "String",
+      "syntax": "${list.id}",
+      "descriptionHtml": "公众参与编号",
+      "description": "公众参与编号",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "公众参与详细内容链接地址",
+      "parameter": "url",
+      "type": "String",
+      "syntax": "${list.url}",
+      "descriptionHtml": "公众参与详细内容链接地址",
+      "description": "公众参与详细内容链接地址",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "公众参与标题",
+      "parameter": "title",
+      "type": "String",
+      "syntax": "${list.title}",
+      "descriptionHtml": "公众参与标题",
+      "description": "公众参与标题",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "公众参与提交内容",
+      "parameter": "content",
+      "type": "String",
+      "syntax": "${list.content}",
+      "descriptionHtml": "公众参与提交内容",
+      "description": "公众参与提交内容",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "提交时间",
+      "parameter": "time",
+      "type": "String",
+      "syntax": "${list.time}",
+      "descriptionHtml": "提交时间",
+      "description": "提交时间",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "公众参与回复内容",
+      "parameter": "reContent",
+      "type": "String",
+      "syntax": "${list.reContent}",
+      "descriptionHtml": "公众参与回复内容",
+      "description": "公众参与回复内容",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "回复时间",
+      "parameter": "reTime",
+      "type": "String",
+      "syntax": "${list.reTime}",
+      "descriptionHtml": "回复时间",
+      "description": "回复时间",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "回复部门",
+      "parameter": "deptName",
+      "type": "String",
+      "syntax": "${list.deptName}",
+      "descriptionHtml": "回复部门",
+      "description": "回复部门",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "分页",
+      "parameter": "pagegroup",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "是第几条",
+      "parameter": "pos",
+      "type": "Integer",
+      "syntax": "${list.pos}",
+      "descriptionHtml": "当前是列表的第几条(从1开始)",
+      "description": "当前是列表的第几条(从1开始)",
+      "kind": "parameter",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "第${list.pos}条",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否首条",
+      "parameter": "isFirst",
+      "type": "Boolean",
+      "syntax": "<#if list.isFirst></#if>",
+      "descriptionHtml": "当前是不是列表的第一条",
+      "description": "当前是不是列表的第一条",
+      "kind": "parameter",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if list.isFirst>首条</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否尾条",
+      "parameter": "isLast",
+      "type": "Boolean",
+      "syntax": "<#if list.isLast></#if>",
+      "descriptionHtml": "当前是不是列表的最后一条",
+      "description": "当前是不是列表的最后一条",
+      "kind": "parameter",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if list.isLast>尾条</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否奇数行",
+      "parameter": "isOdd",
+      "type": "Boolean",
+      "syntax": "<#if list.isOdd></#if>",
+      "descriptionHtml": "当前是不是奇数行",
+      "description": "当前是不是奇数行",
+      "kind": "parameter",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if list.isOdd>奇数行</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否偶数行",
+      "parameter": "isEven",
+      "type": "Boolean",
+      "syntax": "<#if list.isEven></#if>",
+      "descriptionHtml": "当前是不是偶数行",
+      "description": "当前是不是偶数行",
+      "kind": "parameter",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if list.isEven>偶数行</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "总页数",
+      "parameter": "totlePages",
+      "type": "Integer",
+      "syntax": "${totlePages}",
+      "descriptionHtml": "总页数",
+      "description": "总页数",
+      "kind": "parameter",
+      "path": [
+        "pagegroup"
+      ]
+    },
+    {
+      "name": "当前页数",
+      "parameter": "currentPage",
+      "type": "Integer",
+      "syntax": "${currentPage}",
+      "descriptionHtml": "当前页数",
+      "description": "当前页数",
+      "kind": "parameter",
+      "path": [
+        "pagegroup"
+      ]
+    },
+    {
+      "name": "每页显示条数",
+      "parameter": "pageSize",
+      "type": "Integer",
+      "syntax": "${pageSize}",
+      "descriptionHtml": "每页显示条数",
+      "description": "每页显示条数",
+      "kind": "parameter",
+      "path": [
+        "pagegroup"
+      ]
+    },
+    {
+      "name": "首页链接地址",
+      "parameter": "firstPageUrl",
+      "type": "String",
+      "syntax": "${firstPageUrl}",
+      "descriptionHtml": "首页链接地址",
+      "description": "首页链接地址",
+      "kind": "parameter",
+      "path": [
+        "pagegroup"
+      ]
+    },
+    {
+      "name": "上一页链接地址",
+      "parameter": "priUrl",
+      "type": "String",
+      "syntax": "${priUrl}",
+      "descriptionHtml": "上一页链接地址",
+      "description": "上一页链接地址",
+      "kind": "parameter",
+      "path": [
+        "pagegroup"
+      ]
+    },
+    {
+      "name": "下一页链接地址",
+      "parameter": "nextUrl",
+      "type": "String",
+      "syntax": "${nextUrl}",
+      "descriptionHtml": "下一页链接地址",
+      "description": "下一页链接地址",
+      "kind": "parameter",
+      "path": [
+        "pagegroup"
+      ]
+    },
+    {
+      "name": "尾页链接地址",
+      "parameter": "lastPageUrl",
+      "type": "String",
+      "syntax": "${lastPageUrl}",
+      "descriptionHtml": "尾页链接地址",
+      "description": "尾页链接地址",
+      "kind": "parameter",
+      "path": [
+        "pagegroup"
+      ]
+    }
+  ],
+  "template": "<script type=\"text/javascript\">\n     function checksearch${UUID}()\n     { \n            var keyword = document.getElementById(\"${newsKeyCodeId}\").value \n            if(keyword==null||keyword==\"\")\n            { \n            alert(\"请输入你要检索的内容！\"); \n            return false; \n            } \n            if(window.toFF==1) \n            { \n            document.getElementById(\"lucenegbsearchkeyword${viewid}\").value = Simplized(keyword ); \n            }\n            else \n            { \n            document.getElementById(\"lucenegbsearchkeyword${viewid}\").value = keyword; \n            } \n            var base64 = new Base64(); \n            document.getElementById(\"lucenegbsearchkeyword${viewid}\").value=base64.encode(document.getElementById(\"lucenegbsearchkeyword${viewid}\").value); \n            document.getElementById(\"${newsKeyCodeId}\").disabled=true; return true; \n      } \n</script> \n<form action=\"${actionURL}\" method=\"post\" name=\"${formName}\" onsubmit=\"return checksearch${UUID}()\">\n     ${hidden}\n<table width=\"775\" border=\"0\" align=\"center\" cellpadding=\"0\" cellspacing=\"0\" class=\"search${uniqueClassName}\">\n  <tr>\n    <td width=\"154\" height=\"52\" align=\"center\" class=\"ss${uniqueClassName}\"><span class=\"search_font${uniqueClassName}\">公众参与全文检索:</span></td>\n    <td width=\"464\" class=\"ss${uniqueClassName}\"><input name=\"${newsKeyCode}\" type=\"text\" class=\"search_input${uniqueClassName}\" id=\"${newsKeyCodeId}\" value=\"${inValue}\"> </td>\n    <td width=\"157\" class=\"ss${uniqueClassName}\"><input type=\"image\" src=\"/system/resource/guestbook/images/btn_gzcrsearch.gif\" name=\"button\" id=\"button\" value=\"提交\" /></td>\n  </tr>\n</table>\n</form>\n<table width=\"775\" border=\"0\" align=\"center\" cellpadding=\"0\" cellspacing=\"0\">\n  <tr>\n    <td height=\"20\"></td>\n  </tr>\n</table>\n<#if totleNum!=0 > \n<form action=\"${actionURL}\" method=\"post\"> \n<#list resultList as list> \n<table width=\"775\" border=\"0\" align=\"center\" cellpadding=\"0\" cellspacing=\"0\" class=\"info_boder${uniqueClassName}\">\n  <tr>\n    <td height=\"187\" valign=\"top\">\n        <table width=\"94%\" border=\"0\" align=\"center\" cellpadding=\"0\" cellspacing=\"0\" >\n      <tr>\n        <td width=\"40\" align=\"center\"><img src=\"/system/resource/guestbook/images/ico_tj.gif\" width=\"17\" height=\"17\" /></td>\n        <td class=\"info_title${uniqueClassName}\"><a href=\"${list.url}\" style=\"TEXT-DECORATION: none\"><span class=\"info_title${uniqueClassName}\">${list.title}</span></a></td>\n      </tr>\n      <tr>\n        <td>&nbsp;</td>\n        <td class=\"info_content${uniqueClassName}\">${list.content}</td>\n      </tr>\n      <tr>\n        <td>&nbsp;</td>\n        <td align=\"right\" class=\"info_time${uniqueClassName}\">提交时间：${list.time}</td>\n      </tr>\n    </table>\n      <table width=\"94%\" border=\"0\" align=\"center\" cellpadding=\"0\" cellspacing=\"0\">\n        <tr>\n          <td height=\"20\"><hr style=\"color:#cccccc;height:1px;border:0px;border-top:1px dashed #cccccc;margin:0px;padding:0px;overflow:hidden\"/></td>\n        </tr>\n      </table>\n    <table width=\"94%\" border=\"0\" align=\"center\" cellpadding=\"0\" cellspacing=\"0\">\n      <tr>\n        <td width=\"40\" align=\"center\"><img src=\"/system/resource/guestbook/images/ico_huifu.gif\" width=\"17\" height=\"16\" /></td>\n        <td class=\"info_title${uniqueClassName}\">回复内容：</td>\n      </tr>\n      <tr>\n        <td>&nbsp;</td>\n        <td class=\"info_content${uniqueClassName}\">${list.reContent}</td>\n      </tr>\n      <tr>\n        <td>&nbsp;</td>\n        <td align=\"right\" class=\"info_time${uniqueClassName}\">回复部门：${list.deptName}   　　 回复时间：${list.reTime}</td>\n      </tr>\n  </table>\n    </td>\n  </tr>\n</table>\n</#list> \n<#if number<totleNum > \n<table cellspacing=1 cellpadding=0 border=0 width=\"100%\"> \n    <tr> \n        <td align=\"center\"> \n            共有 ${totleNum} 条&nbsp;&nbsp; <#if 1<currentPage><a href=\"${firstPageUrl}\"> 首页</a><#else> 首页</#if> &nbsp;&nbsp;&nbsp;&nbsp; \n            <#if 1<currentPage ><a href=\"${priUrl}\">上一页</a><#else>上一页</#if>&nbsp;&nbsp;&nbsp;&nbsp; \n            <#if currentPage<totlePages ><a href=\"${nextUrl}\">下一页</a><#else>下一页</#if>&nbsp;&nbsp;&nbsp;&nbsp; \n            <#if currentPage<totlePages ><a href=\"${lastPageUrl}\">尾页</a><#else>尾页</#if>&nbsp;&nbsp; \n            共有 ${totlePages} 页&nbsp;&nbsp; 当前第 ${currentPage} 页 \n        </td> \n    </tr> \n</table> \n</#if> \n<#else> \n<table style=\"FONT-FAMILY: 宋体; COLOR: #222222; FONT-SIZE: 9pt;\" cellspacing=1 cellpadding=0 border=0 width=\"100%\"> \n<tr> <td> 找不到和您的查询&nbsp;\" <B> ${inValue} </B> \" &nbsp;相符的新闻。 <br> <br> </td> </tr> \n<tr> <td> 建议: </td> </tr> <tr> <td> \n<ul> &nbsp;&nbsp;&nbsp;&nbsp; \n<li> 请检查输入字词有无错误。 &nbsp;&nbsp;&nbsp;&nbsp; \n<li> 请换用另外的查询字词。 &nbsp;&nbsp;&nbsp;&nbsp; \n<li> 请改用较常见的字词。 \n</ul> \n</td> \n</tr> \n</table> \n</form>\n</#if> ",
+  "exampleTemplate": "",
+  "previousFixtureHashes": [
+    "54df456e",
+    "61175f99"
+  ],
+  "css": ".search${uniqueClassName}{\n    background:url(/system/resource/guestbook/images/btn_gzcrsearch_bg.gif) top left no-repeat;\n}\n.search_font${uniqueClassName} {\n    font-size:12px;\n    color:#333333;\n    font-weight:bold;\n}\n.search_input${uniqueClassName} {\n    font-size:12px;\n    color:#333333;\n    font-weight:bold;\n    border:#CCC 1px solid;\n    height:26px;\n    width:440px;\n}\n.info_boder${uniqueClassName}{\n    border-top:#bcbcbc 2px solid;\n    background:#f5f5f5;\n    padding:20px; margin-bottom:20px;\n}\n.info_title${uniqueClassName}{ font-size:14px; color:#000; font-weight:bold; line-height:30px;}\n.info_title_2${uniqueClassName}{ font-size:14px; color:#0066cc; font-weight:bold; line-height:30px;}\n.info_content${uniqueClassName}{ font-size:12px; color:#333; line-height:24px;}\n.info_time${uniqueClassName}{ font-size:12px; color:#009933;line-height:24px; }\n.info_gjz${uniqueClassName}{ color:#ff6600;  background:#ffff00}",
+  "fixture": {
+    "viewid": "1080",
+    "uid": "u_demo",
+    "uniqueClassName": "c_demo",
+    "UUID": "boda_demo",
+    "formName": "boda_demo",
+    "actionURL": "#preview",
+    "hidden": "",
+    "newsKeyCode": "查询输入文本框名称",
+    "inValue": "查询输入文本框值",
+    "totleNum": 6,
+    "totlePages": 6,
+    "currentPage": 6,
+    "pageSize": 6,
+    "firstPageUrl": "#preview",
+    "priUrl": "#preview",
+    "nextUrl": "#preview",
+    "lastPageUrl": "#preview",
+    "newsKeyCodeId": "demo_newsKeyCodeId",
+    "resultList": [
+      {
+        "url": "#preview",
+        "title": "把课堂搬进山野，让知识连接更广阔的世界",
+        "content": "<p>这里是组件的示例正文。你可以修改模板结构和 CSS，实时观察内容排版的变化。</p><p>所有内容均为本地演示数据，可在“示例数据”中自由编辑。</p>",
+        "time": "2026-10-30",
+        "reContent": "公众参与回复内容",
+        "deptName": "示例名称",
+        "reTime": "2026-10-30",
+        "id": "12",
+        "pos": 1
+      },
+      {
+        "url": "#preview",
+        "title": "校园开放日｜在这里，遇见新的可能",
+        "content": "<p>这里是组件的示例正文。你可以修改模板结构和 CSS，实时观察内容排版的变化。</p><p>所有内容均为本地演示数据，可在“示例数据”中自由编辑。</p>",
+        "time": "2026-10-30",
+        "reContent": "公众参与回复内容",
+        "deptName": "示例名称",
+        "reTime": "2026-10-30",
+        "id": "12",
+        "pos": 2
+      },
+      {
+        "url": "#preview",
+        "title": "关于举办青年学术交流活动的通知",
+        "content": "<p>这里是组件的示例正文。你可以修改模板结构和 CSS，实时观察内容排版的变化。</p><p>所有内容均为本地演示数据，可在“示例数据”中自由编辑。</p>",
+        "time": "2026-10-30",
+        "reContent": "公众参与回复内容",
+        "deptName": "示例名称",
+        "reTime": "2026-10-30",
+        "id": "12",
+        "pos": 3
+      },
+      {
+        "url": "#preview",
+        "title": "图书馆秋季阅读计划正式启动",
+        "content": "<p>这里是组件的示例正文。你可以修改模板结构和 CSS，实时观察内容排版的变化。</p><p>所有内容均为本地演示数据，可在“示例数据”中自由编辑。</p>",
+        "time": "2026-10-30",
+        "reContent": "公众参与回复内容",
+        "deptName": "示例名称",
+        "reTime": "2026-10-30",
+        "id": "12",
+        "pos": 4
+      },
+      {
+        "url": "#preview",
+        "title": "探索与创新：青年研究者的校园故事",
+        "content": "<p>这里是组件的示例正文。你可以修改模板结构和 CSS，实时观察内容排版的变化。</p><p>所有内容均为本地演示数据，可在“示例数据”中自由编辑。</p>",
+        "time": "2026-10-30",
+        "reContent": "公众参与回复内容",
+        "deptName": "示例名称",
+        "reTime": "2026-10-30",
+        "id": "12",
+        "pos": 5
+      }
+    ],
+    "number": 6
+  }
+}

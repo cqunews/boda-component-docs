@@ -1,0 +1,336 @@
+{
+  "id": "098",
+  "index": 98,
+  "name": "信件处理流程",
+  "category": "领导信箱",
+  "parameterCount": 16,
+  "hasScript": false,
+  "templateLength": 770,
+  "parameters": [
+    {
+      "name": "通用参数",
+      "parameter": "commonparam",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件id",
+      "parameter": "viewid",
+      "type": "String",
+      "syntax": "${viewid}",
+      "descriptionHtml": "组件本身的id，数字(形如 1001)",
+      "description": "组件本身的id，数字(形如 1001)",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件uid",
+      "parameter": "uid",
+      "type": "String",
+      "syntax": "${uid}",
+      "descriptionHtml": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "description": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "私有样式类名",
+      "parameter": "uniqueClassName",
+      "type": "String",
+      "syntax": "${uniqueClassName}",
+      "descriptionHtml": "用在私有样式表的类名上，字符串(形如 c10)，举例：<br>&lt;span class=\"<span style=\"color:red\">${uniqueClassName}</span>\" &gt;文字&lt;/span&gt;",
+      "description": "用在私有样式表的类名上，字符串(形如 c10)，举例：\n<span class=\"${uniqueClassName}\" >文字</span>",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<span class=\"${uniqueClassName}\" >文字</span>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "引入jQuery类库",
+      "parameter": "v_includeJquery",
+      "type": "Function",
+      "syntax": "${v_includeJquery()}",
+      "descriptionHtml": "引入系统自带的JQuery类库;<br> 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "description": "引入系统自带的JQuery类库;\n 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "\n<!--引入jQuery-->${v_includeJquery()}<!--引入jQuery完成-->\n",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "唯一标识",
+      "parameter": "UUID",
+      "type": "String",
+      "syntax": "${UUID}",
+      "descriptionHtml": "唯一标识",
+      "description": "唯一标识",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "信件ID",
+      "parameter": "mailid",
+      "type": "String",
+      "syntax": "${mailid}",
+      "descriptionHtml": "信件ID",
+      "description": "信件ID",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "转发记录列表",
+      "parameter": "list_item",
+      "type": "List",
+      "syntax": "<#list list_item as list></#list>",
+      "descriptionHtml": "转发记录列表",
+      "description": "转发记录列表",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "列表位置参数",
+      "parameter": "listnogroup",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "信件从哪个部门转发或分发",
+      "parameter": "tplfromdept",
+      "type": "String",
+      "syntax": "${list.tplfromdept}",
+      "descriptionHtml": "信件从哪个部门转发或分发",
+      "description": "信件从哪个部门转发或分发",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "信件转发或分发到那个部门",
+      "parameter": "tpltodept",
+      "type": "String",
+      "syntax": "${list.tpltodept}",
+      "descriptionHtml": "信件转发或分发到那个部门",
+      "description": "信件转发或分发到那个部门",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "信件状态",
+      "parameter": "tplactionname",
+      "type": "String",
+      "syntax": "${list.tplactionname}",
+      "descriptionHtml": "信件状态",
+      "description": "信件状态",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "信件处理时间",
+      "parameter": "tpldate",
+      "type": "String",
+      "syntax": "${list.tpldate}",
+      "descriptionHtml": "信件处理时间",
+      "description": "信件处理时间",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "是第几条",
+      "parameter": "pos",
+      "type": "Integer",
+      "syntax": "${list.pos}",
+      "descriptionHtml": "当前是列表的第几条(从1开始)",
+      "description": "当前是列表的第几条(从1开始)",
+      "kind": "parameter",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "第${list.pos}条",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否首条",
+      "parameter": "isFirst",
+      "type": "Boolean",
+      "syntax": "<#if list.isFirst></#if>",
+      "descriptionHtml": "当前是不是列表的第一条",
+      "description": "当前是不是列表的第一条",
+      "kind": "parameter",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if list.isFirst>首条</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否尾条",
+      "parameter": "isLast",
+      "type": "Boolean",
+      "syntax": "<#if list.isLast></#if>",
+      "descriptionHtml": "当前是不是列表的最后一条",
+      "description": "当前是不是列表的最后一条",
+      "kind": "parameter",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if list.isLast>尾条</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否奇数行",
+      "parameter": "isOdd",
+      "type": "Boolean",
+      "syntax": "<#if list.isOdd></#if>",
+      "descriptionHtml": "当前是不是奇数行",
+      "description": "当前是不是奇数行",
+      "kind": "parameter",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if list.isOdd>奇数行</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否偶数行",
+      "parameter": "isEven",
+      "type": "Boolean",
+      "syntax": "<#if list.isEven></#if>",
+      "descriptionHtml": "当前是不是偶数行",
+      "description": "当前是不是偶数行",
+      "kind": "parameter",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if list.isEven>偶数行</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listnogroup"
+      ]
+    }
+  ],
+  "template": "<table border=0 cellpadding=0 cellpadding=0 >\n    <tr><Td align=\"center\"> \n    <#list list_item as list>           \n        <div  style=\"BORDER-BOTTOM: #7fa5fa 1px solid;BORDER-LEFT: #7fa5fa 1px solid;PADDING-BOTTOM: 5px;LINE-HEIGHT: 20px;BACKGROUND-COLOR: #e6eef9;PADDING-LEFT: 5px;WIDTH: 200px;PADDING-RIGHT: 5px;COLOR: #15418a;BORDER-TOP: #7fa5fa 1px solid;BORDER-RIGHT: #7fa5fa 1px solid;PADDING-TOP: 5px;\" >\n        <span  style=\"FONT-FAMILY: 宋体;FONT-SIZE: 9pt;\" > ${list.tplfromdept}  ${list.tplactionname}   ${list.tpltodept}<br>${list.tpldate}\n        </span></div>\n        <#if !list.isLast>\n        <img src='/system/resource/images/leadermail/ldxx_jg.gif' width='16' height='50'>                           \n        </#if>\n     </#list>\n    </td></tr>\n</table>",
+  "exampleTemplate": "",
+  "previousFixtureHashes": [
+    "4da5c7c9"
+  ],
+  "css": "",
+  "fixture": {
+    "viewid": "1098",
+    "uid": "u_demo",
+    "uniqueClassName": "c_demo",
+    "UUID": "boda_demo",
+    "mailid": "信件ID",
+    "list_item": [
+      {
+        "tplfromdept": "信件从哪个部门转发或分发",
+        "tplactionname": "#preview",
+        "tpltodept": "信件转发或分发到那个部门",
+        "tpldate": "2026-10-30 09:30:00",
+        "isLast": false,
+        "pos": 1
+      },
+      {
+        "tplfromdept": "信件从哪个部门转发或分发",
+        "tplactionname": "#preview",
+        "tpltodept": "信件转发或分发到那个部门",
+        "tpldate": "2026-10-30 09:30:00",
+        "isLast": false,
+        "pos": 2
+      },
+      {
+        "tplfromdept": "信件从哪个部门转发或分发",
+        "tplactionname": "#preview",
+        "tpltodept": "信件转发或分发到那个部门",
+        "tpldate": "2026-10-30 09:30:00",
+        "isLast": false,
+        "pos": 3
+      },
+      {
+        "tplfromdept": "信件从哪个部门转发或分发",
+        "tplactionname": "#preview",
+        "tpltodept": "信件转发或分发到那个部门",
+        "tpldate": "2026-10-30 09:30:00",
+        "isLast": false,
+        "pos": 4
+      },
+      {
+        "tplfromdept": "信件从哪个部门转发或分发",
+        "tplactionname": "#preview",
+        "tpltodept": "信件转发或分发到那个部门",
+        "tpldate": "2026-10-30 09:30:00",
+        "isLast": true,
+        "pos": 5
+      }
+    ]
+  }
+}

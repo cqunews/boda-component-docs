@@ -1,0 +1,28 @@
+{
+  "name": "boda-components-docs",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vitepress dev docs --host 127.0.0.1",
+    "build": "vitepress build docs",
+    "preview": "vitepress preview docs --host 127.0.0.1",
+    "test": "npm run audit",
+    "audit": "node scripts/audit.mjs && node scripts/audit-preview.mjs",
+    "import": "node scripts/import-components.mjs"
+  },
+  "dependencies": {
+    "idb-keyval": "^6.2.2",
+    "monaco-editor": "^0.55.1",
+    "qrcode-generator": "^2.0.4",
+    "vitepress": "1.6.4",
+    "vue": "^3.5.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.0",
+    "happy-dom": "^21.0.4"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

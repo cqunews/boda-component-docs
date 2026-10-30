@@ -1,0 +1,646 @@
+{
+  "id": "091",
+  "index": 91,
+  "name": "简单查询结果",
+  "category": "领导信箱",
+  "parameterCount": 52,
+  "hasScript": true,
+  "templateLength": 14254,
+  "parameters": [
+    {
+      "name": "通用参数",
+      "parameter": "commonparam",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件id",
+      "parameter": "viewid",
+      "type": "String",
+      "syntax": "${viewid}",
+      "descriptionHtml": "组件本身的id，数字(形如 1001)",
+      "description": "组件本身的id，数字(形如 1001)",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件uid",
+      "parameter": "uid",
+      "type": "String",
+      "syntax": "${uid}",
+      "descriptionHtml": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "description": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "私有样式类名",
+      "parameter": "uniqueClassName",
+      "type": "String",
+      "syntax": "${uniqueClassName}",
+      "descriptionHtml": "用在私有样式表的类名上，字符串(形如 c10)，举例：<br>&lt;span class=\"<span style=\"color:red\">${uniqueClassName}</span>\" &gt;文字&lt;/span&gt;",
+      "description": "用在私有样式表的类名上，字符串(形如 c10)，举例：\n<span class=\"${uniqueClassName}\" >文字</span>",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<span class=\"${uniqueClassName}\" >文字</span>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "引入jQuery类库",
+      "parameter": "v_includeJquery",
+      "type": "Function",
+      "syntax": "${v_includeJquery()}",
+      "descriptionHtml": "引入系统自带的JQuery类库;<br> 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "description": "引入系统自带的JQuery类库;\n 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "\n<!--引入jQuery-->${v_includeJquery()}<!--引入jQuery完成-->\n",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "唯一标识",
+      "parameter": "UUID",
+      "type": "String",
+      "syntax": "${UUID}",
+      "descriptionHtml": "唯一标识",
+      "description": "唯一标识",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "查询表单名称",
+      "parameter": "formname",
+      "type": "String",
+      "syntax": "${formname}",
+      "descriptionHtml": "查询表单名称",
+      "description": "查询表单名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "查询流水号输入文本框名称",
+      "parameter": "wbserialnum",
+      "type": "String",
+      "syntax": "${wbserialnum}",
+      "descriptionHtml": "查询流水号输入文本框名称",
+      "description": "查询流水号输入文本框名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "查询密码输入文本框名称",
+      "parameter": "wbsearchcode",
+      "type": "String",
+      "syntax": "${wbsearchcode}",
+      "descriptionHtml": "查询密码码输入文本框名称",
+      "description": "查询密码码输入文本框名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "是否是领导信件",
+      "parameter": "isleadermail",
+      "type": "Boolean",
+      "syntax": "${isleadermail}",
+      "descriptionHtml": "是否是领导信件",
+      "description": "是否是领导信件",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "回复状态值",
+      "parameter": "reply",
+      "type": "Boolean",
+      "syntax": "${reply}",
+      "descriptionHtml": "回复状态值",
+      "description": "回复状态值",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "信息编号",
+      "parameter": "mailId",
+      "type": "Integer",
+      "syntax": "${mailId}",
+      "descriptionHtml": "信息编号",
+      "description": "信息编号",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "流水号",
+      "parameter": "serialnum",
+      "type": "Integer",
+      "syntax": "${serialnum}",
+      "descriptionHtml": "流水号",
+      "description": "流水号",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "标题",
+      "parameter": "title",
+      "type": "String",
+      "syntax": "${title}",
+      "descriptionHtml": "标题",
+      "description": "标题",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "是否显示姓名",
+      "parameter": "showname",
+      "type": "String",
+      "syntax": "${showname}",
+      "descriptionHtml": "是否显示姓名",
+      "description": "是否显示姓名",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "姓名",
+      "parameter": "name",
+      "type": "String",
+      "syntax": "${name}",
+      "descriptionHtml": "姓名",
+      "description": "姓名",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "是否显示性别",
+      "parameter": "showsex",
+      "type": "Boolean",
+      "syntax": "${showsex}",
+      "descriptionHtml": "是否显示性别",
+      "description": "是否显示性别",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "性别",
+      "parameter": "sex",
+      "type": "String",
+      "syntax": "${sex}",
+      "descriptionHtml": "性别",
+      "description": "性别",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "是否显示年龄",
+      "parameter": "showage",
+      "type": "Boolean",
+      "syntax": "${showage}",
+      "descriptionHtml": "是否显示年龄",
+      "description": "是否显示年龄",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "年龄",
+      "parameter": "age",
+      "type": "Integer",
+      "syntax": "${age}",
+      "descriptionHtml": "年龄",
+      "description": "年龄",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "是否显示固定电话",
+      "parameter": "showphone",
+      "type": "Boolean",
+      "syntax": "${showphone}",
+      "descriptionHtml": "是否显示固定电话",
+      "description": "是否显示固定电话",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "固定电话",
+      "parameter": "phone",
+      "type": "String",
+      "syntax": "${phone}",
+      "descriptionHtml": "固定电话",
+      "description": "固定电话",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "是否显示手机",
+      "parameter": "showmobile",
+      "type": "Boolean",
+      "syntax": "${showmobile}",
+      "descriptionHtml": "是否显示手机",
+      "description": "是否显示手机",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "手机",
+      "parameter": "mobile",
+      "type": "String",
+      "syntax": "${mobile}",
+      "descriptionHtml": "手机",
+      "description": "手机",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "是否显示地址",
+      "parameter": "showaddress",
+      "type": "Boolean",
+      "syntax": "${showaddress}",
+      "descriptionHtml": "是否显示地址",
+      "description": "是否显示地址",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "地址",
+      "parameter": "address",
+      "type": "String",
+      "syntax": "${address}",
+      "descriptionHtml": "地址",
+      "description": "地址",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "是否显示邮箱",
+      "parameter": "showemail",
+      "type": "Boolean",
+      "syntax": "${showemail}",
+      "descriptionHtml": "是否显示邮箱",
+      "description": "是否显示邮箱",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "邮箱",
+      "parameter": "email",
+      "type": "String",
+      "syntax": "${email}",
+      "descriptionHtml": "邮箱",
+      "description": "邮箱",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "是否显示邮政编码",
+      "parameter": "showpost",
+      "type": "Boolean",
+      "syntax": "${showpost}",
+      "descriptionHtml": "是否显示邮政编码",
+      "description": "是否显示邮政编码",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "邮政编码",
+      "parameter": "post",
+      "type": "String",
+      "syntax": "${post}",
+      "descriptionHtml": "邮政编码",
+      "description": "邮政编码",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "是否显示身份证号",
+      "parameter": "showidcard",
+      "type": "Boolean",
+      "syntax": "${showidcard}",
+      "descriptionHtml": "是否显示身份证号",
+      "description": "是否显示身份证号",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "身份证号",
+      "parameter": "idcard",
+      "type": "String",
+      "syntax": "${idcard}",
+      "descriptionHtml": "身份证号",
+      "description": "身份证号",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "是否显示身份",
+      "parameter": "showidentity",
+      "type": "Boolean",
+      "syntax": "${showidentity}",
+      "descriptionHtml": "是否显示身份",
+      "description": "是否显示身份",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "身份",
+      "parameter": "identity",
+      "type": "String",
+      "syntax": "${identity}",
+      "descriptionHtml": "身份",
+      "description": "身份",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "是否显示职务",
+      "parameter": "showjob",
+      "type": "Boolean",
+      "syntax": "${showjob}",
+      "descriptionHtml": "是否显示职务",
+      "description": "是否显示职务",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "职务",
+      "parameter": "job",
+      "type": "String",
+      "syntax": "${job}",
+      "descriptionHtml": "职务",
+      "description": "职务",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "是否显示民族",
+      "parameter": "shownation",
+      "type": "Boolean",
+      "syntax": "${shownation}",
+      "descriptionHtml": "是否显示民族",
+      "description": "是否显示民族",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "民族",
+      "parameter": "nation",
+      "type": "String",
+      "syntax": "${nation}",
+      "descriptionHtml": "民族",
+      "description": "民族",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "是否显示发信ip",
+      "parameter": "showip",
+      "type": "Boolean",
+      "syntax": "${showip}",
+      "descriptionHtml": "是否显示发信ip",
+      "description": "是否显示发信ip",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "发信ip",
+      "parameter": "ip",
+      "type": "String",
+      "syntax": "${ip}",
+      "descriptionHtml": "发信ip",
+      "description": "发信ip",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "是否显示写信时间",
+      "parameter": "showDate",
+      "type": "Boolean",
+      "syntax": "${showDate}",
+      "descriptionHtml": "是否显示写信时间",
+      "description": "是否显示写信时间",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "写信时间",
+      "parameter": "writeMailDate",
+      "type": "Date",
+      "syntax": "${writeMailDate}",
+      "descriptionHtml": "写信时间",
+      "description": "写信时间",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "是否显示信件内容",
+      "parameter": "showcontent",
+      "type": "Boolean",
+      "syntax": "${showcontent}",
+      "descriptionHtml": "是否显示信件内容",
+      "description": "是否显示信件内容",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "信件内容",
+      "parameter": "content",
+      "type": "String",
+      "syntax": "${content}",
+      "descriptionHtml": "信件内容",
+      "description": "信件内容",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "处理状态",
+      "parameter": "audit",
+      "type": "String",
+      "syntax": "${audit}",
+      "descriptionHtml": "处理状态",
+      "description": "处理状态",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "是否显示回复内容",
+      "parameter": "showrecontent",
+      "type": "Boolean",
+      "syntax": "${showrecontent}",
+      "descriptionHtml": "是否显示回复内容",
+      "description": "是否显示回复内容",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "回复内容",
+      "parameter": "reContent",
+      "type": "String",
+      "syntax": "${reContent}",
+      "descriptionHtml": "回复内容",
+      "description": "回复内容",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "处理对象",
+      "parameter": "replyname",
+      "type": "String",
+      "syntax": "${replyname}",
+      "descriptionHtml": "处理对象",
+      "description": "处理对象",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "处理时间",
+      "parameter": "replyDate",
+      "type": "Date",
+      "syntax": "${replyDate}",
+      "descriptionHtml": "处理时间",
+      "description": "处理时间",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "分发信件处理列表",
+      "parameter": "null",
+      "type": "String",
+      "syntax": "<#list assignList as list></#list>",
+      "descriptionHtml": "如果当前信件是领导信件，而且被分发到多个部门联合处理，那么这个列表显示的就是这些处理部门的回复内容",
+      "description": "如果当前信件是领导信件，而且被分发到多个部门联合处理，那么这个列表显示的就是这些处理部门的回复内容",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "回复部门名称",
+      "parameter": "assigndeptname",
+      "type": "String",
+      "syntax": "${list.assigndeptname}",
+      "descriptionHtml": "回复部门名称",
+      "description": "回复部门名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "分发部门回复内容",
+      "parameter": "assigncontent",
+      "type": "String",
+      "syntax": "${list.assigncontent}",
+      "descriptionHtml": "分发部门回复内容",
+      "description": "分发部门回复内容",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "回复时间",
+      "parameter": "assigndate",
+      "type": "Date",
+      "syntax": "${list.assigndate}",
+      "descriptionHtml": "显示名称",
+      "description": "显示名称",
+      "kind": "parameter",
+      "path": []
+    }
+  ],
+  "template": "<script type=\"text/javascript\">\n    function _leadermail_search_changebase64_5()\n    {\n        if(document.getElementById(\"${wbserialnum}_temp\"))\n       {\n           document.getElementById(\"${wbserialnum}\").value=new  Base64().encode(document.getElementById(\"${wbserialnum}_temp\").value);\n           document.getElementById(\"${wbserialnum}_temp\").disabled=true;\n       }\n       if(document.getElementById(\"${wbsearchcode}_temp\"))\n       {\n           document.getElementById(\"${wbsearchcode}\").value=new  Base64().encode(document.getElementById(\"${wbsearchcode}_temp\").value);\n           document.getElementById(\"${wbsearchcode}_temp\").disabled=true;\n       }\n       return true;\n    }\n</script>\n<form  name=\"${formname}\" method=\"post\" action=\"\" style=\"display: inline;\" onsubmit=\"return _leadermail_search_changebase64_5();\">\n<table  cellspacing=\"0\" cellpadding=\"8\" align=\"center\" style=\"word-break:break-all;FONT-SIZE: 9pt; FONT-FAMILY: 宋体;\">\n    <tr>\n       <td nowrap=\"nowrap\">\n            <span style='FONT-FAMILY: 宋体; FONT-SIZE: 9pt'>流水号：</span><input type=\"text\" name=\"${wbserialnum}\" id=\"${wbserialnum}\" value=\"${serialnumvalue}\" style=\"display:none;\"\n            ><input type=\"text\" name=\"${wbserialnum}_temp\" id=\"${wbserialnum}_temp\" value=\"${serialnumvalue}\"  style=\"width:100px;BORDER-BOTTOM: #d2eec6 1px solid;BORDER-LEFT: #d2eec6 1px solid;FONT-FAMILY: 宋体;HEIGHT: 12pt;FONT-SIZE: 9pt;BORDER-TOP: #d2eec6 1px solid;BORDER-RIGHT: #d2eec6 1px solid; \" >\n        </td>\n        <td nowrap=\"nowrap\">\n            <span style='FONT-FAMILY: 宋体; FONT-SIZE: 9pt'>查询密码：</span><input type=\"text\" name=\"${wbsearchcode}\" id=\"${wbsearchcode}\" value=\"${searchcodevalue}\" style=\"display:none;\"\n            ><input type=\"text\" name=\"${wbsearchcode}_temp\" id=\"${wbsearchcode}_temp\" value=\"${searchcodevalue}\"   style=\"BORDER-BOTTOM: #d2eec6 1px solid;BORDER-LEFT: #d2eec6 1px solid;FONT-FAMILY: 宋体;HEIGHT: 12pt;FONT-SIZE: 9pt;BORDER-TOP: #d2eec6 1px solid;BORDER-RIGHT: #d2eec6 1px solid;width:100px;\" >\n        </td>\n        <td align=\"absmiddle\"><input type=\"image\"  src=\"/system/resource/images/leadermail/anniu_cx2.jpg\" valign=\"bottom\" border=\"0\" style=\"cursor:hand\"></td>\n    </tr>\n</table>\n</form>\n<#if mailId!=0 >\n    <div class=\"govitemcontentdetal${uniqueClassName}\">\n <TABLE style=\"FONT-SIZE: 9pt; FONT-FAMILY: 宋体;word-break:break-all\" cellspacing=\"0\" cellpadding=\"8\" width=\"100%\" >\n            <tr>\n                <td colspan=\"4\"  style=\"FONT-FAMILY: 宋体;FONT-SIZE: 18pt;FONT-WEIGHT: bold;\" ><img src=\"/system/resource/images/default/bltj_08.jpg\" border=\"0\" align=\"absmiddle\">信件内容</td>\n            </tr> \n            <tr>\n                <td  style=\"PADDING-LEFT: 25px;FONT-WEIGHT: bold;FONT-SIZE: 9pt;COLOR: #ff6600;FONT-FAMILY: 宋体;BACKGROUND-COLOR: #ffffec;text-align: left;\" nowrap  width=\"10%\">流水号</td>\n                <td  style=\"FONT-FAMILY: 宋体;COLOR: #5e5e5e;FONT-SIZE: 9pt;TEXT-DECORATION: none;text-align: left;\"  colspan=\"3\" >${serialnum}</td>\n            </tr>\n            <tr>\n                <td  style=\"PADDING-LEFT: 25px;FONT-WEIGHT: bold;FONT-SIZE: 9pt;COLOR: #ff6600;FONT-FAMILY: 宋体;BACKGROUND-COLOR: #ffffec;text-align: left;\"  nowrap  width=\"10%\">标&nbsp;&nbsp;&nbsp;&nbsp;题</td>\n                <td  style=\"FONT-FAMILY: 宋体;COLOR: #5e5e5e;FONT-SIZE: 9pt;TEXT-DECORATION: none;text-align: left;\"  colspan=\"3\" >${title}</td>\n            </tr>\n            <#if showname>\n            <tr>\n                <td  style=\"PADDING-LEFT: 25px;FONT-WEIGHT: bold;FONT-SIZE: 9pt;COLOR: #ff6600;FONT-FAMILY: 宋体;BACKGROUND-COLOR: #ffffec;text-align: left;\"  nowrap  width=\"10%\">姓&nbsp;&nbsp;&nbsp;&nbsp;名</td>\n                <td  style=\"FONT-FAMILY: 宋体;COLOR: #5e5e5e;FONT-SIZE: 9pt;TEXT-DECORATION: none;text-align: left;\"  colspan=\"3\" >${name}</td>\n            </tr>\n            </#if>\n            <#if showsex>\n            <tr>\n                <td  style=\"PADDING-LEFT: 25px;FONT-WEIGHT: bold;FONT-SIZE: 9pt;COLOR: #ff6600;FONT-FAMILY: 宋体;BACKGROUND-COLOR: #ffffec;text-align: left;\"  nowrap  width=\"10%\">性&nbsp;&nbsp;&nbsp;&nbsp;别</td>\n                <td  style=\"FONT-FAMILY: 宋体;COLOR: #5e5e5e;FONT-SIZE: 9pt;TEXT-DECORATION: none;text-align: left;\"  colspan=\"3\" >${sex}</td>\n            </tr>\n            </#if>\n            <#if showage>\n            <tr>\n                <td  style=\"PADDING-LEFT: 25px;FONT-WEIGHT: bold;FONT-SIZE: 9pt;COLOR: #ff6600;FONT-FAMILY: 宋体;BACKGROUND-COLOR: #ffffec;text-align: left;\"  nowrap  width=\"10%\">年&nbsp;&nbsp;&nbsp;&nbsp;龄</td>\n                <td  style=\"FONT-FAMILY: 宋体;COLOR: #5e5e5e;FONT-SIZE: 9pt;TEXT-DECORATION: none;text-align: left;\"  colspan=\"3\" ><#if (age>0) > ${age} </#if></td>\n            </tr>\n            </#if>\n            <#if showphone>\n            <tr>\n                <td  style=\"PADDING-LEFT: 25px;FONT-WEIGHT: bold;FONT-SIZE: 9pt;COLOR: #ff6600;FONT-FAMILY: 宋体;BACKGROUND-COLOR: #ffffec;text-align: left;\"  nowrap  width=\"10%\">固定电话</td>\n                <td  style=\"FONT-FAMILY: 宋体;COLOR: #5e5e5e;FONT-SIZE: 9pt;TEXT-DECORATION: none;text-align: left;\"  colspan=\"3\" >${phone}</td>\n            </tr>\n            </#if>\n            <#if showmobile>\n            <tr>\n                <td  style=\"PADDING-LEFT: 25px;FONT-WEIGHT: bold;FONT-SIZE: 9pt;COLOR: #ff6600;FONT-FAMILY: 宋体;BACKGROUND-COLOR: #ffffec;text-align: left;\"  nowrap  width=\"10%\">手&nbsp;&nbsp;&nbsp;&nbsp;机</td>\n                <td  style=\"FONT-FAMILY: 宋体;COLOR: #5e5e5e;FONT-SIZE: 9pt;TEXT-DECORATION: none;text-align: left;\"  colspan=\"3\" >${mobile}</td>\n            </tr>\n            </#if>\n            <#if showaddress>\n            <tr>\n                <td  style=\"PADDING-LEFT: 25px;FONT-WEIGHT: bold;FONT-SIZE: 9pt;COLOR: #ff6600;FONT-FAMILY: 宋体;BACKGROUND-COLOR: #ffffec;text-align: left;\"  nowrap  width=\"10%\">地&nbsp;&nbsp;&nbsp;&nbsp;址</td>\n                <td  style=\"FONT-FAMILY: 宋体;COLOR: #5e5e5e;FONT-SIZE: 9pt;TEXT-DECORATION: none;text-align: left;\"  colspan=\"3\" >${address}</td>\n            </tr>\n            </#if>\n            <#if showemail>\n            <tr>\n                <td  style=\"PADDING-LEFT: 25px;FONT-WEIGHT: bold;FONT-SIZE: 9pt;COLOR: #ff6600;FONT-FAMILY: 宋体;BACKGROUND-COLOR: #ffffec;text-align: left;\"  nowrap  width=\"10%\">邮&nbsp;&nbsp;&nbsp;&nbsp;箱</td>\n                <td  style=\"FONT-FAMILY: 宋体;COLOR: #5e5e5e;FONT-SIZE: 9pt;TEXT-DECORATION: none;text-align: left;\"  colspan=\"3\" >${email}</td>\n            </tr>\n            </#if>\n            <#if showpost>\n            <tr>\n                <td  style=\"PADDING-LEFT: 25px;FONT-WEIGHT: bold;FONT-SIZE: 9pt;COLOR: #ff6600;FONT-FAMILY: 宋体;BACKGROUND-COLOR: #ffffec;text-align: left;\"  nowrap  width=\"10%\">邮政编码</td>\n                <td  style=\"FONT-FAMILY: 宋体;COLOR: #5e5e5e;FONT-SIZE: 9pt;TEXT-DECORATION: none;text-align: left;\"  colspan=\"3\" >${post}</td>\n            </tr>\n            </#if>\n            <#if showidcard>\n            <tr>\n                <td  style=\"PADDING-LEFT: 25px;FONT-WEIGHT: bold;FONT-SIZE: 9pt;COLOR: #ff6600;FONT-FAMILY: 宋体;BACKGROUND-COLOR: #ffffec;text-align: left;\"  nowrap  width=\"10%\">身份证号</td>\n                <td  style=\"FONT-FAMILY: 宋体;COLOR: #5e5e5e;FONT-SIZE: 9pt;TEXT-DECORATION: none;text-align: left;\"  colspan=\"3\" >${idcard}</td>\n            </tr>\n            </#if>\n            <#if showidentity>\n            <tr>\n                <td  style=\"PADDING-LEFT: 25px;FONT-WEIGHT: bold;FONT-SIZE: 9pt;COLOR: #ff6600;FONT-FAMILY: 宋体;BACKGROUND-COLOR: #ffffec;text-align: left;\"  nowrap  width=\"10%\">身&nbsp;&nbsp;&nbsp;&nbsp;份</td>\n                <td  style=\"FONT-FAMILY: 宋体;COLOR: #5e5e5e;FONT-SIZE: 9pt;TEXT-DECORATION: none;text-align: left;\"  colspan=\"3\" >${identity}</td>\n            </tr>\n            </#if>\n            <#if showjob>\n            <tr>\n                <td  style=\"PADDING-LEFT: 25px;FONT-WEIGHT: bold;FONT-SIZE: 9pt;COLOR: #ff6600;FONT-FAMILY: 宋体;BACKGROUND-COLOR: #ffffec;text-align: left;\"  nowrap  width=\"10%\">职&nbsp;&nbsp;&nbsp;&nbsp;务</td>\n                <td  style=\"FONT-FAMILY: 宋体;COLOR: #5e5e5e;FONT-SIZE: 9pt;TEXT-DECORATION: none;text-align: left;\"  colspan=\"3\" >${job}</td>\n            </tr>\n            </#if>\n            <#if shownation>\n            <tr>\n                <td  style=\"PADDING-LEFT: 25px;FONT-WEIGHT: bold;FONT-SIZE: 9pt;COLOR: #ff6600;FONT-FAMILY: 宋体;BACKGROUND-COLOR: #ffffec;text-align: left;\"  nowrap  width=\"10%\">民&nbsp;&nbsp;&nbsp;&nbsp;族</td>\n                <td  style=\"FONT-FAMILY: 宋体;COLOR: #5e5e5e;FONT-SIZE: 9pt;TEXT-DECORATION: none;text-align: left;\"  colspan=\"3\" >${nation}</td>\n            </tr>\n            </#if>\n            <#if showip>\n            <tr>\n                <td  style=\"PADDING-LEFT: 25px;FONT-WEIGHT: bold;FONT-SIZE: 9pt;COLOR: #ff6600;FONT-FAMILY: 宋体;BACKGROUND-COLOR: #ffffec;text-align: left;\"  nowrap  width=\"10%\">发件IP</td>\n                <td  style=\"FONT-FAMILY: 宋体;COLOR: #5e5e5e;FONT-SIZE: 9pt;TEXT-DECORATION: none;text-align: left;\"  colspan=\"3\" >${ip}</td>\n            </tr>\n            </#if>\n            \n            <#if showDate>\n            <tr>\n                <td  style=\"PADDING-LEFT: 25px;FONT-WEIGHT: bold;FONT-SIZE: 9pt;COLOR: #ff6600;FONT-FAMILY: 宋体;BACKGROUND-COLOR: #ffffec;text-align: left;\"  nowrap  width=\"10%\">写信时间</td>\n                <td  style=\"FONT-FAMILY: 宋体;COLOR: #5e5e5e;FONT-SIZE: 9pt;TEXT-DECORATION: none;text-align: left;\"  colspan=\"3\" >${writeMailDate?string(\"yyyy年MM月d日\")}</td>\n            </tr>\n            </#if>\n            \n            <#if showcontent>\n            <tr>\n                <td  style=\"PADDING-LEFT: 25px;FONT-WEIGHT: bold;FONT-SIZE: 9pt;COLOR: #ff6600;FONT-FAMILY: 宋体;BACKGROUND-COLOR: #ffffec;text-align: left;\"  nowrap  width=\"10%\">信件内容</td>\n                <td  style=\"FONT-FAMILY: 宋体;COLOR: #5e5e5e;FONT-SIZE: 9pt;TEXT-DECORATION: none;text-align: left;\"  colspan=\"3\" >${content}</td>\n            </tr>\n            </#if>\n            \n            <tr>\n                <td colspan=\"4\"  style=\"FONT-FAMILY: 宋体;FONT-SIZE: 18pt;FONT-WEIGHT: bold;\" ><img src=\"/system/resource/images/default/bltj_08.jpg\" border=\"0\" align=\"absmiddle\">办理情况</td>\n            </tr> \n            <tr>\n                <td  style=\"PADDING-LEFT: 25px;FONT-WEIGHT: bold;FONT-SIZE: 9pt;COLOR: #ff6600;FONT-FAMILY: 宋体;BACKGROUND-COLOR: #ffffec;text-align: left;\"  nowrap  width=\"10%\">处理状态</td>\n                <td  style=\"FONT-FAMILY: 宋体;COLOR: #5e5e5e;FONT-SIZE: 9pt;TEXT-DECORATION: none;text-align: left;\"  colspan=\"3\" >${audit}</td>\n            </tr>\n            <!-- 下面是具体的回复内容 -->\n            <#if !isleadermail&&showrecontent>\n                <#if (assignList?size>0) >\n                <tr>\n                    <td  style=\"PADDING-LEFT: 25px;FONT-WEIGHT: bold;FONT-SIZE: 9pt;COLOR: #ff6600;FONT-FAMILY: 宋体;BACKGROUND-COLOR: #ffffec;text-align: left;\"  nowrap  width=\"10%\">回复内容</td>\n                    <td  style=\"FONT-FAMILY: 宋体;COLOR: #5e5e5e;FONT-SIZE: 9pt;TEXT-DECORATION: none;text-align: left;\"  colspan=\"3\" >${reContent}</td>\n                </tr>\n                <#else>\n                <tr>\n                    <td  style=\"PADDING-LEFT: 25px;FONT-WEIGHT: bold;FONT-SIZE: 9pt;COLOR: #ff6600;FONT-FAMILY: 宋体;BACKGROUND-COLOR: #ffffec;text-align: left;\"  nowrap  width=\"10%\">回复内容</td>\n                    <td  style=\"FONT-FAMILY: 宋体;COLOR: #5e5e5e;FONT-SIZE: 9pt;TEXT-DECORATION: none;text-align: left;\"   >${reContent}</td>\n                </tr>\n                </#if>\n            </#if>\n            <#if isleadermail>   \n                <#if (assignList?size>0) >\n                    <tr>\n                        <td rowspan=\"${assignList?size+2}\"  style=\"PADDING-LEFT: 25px;FONT-WEIGHT: bold;FONT-SIZE: 9pt;COLOR: #ff6600;FONT-FAMILY: 宋体;BACKGROUND-COLOR: #ffffec;text-align: left;\"  nowrap  width=\"10%\">回复内容</td>\n                        <td  style=\"FONT-FAMILY: 宋体;COLOR: #5e5e5e;FONT-SIZE: 9pt;TEXT-DECORATION: none;text-align: left;\"  colspan=\"3\" >${reContent}</td>\n                    </tr>\n                <#else>\n                    <#if showrecontent >\n                        <tr>\n                            <td  style=\"PADDING-LEFT: 25px;FONT-WEIGHT: bold;FONT-SIZE: 9pt;COLOR: #ff6600;FONT-FAMILY: 宋体;BACKGROUND-COLOR: #ffffec;text-align: left;\"  nowrap  width=\"10%\">回复内容</td>\n                            <td  style=\"FONT-FAMILY: 宋体;COLOR: #5e5e5e;FONT-SIZE: 9pt;TEXT-DECORATION: none;text-align: left;\"  colspan=\"3\" >${reContent}</td>\n                        </tr>\n                    </#if>\n                </#if>  \n                <#if (assignList?size>0) >       \n                        <tr>\n                            <td  style=\"text-align:center\">转办单位</td>\n                            <td  style=\"text-align:center\">办理回复</td>\n                            <td  style=\"text-align:center\">办理时间</td>\n                        </tr>\n                        <#list assignList as list>\n                          <tr>\n                               <td  style=\"text-align:center\" nowrap=\"nowrap\">${list.assigndeptname}</td>\n                               <td  style=\"text-align:center\">${list.assigncontent}</td>\n                               <td  style=\"text-align:center\" nowrap=\"nowrap\">${list.assigndate?string(\"yyyy年MM月d日\")}</td>\n                          </tr>\n                       </#list> \n                 </#if>        \n            </#if>\n            \n            <!-- 回复内容完成 -->\n            <tr>\n                <td  style=\"PADDING-LEFT: 25px;FONT-WEIGHT: bold;FONT-SIZE: 9pt;COLOR: #ff6600;FONT-FAMILY: 宋体;BACKGROUND-COLOR: #ffffec;text-align: left;\"  nowrap  width=\"10%\">处理对象</td>\n                <td  style=\"FONT-FAMILY: 宋体;COLOR: #5e5e5e;FONT-SIZE: 9pt;TEXT-DECORATION: none;text-align: left;\"  colspan=\"3\" >${replyname}</td>\n            </tr>\n             \n            <#if auditvalue!=0 >\n            <tr>\n                <td  style=\"PADDING-LEFT: 25px;FONT-WEIGHT: bold;FONT-SIZE: 9pt;COLOR: #ff6600;FONT-FAMILY: 宋体;BACKGROUND-COLOR: #ffffec;text-align: left;\"  nowrap  width=\"10%\">处理时间</td>\n                <td  style=\"FONT-FAMILY: 宋体;COLOR: #5e5e5e;FONT-SIZE: 9pt;TEXT-DECORATION: none;text-align: left;\"  colspan=\"3\" >${replyDate?string(\"yyyy年MM月d日\")}</td>\n            </tr>\n            </#if>\n        </table>\n<#else>\n       <TABLE width=\"100%\">\n           <tr><td align=\"center\">没有找到你要查询的信件</td></tr>\n       </TABLE>\n       </div>\n    </#if>",
+  "exampleTemplate": "",
+  "previousFixtureHashes": [
+    "14346912"
+  ],
+  "css": ".govitemcontentdetal${uniqueClassName} table\n{\n    border-collapse:collapse;\n    border:1px #ecc197 solid;\n}                                                                          \n.govitemcontentdetal${uniqueClassName} td\n{\n    border:1px #ecc197 solid;\n} ",
+  "fixture": {
+    "viewid": "1091",
+    "uid": "u_demo",
+    "uniqueClassName": "c_demo",
+    "UUID": "boda_demo",
+    "formname": "boda_demo",
+    "wbserialnum": "boda_demo",
+    "wbsearchcode": "boda_demo",
+    "isleadermail": true,
+    "reply": true,
+    "mailId": 6,
+    "serialnum": 6,
+    "title": "把课堂搬进山野，让知识连接更广阔的世界",
+    "showname": true,
+    "name": "示例名称",
+    "showsex": true,
+    "sex": "性别",
+    "showage": true,
+    "age": 6,
+    "showphone": true,
+    "phone": "",
+    "showmobile": true,
+    "mobile": "",
+    "showaddress": true,
+    "address": "地址",
+    "showemail": true,
+    "email": "",
+    "showpost": true,
+    "post": "邮政编码",
+    "showidcard": true,
+    "idcard": "身份证号",
+    "showidentity": true,
+    "identity": "身份",
+    "showjob": true,
+    "job": "职务",
+    "shownation": true,
+    "nation": "民族",
+    "showip": true,
+    "ip": "发信ip",
+    "showDate": true,
+    "writeMailDate": "2026-10-30 09:30:00",
+    "showcontent": true,
+    "content": "<p>这里是组件的示例正文。你可以修改模板结构和 CSS，实时观察内容排版的变化。</p><p>所有内容均为本地演示数据，可在“示例数据”中自由编辑。</p>",
+    "audit": "处理状态",
+    "showrecontent": true,
+    "reContent": "回复内容",
+    "replyname": "示例名称",
+    "replyDate": "2026-10-30 09:30:00",
+    "serialnumvalue": "12",
+    "searchcodevalue": "示例内容",
+    "assignList": [
+      {
+        "assigndeptname": "示例名称",
+        "assigncontent": "分发部门回复内容",
+        "assigndate": "2026-10-30 09:30:00"
+      },
+      {
+        "assigndeptname": "示例名称",
+        "assigncontent": "分发部门回复内容",
+        "assigndate": "2026-10-30 09:30:00"
+      },
+      {
+        "assigndeptname": "示例名称",
+        "assigncontent": "分发部门回复内容",
+        "assigndate": "2026-10-30 09:30:00"
+      },
+      {
+        "assigndeptname": "示例名称",
+        "assigncontent": "分发部门回复内容",
+        "assigndate": "2026-10-30 09:30:00"
+      },
+      {
+        "assigndeptname": "示例名称",
+        "assigncontent": "分发部门回复内容",
+        "assigndate": "2026-10-30 09:30:00"
+      }
+    ],
+    "auditvalue": 6
+  }
+}

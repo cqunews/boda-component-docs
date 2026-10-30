@@ -1,0 +1,358 @@
+{
+  "id": "019",
+  "index": 19,
+  "name": "文章心情列表",
+  "category": "文章列表",
+  "parameterCount": 19,
+  "hasScript": false,
+  "templateLength": 291,
+  "parameters": [
+    {
+      "name": "通用参数",
+      "parameter": "commonparam",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件id",
+      "parameter": "viewid",
+      "type": "String",
+      "syntax": "${viewid}",
+      "descriptionHtml": "组件本身的id，数字(形如 1001)",
+      "description": "组件本身的id，数字(形如 1001)",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件uid",
+      "parameter": "uid",
+      "type": "String",
+      "syntax": "${uid}",
+      "descriptionHtml": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "description": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "私有样式类名",
+      "parameter": "uniqueClassName",
+      "type": "String",
+      "syntax": "${uniqueClassName}",
+      "descriptionHtml": "用在私有样式表的类名上，字符串(形如 c10)，举例：<br>&lt;span class=\"<span style=\"color:red\">${uniqueClassName}</span>\" &gt;文字&lt;/span&gt;",
+      "description": "用在私有样式表的类名上，字符串(形如 c10)，举例：\n<span class=\"${uniqueClassName}\" >文字</span>",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<span class=\"${uniqueClassName}\" >文字</span>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "引入jQuery类库",
+      "parameter": "v_includeJquery",
+      "type": "Function",
+      "syntax": "${v_includeJquery()}",
+      "descriptionHtml": "引入系统自带的JQuery类库;<br> 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "description": "引入系统自带的JQuery类库;\n 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "\n<!--引入jQuery-->${v_includeJquery()}<!--引入jQuery完成-->\n",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "图片地址",
+      "parameter": "imgUrl",
+      "type": "String",
+      "syntax": "${imgUrl}",
+      "descriptionHtml": "图片地址",
+      "description": "图片地址",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "图片宽度",
+      "parameter": "imgWidth",
+      "type": "String",
+      "syntax": "${imgWidth}",
+      "descriptionHtml": "图片宽度",
+      "description": "图片宽度",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "图片高度",
+      "parameter": "imgHeight",
+      "type": "String",
+      "syntax": "${imgHeight}",
+      "descriptionHtml": "图片高度",
+      "description": "图片高度",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "类型名称",
+      "parameter": "moodName",
+      "type": "String",
+      "syntax": "${moodName}",
+      "descriptionHtml": "类型名称",
+      "description": "类型名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "点击日期",
+      "parameter": "moodClickDate",
+      "type": "String",
+      "syntax": "${moodClickDate}",
+      "descriptionHtml": "点击日期",
+      "description": "点击日期",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "文章列表",
+      "parameter": "moodList",
+      "type": "List",
+      "syntax": "<#list moodList as list></#list>",
+      "descriptionHtml": "文章列表",
+      "description": "文章列表",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#list moodList as list>\n    ${list.columnName}<a href=\"${list.url}\">${list.showTitle}</a><br/>\n    </#list>\n\t\t",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "列表位置参数",
+      "parameter": "listnogroup",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "栏目名称",
+      "parameter": "columnName",
+      "type": "String",
+      "syntax": "${list.columnName}",
+      "descriptionHtml": "栏目名称",
+      "description": "栏目名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "文章链接",
+      "parameter": "url",
+      "type": "String",
+      "syntax": "${list.url}",
+      "descriptionHtml": "文章链接",
+      "description": "文章链接",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "原标题",
+      "parameter": "title",
+      "type": "String",
+      "syntax": "${list.title}",
+      "descriptionHtml": "文章原标题，不建议直接输出",
+      "description": "文章原标题，不建议直接输出",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "显示标题",
+      "parameter": "showTitle",
+      "type": "String",
+      "syntax": "${list.showTitle}",
+      "descriptionHtml": "文章显示标题",
+      "description": "文章显示标题",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "提示标题",
+      "parameter": "tipsTitle",
+      "type": "String",
+      "syntax": "${list.tipsTitle}",
+      "descriptionHtml": "文章提示标题",
+      "description": "文章提示标题",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "点击数",
+      "parameter": "moodClick",
+      "type": "Integer",
+      "syntax": "${list.moodClick}",
+      "descriptionHtml": "点击数",
+      "description": "点击数",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "是第几条",
+      "parameter": "pos",
+      "type": "Integer",
+      "syntax": "${list.pos}",
+      "descriptionHtml": "当前是列表的第几条(从1开始)",
+      "description": "当前是列表的第几条(从1开始)",
+      "kind": "parameter",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "第${list.pos}条",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否首条",
+      "parameter": "isFirst",
+      "type": "Boolean",
+      "syntax": "<#if list.isFirst></#if>",
+      "descriptionHtml": "当前是不是列表的第一条",
+      "description": "当前是不是列表的第一条",
+      "kind": "parameter",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if list.isFirst>首条</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否尾条",
+      "parameter": "isLast",
+      "type": "Boolean",
+      "syntax": "<#if list.isLast></#if>",
+      "descriptionHtml": "当前是不是列表的最后一条",
+      "description": "当前是不是列表的最后一条",
+      "kind": "parameter",
+      "path": [
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if list.isLast>尾条</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "listnogroup"
+      ]
+    }
+  ],
+  "template": "<#if (moodName != \"\")>\n    <img src=\"${imgUrl}\" />&nbsp;\n    ${moodName}&nbsp;\n    ${moodClickDate}\n</#if><br/>\n<#if (size > 0)>\n    <#list moodList as list>\n    ${list.columnName}<a href=\"${list.url}\">${list.showTitle}</a> &nbsp; ${list.moodClick}<br/>\n    </#list>\n<#else>\n    尚无资料\n</#if>\n",
+  "exampleTemplate": "",
+  "previousFixtureHashes": [
+    "d200a1c2",
+    "8fd01f67"
+  ],
+  "css": "",
+  "fixture": {
+    "viewid": "1019",
+    "uid": "u_demo",
+    "uniqueClassName": "c_demo",
+    "imgUrl": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22640%22%20height%3D%22400%22%20viewBox%3D%220%200%20640%20400%22%3E%3Crect%20width%3D%22640%22%20height%3D%22400%22%20fill%3D%22%23e8eef0%22%2F%3E%3Ccircle%20cx%3D%22500%22%20cy%3D%2290%22%20r%3D%22130%22%20fill%3D%22%23d4e1dc%22%2F%3E%3Cpath%20d%3D%22M0%20400V270L180%20110l220%20290M170%20400l220-230%20250%20230%22%20fill%3D%22%2391afa4%22%2F%3E%3Cpath%20d%3D%22M0%20400V320l170-130%20160%20210M260%20400l170-180%20210%20180%22%20fill%3D%22%23658979%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2255%22%20fill%3D%22%23426454%22%20font-size%3D%2220%22%20font-family%3D%22sans-serif%22%3EIMAGE%20PREVIEW%3C%2Ftext%3E%3C%2Fsvg%3E",
+    "imgWidth": "图片宽度",
+    "imgHeight": "图片高度",
+    "moodName": "示例名称",
+    "moodClickDate": "12",
+    "size": 6,
+    "moodList": [
+      {
+        "columnName": "校园动态",
+        "url": "#preview",
+        "showTitle": "把课堂搬进山野，让知识连接更广阔的世界",
+        "moodClick": 6,
+        "title": "把课堂搬进山野，让知识连接更广阔的世界",
+        "tipsTitle": "把课堂搬进山野，让知识连接更广阔的世界",
+        "pos": 1
+      },
+      {
+        "columnName": "校园动态",
+        "url": "#preview",
+        "showTitle": "校园开放日｜在这里，遇见新的可能",
+        "moodClick": 6,
+        "title": "校园开放日｜在这里，遇见新的可能",
+        "tipsTitle": "校园开放日｜在这里，遇见新的可能",
+        "pos": 2
+      },
+      {
+        "columnName": "校园动态",
+        "url": "#preview",
+        "showTitle": "关于举办青年学术交流活动的通知",
+        "moodClick": 6,
+        "title": "关于举办青年学术交流活动的通知",
+        "tipsTitle": "关于举办青年学术交流活动的通知",
+        "pos": 3
+      },
+      {
+        "columnName": "校园动态",
+        "url": "#preview",
+        "showTitle": "图书馆秋季阅读计划正式启动",
+        "moodClick": 6,
+        "title": "图书馆秋季阅读计划正式启动",
+        "tipsTitle": "图书馆秋季阅读计划正式启动",
+        "pos": 4
+      },
+      {
+        "columnName": "校园动态",
+        "url": "#preview",
+        "showTitle": "探索与创新：青年研究者的校园故事",
+        "moodClick": 6,
+        "title": "探索与创新：青年研究者的校园故事",
+        "tipsTitle": "探索与创新：青年研究者的校园故事",
+        "pos": 5
+      }
+    ]
+  }
+}

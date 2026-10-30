@@ -1,0 +1,704 @@
+{
+  "id": "089",
+  "index": 89,
+  "name": "信件投票",
+  "category": "领导信箱",
+  "parameterCount": 33,
+  "hasScript": true,
+  "templateLength": 2386,
+  "parameters": [
+    {
+      "name": "通用参数",
+      "parameter": "commonparam",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件id",
+      "parameter": "viewid",
+      "type": "String",
+      "syntax": "${viewid}",
+      "descriptionHtml": "组件本身的id，数字(形如 1001)",
+      "description": "组件本身的id，数字(形如 1001)",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件uid",
+      "parameter": "uid",
+      "type": "String",
+      "syntax": "${uid}",
+      "descriptionHtml": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "description": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "私有样式类名",
+      "parameter": "uniqueClassName",
+      "type": "String",
+      "syntax": "${uniqueClassName}",
+      "descriptionHtml": "用在私有样式表的类名上，字符串(形如 c10)，举例：<br>&lt;span class=\"<span style=\"color:red\">${uniqueClassName}</span>\" &gt;文字&lt;/span&gt;",
+      "description": "用在私有样式表的类名上，字符串(形如 c10)，举例：\n<span class=\"${uniqueClassName}\" >文字</span>",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<span class=\"${uniqueClassName}\" >文字</span>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "引入jQuery类库",
+      "parameter": "v_includeJquery",
+      "type": "Function",
+      "syntax": "${v_includeJquery()}",
+      "descriptionHtml": "引入系统自带的JQuery类库;<br> 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "description": "引入系统自带的JQuery类库;\n 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "\n<!--引入jQuery-->${v_includeJquery()}<!--引入jQuery完成-->\n",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "唯一标识",
+      "parameter": "UUID",
+      "type": "String",
+      "syntax": "${UUID}",
+      "descriptionHtml": "唯一标识",
+      "description": "唯一标识",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "是否已经够过票",
+      "parameter": "hastoken",
+      "type": "Boolean",
+      "syntax": "<#if hastoken></#if>",
+      "descriptionHtml": "是否已经够过票",
+      "description": "是否已经够过票",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "是否投票成功",
+      "parameter": "issucess",
+      "type": "Boolean",
+      "syntax": "<#if issucessil></#if>",
+      "descriptionHtml": "是否投票成功",
+      "description": "是否投票成功",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "信件选择次数",
+      "parameter": "votetotlecount",
+      "type": "Integer",
+      "syntax": "${votetotlecount}",
+      "descriptionHtml": "信件选择次数",
+      "description": "信件选择次数",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "表单项",
+      "parameter": "group_list",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "投票表单名称",
+      "parameter": "formname",
+      "type": "String",
+      "syntax": "${formname}",
+      "descriptionHtml": "投票表单名称",
+      "description": "投票表单名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "投票表单跳转链接",
+      "parameter": "action",
+      "type": "String",
+      "syntax": "${action}",
+      "descriptionHtml": "投票表单跳转链接",
+      "description": "投票表单跳转链接",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "投票表单提交状态",
+      "parameter": "actiontype",
+      "type": "String",
+      "syntax": "${actiontype}",
+      "descriptionHtml": "投票表单提交状态",
+      "description": "投票表单提交状态",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "投票表单需要的隐藏表单",
+      "parameter": "hidden",
+      "type": "String",
+      "syntax": "${hidden}",
+      "descriptionHtml": "投票表单跳转链接",
+      "description": "投票表单跳转链接",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "投票选项",
+      "parameter": "list",
+      "type": "List",
+      "syntax": "<#list list_xx as list></#list>",
+      "descriptionHtml": "投票选项",
+      "description": "投票选项",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#list list_xx as list><input type=\"radio\" name=${list.name} id=${list.id}>${list.code}</#list>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "是否显示投票结果",
+      "parameter": "isshowresult",
+      "type": "Booblean",
+      "syntax": "<#if isshowresult></#if>",
+      "descriptionHtml": "如果总投票数为0，则不显示投票结果",
+      "description": "如果总投票数为0，则不显示投票结果",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if isshowresult>投票结果列表</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "投票结果",
+      "parameter": "list_result",
+      "type": "List",
+      "syntax": "<#list list_result as list_result></#list>",
+      "descriptionHtml": "投票结果",
+      "description": "投票结果",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#list list_result as list_result></#list>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "表单隐藏域",
+      "parameter": "hidden2",
+      "type": "String",
+      "syntax": "${hidden2}",
+      "descriptionHtml": "表单隐藏域，放在</from>前",
+      "description": "表单隐藏域，放在前",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "列表位置参数",
+      "parameter": "listnogroup",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": [
+        "list"
+      ]
+    },
+    {
+      "name": "单选项的name",
+      "parameter": "name",
+      "type": "String",
+      "syntax": "${list.name}",
+      "descriptionHtml": "radio标签的name",
+      "description": "radio标签的name",
+      "kind": "parameter",
+      "path": [
+        "list"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<input type=\"radio\" name=${list.name} id=${list.id}>${list.code}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "list"
+      ]
+    },
+    {
+      "name": "单选项的id",
+      "parameter": "id",
+      "type": "String",
+      "syntax": "${list.id}",
+      "descriptionHtml": "radio标签的id",
+      "description": "radio标签的id",
+      "kind": "parameter",
+      "path": [
+        "list"
+      ]
+    },
+    {
+      "name": "选项名称",
+      "parameter": "code",
+      "type": "String",
+      "syntax": "${list.code}",
+      "descriptionHtml": "选项名称",
+      "description": "选项名称",
+      "kind": "parameter",
+      "path": [
+        "list"
+      ]
+    },
+    {
+      "name": "选项名称",
+      "parameter": "xjtitle",
+      "type": "String",
+      "syntax": "${list.title}",
+      "descriptionHtml": "选项名称",
+      "description": "选项名称",
+      "kind": "parameter",
+      "path": [
+        "list"
+      ]
+    },
+    {
+      "name": "是第几条",
+      "parameter": "pos",
+      "type": "Integer",
+      "syntax": "${list.pos}",
+      "descriptionHtml": "当前是列表的第几条(从1开始)",
+      "description": "当前是列表的第几条(从1开始)",
+      "kind": "parameter",
+      "path": [
+        "list",
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "第${list.pos}条",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "list",
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否首条",
+      "parameter": "isFirst",
+      "type": "Boolean",
+      "syntax": "<#if list.isFirst></#if>",
+      "descriptionHtml": "当前是不是列表的第一条",
+      "description": "当前是不是列表的第一条",
+      "kind": "parameter",
+      "path": [
+        "list",
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if list.isFirst>首条</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "list",
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否尾条",
+      "parameter": "isLast",
+      "type": "Boolean",
+      "syntax": "<#if list.isLast></#if>",
+      "descriptionHtml": "当前是不是列表的最后一条",
+      "description": "当前是不是列表的最后一条",
+      "kind": "parameter",
+      "path": [
+        "list",
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if list.isLast>尾条</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "list",
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否奇数行",
+      "parameter": "isOdd",
+      "type": "Boolean",
+      "syntax": "<#if list.isOdd></#if>",
+      "descriptionHtml": "当前是不是奇数行",
+      "description": "当前是不是奇数行",
+      "kind": "parameter",
+      "path": [
+        "list",
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if list.isOdd>奇数行</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "list",
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否偶数行",
+      "parameter": "isEven",
+      "type": "Boolean",
+      "syntax": "<#if list.isEven></#if>",
+      "descriptionHtml": "当前是不是偶数行",
+      "description": "当前是不是偶数行",
+      "kind": "parameter",
+      "path": [
+        "list",
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if list.isEven>偶数行</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "list",
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "列表位置参数",
+      "parameter": "listnogroup",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": [
+        "list_result"
+      ]
+    },
+    {
+      "name": "标题",
+      "parameter": "title",
+      "type": "String",
+      "syntax": "${list_result.title}",
+      "descriptionHtml": "标题",
+      "description": "标题",
+      "kind": "parameter",
+      "path": [
+        "list_result"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<input type=\"radio\" name=${name} id=${id}>${code}",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "list_result"
+      ]
+    },
+    {
+      "name": "该选项的选择次数",
+      "parameter": "votecount",
+      "type": "Integer",
+      "syntax": "${list_result.votecount}",
+      "descriptionHtml": "该选项的选择次数",
+      "description": "该选项的选择次数",
+      "kind": "parameter",
+      "path": [
+        "list_result"
+      ]
+    },
+    {
+      "name": "投票率",
+      "parameter": "parresult",
+      "type": "String",
+      "syntax": "${list_result.parresult}",
+      "descriptionHtml": "投票率",
+      "description": "投票率",
+      "kind": "parameter",
+      "path": [
+        "list_result"
+      ]
+    },
+    {
+      "name": "是第几条",
+      "parameter": "pos",
+      "type": "Integer",
+      "syntax": "${list.pos}",
+      "descriptionHtml": "当前是列表的第几条(从1开始)",
+      "description": "当前是列表的第几条(从1开始)",
+      "kind": "parameter",
+      "path": [
+        "list_result",
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "第${list.pos}条",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "list_result",
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否首条",
+      "parameter": "isFirst",
+      "type": "Boolean",
+      "syntax": "<#if list.isFirst></#if>",
+      "descriptionHtml": "当前是不是列表的第一条",
+      "description": "当前是不是列表的第一条",
+      "kind": "parameter",
+      "path": [
+        "list_result",
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if list.isFirst>首条</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "list_result",
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否尾条",
+      "parameter": "isLast",
+      "type": "Boolean",
+      "syntax": "<#if list.isLast></#if>",
+      "descriptionHtml": "当前是不是列表的最后一条",
+      "description": "当前是不是列表的最后一条",
+      "kind": "parameter",
+      "path": [
+        "list_result",
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if list.isLast>尾条</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "list_result",
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否奇数行",
+      "parameter": "isOdd",
+      "type": "Boolean",
+      "syntax": "<#if list.isOdd></#if>",
+      "descriptionHtml": "当前是不是奇数行",
+      "description": "当前是不是奇数行",
+      "kind": "parameter",
+      "path": [
+        "list_result",
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if list.isOdd>奇数行</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "list_result",
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "是否偶数行",
+      "parameter": "isEven",
+      "type": "Boolean",
+      "syntax": "<#if list.isEven></#if>",
+      "descriptionHtml": "当前是不是偶数行",
+      "description": "当前是不是偶数行",
+      "kind": "parameter",
+      "path": [
+        "list_result",
+        "listnogroup"
+      ]
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<#if list.isEven>偶数行</#if>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": [
+        "list_result",
+        "listnogroup"
+      ]
+    }
+  ],
+  "template": "<#if issucess>\n    <script type=\"text/javascript\">\n        alert(\"投票成功\"); \n    </script>\n<#else>\n    <script type=\"text/javascript\">\n        <#if resultmsg!='' >\n        alert(\"${resultmsg}\"); \n        </#if>\n    </script>\n</#if>\n<form name=\"${formname}\" id=\"${formname}\" method=\"post\" action=\"${action}\" style=\"display: inline;\" >\n${hidden}\n    <table  cellspacing=\"0\" cellpadding=\"3\" width=\"100%\" border=\"0\" style=\"word-break:break-all;COLOR: #ffffff;FONT-FAMILY: 宋体;BACKGROUND-IMAGE: url(/system/resource/images/leadermail/xjdc_bg.jpg);FONT-WEIGHT: bold;WIDTH: 647px;POSITION: relative;HEIGHT: 32px;FONT-SIZE: 9pt;border-collapse: collapse; border:0px black solid;\">\n        <tr>\n            <td nowrap=\"nowrap\" align=\"left\"  style=\"BACKGROUND-IMAGE: url(/system/resource/images/leadermail/xjdc_bg.jpg);PADDING-LEFT: 35px;border:0px black solid;\" >\n            \n            <span >${title}</span>\n                <#list list_xx as list>\n                <input type=\"radio\" name=\"${list.name}\"  id=\"${list.id}\" value=\"${list.code}\">\n                <label for=\"${list.id}\"><span >${list.showtitle}</span></label>\n                </#list>\n                \n            </td>\n            <td align=\"absmiddle\" style=\"vertical-align: right;border:0px black   solid;\"><input type=image src=\"/system/resource/images/leadermail/xjdc_anniu_tp.jpg\" valign=\"bottom\" style=\"cursor: hand\"  \n                ></td>\n        </tr>\n     </table>\n        \n     <#if isshowresult>\n        <table  cellspacing=\"0\" cellpadding=\"3\" width=\"100%\" border=\"0\" style=\"word-break:break-all;WIDTH: 647px;POSITION: relative;HEIGHT: 32px;\">\n            <tr>\n                <td nowrap=\"nowrap\"  align=\"left\" style=\"border:0px black   solid;BACKGROUND-IMAGE: url(/system/resource/images/leadermail/xjdc_xuanxiang_bg.gif);PADDING-LEFT: 35px;WIDTH: 647px;POSITION: relative;HEIGHT: 54px; \">\n                    <span  style=\"FONT-FAMILY: 宋体;FONT-SIZE: 9pt; \" >当前投票结果：</span>\n                    <#list list_result as list_result>\n                    <span  style=\"FONT-FAMILY: 宋体;COLOR: #3c3c3c;FONT-SIZE: 9pt;\" >${list_result.title}</span><span  style=\"FONT-FAMILY: 宋体;COLOR: #b52907;FONT-SIZE: 9pt;\" > ${list_result.votecount} 票(${list_result.parresult})</span>&nbsp;&nbsp;\n                    </#list>\n                    \n                </td>\n            </tr>\n        </table>\n    </#if>\n    ${hidden2}\n\n</form>",
+  "exampleTemplate": "",
+  "previousFixtureHashes": [
+    "f0b24ebc",
+    "8c03943b"
+  ],
+  "css": "",
+  "fixture": {
+    "viewid": "1089",
+    "uid": "u_demo",
+    "uniqueClassName": "c_demo",
+    "UUID": "boda_demo",
+    "votetotlecount": 120,
+    "formname": "boda_demo",
+    "action": "#preview",
+    "actiontype": "#preview",
+    "hidden": "",
+    "hidden2": "",
+    "issucess": true,
+    "resultmsg": "示例内容",
+    "title": "您对本次服务的评价？",
+    "list_xx": [
+      {
+        "name": "service_vote",
+        "id": "vote_option_0",
+        "code": "1",
+        "showtitle": "非常满意"
+      },
+      {
+        "name": "service_vote",
+        "id": "vote_option_1",
+        "code": "2",
+        "showtitle": "满意"
+      },
+      {
+        "name": "service_vote",
+        "id": "vote_option_2",
+        "code": "3",
+        "showtitle": "一般"
+      },
+      {
+        "name": "service_vote",
+        "id": "vote_option_3",
+        "code": "4",
+        "showtitle": "不满意"
+      }
+    ],
+    "isshowresult": true,
+    "list_result": [
+      {
+        "title": "非常满意",
+        "votecount": 72,
+        "parresult": "60%"
+      },
+      {
+        "title": "满意",
+        "votecount": 24,
+        "parresult": "20%"
+      },
+      {
+        "title": "一般",
+        "votecount": 16,
+        "parresult": "13.3%"
+      },
+      {
+        "title": "不满意",
+        "votecount": 8,
+        "parresult": "6.7%"
+      }
+    ]
+  }
+}

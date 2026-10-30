@@ -1,0 +1,555 @@
+{
+  "id": "031",
+  "index": 31,
+  "name": "用户注册",
+  "category": "网站会员",
+  "parameterCount": 38,
+  "hasScript": true,
+  "templateLength": 38713,
+  "parameters": [
+    {
+      "name": "通用参数",
+      "parameter": "commonparam",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件id",
+      "parameter": "viewid",
+      "type": "String",
+      "syntax": "${viewid}",
+      "descriptionHtml": "组件本身的id，数字(形如 1001)",
+      "description": "组件本身的id，数字(形如 1001)",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "组件uid",
+      "parameter": "uid",
+      "type": "String",
+      "syntax": "${uid}",
+      "descriptionHtml": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "description": "组件在此页面上的唯一id，字符串(形如 u10)。若同一组件在页面上多次放置， 那每次执行获得的uid也会不同",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "私有样式类名",
+      "parameter": "uniqueClassName",
+      "type": "String",
+      "syntax": "${uniqueClassName}",
+      "descriptionHtml": "用在私有样式表的类名上，字符串(形如 c10)，举例：<br>&lt;span class=\"<span style=\"color:red\">${uniqueClassName}</span>\" &gt;文字&lt;/span&gt;",
+      "description": "用在私有样式表的类名上，字符串(形如 c10)，举例：\n<span class=\"${uniqueClassName}\" >文字</span>",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "<span class=\"${uniqueClassName}\" >文字</span>",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "引入jQuery类库",
+      "parameter": "v_includeJquery",
+      "type": "Function",
+      "syntax": "${v_includeJquery()}",
+      "descriptionHtml": "引入系统自带的JQuery类库;<br> 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "description": "引入系统自带的JQuery类库;\n 如果组件用到了jQuery，请不要自行上传和引入， 请使用此参数进行引入",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "\n<!--引入jQuery-->${v_includeJquery()}<!--引入jQuery完成-->\n",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "唯一标识",
+      "parameter": "UUID",
+      "type": "String",
+      "syntax": "${UUID}",
+      "descriptionHtml": "唯一标识",
+      "description": "唯一标识",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "密码提示语句",
+      "parameter": "passrule",
+      "type": "String",
+      "syntax": "${passrule}",
+      "descriptionHtml": "密码提示语句",
+      "description": "密码提示语句",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "密码最大长度",
+      "parameter": "passlen_max",
+      "type": "Integer",
+      "syntax": "${passlen_max}",
+      "descriptionHtml": "验证用户密码的最大长度",
+      "description": "验证用户密码的最大长度",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "密码最小长度",
+      "parameter": "passlen_min",
+      "type": "Integer",
+      "syntax": "${passlen_min}",
+      "descriptionHtml": "验证用户密码的最小长度",
+      "description": "验证用户密码的最小长度",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "基本参数",
+      "parameter": "baseparameters",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "当前站点的ID",
+      "parameter": "owner",
+      "type": "String",
+      "syntax": "${owner}",
+      "descriptionHtml": "当前站点的编号",
+      "description": "当前站点的编号",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "当前数据库连接名称",
+      "parameter": "dbname",
+      "type": "String",
+      "syntax": "${dbname}",
+      "descriptionHtml": "当前数据库连接名称",
+      "description": "当前数据库连接名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "返回链接",
+      "parameter": "returnlink",
+      "type": "String",
+      "syntax": "${returnlink}",
+      "descriptionHtml": "返回链接",
+      "description": "返回链接",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "判断用户是否登录",
+      "parameter": "isReg",
+      "type": "Boolean",
+      "syntax": "${isReg}",
+      "descriptionHtml": "判断用户是否在注册状态：false表示没有登录  true表示登录成功",
+      "description": "判断用户是否在注册状态：false表示没有登录  true表示登录成功",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "\n            <#if isReg>\n                 <#--登陆用户存在的操作代码-->\n            <#else>\n                 <#--登录用户不存在的操作代码-->\n            </#if>\n            ",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "判断是否是找回密码",
+      "parameter": "isGet",
+      "type": "Boolean",
+      "syntax": "${isGet}",
+      "descriptionHtml": "判断用户是否是找回密码：false表示不是  true表示是",
+      "description": "判断用户是否是找回密码：false表示不是  true表示是",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "\n            <#if isGet>\n                 <#--登陆用户存在的操作代码-->\n            <#else>\n                 <#--登录用户不存在的操作代码-->\n            </#if>\n            ",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "判断是否是修改密码操作",
+      "parameter": "isUpdate",
+      "type": "Boolean",
+      "syntax": "${isUpdate}",
+      "descriptionHtml": "判断用户是否是修改密码操作：false表示不是  true表示是",
+      "description": "判断用户是否是修改密码操作：false表示不是  true表示是",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "\n            <#if isUpdate>\n                 <#--修改密码的操作代码-->\n            </#if>\n            ",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "判断是否是强制修改密码",
+      "parameter": "wbeditpass",
+      "type": "Boolean",
+      "syntax": "${isUpdate}",
+      "descriptionHtml": "判断用户是否是强制修改密码：false表示不是  true表示是",
+      "description": "判断用户是否是强制修改密码：false表示不是  true表示是",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "样例",
+      "parameter": null,
+      "type": null,
+      "syntax": "\n            <#if wbeditpass>\n                 <#--修改密码的操作代码-->\n            </#if>\n            ",
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "example",
+      "path": []
+    },
+    {
+      "name": "用户注册所需参数",
+      "parameter": "register",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "用户注册表单名称",
+      "parameter": "regFormName",
+      "type": "String",
+      "syntax": "${regFormName}",
+      "descriptionHtml": "用户注册表单名称",
+      "description": "用户注册表单名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "用户注册表单提交链接",
+      "parameter": "regAction",
+      "type": "String",
+      "syntax": "${regAction}",
+      "descriptionHtml": "用户注册表单提交链接",
+      "description": "用户注册表单提交链接",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "用户注册表单显示样式",
+      "parameter": "showReg",
+      "type": "String",
+      "syntax": "${showReg}",
+      "descriptionHtml": "用户注册表单显示样式",
+      "description": "用户注册表单显示样式",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "用户注册表单返回链接",
+      "parameter": "backURL",
+      "type": "String",
+      "syntax": "${backURL}",
+      "descriptionHtml": "用户注册表单返回链接",
+      "description": "用户注册表单返回链接",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "用户名文本框名称",
+      "parameter": "account",
+      "type": "String",
+      "syntax": "${account}",
+      "descriptionHtml": "用户名文本框名称",
+      "description": "用户名文本框名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "密码文本框名称",
+      "parameter": "password",
+      "type": "String",
+      "syntax": "${password}",
+      "descriptionHtml": "密码文本框名称",
+      "description": "密码文本框名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "重复密码文本框名称",
+      "parameter": "checkagain",
+      "type": "String",
+      "syntax": "${checkagain}",
+      "descriptionHtml": "重复密码文本框名称",
+      "description": "重复密码文本框名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "昵称文本框名称",
+      "parameter": "nickname",
+      "type": "String",
+      "syntax": "${nickname}",
+      "descriptionHtml": "昵称文本框名称",
+      "description": "昵称文本框名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "电话号码文本框名称",
+      "parameter": "phone",
+      "type": "String",
+      "syntax": "${phone}",
+      "descriptionHtml": "电话号码文本框名称",
+      "description": "电话号码文本框名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "email文本框名称",
+      "parameter": "email",
+      "type": "String",
+      "syntax": "${backURL}",
+      "descriptionHtml": "email文本框名称",
+      "description": "email文本框名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "修改密码问题文本框名称",
+      "parameter": "question",
+      "type": "String",
+      "syntax": "${question}",
+      "descriptionHtml": "修改密码问题文本框名称",
+      "description": "修改密码问题文本框名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "修改密码答案文本框名称",
+      "parameter": "answer",
+      "type": "String",
+      "syntax": "${answer}",
+      "descriptionHtml": "修改密码答案文本框名称",
+      "description": "修改密码答案文本框名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "修改密码答案文本框名称",
+      "parameter": "answer",
+      "type": "String",
+      "syntax": "${answer}",
+      "descriptionHtml": "修改密码答案文本框名称",
+      "description": "修改密码答案文本框名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "提交按钮名称",
+      "parameter": "btnsum",
+      "type": "String",
+      "syntax": "${btnsum}",
+      "descriptionHtml": "提交按钮名称",
+      "description": "提交按钮名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "阅读协议所需参数",
+      "parameter": "licensecontent",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "用户找回密码所需参数",
+      "parameter": "getpassword",
+      "type": "Group",
+      "syntax": null,
+      "descriptionHtml": null,
+      "description": "",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "用户找回密码表单名称",
+      "parameter": "getPassFormName",
+      "type": "String",
+      "syntax": "${getPassFormName}",
+      "descriptionHtml": "用户找回密码表单名称",
+      "description": "用户找回密码表单名称",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "用户找回密码表单提交链接",
+      "parameter": "getPassAction",
+      "type": "String",
+      "syntax": "${getPassAction}",
+      "descriptionHtml": "用户找回密码表单提交链接",
+      "description": "用户找回密码表单提交链接",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "用户找回密码表单显示样式",
+      "parameter": "showGetPass",
+      "type": "String",
+      "syntax": "${showGetPass}",
+      "descriptionHtml": "用户找回密码表单显示样式",
+      "description": "用户找回密码表单显示样式",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "用户强制修改密码表单显示样式",
+      "parameter": "showEditpass",
+      "type": "String",
+      "syntax": "${showEditpass}",
+      "descriptionHtml": "用户强制修改密码表单显示样式",
+      "description": "用户强制修改密码表单显示样式",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "用户找回密码表单返回链接",
+      "parameter": "term",
+      "type": "String",
+      "syntax": "${term}",
+      "descriptionHtml": "用户找回密码表单返回链接",
+      "description": "用户找回密码表单返回链接",
+      "kind": "parameter",
+      "path": []
+    },
+    {
+      "name": "阅读协议单选框名称",
+      "parameter": "checkboxname",
+      "type": "String",
+      "syntax": "${checkboxname}",
+      "descriptionHtml": "阅读协议单选框名称",
+      "description": "阅读协议单选框名称",
+      "kind": "parameter",
+      "path": [
+        "licensecontent"
+      ]
+    },
+    {
+      "name": "阅读协议单选框编号",
+      "parameter": "checkboxid",
+      "type": "String",
+      "syntax": "${checkboxid}",
+      "descriptionHtml": "阅读协议单选框编号",
+      "description": "阅读协议单选框编号",
+      "kind": "parameter",
+      "path": [
+        "licensecontent"
+      ]
+    },
+    {
+      "name": "原始阅读协议内容",
+      "parameter": "",
+      "type": "String",
+      "syntax": null,
+      "descriptionHtml": "原始阅读协议内容",
+      "description": "原始阅读协议内容",
+      "kind": "parameter",
+      "path": [
+        "licensecontent"
+      ]
+    },
+    {
+      "name": "阅读协议内容",
+      "parameter": "license",
+      "type": "String",
+      "syntax": "${license}",
+      "descriptionHtml": "阅读协议内容",
+      "description": "阅读协议内容",
+      "kind": "parameter",
+      "path": [
+        "licensecontent"
+      ]
+    }
+  ],
+  "template": "<!-- 服务条款内容请在本组件\"内容配置-会员注册条款\"处填写 -->\n<script language='JavaScript' src='${v_link(\"/system/resource/js/login/reguser.js\")}'></script>\n <script type='text/javascript' src='${v_link(\"/system/dwr/interface/RegisterDwr.js\")}'></script>\n <script type='text/javascript' src='${v_link(\"/system/dwr/interface/CheckPasswordDWR.js\")}'></script>\n <script type='text/javascript' src='${v_link(\"/system/dwr/engine.js\")}'></script> \n <script type='text/javascript' src='${v_link(\"/system/dwr/util.js\")}'></script> \n<script type='text/javascript' src='${v_link(\"/system/resource/js/md5.js\")}'></script> \n\n <script> \n    var _getbyid = function(id) {if(id)return document.getElementById(id);}; \n    function tkcheck${UUID}() \n    { \n        if(_getbyid('${checkboxid}').checked) \n        { \n            _getbyid('${checkboxid}').checked=false;\n        } else \n        { \n            _getbyid('${checkboxid}').checked=true; \n        } \n    } \n    function isEmail(email) \n    { \n        //邮件地址正则表达式 \n        isEmail1 = /^\\w+([\\.\\-]\\w+)*\\@\\w+([\\.\\-]\\w+)*\\.\\w+$/; \n        //邮件地址正则表达式 \n        isEmail2 = /^.*@[^_]*$/; \n        //验证邮件地址，返回结果 \n        return (isEmail1.test(email) && isEmail2.test(email)); \n    } \n    function checkpassword${UUID}(input) \n    { \n        var instr = trim(input); \n        if(instr == \"\") return false; \n        var ilength = instr.length; \n        if((ilength > ${passlen_max}) || (ilength < ${passlen_min})) \n        return false; \n        return true; \n    } \n    function checkSub${UUID}() \n    { \n        _getbyid(\"btnsum${UUID}\").disabled=true; \n\n            var password = trim(_getbyid('${password}').value); \n            var checkagain = trim(_getbyid(\"${checkagain}\").value); \n            var wbnickname = trim(_getbyid(\"${nickname}\").value); \n            var wbphone = trim(_getbyid(\"${phone}\").value); \n            var wbemail = trim(_getbyid(\"${email}\").value); \n            var wbquestion = trim(_getbyid(\"${question}\").value); \n            var wbanswer = trim(_getbyid(\"${answer}\").value); \n            var wbaccount = trim(_getbyid(\"${account}\").value); \n\t    var yanzheng = trim(_getbyid(\"yanzheng\").value);\n            if(trim(_getbyid(\"${account}\").value)==null||trim(_getbyid(\"${account}\").value)==\"\") \n            { \n                _getbyid(\"btnsum${UUID}\").disabled=false;\n                 alert(\"请输入用户名\"); \n                 return false; \n            } \n            var re = /^[a-z][a-z0-9_]*$/;\n            if(!re.test(_getbyid(\"${account}\").value)) \n            { \n                alert(\"用户名只能以小写英文字母开始，只允许使用小写英文字母、数字、下划线的组合\"); \n                _getbyid(\"btnsum${UUID}\").disabled=false; \n                return false; \n            } \n            if(checkname(_getbyid(\"${account}\").value)==false) \n            { \n                _getbyid(\"btnsum${UUID}\").disabled=false; \n                return false; \n            } \n            if(wbaccount.length > 20) \n            { \n                alert(\"用户名长度最长20个字符\"); \n                _getbyid(\"btnsum${UUID}\").disabled=false; \n                return false; \n            } \n             \n\t\t\tif(password==null||password==\"\")\n\t\t\t{\n\t\t\t\talert(\"请输入密码\");\n\t\t\t\t_getbyid(\"btnsum${UUID}\").disabled=false;\n\t\t\t\treturn false\n\t\t\t} \n\t\t\tif(checkpassword${UUID}(password) == false)\n\t\t\t{\n\t\t\t\talert(\"密码长度为\"+${passlen_min}+\"～\"+${passlen_max}+\"位，您输入不合法！\");\n\t\t\t\t_getbyid(\"btnsum${UUID}\").disabled=false;return false; \n\t\t\t} \n\t\t\tCheckPasswordDWR.checkSite(password,function(data){ \n\t\t\t\tvar result = data.split(\"@\"); \n\t\t\t\tif(result[0]==\"true\") \n\t\t\t\t{ \n\t\t\t\t\tif(checkagain==null||checkagain==\"\")\n\t\t\t\t\t{\n\t\t\t\t\t\talert(\"请输入确认密码\");\n\t\t\t\t\t\t_getbyid(\"btnsum${UUID}\").disabled=false;\n\t\t\t\t\t\treturn false\n\t\t\t\t\t} \n\t\t\t\t\tif(password!=checkagain)\n\t\t\t\t\t{\n\t\t\t\t\t\talert(\"两次密码输入不一致\");\n\t\t\t\t\t\t_getbyid(\"btnsum${UUID}\").disabled=false;\n\t\t\t\t\t\treturn false\n\t\t\t\t\t} \n\t\t\t\t\tif(wbnickname==null||wbnickname==\"\")\n\t\t\t\t\t{\n\t\t\t\t\t\talert(\"请输入昵称\");\n\t\t\t\t\t\t_getbyid(\"btnsum${UUID}\").disabled=false;\n\t\t\t\t\t\treturn false\n\t\t\t\t\t} \n\t\t\t\t\tif(wbnickname.indexOf(\",\")>=0||wbnickname.indexOf(\";\")>=0||wbnickname.indexOf(\"|\")>=0||wbnickname.indexOf(\"<\")>=0||wbnickname.indexOf(\">\")>=0) \n\t\t\t\t\t{ \n\t\t\t\t\t\talert(\"昵称中不能包含字符,;|<>\"); \n\t\t\t\t\t\t_getbyid(\"btnsum${UUID}\").disabled=false; \n\t\t\t\t\t\treturn false; \n\t\t\t\t\t} \n\t\t\t\t\tif(wbnickname.length > 10) \n\t\t\t\t\t{ \n\t\t\t\t\t\talert(\"昵称过长，长度最大为10个字符\"); \n\t\t\t\t\t\t_getbyid(\"btnsum${UUID}\").disabled=false; \n\t\t\t\t\t\treturn false; \n\t\t\t\t\t} \n\t\t\t\t\tif(wbphone==null||wbphone==\"\")\n\t\t\t\t\t{\n\t\t\t\t\t\talert(\"请输入联系方式\");\n\t\t\t\t\t\t_getbyid(\"btnsum${UUID}\").disabled=false;\n\t\t\t\t\t\treturn false\n\t\t\t\t\t} \n\t\t\t\t\tif(!isTelephone${UUID}(wbphone))\n\t\t\t\t\t{\n\t\t\t\t\t\talert(\"请输入正确的联系方式\");\n\t\t\t\t\t\t_getbyid(\"btnsum${UUID}\").disabled=false;\n\t\t\t\t\t\treturn false   \n\t\t\t\t\t}\n\t\t\t\t\tif(wbemail==null||wbemail==\"\")\n\t\t\t\t\t{\n\t\t\t\t\t\talert(\"请输入邮箱地址\");\n\t\t\t\t\t\t_getbyid(\"btnsum${UUID}\").disabled=false;\n\t\t\t\t\t\treturn false\n\t\t\t\t\t} \n\t\t\t\t\tif(isEmail(wbemail)==false)\n\t\t\t\t\t{\n\t\t\t\t\t\talert(\"邮箱输入不正确\");\n\t\t\t\t\t\t_getbyid(\"btnsum${UUID}\").disabled=false;\n\t\t\t\t\t\treturn false\n\t\t\t\t\t} \n\t\t\t\t\tif(wbquestion==null||wbquestion==\"\")\n\t\t\t\t\t{\n\t\t\t\t\t\talert(\"请输入修改密码提问\");\n\t\t\t\t\t\t_getbyid(\"btnsum${UUID}\").disabled=false;\n\t\t\t\t\t\treturn false\n\t\t\t\t\t} \n\t\t\t\t\tif(wbanswer==null||wbanswer==\"\")\n\t\t\t\t\t{\n\t\t\t\t\t\talert(\"请输入修改密码答案\");\n\t\t\t\t\t\t_getbyid(\"btnsum${UUID}\").disabled=false;\n\t\t\t\t\t\treturn false\n\t\t\t\t\t}\n\t\t\t\t\tif(yanzheng==null||yanzheng==\"\")\n\t\t\t\t\t{\n\t\t\t\t\t\talert(\"请输入验证码\");\n\t\t\t\t\t\t_getbyid(\"btnsum${UUID}\").disabled=false;\n\t\t\t\t\t\treturn false\n\t\t\t\t\t} \n\t\t\t\t\tif(!_getbyid(\"${checkboxid}\").checked) \n\t\t\t\t\t{ \n\t\t\t\t\t\t_getbyid(\"btnsum${UUID}\").disabled=false; \n\t\t\t\t\t\talert(\"您还没有阅读服务条款\"); \n\t\t\t\t\t\treturn; \n\t\t\t\t\t} \n\t\t\t\t\tRegisterDwr.saveUser(wbaccount, password, wbnickname, wbphone, wbemail, wbquestion, wbanswer,${owner},'${dbname}',yanzheng,function (flag){ \n\t\t\t\t\t\t var result = flag.split(\"@\"); \n\t\t\t\t\t\tif(result[0]!=\"true\") \n\t\t\t\t\t\t{ \n\t\t\t\t\t\t\talert(result[1]);\n\t\t\t\t\t\t\t_getbyid(\"btnsum${UUID}\").disabled=false;\n\t\t\t\t\t\t\treturn false;\n\t\t\t\t\t\t}\n\t\t\t\t\t\tif(result[0]==\"true\") \n\t\t\t\t\t\t{ \n\t\t\t\t\t\t\talert(\"注册成功\"); \n\t\t\t\t\t\t\t${backURL} \n\t\t\t\t\t\t}\n\t\t\t\t\t\t}); \n\t\t\t\t\t\t}else \n\t\t\t\t\t\t\t{ \n\t\t\t\t\t\t\t\talert(result[1]); \n\t\t\t\t\t\t\t\t_getbyid(\"btnsum${UUID}\").disabled=false; \n\t\t\t\t\t\t\t\treturn false; \n\t\t\t\t\t\t\t\t}}); \n                         \n                } \n                function isTelephone${UUID}(str)\n                {\n                    if(isMobile${UUID}(str) || isFixedPhone${UUID}(str))\n                    {\n                        return true;\n                    }\n                    return false;\n                }\n                function isMobile${UUID}(str)\n                {\n                    var re = /^(13[0-9]|14[0-9]|15[0-9]|18[0-9])\\d{8}$/;\n                    return re.test(str);\n                }\n                function isFixedPhone${UUID}(str)\n                {\n                    var re =/^(\\d{7,8})(-(\\d{3,}))?$/;\n                    var re1 = /^(([0\\+]\\d{2,3}-)?(0\\d{2,3})-)(\\d{7,8})(-(\\d{3,}))?$/;\n                    return (re.test(str) || re1.test(str));\n                }\n                function checkGetPassForm${UUID}()//检测修改密码 \n                {  \n                        var wbquestion = trim(_getbyid(\"${question}\").value); \n                        var wbanswer = trim(_getbyid(\"${answer}\").value); \n                        var wbaccount = trim(_getbyid(\"${account}\").value); \n                        if(trim(_getbyid(\"${account}\").value)==null||trim(_getbyid(\"${account}\").value)==\"\") \n                        { \n                            alert(\"请输入用户名\");\n                            return false; \n                        } \n                        if(checkname(_getbyid(\"${account}\").value)==false)\n                        return false; \n                        if(wbquestion==null||wbquestion==\"\") \n                        { \n                            alert(\"请输入修改密码问题!\"); \n                            return false; \n                        } \n                        if(wbanswer==null||wbanswer==\"\") \n                        { alert(\"请输入修改密码答案!\"); return false; } \n\n\n            var password = trim(_getbyid(\"${pw}\").value);\n            var newpassword = trim(_getbyid(\"${newpw}\").value);\n            if(password==null||password==\"\")\n            {\n                alert(\"请输入新密码\");\n                return false;\n            }\n            if(newpassword==null||newpassword==\"\")\n            {\n                alert(\"请输入确认的新密码\");\n                return false;\n            }    \n            if(password!=newpassword)\n            {\n                alert(\"两次密码不一致\");\n                return false;\n            }\n            if(checkpassword${UUID}(newpassword) == false)\n            {\n                alert(\"密码长度应该为${passlen_min}～${passlen_max}位，您输入不合法！\");\n                return false; \n            }\n\t\tvar yanzheng = trim(_getbyid(\"yanzheng\").value);\nif(yanzheng==null||yanzheng==\"\")\n            {\n                alert(\"请输入验证码\");\n                return false;\n            }\n            CheckPasswordDWR.checkSite(password,function(data){ \n        var result = data.split(\"@\"); \n        if(result[0]!=\"true\") \n        { \n            alert(result[1]);\n                        return false;\n        }else\n        {\n             \n                                RegisterDwr.getPass(wbaccount,wbquestion, wbanswer,${owner},'${dbname}',newpassword,yanzheng,function (flag){ \n                                    if(\"0\"==flag) { \n                                        alert(\"系统繁忙!请稍后再试!\"); \n                                        return false; \n                                        }else if(\"1\"==flag) \n                                            { \n                                                alert(\"您输入的修改密码问题不存在!\"); \n                                                return false; \n                                            }else if(\"2\"==flag) \n                                                { \n                                                    alert(\"答案错误!\"); \n                                                    return false; \n                                                }else if(\"4\"==flag) \n                                                { \n                                                    alert(\"验证码错误!\"); \n                                                    return false; \n                                                }else \n                                                    { \n                                                        //frmToDo${UUID}.style.display=\"none\"; \n                                                        _getbyid(\"sussmes${UUID}\").style.display=\"\"; \n                                                        //_getbyid(\"passmes${UUID}\").innerHTML=flag; \n                                                    } \n                                                }); \n        }\n\n\n                        \n                    }); \n            }\n            function tk(flag) \n            { \n                if(flag) \n                { \n                    _getbyid(\"${checkboxid}\").checked=true; \n                    _getbyid(\"tiaokuan\").style.display=\"\"; \n                    //_getbyid(\"frmToDo_getbyid{UUID}\").style.display=\"none\"; \n                }else \n                { \n                    _getbyid(\"tiaokuan\").style.display=\"none\"; \n                    //_getbyid(\"frmToDo${UUID}\").style.display=\"\"; \n                } \n            } \n//修改密码\nfunction checkEditSub${UUID}()\n{\n            var password = trim(_getbyid('oldpassword').value);\n            var newpassword = trim(_getbyid('newpassword').value);\n            var newregainpassword = trim(_getbyid('newregainpassword').value);\n            if(password==null||password==\"\")\n            {\n                alert(\"请输入原始密码\");\n                return false;\n            }\n            if(newpassword==null||newpassword==\"\")\n            {\n                alert(\"请输入新密码\");\n                return false;\n            }\n            if(checkpassword${UUID}(newpassword) == false)\n            {\n                alert(\"密码长度应该为${passlen_min}～${passlen_max}位，您输入不合法！\");\n                return false; \n            }\n            CheckPasswordDWR.checkSite(newpassword,function(data){\n                    var result = data.split(\"@\");\n                    if(result[0]==\"true\")\n                    {\n                        if(newregainpassword==null||newregainpassword==\"\")\n                        {\n                            alert(\"请输入确认密码\");\n                            return false;\n                        }\n                        if(newpassword!=newregainpassword)\n                        {\n                            alert(\"两次密码输入不一致\");\n                            return false\n                        }                                          \n                        CheckPasswordDWR.editPass(hex_md5(password).toUpperCase(), newpassword,'${dbname}',${owner},function (flag)\n                        {\n                            var result = flag.split(\"@\");\n                            if(result[0]==\"true\")\n                            {\n                                alert(result[1]);\n                                window.location='${returnlink}';\n                            }else\n                            {\n                                alert(result[1]);\n                            }\n                        });\n                    }else\n                    {\n                        alert(result[1]);\n                        return false;\n                    }\n                });\n}                       \n</script>\n<a id=register_go href=''></a> <!-- 定义服务条款的位置并输出 --> \n<table id='tiaokuan' style='display:none;font-family: 宋体;font-size: 9pt;' width='400' height='400' border='0' align='center'> \n    <tr >\n        <td colspan='2' >\n            <div align=left style='overflow:auto;height:400px;font-size:12px;border: 1px solid #BDDBF7;'> ${license} </div>\n        </td>\n    </tr> \n    <tr height='20'>\n        <td colspan='2' align='center'>\n            <input type='button' style='cursor: hand;font-family: 宋体;font-size: 9pt;height: 18px;background-color: #E6FDFF;border: 1px solid #BDDBF7;' name='agree' value='关闭' onclick='tk(false)'>\n        </td>\n    </tr> \n</table>\n<#if isReg> \n<table width=\"90%\" border=\"0\" align=\"center\" cellpadding=\"5\" cellspacing=\"5\"> \n    <tr>\n        <td>\n            <strong>\n                <span style='font-size: 14px;color: #f09e00;'>1、创建您的账户</span>\n            </strong>\n        </td>\n    </tr>\n</table>\n<table width=\"90%\" border=\"0\" align=\"center\" cellpadding=\"0\" cellspacing=\"0\" style=\"border: 1px dashed #CCCCCC;\"> \n    <tr> \n        <td valign=\"top\">\n            <table width=\"99%\" border=\"0\" align=\"left\" cellpadding=\"0\" cellspacing=\"1\"> \n                <tr> \n                    <td width=\"26%\" style=' font-family: 宋体;font-size: 12px;line-height: 20px;color: 757575;text-decoration: none;background-color: #f5f5f5;height: 25px;'>\n                        <div align=\"right\" >用户名：</div>\n                    </td> \n                    <td width=\"74%\">\n                        <p>\n                            <span style=\" font-size: 12px;color: #E76110;\">&nbsp;&nbsp;*</span>\n                            <input name=\"${account}\" type=\"text\" maxlength=\"20\" style='font-family: 宋体;font-size: 14px;font-weight:bold;height:23px;color: #345832;text-decoration: none;border: 1px solid #8fac8e;width: 180px;LINE-HEIGHT: 160%;FONT-FAMILY: verdana,Arial, Helvetica, sans-serif; LIST-STYLE-TYPE: none' id=\"${account}\" />&nbsp; \n                        </p>\n                    </td> \n                </tr> \n                <tr> \n                    <td style=' font-family: 宋体;font-size: 12px;line-height: 20px;color: 757575;text-decoration: none;background-color: #f5f5f5;height: 25px;'>&nbsp;</td> \n                    <td>\n                        <span style=\" font-size: 12px;color: #BBBBBB;\">&nbsp;&nbsp;用户名只能为小写英文字母开始，最长为20个字符，允许使用小写英文字母、数字、下划线的组合</span>\n                    </td> \n                </tr> \n                <tr> \n                    <td style=' font-family: 宋体;font-size: 12px;line-height: 20px;color: 757575;text-decoration: none;background-color: #f5f5f5;height: 25px;'>\n                        <div align=\"right\" >密码：</div>\n                    </td> \n                    <td>\n                        <span style=\" font-size: 12px;color: #E76110;\">&nbsp;&nbsp;*</span> <input name=\"${password}\" autocomplete=\"off\" type=\"password\" style='font-family: 宋体;font-size: 14px;font-weight:bold;height:23px;color: #345832;text-decoration: none;border: 1px solid #8fac8e;width: 180px;LINE-HEIGHT: 160%;FONT-FAMILY: verdana,Arial, Helvetica, sans-serif; LIST-STYLE-TYPE: none' id=\"${password}\" />\n                        <span id=\"mespassword\"></span>\n                    </td> \n                </tr> \n                <tr> \n                    <td style=' font-family: 宋体;font-size: 12px;line-height: 20px;color: 757575;text-decoration: none;background-color: #f5f5f5;height: 25px;'>&nbsp;</td> \n                    <td>\n                        <span style=\" font-size: 12px;color: #BBBBBB;\">&nbsp;&nbsp;${passrule}</span>\n                    </td>\n                </tr>\n                <tr>\n                    <td style=' font-family: 宋体;font-size: 12px;line-height: 20px;color: 757575;text-decoration: none;background-color: #f5f5f5;height: 25px;'>\n                    <div align=\"right\" >&nbsp;&nbsp;请再次确认密码：</div>\n                    </td>\n                    <td>\n                        <span style=\" font-size: 12px;color: #E76110;\">&nbsp;&nbsp;*</span>\n                        <input name=\"${checkagain}\" autocomplete=\"off\" type=\"password\" style=\"font-family: 宋体;font-size: 14px;font-weight:bold;height:23px;color: #345832;text-decoration: none;border: 1px solid #8fac8e;width: 180px;LINE-HEIGHT: 160%;FONT-FAMILY: verdana,Arial, Helvetica, sans-serif; LIST-STYLE-TYPE: none\" id=\"${checkagain}\" />\n                        <span id=\"mesrepassword\"></span>\n                    </td>\n                </tr> \n                <tr> \n                    <td style=\" font-family: 宋体;font-size: 12px;line-height: 20px;color: 757575;text-decoration: none;background-color: #f5f5f5;height: 25px;\">&nbsp;</td> \n                    <td><span style=\" font-size: 12px;color: #BBBBBB;\">&nbsp;&nbsp;</span></td>\n                </tr>\n            </table>\n        </td> \n    </tr> \n</table>\n<table width=\"90%\" border=\"0\" align=\"center\" cellpadding=\"5\" cellspacing=\"5\"> \n    <tr>\n        <td>\n            <strong>\n                <span style=\"font-size: 14px;color: #f09e00;\">2、请填写您的联系方式</span>\n            </strong>\n        </td>\n    </tr>\n</table>\n<table width=\"90%\" border=\"0\" align=\"center\" cellpadding=\"0\" cellspacing=\"0\" style=\"border: 1px dashed #CCCCCC;\">\n    <tr>\n        <td valign=\"top\">\n            <table width=\"99%\" border=\"0\" align=\"left\" cellpadding=\"0\" cellspacing=\"1\">\n                <tr>\n                    <td width=\"26%\" style=\" font-family: 宋体;font-size: 12px;line-height: 20px;color: 757575;text-decoration: none;background-color: #f5f5f5;height: 25px;\">\n                        <div align=\"right\" >昵称：</div>\n                    </td>\n                    <td width=\"74%\">\n                        <p>\n                            <span style=\" font-size: 12px;color: #E76110;\">&nbsp;&nbsp;*</span>\n                            <input name=\"${nickname}\" maxlength=\"20\" type=\"text\" style=\"font-family: 宋体;font-size: 14px;font-weight:bold;height:23px;color: #345832;text-decoration: none;border: 1px solid #8fac8e;width: 180px;LINE-HEIGHT: 160%;FONT-FAMILY: verdana,Arial, Helvetica, sans-serif; LIST-STYLE-TYPE: none\" id=\"${nickname}\" />\n                            <span id=\"mesname\"></span> \n                        </p>\n                    </td> \n                </tr> \n                <tr> \n                    <td style=\" font-family: 宋体;font-size: 12px;line-height: 20px;color: 757575;text-decoration: none;background-color: #f5f5f5;height: 25px;\">&nbsp;</td> \n                    <td><span style=\" font-size: 12px;color: #BBBBBB;\">&nbsp;&nbsp;长度最长为10个字符</span></td> \n                </tr> \n                <tr> \n                    <td style=\" font-family: 宋体;font-size: 12px;line-height: 20px;color: 757575;text-decoration: none;background-color: #f5f5f5;height: 25px;\">\n                        <div align=\"right\" >联系电话：</div>\n                    </td> \n                    <td>\n                        <span style=\" font-size: 12px;color: #E76110;\">&nbsp;&nbsp;*</span>\n                        <input name=\"${phone}\" type=\"text\" maxlength=\"20\" style=\"font-family: 宋体;font-size: 14px;font-weight:bold;height:23px;color: #345832;text-decoration: none;border: 1px solid #8fac8e;width: 180px;LINE-HEIGHT: 160%;FONT-FAMILY: verdana,Arial, Helvetica, sans-serif; LIST-STYLE-TYPE: none\" id=\"${phone}\" />\n                        <span id=\"mesphone\"></span>\n                    </td> \n                </tr> \n                <tr> \n                    <td style=\" font-family: 宋体;font-size: 12px;line-height: 20px;color: 757575;text-decoration: none;background-color: #f5f5f5;height: 25px;\">&nbsp;</td> \n                    <td><span style=\" font-size: 12px;color: #BBBBBB;\">&nbsp;&nbsp;请填写您有效的联系方式，以使我们及时和您联系</span></td> \n                </tr> \n                <tr> \n                    <td style=\" font-family: 宋体;font-size: 12px;line-height: 20px;color: 757575;text-decoration: none;background-color: #f5f5f5;height: 25px;\">\n                        <div align=\"right\" >电子邮箱：</div>\n                    </td> \n                    <td>\n                        <span style=\" font-size: 12px;color: #E76110;\">&nbsp;&nbsp;*</span>\n                        <input name=\"${email}\" type=\"text\" maxlength=\"50\" style=\"font-family: 宋体;font-size: 14px;font-weight:bold;height:23px;color: #345832;text-decoration: none;border: 1px solid #8fac8e;width: 180px;LINE-HEIGHT: 160%;FONT-FAMILY: verdana,Arial, Helvetica, sans-serif; LIST-STYLE-TYPE: none\" id=\"${email}\" />\n                        <span id=\"mesemail\"></span>\n                    </td> \n                </tr> \n                <tr> \n                    <td style=\" font-family: 宋体;font-size: 12px;line-height: 20px;color: 757575;text-decoration: none;background-color: #f5f5f5;height: 25px;\">&nbsp;</td> \n                    <td><span style=\" font-size: 12px;color: #BBBBBB;\">&nbsp;&nbsp;</span></td>\n                </tr>\n            </table>\n        </td> \n    </tr> \n</table> \n<table width=\"90%\" border=\"0\" align=\"center\" cellpadding=\"5\" cellspacing=\"5\"> \n    <tr> \n        <td><strong><span style=\"font-size: 14px;color: #f09e00;\">3、忘记密码找回方式</span></strong></td>\n    </tr>\n</table> \n<table width=\"90%\" border=\"0\" align=\"center\" cellpadding=\"0\" cellspacing=\"0\" style=\"border: 1px dashed #CCCCCC;\"> \n<tr> \n    <td valign=\"top\">\n        <table width=\"99%\" border=\"0\" align=\"left\" cellpadding=\"0\" cellspacing=\"1\"> \n            <tr> \n                <td width=\"26%\" style=\" font-family: 宋体;font-size: 12px;line-height: 20px;color: 757575;text-decoration: none;background-color: #f5f5f5;height: 25px;\">\n                    <div align=\"right\" >修改密码提问：</div>\n                </td> \n                <td width=\"74%\">\n                    <p>\n                        <span style=\" font-size: 12px;color: #E76110;\">&nbsp;&nbsp;*</span>\n                        <input name=\"${question}\" type=\"text\" maxlength=\"200\" style=\"font-family: 宋体;font-size: 14px;font-weight:bold;height:23px;color: #345832;text-decoration: none;border: 1px solid #8fac8e;width: 180px;LINE-HEIGHT: 160%;FONT-FAMILY: verdana,Arial, Helvetica, sans-serif; LIST-STYLE-TYPE: none\" id=\"${question}\" />\n                        <span id=\"mesquestion\"></span>\n                    </p>\n                </td> \n            </tr> \n            <tr> \n                <td style=\" font-family: 宋体;font-size: 12px;line-height: 20px;color: 757575;text-decoration: none;background-color: #f5f5f5;height: 25px;\">&nbsp;</td> \n                <td><span style=\" font-size: 12px;color: #BBBBBB;\">&nbsp;&nbsp;用于密码遗忘时使用</span></td> \n            </tr> \n            <tr> \n                <td style=\" font-family: 宋体;font-size: 12px;line-height: 20px;color: 757575;text-decoration: none;background-color: #f5f5f5;height: 25px;\">\n                    <div align=\"right\" >修改密码答案：</div>\n                </td> \n                <td>\n                    <span style=\" font-size: 12px;color: #E76110;\">&nbsp;&nbsp;*</span>\n                    <input name=\"${answer}\" type=\"text\" maxlength=\"200\" style=\"font-family: 宋体;font-size: 14px;font-weight:bold;height:23px;color: #345832;text-decoration: none;border: 1px solid #8fac8e;width: 180px;LINE-HEIGHT: 160%;FONT-FAMILY: verdana,Arial, Helvetica, sans-serif; LIST-STYLE-TYPE: none\" id=\"${answer}\" />\n                    <span id=\"mesanswer\"></span>\n                </td> \n            </tr> \n            <tr> \n                <td style=\" font-family: 宋体;font-size: 12px;line-height: 20px;color: 757575;text-decoration: none;background-color: #f5f5f5;height: 25px;\">&nbsp;</td> \n                <td>\n                    <span style=\" font-size: 12px;color: #BBBBBB;\">&nbsp;&nbsp;密码遗忘时将验证此答案</span>\n                </td> \n            </tr> \n\t    <tr> \n                <td style=\" font-family: 宋体;font-size: 12px;line-height: 20px;color: 757575;text-decoration: none;background-color: #f5f5f5;height: 25px;\">\n                    <div align=\"right\" >验证码：</div>\n                </td>  \n                <td>\n<span style=\" float:left;font-size: 12px;color: #E76110;\">&nbsp;&nbsp;*</span>\n                    <div style=\"float:left;margin-left:4px;\">\n                    <input name=\"yanzheng\" type=\"text\" maxlength=\"200\" style=\"font-family: 宋体;font-size: 14px;font-weight:bold;height:23px;color: #345832;text-decoration: none;border: 1px solid #8fac8e;width: 180px;LINE-HEIGHT: 160%;FONT-FAMILY: verdana,Arial, Helvetica, sans-serif; LIST-STYLE-TYPE: none\" id=\"yanzheng\" /></div><div style=\"float:left;margin-left:2px;margin-bottom:1px;\"><img border=\"0\" src=\"/system/resource/js/message/memberimage.jsp\" align=\"absmiddle\" style=\"display: inline-block; vertical-align: middle;\"/></div>\n                </td> \n            </tr>\n        </table>\n        </td> \n    </tr> \n</table> \n<table width=\"90%\" border=\"0\" align=\"center\" cellpadding=\"0\" cellspacing=\"0\" > \n    <tr> \n        <td valign=\"top\">\n            <table width=\"99%\" border=\"0\" align=\"left\" cellpadding=\"0\" cellspacing=\"1\"> \n                <tr> \n                    <td width=\"26%\" height=\"15px\"></td> <td width=\"74%\" height=\"15px\">\n                    </td>\n                </tr> \n                <tr> \n                    <td valign=\"middle\">\n                        <p align=\"right\" >\n                            <input type=\"checkbox\" name=\"${checkboxname}\" id=\"${checkboxid}\" value=\"checkbox\" checked=\"checked\"/>\n                        </p>\n                    </td> \n                    <td style=\" font-size:12px\" valign=\"middle\" >\n                        <span onclick=\"tk(true)\" style=\" font-size: 12px;color: #BBBBBB;\" style=\"cursor:pointer\">已经阅读协议,并同意协议中的各项条款。 </span>\n                        <a href=\"#\" onclick=\"javascript:tk(true)\">点此阅读</a>\n                    </td>\n                </tr> \n                <tr>\n                    <td colspan=\"2\" height=\"15px\"></td> \n                </tr> \n                <tr> \n                    <td >\n                        <div align=\"center\">\n                            <label></label>\n                        </div>\n                    </td> \n                    <td >\n                        <img id=\"${btnsum}\" style=\" margin-left:40px;cursor:pointer\" src=\"/system/resource/images/login/zhuce_anniu_zhuce.gif\" onclick=\"checkSub${UUID}()\"/>\n                    </td> \n                </tr> \n            </table>\n        </td>\n    </tr> \n</table> \n<#elseif isGet> \n<table width=\"90%\" border=\"0\" align=\"center\" cellpadding=\"5\" cellspacing=\"5\"> \n    <tr>\n        <td>\n            <strong><span style=\"font-size: 14px;color: #f09e00;\">修改遗忘的密码：</span></strong>\n        </td>\n    </tr>\n</table> \n<table width=\"90%\" border=\"0\" align=\"center\" cellpadding=\"0\" cellspacing=\"0\" style=\"border: 1px dashed #CCCCCC;\"> \n    <tr>\n        <td valign=\"top\">\n            <table width=\"99%\" border=\"0\" align=\"left\" cellpadding=\"0\" cellspacing=\"1\"> \n                <tr>\n                    <td width=\"26%\" style='font-family: 宋体;font-size: 12px;line-height: 20px;color: 757575;text-decoration: none;background-color: #f5f5f5;height: 25px;'>\n                        <div align=\"right\" >用户名：</div>\n                    </td>\n                    <td width=\"74%\">\n                        <p>\n                            <span style=\" font-size: 12px;color: #E76110;\">&nbsp;&nbsp;*</span> \n                            <input name=\"${account}\" type=\"text\" maxlength=\"20\" style='font-family: 宋体;font-size: 14px;font-weight:bold;height:23px;color: #345832;text-decoration: none;border: 1px solid #8fac8e;width: 180px;LINE-HEIGHT: 160%;FONT-FAMILY: verdana,Arial, Helvetica, sans-serif; LIST-STYLE-TYPE: none' id=\"${account}\" />&nbsp; \n                        </p>\n                    </td>\n                </tr> \n                <tr>\n                    <td style=\" font-family: 宋体;font-size: 12px;line-height: 20px;color: 757575;text-decoration: none;background-color: #f5f5f5;height: 25px;\">&nbsp;\n                    </td> \n                    \n                    <td><span style=\" font-size: 12px;color: #BBBBBB;\">&nbsp;</span>\n                    </td>\n                </tr> \n                <tr>\n                    <td style=\" font-family: 宋体;font-size: 12px;line-height: 20px;color: 757575;text-decoration: none;background-color: #f5f5f5;height: 25px;\">\n                        <div align=\"right\" >修改密码问题：</div>\n                    </td> \n                    <td>\n                        <span style=\" font-size: 12px;color: #E76110;\">&nbsp;&nbsp;*</span> \n                        <input name=\"${question}\" type=\"text\" style=\"font-family: 宋体;font-size: 14px;font-weight:bold;height:23px;color: #345832;text-decoration: none;border: 1px solid #8fac8e;width: 180px;LINE-HEIGHT: 160%;FONT-FAMILY: verdana,Arial, Helvetica, sans-serif; LIST-STYLE-TYPE: none\" id=\"${question}\" />\n                    </td>\n                </tr> \n                <tr> \n                    <td style=\" font-family: 宋体;font-size: 12px;line-height: 20px;color: 757575;text-decoration: none;background-color: #f5f5f5;height: 25px;\">&nbsp;\n                    </td>\n                    <td>&nbsp;</td>\n                </tr> \n                <tr> \n                    <td style=\" font-family: 宋体;font-size: 12px;line-height: 20px;color: 757575;text-decoration: none;background-color: #f5f5f5;height: 25px;\">\n                        <div align=\"right\" >修改密码答案：</div>\n                    </td> \n                    <td>\n                        <span style=\" font-size: 12px;color: #E76110;\">&nbsp;&nbsp;*</span> <input name=\"${answer}\" type=\"text\" style=\"font-family: 宋体;font-size: 14px;font-weight:bold;height:23px;color: #345832;text-decoration: none;border: 1px solid #8fac8e;width: 180px;LINE-HEIGHT: 160%;FONT-FAMILY: verdana,Arial, Helvetica, sans-serif; LIST-STYLE-TYPE: none\" id=\"${answer}\" />\n                    </td>\n                </tr> \n                <tr> \n                    <td style=\" font-family: 宋体;font-size: 12px;line-height: 20px;color: 757575;text-decoration: none;background-color: #f5f5f5;height: 25px;\">&nbsp;\n                    </td> \n                    <td>&nbsp;</td>\n                </tr> \n                <tr> \n                    <td style=\" font-family: 宋体;font-size: 12px;line-height: 20px;color: 757575;text-decoration: none;background-color: #f5f5f5;height: 25px;\">\n                        <div align=\"right\" >新密码：</div>\n                    </td> \n                    <td>\n                        <span style=\" font-size: 12px;color: #E76110;\">&nbsp;&nbsp;*</span> <input name=\"${pw}\" type=\"password\" style=\"font-family: 宋体;font-size: 14px;font-weight:bold;height:23px;color: #345832;text-decoration: none;border: 1px solid #8fac8e;width: 180px;LINE-HEIGHT: 160%;FONT-FAMILY: verdana,Arial, Helvetica, sans-serif; LIST-STYLE-TYPE: none\" id=\"${pw}\" />\n                    </td>\n                </tr> \n                <tr> \n                    <td style=\" font-family: 宋体;font-size: 12px;line-height: 20px;color: 757575;text-decoration: none;background-color: #f5f5f5;height: 25px;\">&nbsp;\n                    </td> \n                    <td>&nbsp;</td>\n                </tr> \n                <tr> \n                    <td style=\" font-family: 宋体;font-size: 12px;line-height: 20px;color: 757575;text-decoration: none;background-color: #f5f5f5;height: 25px;\">\n                        <div align=\"right\" >确认新密码：</div>\n                    </td> \n                    <td>\n                        <span style=\" font-size: 12px;color: #E76110;\">&nbsp;&nbsp;*</span> <input name=\"${newpw}\" type=\"password\" style=\"font-family: 宋体;font-size: 14px;font-weight:bold;height:23px;color: #345832;text-decoration: none;border: 1px solid #8fac8e;width: 180px;LINE-HEIGHT: 160%;FONT-FAMILY: verdana,Arial, Helvetica, sans-serif; LIST-STYLE-TYPE: none\" id=\"${newpw}\" />\n                    </td>\n                </tr> \n\t\t\t\t<tr> \n                    <td style=\" font-family: 宋体;font-size: 12px;line-height: 20px;color: 757575;text-decoration: none;background-color: #f5f5f5;height: 25px;\">&nbsp;\n                    </td> \n                    <td>&nbsp;</td>\n                </tr> \n<tr> \n                <td style=\" font-family: 宋体;font-size: 12px;line-height: 20px;color: 757575;text-decoration: none;background-color: #f5f5f5;height: 25px;\">\n                    <div align=\"right\" >验证码：</div>\n                </td>  \n                <td>\n<span style=\" float:left;font-size: 12px;color: #E76110;\">&nbsp;&nbsp;*</span>\n                    <div style=\"float:left;margin-left:4px;\">\n                    <input name=\"yanzheng\" type=\"text\" maxlength=\"200\" style=\"font-family: 宋体;font-size: 14px;font-weight:bold;height:23px;color: #345832;text-decoration: none;border: 1px solid #8fac8e;width: 180px;LINE-HEIGHT: 160%;FONT-FAMILY: verdana,Arial, Helvetica, sans-serif; LIST-STYLE-TYPE: none\" id=\"yanzheng\" /></div><div style=\"float:left;margin-left:2px;margin-bottom:1px;\"><img border=\"0\" src=\"/system/resource/js/message/memberimage.jsp\" align=\"absmiddle\" style=\"display: inline-block; vertical-align: middle;\"/></div>\n                </td> \n            </tr>\n                <tr> \n                    <td style=\" font-family: 宋体;font-size: 12px;line-height: 20px;color: 757575;text-decoration: none;background-color: #f5f5f5;height: 25px;\">&nbsp;\n                    </td> \n                    <td>&nbsp;</td>\n                </tr>\n                <tr>\n                    <td>&nbsp;</td> \n                    <td align='left'>\n                        <img style=\" margin-left:25px;cursor:pointer\" src=\"/system/resource/images/login/anniu_zhuce_wancheng.gif\" onclick=\"checkGetPassForm${UUID}()\"/> \n                        <img style=\" margin-left:25px;cursor:pointer\" src=\"/system/resource/images/login/anniu_zhuce_quxiao.gif\" onclick=\"${term}\"/>\n                    </td> \n                </tr>\n            </table>\n        </td>\n    </tr> \n</table> \n<table id=\"sussmes${UUID}\" width=\"80%\" style=\"display:none\" border=\"0\" align=\"center\" cellpadding=\"0\" cellspacing=\"0\" style=\"border: 1px dashed #CCCCCC;\"> \n    <tr>\n        <td valign=\"top\">\n            <table width=\"99%\" border=\"0\" align=\"left\" cellpadding=\"0\" cellspacing=\"1\"> \n                <tr>\n                    <td width=\"50%\" style=\" font-family: 宋体;font-size: 12px;line-height: 20px;color: 757575;text-decoration: none;background-color: #f5f5f5;height: 25px;\">\n                        <div align=\"right\">恭喜您，密码修改成功。</div>\n                    </td> \n                    <td width=\"50%\">\n                        <span style=\" font-size: 12px;color: #E76110;\" id=\"passmes${UUID}\">&nbsp;</span> \n                    </td>\n                </tr> \n            </table>\n        </td>\n    </tr> \n</table> \n<#elseif isUpdate>\n<table width=\"620\" border=\"0\" align=\"center\" cellpadding=\"0\" cellspacing=\"0\"   style=\"border: 1px dashed #CCCCCC;\">\n      <tr>\n            <td width=\"138\" height=\"5\"></td>\n            <td height=\"5\"></td>\n            <td width=\"284\" height=\"5\"></td>\n      </tr>\n      <tr>\n            <td height=\"51\" colspan=\"3\" class=\"reg_titlefont\">\n            <#if !wbeditpass>\n                您当前的密码存在安全风险，站群管理员已强制要求您更改密码，请更改!\n            <#else>\n                当前网站密码安全规范为：${passrule}您当前的密码已经不符合安全要求，请更改!\n            </#if>\n            </td>\n      </tr>\n      <tr>\n            <td height=\"51\" class=\"reg_titlefont\" align=\"right\" style=\"padding-right:15px\">\n                <span style=\"color:red\"> *</span> 原始密码：\n            </td>\n            <td width=\"198\">\n                <input type=\"password\" name=\"oldpassword\"  id=\"oldpassword\" class=\"reg_input\" style=\"ime-mode:disabled\" autocomplete=\"off\"   value=\"\"  onFocus=\"this.className='reg_inputon'\" onBlur=\"this.className='reg_input'\">\n            </td>\n            <td align=\"left\" ></td>\n      </tr>\n      <tr>\n           <td height=\"7\"></td>\n           <td height=\"7\"></td>\n           <td height=\"7\"></td>\n      </tr>\n      <tr>\n            <td align=\"right\" style=\"padding-right:15px\">\n                <span class=\"reg_titlefont\"><span style=\"color:red\"> *</span> 新密码：</span>\n            </td>\n            <td>\n                <input type=\"password\" name=\"newpassword\" id=\"newpassword\" class=\"reg_input\" autocomplete=\"off\"  style=\"ime-mode:disabled\"  value=\"\" onFocus=\"this.className='reg_inputon'\" onBlur=\"this.className='reg_input'\">\n            </td>\n            <td rowspan=\"3\" align=\"left\" style=\"padding-left:10px;background-repeat :no-repeat\"></td>\n      </tr>\n      <tr>\n            <td height=\"7\"></td>\n            <td height=\"7\"></td>\n      </tr>\n      <tr>\n            <td align=\"right\" style=\"padding-right:15px\">\n                <span class=\"reg_titlefont\"><span style=\"color:red\"> *</span> 新密码确认：</span>\n            </td>\n            <td>\n                <input type=\"password\" name=\"newregainpassword\" id=\"newregainpassword\"  class=\"reg_input\" autocomplete=\"off\"  style=\"ime-mode:disabled\"  value=\"\"  onFocus=\"this.className='reg_inputon'\" onBlur=\"this.className='reg_input'\">\n            </td>\n      </tr>\n      <tr>\n            <td>&nbsp;</td>\n            <td>&nbsp;</td>\n            <td>&nbsp;</td>\n      </tr>\n      <tr>\n        <td colspan=3>\n            <table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">\n                <tr>\n                    <td width=\"100%\" height=\"75\" align=center>\n                        <input  type=\"button\" class=\"reg_menu\" id=\"btn_sub\" value=\"修   改\" onclick=\"checkEditSub${UUID}()\"/>&nbsp;&nbsp;&nbsp;\n                    </td>\n                </tr>\n            </table>\n        </td>\n        <td>&nbsp;</td>\n      </tr>\n</table>\n</#if>",
+  "exampleTemplate": "",
+  "previousFixtureHashes": [
+    "156c9937",
+    "463a5c84"
+  ],
+  "css": "",
+  "fixture": {
+    "viewid": "1031",
+    "uid": "u_demo",
+    "uniqueClassName": "c_demo",
+    "UUID": "boda_demo",
+    "passrule": "密码提示语句",
+    "passlen_max": 6,
+    "passlen_min": 6,
+    "owner": "当前站点的ID",
+    "dbname": "示例名称",
+    "returnlink": "#preview",
+    "isReg": true,
+    "isGet": true,
+    "isUpdate": true,
+    "regFormName": "示例名称",
+    "regAction": "#preview",
+    "showReg": "用户注册表单显示样式",
+    "backURL": "",
+    "account": "12",
+    "password": "密码文本框名称",
+    "checkagain": "重复密码文本框名称",
+    "nickname": "示例名称",
+    "phone": "",
+    "question": "修改密码问题文本框名称",
+    "answer": "修改密码答案文本框名称",
+    "btnsum": "提交按钮名称",
+    "getPassFormName": "示例名称",
+    "getPassAction": "#preview",
+    "showGetPass": "用户找回密码表单显示样式",
+    "showEditpass": "用户强制修改密码表单显示样式",
+    "term": "用户找回密码表单返回链接",
+    "checkboxname": "示例名称",
+    "checkboxid": "阅读协议单选框编号",
+    "license": "阅读协议内容",
+    "email": "",
+    "pw": "示例内容",
+    "newpw": "示例内容",
+    "wbeditpass": true
+  }
+}
